@@ -151,3 +151,49 @@ html { scroll-behavior: smooth; }
 .media-list strong { font: 400 1.2rem/1.25 var(--display); }
 .media-list a:hover strong { color: var(--river); }
 .media-list span:last-child { color: var(--muted); font-size: .95rem; }
+
+/* map */
+.map-shell { display: grid; grid-template-columns: minmax(0, 1fr) 200px; gap: 18px; align-items: start; }
+#map { height: min(72vh, 640px); min-height: 380px; border: 1px solid var(--rule); background: var(--sheet); }
+.legend { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; font: 500 .85rem/1.3 var(--label); color: var(--muted); }
+.legend li { display: flex; align-items: center; gap: 10px; }
+.k { flex: none; display: inline-grid; place-items: center; }
+.k-open { width: 26px; height: 0; border-top: 4px solid var(--river); }
+.k-under { width: 26px; height: 0; border-top: 4px dotted var(--river); }
+.k-water { width: 26px; height: 0; border-top: 3px dashed var(--antiquity); }
+.k-stop, .pin-stop span { width: 24px; height: 24px; border-radius: 50%; background: var(--paper); border: 3px solid var(--river); color: var(--river); font: 600 .72rem/1 var(--label); }
+.pin-stop span { display: grid; place-items: center; box-sizing: border-box; width: 28px; height: 28px; }
+.pin-stop { background: none; border: 0; }
+.k-mill, .pin-mill { width: 12px; height: 12px; background: var(--antiquity); border: 2px solid var(--paper); box-sizing: content-box; }
+.k-works, .pin-works { width: 12px; height: 12px; background: #c98500; border: 2px solid var(--paper); border-radius: 50%; box-sizing: content-box; }
+.k-gauge, .pin-gauge { width: 0; height: 0; border-left: 8px solid transparent; border-right: 8px solid transparent; border-bottom: 14px solid var(--river); background: none; }
+.pop img { width: 100%; height: auto; margin-bottom: 8px; border: 1px solid var(--rule); }
+.pop h3 { font: 400 1.05rem/1.2 var(--display); margin: 2px 0 4px; }
+.pop p { margin: 0 0 6px; font: 400 .9rem/1.45 var(--body); }
+.pop .pk { font: 600 .7rem/1.2 var(--label); letter-spacing: .1em; text-transform: uppercase; color: var(--antiquity); margin: 0; }
+.leaflet-container { font: 400 .9rem/1.4 var(--body); }
+.leaflet-popup-content-wrapper, .leaflet-popup-tip { background: var(--sheet); color: var(--ink); }
+.leaflet-control-layers { background: var(--sheet); color: var(--ink); }
+.note { font: 500 .82rem/1.45 var(--label); color: var(--muted); margin-top: 10px; }
+.muted { color: var(--muted); }
+@media (max-width: 760px) { .map-shell { grid-template-columns: minmax(0, 1fr); } .legend { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+/* live gauges */
+.gauges { display: grid; gap: 22px; }
+.gauge { border-top: 2px solid var(--ink); padding-top: 12px; display: grid; gap: 8px; }
+.gauge header { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.gauge h3 { font: 400 1.15rem/1.2 var(--display); }
+.gauge .now { font: 500 .9rem/1.3 var(--label); color: var(--muted); font-variant-numeric: tabular-nums; }
+.gauge .now strong { font: 400 1.4rem/1 var(--display); color: var(--river); }
+.spark { width: 100%; height: 150px; display: block; background: var(--sheet); border: 1px solid var(--rule); }
+.spark .l { fill: none; stroke: var(--river); stroke-width: 2; vector-effect: non-scaling-stroke; stroke-linejoin: round; }
+.spark .a { fill: var(--river-soft); stroke: none; }
+.spark .e { fill: var(--river); stroke: var(--sheet); stroke-width: 2; }
+.range { display: flex; justify-content: space-between; font: 500 .8rem/1 var(--label); color: var(--muted); font-variant-numeric: tabular-nums; }
+.src { font: 600 .85rem/1.3 var(--label); }
+
+/* lists inside chapters */
+.mill-list { margin: 0; padding-left: 1.1em; display: grid; gap: 8px; }
+.timeline-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; border-top: 1px solid var(--rule); }
+.timeline-list li { display: grid; grid-template-columns: 6.5em minmax(0, 1fr); gap: 12px; padding: 8px 0; border-bottom: 1px solid var(--rule); }
+.timeline-list span { font: 600 .82rem/1.5 var(--label); color: var(--antiquity); letter-spacing: .04em; font-variant-numeric: tabular-nums; }
