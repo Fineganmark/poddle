@@ -56,7 +56,7 @@ map_body = (
  '<link rel="stylesheet" href="vendor/leaflet.css">'
  '<script src="vendor/leaflet.js"></script>'
  '<script>const DATA = ' + MAPDATA + ';</script>'
- '<script src="map.js"></script>')
+ '<script src="map.js?v=' + ASSET_V + '"></script>')
 write("map.html", shell("map", f"Map · {SITE}", "Interactive map of the River Poddle: river walk stops, mill sites and flood works.", map_body, "map.html"))
 
 live_body = '''<div class="wrap page"><header class="page-head"><p class="kicker">Live data</p><h1>River levels, flood maps and models</h1>
@@ -81,5 +81,5 @@ live_body = '''<div class="wrap page"><header class="page-head"><p class="kicker
 </ul>
 <p>A 1-in-100-year flood is a flood with a 1% chance of happening in any one year. It is the standard the Poddle scheme is built to.</p></section>
 </div></div></div>
-<script src="levels.js"></script>'''
+<script src="levels.js?v=''' + ASSET_V + '''"></script>'''
 write("river-data.html", shell("river-data", f"Live data · {SITE}", "Live river levels near the Poddle, flood maps and flood model data.", live_body, "river-data.html"))

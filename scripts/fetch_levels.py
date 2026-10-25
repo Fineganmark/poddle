@@ -17,7 +17,9 @@ def parse(text):
             pts.append([row["datetime"].replace(" ", "T") + ":00", round(float(row["value"]), 3)])
         except (KeyError, ValueError):
             continue
-    return pts[::4] if len(pts) > 200 else pts   # hourly is plenty for a week
+    if len(pts) > 200:   # hourly is plenty for a week, but always keep the latest reading
+        pts = pts[::4] + ([pts[-1]] if (len(pts) - 1) % 4 else [])
+    return pts
 
 def main(out):
     stations = []

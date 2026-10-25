@@ -1,7 +1,13 @@
 """Builds the Poddle site: one HTML file per page, sharing site.css.
 index.html is written without <html>/<head> wrappers (the Artifact host adds them);
 every other page is a full document so it also works on plain static hosting."""
-import html, os
+import html, os, hashlib
+def _v(*names):
+    h = hashlib.md5()
+    for n in names:
+        h.update(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), n), "rb").read())
+    return h.hexdigest()[:8]
+ASSET_V = _v("site.css", "map.js", "levels.js")
 
 OUT = os.path.dirname(os.path.abspath(__file__))
 SITE = "The Poddle"
@@ -291,7 +297,7 @@ NAV = [("index.html", "The river"), ("map.html", "Map"), ("history.html", "Histo
 def shell(slug, title, desc, body, active):
     nav = "".join(f'<a href="{h}"{" aria-current=\"page\"" if h == active else ""}>{t}</a>' for h, t in NAV)
     head = (f'<title>{esc(title)}</title>\n<meta name="claude:viewport-fit-sides" content="cover">\n'
-            f'<meta name="description" content="{esc(desc)}">\n{FONTS}\n<link rel="stylesheet" href="site.css">\n')
+            f'<meta name="description" content="{esc(desc)}">\n{FONTS}\n<link rel="stylesheet" href="site.css?v={ASSET_V}">\n')
     page = (f'<a class="skip" href="#main">Skip to content</a>\n'
             f'<header class="top"><div class="wrap top-in"><a class="brand" href="index.html">The <span>Poddle</span></a>'
             f'<nav aria-label="Main">{nav}</nav></div></header>\n'
