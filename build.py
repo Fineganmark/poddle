@@ -484,7 +484,7 @@ home = f'''
  <div class="hero-text">
   <p class="kicker">Tallaght to Wellington Quay</p>
   <h1>The river that named Dublin</h1>
-  <p class="lede">The Poddle is the most important watercourse in Dublin City, yet most Dubliners walk over it without knowing. It rises in Tallaght and runs, both over ground and underground, until it emerges into the Liffey at Wellington Quay. It was the city’s drinking water, its defensive moat and the power for its mills. It gave the city its name.</p>
+  <p class="lede">The Poddle is the most important watercourse in Dublin city, yet most Dubliners walk over it without knowing. It rises in Tallaght and runs, both over ground and underground, until it emerges into the Liffey at Wellington Quay. It was the city’s drinking water, its defensive moat and the power for its mills. It gave the city its name.</p>
   <p class="lede">This site follows the river from source to sea, stop by stop, and tells the history of how monks, citizens and engineers harnessed it to meet a growing city’s needs.</p>
   <p class="cta"><a class="btn" href="walk.html">Walk the river</a><a class="btn ghost" href="history.html">Read the history</a><a class="btn ghost" href="map.html">Open the map</a></p>
  </div>
