@@ -643,7 +643,7 @@ write("thanks.html", shell("thanks", f"Thank you · {SITE}", "Message sent.", '<
 # workbooks through a digital-download shop, t-shirts through print on demand.
 # Empty string = not signed up yet; the page then shows "Coming soon".
 SHOP = dict(
-  downloads="",            # e.g. https://payhip.com/thepoddle
+  downloads="https://payhip.com/ThePoddle",
   tees="",                 # e.g. https://thepoddle.teemill.com
   price_single="€4",
   price_pack="€9",
