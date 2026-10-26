@@ -387,7 +387,7 @@ def esc(s): return html.escape(s, quote=True)
 def para(p):
     return p if p.startswith("<") else f"<p>{esc(p)}</p>"
 
-NAV = [("walk.html", "River walk"), ("map.html", "Map"), ("history.html", "History"), ("river-data.html", "Live data"), ("media.html", "Media"), ("sources.html", "Sources"), ("about.html", "About")]
+NAV = [("walk.html", "River walk"), ("map.html", "Map"), ("history.html", "History"), ("river-data.html", "Live data"), ("media.html", "Media"), ("sources.html", "Sources"), ("shop.html", "Shop"), ("about.html", "About")]
 
 def shell(slug, title, desc, body, active):
     nav = "".join(f'<a href="{h}"{" aria-current=\"page\"" if h == active else ""}>{t}</a>' for h, t in NAV)
@@ -400,7 +400,8 @@ def shell(slug, title, desc, body, active):
             f'<nav aria-label="Main">{nav}</nav></div></header>\n'
             f'<main id="main">{body}</main>\n'
             f'<footer class="foot"><div class="wrap foot-in"><p>The Poddle: a history of Dublin’s hidden river, from Tallaght to the Liffey.</p>'
-            f'<p>Photographs and maps are credited where known. Third-party images are used for local-history purposes.</p></div></footer>\n')
+            f'<p>Photographs and maps are credited where known. Third-party images are used for local-history purposes.</p>'
+            f'<p>This site is free to read. <a href="shop.html">Workbooks and t-shirts</a> help keep it online.</p></div></footer>\n')
     if slug == "index" and not os.environ.get("STATIC"):
         return head + page
     return ('<!doctype html>\n<html lang="en-IE">\n<head>\n<meta charset="utf-8">\n'
@@ -564,5 +565,55 @@ about = f'''<div class="wrap page narrow"><header class="page-head"><p class="ki
 </div>'''
 write("about.html", shell("about", f"About · {SITE}", "About The Poddle site.", about, "about.html"))
 write("thanks.html", shell("thanks", f"Thank you · {SITE}", "Message sent.", '<div class="wrap page narrow"><header class="page-head"><h1>Thank you</h1><p class="dek">Your message has been sent. We will be in touch if a reply is needed.</p></header><p><a href="index.html">Back to the home page</a></p></div>', "about.html"))
+
+# ---------------------------------------------------------------- shop / support
+# Hosted checkout links. The site is static, so everything is sold off-site:
+# workbooks through a digital-download shop, t-shirts through print on demand.
+# Empty string = not signed up yet; the page then shows "Coming soon".
+SHOP = dict(
+  downloads="",            # e.g. https://payhip.com/thepoddle
+  tees="",                 # e.g. https://thepoddle.teemill.com
+  price_single="€4",
+  price_pack="€9",
+  price_all="€25",
+)
+LEVELS = [("J", "1st and 2nd class", "ages 6 to 8"), ("M", "3rd and 4th class", "ages 8 to 10"), ("U", "5th and 6th class", "ages 10 to 12")]
+WORKBOOKS = [
+ ("The Secret River", "A first look at Dublin’s hidden river: where it rises, where it runs and why the city grew beside it. Fact pages, drawing, matching and a map to colour."),
+ ("Hunt for the Hidden River", "A treasure hunt through the city centre, stop by stop, looking for the signs of a river that runs underneath. Clues, rubbings and an answer key."),
+ ("Walk the Hidden River", "A self-guided walking tour of the Poddle’s course through the Liberties and the city centre, about 2.5 km, with activities at each stop."),
+ ("Mill Detectives", "Water power and the mills of the Poddle, with a waterwheel you can make at home from card and a paper plate."),
+ ("Flood Defenders", "Rain, rivers and keeping Dublin dry: why the Poddle floods, what the flood scheme is building, and simple experiments to try."),
+]
+
+def shop_btn(url, label):
+    if url:
+        return f'<p class="cta"><a class="btn" href="{url}" target="_blank" rel="noopener noreferrer">{esc(label)}</a></p>'
+    return '<p class="cta"><span class="btn soon" aria-disabled="true">Coming soon</span></p>'
+
+wb_cards = "".join(
+  f'<li><h3>{esc(n)}</h3><p>{esc(d)}</p>'
+  f'<p class="lv">{"".join(f"<span>{esc(cl)} <em>{esc(ag)}</em></span>" for _, cl, ag in LEVELS)}</p></li>'
+  for n, d in WORKBOOKS)
+
+shop_page = f'''<div class="wrap page"><header class="page-head"><p class="kicker">Support this site</p><h1>Workbooks and t-shirts</h1>
+<p class="dek">Everything on this site is free, and will stay that way: no paywall, no sign-up, no adverts. If you would like to help with the hosting, the domain and the hours of digging through maps and reports, you can buy something here. It is the whole business model.</p></header>
+<section class="shop-sec"><div class="sec-head"><h2>Classroom and family workbooks</h2>
+<p class="dek">Five workbooks about the Poddle, each written at three levels for 1st to 6th class, so fifteen in all. They are PDFs you download and print: original writing and artwork, with notes for the adult, curriculum links and an answer key. One copy covers your own family or a single classroom.</p></div>
+<ul class="wb">{wb_cards}</ul>
+<p class="note">{SHOP["price_single"]} for one workbook, {SHOP["price_pack"]} for a title at all three levels, {SHOP["price_all"]} for the complete set of fifteen. Paid by card or PayPal on a shop page; the download arrives by email straight away.</p>
+{shop_btn(SHOP["downloads"], "Browse the workbooks")}</section>
+<section class="shop-sec"><div class="sec-head"><h2>Poddle t-shirts</h2>
+<p class="dek">Shirts and totes printed with the river: the 1848 line of the Poddle, the culvert arch, and the dubh linn that gave Dublin its name. Printed to order by a print-on-demand company, so nothing is made until someone wants it and there is no box of unsold stock in a spare room. They handle the printing, the postage and anything that goes wrong with an order.</p></div>
+{shop_btn(SHOP["tees"], "See the t-shirts")}</section>
+<section class="shop-sec"><div class="sec-head"><h2>Other ways to help</h2></div>
+<ul class="links">
+<li>Tell us what we have wrong. Corrections and local memories are worth more to this site than money: <a href="about.html#contact">get in touch</a>.</li>
+<li>Share the site with a school, a history group or anyone who walks over the river without knowing.</li>
+<li>Ask us to give a talk or lead a walk for your group.</li>
+</ul></section>
+</div>'''
+write("shop.html", shell("shop", f"Workbooks and t-shirts · {SITE}", "Workbooks about the Poddle and printed t-shirts, supporting a free local-history site.", shop_page, "shop.html"))
+
 exec(open(os.path.join(OUT, "build_extra.py"), encoding="utf-8").read())
 print("built", len(STOPS) + len(HISTORY) + 4, "pages")
