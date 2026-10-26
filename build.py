@@ -474,7 +474,7 @@ home = f'''
   <p class="lede">This site follows the river from source to sea, stop by stop, and tells the history of how monks, citizens and engineers bent it to the city’s needs.</p>
   <p class="cta"><a class="btn" href="walk.html">Walk the river</a><a class="btn ghost" href="history.html">Read the history</a><a class="btn ghost" href="map.html">Open the map</a></p>
  </div>
- <figure class="hero-fig"><img src="img/cover-painting.jpg" alt="Painting of a heart shape in river blue" loading="eager"><figcaption>Cover painting</figcaption></figure>
+ <figure class="hero-fig"><img src="img/cover-painting.jpg" alt="Painting of a heart shape in river blue" loading="eager"></figure>
 </div></section>
 <section class="quotes" aria-label="Quotations about the Poddle"><div class="wrap"><div class="q-stage" id="quotes">
 {QUOTES_HTML}
