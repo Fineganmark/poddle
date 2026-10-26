@@ -29,7 +29,7 @@ WORKS = [
 DIGS = [
  ("Tenters Blackpitts, Mill Street", 53.3367, -6.2756, "Digs in 2005, 2007 and 2016 found a possible river channel, a red-brick culvert, tannery remains and two de-hairing barrels. The 2009 planning drawings show the culvert about two metres below the street.", "planning-record", "Archaeological dig"),
  ("Reuben Street watercourse", 53.3344, -6.2906, "A watercourse recorded by the National Monuments Service, and the medieval City Watercourse found in two investigations nearby. Position from the record’s grid reference.", "planning-record", "Recorded watercourse"),
- ("Site of Donore Castle", 53.3372, -6.2812, "A medieval castle in a borough mentioned in 1228, shown on the 1837 map. No trace is visible; the site is now a business park.", "planning-record", "Recorded monument"),
+ ("Site of Donore Castle", 53.3372, -6.2812, "A medieval castle in a borough mentioned in 1228, shown on the 1837 map. No trace is visible; the site is now a business park. The 2006 plans for the neighbouring Donore Avenue site show the Poddle culvert running diagonally across it, with a 6 m keep-clear strip.", "planning-record", "Recorded monument"),
  ("Site of Tymon Castle", 53.2883, -6.3606, "A 15th-century tower house in Tymon Park, drawn by Beranger in 1763 and demolished in 1960.", "planning-record", "Recorded monument"),
 ]
 GAUGES = [
