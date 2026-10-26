@@ -495,7 +495,7 @@ home = f'''
 '''
 
 walk_page = f'''<div class="wrap page"><header class="page-head"><p class="kicker">The river walk</p><h1>Source to sea, stop by stop</h1>
-<p class="dek">Solid line: open channel. Dotted line: culverted underground. The <a href="map.html">map</a> shows the same stops on today’s streets.</p></header>
+<p class="dek">The Poddle’s course has been created and recreated by nature and by people over the centuries. Here we plot it as a single line, above and below ground, as best we can. The <a href="map.html">map</a> shows the same stops on today’s streets.</p></header>
 <div class="walk-grid"><ol class="line">{walk}</ol>
 <div class="walk-maps">{figures([("1848-os-map-small", "Ordnance Survey map of Dublin, 1848"), ("poddle-catchment", "The Poddle catchment, from Tallaght north-east to the Liffey")])}</div></div></div>'''
 write("walk.html", shell("walk", f"The river walk · {SITE}", "Sixteen stops along the Poddle, from its source in Tallaght to the Liffey.", walk_page, "walk.html"))
@@ -503,7 +503,7 @@ write("index.html", shell("index", "The Poddle", "A history of Dublin’s hidden
 
 # History index
 hist = f'''<div class="wrap page"><header class="page-head"><p class="kicker">History</p><h1>How the Poddle shaped Dublin</h1>
-<p class="dek">From the black pool of Dubh Linn to the flood scheme being built today.</p></header>
+<p class="dek">From the black pool of Dubh Linn to the flood scheme being built today. This is a friendly telling, drawn from many sources that sometimes disagree; where the record is thin we say so, and corrections are always welcome.</p></header>
 <div class="maps">{figures([("dublin-840","Dublin c. 840"),("dublin-1000","Dublin c. 1000"),("dublin-1170","Dublin c. 1170"),("dublin-1370","Dublin c. 1370")])}</div>
 <ol class="tl big">{"".join(f'<li><a href="{h["slug"]}.html"><span class="when">{esc(h["when"])}</span><strong>{esc(h["name"])}</strong><span>{esc(h["teaser"])}</span></a></li>' for h in HISTORY)}</ol></div>'''
 write("history.html", shell("history", f"History · {SITE}", "How the Poddle shaped Dublin, from Dubh Linn to the 1719 Act.", hist, "history.html"))
@@ -525,7 +525,6 @@ write("sources.html", shell("sources", f"Sources · {SITE}", "Maps, reports and 
 MEDIA = [
  ("Video", "Dublin’s Hidden Rivers", "A short film on the Poddle and the city’s other buried rivers.", "https://www.youtube.com/watch?v=K5ygnHSLKLY"),
  ("Video", "River Poddle in Dublin’s city centre, previously unseen", "Footage from inside the culverted river in the city centre.", "https://www.youtube.com/watch?v=SLwzXheosOI"),
- ("Video", "Poddle River bursts its banks in Kimmage", "The Irish Times, on the flooding that led to the flood alleviation scheme.", "https://www.youtube.com/watch?v=Bc7xLfytphQ"),
  ("Video", "Tymon Park’s esker", "The Echo, on the glacial ridge beside Tymon Castle.", "https://youtu.be/-oMSnnBhdbI"),
  ("Video", "Kimmage Manor from the air", "Drone footage of the manor where the river is piped under the buildings.", "https://youtu.be/e3bgOMpW9Z4"),
  ("Video", "Medieval Dublin Online: Wood Quay", "How the Viking and medieval town grew beside the Poddle and the Liffey.", "https://vimeo.com/147322671"),
@@ -536,7 +535,7 @@ MEDIA = [
  ("Writing", "Undercurrents, by Amanda Bell", "Haiku and prose on Irish rivers, with a section on the Poddle.", "https://www.littletoller.co.uk/?p=12682"),
 ]
 med = '<div class="wrap page"><header class="page-head"><p class="kicker">Media</p><h1>Watch, read and listen</h1><p class="dek">Films, television and writing about the Poddle. Links open on other sites.</p></header><ol class="media-list">'
-med += "".join(f'<li><a href="{u}" rel="noopener"><span class="mtype">{esc(k)}</span><strong>{esc(t)}</strong><span>{esc(d)}</span></a></li>' for k, t, d, u in MEDIA)
+med += "".join(f'<li><a href="{u}" target="_blank" rel="noopener noreferrer"><span class="mtype">{esc(k)}</span><strong>{esc(t)}</strong><span>{esc(d)}</span></a></li>' for k, t, d, u in MEDIA)
 med += '</ol></div>'
 write("media.html", shell("media", f"Media · {SITE}", "Films, television and writing about the River Poddle.", med, "media.html"))
 

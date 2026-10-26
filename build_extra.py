@@ -65,7 +65,7 @@ MAPDATA = json.dumps(dict(river=river, stops=stops_js, mills=MILLS, works=WORKS,
 map_body = (
  '<div class="wrap page"><header class="page-head"><p class="kicker">Map</p><h1>The Poddle on today’s map</h1>'
  '<p class="dek">Every stop on the river walk, the City Watercourse, the Abbey Stream, the Dodder Overflow, the mill sites and the flood works, on a modern street map. '
- 'Tap a marker to see the place, then follow the link to its history.</p></header>'
+ 'Tap a marker to see the place, then follow the link to its history. Routes are drawn as best we can: the river has been moved, culverted and rebuilt many times, so treat every line as a friendly guide rather than a survey.</p></header>'
  '<div class="map-shell"><div id="map" role="region" aria-label="Map of the River Poddle"></div>'
  '<div id="layers" class="layers-below" aria-label="Choose what to show on the map"></div><ul class="legend" aria-label="Map key">'
  '<li><span class="k k-open"></span>River, open channel</li><li><span class="k k-under"></span>River, underground</li>'
@@ -93,16 +93,16 @@ live_body = '''<div class="wrap page"><header class="page-head"><p class="kicker
 <section><h2>Explore the flood models</h2>
 <p>The flood scheme was designed with a computer model of the river: a hydraulic model that works out how deep and how fast the water runs in floods of different sizes. The model itself isn’t public, but its results are.</p>
 <ul class="links">
-<li><a href="https://www.floodinfo.ie" rel="noopener">floodinfo.ie</a>: the national flood map portal. Search for Harold’s Cross or Kimmage to see the modelled flood extents along the Poddle.</li>
-<li><a href="https://data.gov.ie/dataset/cfram-river-flood-extents-current-scenario" rel="noopener">CFRAM river flood extents</a>: the same flood outlines as open data you can download and map.</li>
-<li><a href="https://data.gov.ie/dataset/cfram-model-nodes-current-scenario" rel="noopener">CFRAM model nodes</a>: points along the modelled rivers with predicted levels and flows for each flood size, with future climate scenarios alongside.</li>
-<li><a href="https://data.gov.ie/dataset/cfram-modelled-river-centrelines" rel="noopener">CFRAM modelled river centrelines</a>: the river lines the model uses.</li>
+<li><a href="https://www.floodinfo.ie/map/floodmaps/" rel="noopener">floodinfo.ie flood maps</a>: the national interactive flood map. Zoom to Harold’s Cross, Kimmage or Templeogue and switch on the river flood extents to see the modelled flood outlines along the Poddle.</li>
+<li><a href="https://www.floodinfo.ie/map/floodplans/" rel="noopener">floodinfo.ie flood plans</a>: the flood risk management plans and the schemes proposed for each area.</li>
+<li><a href="https://www.poddlefas.ie/" rel="noopener">poddlefas.ie</a>: the flood alleviation scheme’s own site, with the project background and updates.</li>
 <li><a href="https://data.gov.ie/dataset/wfd-river-waterbody-status-2016-2021" rel="noopener">River water quality status, 2016 to 2021</a>: the EPA’s ecological status for every river, the Poddle included.</li>
 <li><a href="https://waterlevel.ie/" rel="noopener">waterlevel.ie</a>: all the Office of Public Works’ live gauges, with downloads.</li>
 </ul>
 <p>A 1-in-100-year flood is a flood with a 1% chance of happening in any one year. It is the standard the Poddle scheme is built to.</p></section>
 </div></div></div>
 <script src="levels.js?v=''' + ASSET_V + '''"></script>'''
+live_body = re.sub(r'<a href="(https?://[^"]+)"( rel="noopener")?>', r'<a href="\1" target="_blank" rel="noopener noreferrer">', live_body)
 write("river-data.html", shell("river-data", f"Live data · {SITE}", "Live river levels near the Poddle, flood maps and flood model data.", live_body, "river-data.html"))
 
 
