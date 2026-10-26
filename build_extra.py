@@ -67,7 +67,7 @@ map_body = (
  '<p class="dek">Every stop on the river walk, the City Watercourse, the Abbey Stream, the Dodder Overflow, the mill sites and the flood works, on a modern street map. '
  'Tap a marker to see the place, then follow the link to its history.</p></header>'
  '<div class="map-shell"><div id="map" role="region" aria-label="Map of the River Poddle"></div>'
- '<ul class="legend" aria-label="Map key">'
+ '<div id="layers" class="layers-below" aria-label="Choose what to show on the map"></div><ul class="legend" aria-label="Map key">'
  '<li><span class="k k-open"></span>River, open channel</li><li><span class="k k-under"></span>River, underground</li>'
  '<li><span class="k k-water"></span>City Watercourse (approx.)</li><li><span class="k k-abbey"></span>Abbey Stream</li><li><span class="k k-overflow"></span>Dodder Overflow (approx.)</li><li><span class="k k-stop">1</span>River walk stop</li>'
  '<li><span class="k k-mill"></span>Mill site</li><li><span class="k k-works"></span>Flood scheme works</li>'
@@ -161,3 +161,20 @@ mills_body = (
  '<p class="note">Almost nothing of these mills is left to see, so the “today” photographs show the river or the street at or near each site, not the mill itself. '
  'Sites marked approximate are placed from old maps and local histories. If you have a photograph or a memory of any of them, <a href="about.html">get in touch</a>.</p></div>')
 write("mill-sites.html", shell("mill-sites", f"Mill sites · {SITE}", "The mills on the River Poddle, one by one, with historic maps and photographs of the sites today.", mills_body, "history.html"))
+
+# ---- planning-record page: clickable map of the files
+PLAN = [
+ ("2768/09", "Tenters, Blackpitts", 53.3367, -6.2756, "Drawings for the Tenters development, 2009: long sections through the culverts about 2 m below the street.", "blackpitts-the-culvert-on-the-drawings"),
+ ("4156/06", "Donore Avenue", 53.3372, -6.2812, "2006 plans: culvert crossing the old printing works, with a 6 m keep-clear strip.", "donore-avenue-keeping-clear-of-the-culvert"),
+ ("4423/19", "27–29 New Row South", 53.3371, -6.2769, "2019 plans: culvert and culverted mill race under the site; 3 m clear each side; Dutch Billy houses found below the slab.", "new-row-south-the-culvert-and-the-mill-race"),
+ ("4223/18", "Ship Street Great", 53.3416, -6.2692, "2018 plans: the Poddle’s line through the city near the Castle, with a Dublin City Council drainage record map.", "ship-street-and-the-castle-the-line-through-the-city"),
+]
+PLANDATA = json.dumps(dict(river=river, channels=CHANNELS, works=WORKS, files=PLAN), ensure_ascii=False)
+_pm = ('<div class="plan-map"><div id="planmap" role="region" aria-label="Map of the planning files"></div>'
+       '<p class="note">River line © OpenStreetMap contributors. Marker positions are approximate, from the site addresses.</p></div>'
+       '<link rel="stylesheet" href="vendor/leaflet.css"><script src="vendor/leaflet.js"></script>'
+       '<script>const PLAN = ' + PLANDATA + ';</script><script src="planmap.js?v=' + ASSET_V + '"></script>')
+_p = os.path.join(OUT, "planning-record.html")
+_t = open(_p, encoding="utf-8").read()
+assert "<!--PLANMAP-->" in _t
+open(_p, "w", encoding="utf-8").write(_t.replace("<!--PLANMAP-->", _pm))

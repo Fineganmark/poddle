@@ -222,3 +222,22 @@ html { scroll-behavior: smooth; }
 .q-stage.js .q { position: absolute; inset: 0; opacity: 0; visibility: hidden; transition: opacity 1.4s ease, visibility 0s linear 1.4s; align-content: start; }
 .q-stage.js .q.on { opacity: 1; visibility: visible; transition: opacity 1.4s ease; }
 .q-stage.calm .q, .q-stage.calm .q.on { transition: none; }
+
+/* map layer tick boxes sit below the map */
+.layers-below { margin-top: 12px; }
+.layers-below .leaflet-control { float: none; clear: none; margin: 0; }
+.layers-below .leaflet-control-layers { background: var(--sheet, #fff); border: 1px solid var(--rule); border-radius: 3px; box-shadow: none; color: var(--ink); padding: 10px 14px; font: 500 .9rem/1.4 var(--label); }
+.layers-below .leaflet-control-layers-list { display: block; }
+.layers-below .leaflet-control-layers-overlays { display: flex; flex-wrap: wrap; gap: 6px 22px; }
+.layers-below .leaflet-control-layers-overlays label { margin: 0; }
+.layers-below .leaflet-control-layers-selector { margin-right: 6px; }
+.map-shell #map { grid-column: 1; grid-row: 1; }
+.map-shell .legend { grid-column: 2; grid-row: 1; }
+.map-shell .layers-below { grid-column: 1 / -1; grid-row: 2; margin-top: 0; }
+@media (max-width: 760px) { .map-shell #map, .map-shell .legend, .map-shell .layers-below { grid-column: 1; grid-row: auto; } .map-shell .layers-below { order: 2; } .map-shell .legend { order: 3; } }
+
+/* planning map */
+.plan-map { margin: 1rem 0 0.5rem; }
+#planmap { height: 420px; border: 1px solid var(--rule, #d9d4c7); border-radius: 6px; }
+.plan-tip { font: 600 0.78rem/1.2 inherit; background: #fffdf8; border: 1px solid #b9b3a3; box-shadow: none; padding: 2px 6px; }
+@media (max-width: 640px) { #planmap { height: 340px; } }

@@ -1,13 +1,13 @@
 """Builds the Poddle site: one HTML file per page, sharing site.css.
 index.html is written without <html>/<head> wrappers (the Artifact host adds them);
 every other page is a full document so it also works on plain static hosting."""
-import html, os, hashlib
+import re, html, os, hashlib
 def _v(*names):
     h = hashlib.md5()
     for n in names:
         h.update(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), n), "rb").read())
     return h.hexdigest()[:8]
-ASSET_V = _v("site.css", "map.js", "levels.js", "quotes.js")
+ASSET_V = _v("site.css", "map.js", "levels.js", "quotes.js", "planmap.js")
 
 OUT = os.path.dirname(os.path.abspath(__file__))
 SITE = "The Poddle"
@@ -296,7 +296,10 @@ HISTORY = [
   links=[("River Poddle Flood Alleviation Scheme website", "https://www.poddlefas.ie/"), ("Dublin InQuirer: residents debate the scheme (2020)", "https://www.dublininquirer.com/residents-debate-environmental-impact-of-a-plan-to-build-flood-defences-on-the-river-poddle/"), ("Facts and figures from the planning file", "planning-record.html"), ("Live river levels and flood maps", "river-data.html")]),
  dict(slug="planning-record", name="What the planning file says", when="2019 to 2023",
   teaser="Facts and figures from the flood scheme’s planning application and environmental impact report.",
-  sections=[("Where this comes from", [
+  sections=[("Where the files are", [
+    "Each planning file below is placed on the map by the site it covers. Select a marker to read what that file says about the river. Positions are approximate, taken from the site addresses, and the blue line is today’s mapped course of the Poddle.",
+    "<!--PLANMAP-->"]),
+   ("Where this comes from", [
     "The Poddle flood scheme was a joint application by South Dublin County Council and Dublin City Council, with the Office of Public Works, to An Bord Pleanála (case 306725). The application includes a planning report, an environmental impact assessment report (EIAR) and a heritage chapter that rewrites the river’s history from the maps and excavations. This page gathers the details that are not on the other pages, from the full documents, which are linked below. It also draws on three Dublin City Council planning applications: the Tenters Blackpitts drawings (2768/09), a mixed-use scheme on Donore Avenue (4156/06) and the Ship Street office and convention centre scheme (4223/18)."]),
    ("The river in numbers", [
     "The EIAR gives the river’s length as about 11.6 km, and its catchment as about 16.4 km² (16,400 hectares). Its non-technical summary rounds the length to about 10 km. The river rises at Cookstown, north of Tallaght, and flows through Tymon Park, under the M50, past Templeogue, Kimmage, Mount Jerome and Harold’s Cross, and crosses under the Grand Canal before running under the city to the Liffey at Wellington Quay. The lower and middle reaches are heavily urbanised, culverted and partly channelled.",
@@ -336,6 +339,11 @@ HISTORY = [
    ("Donore Avenue: keeping clear of the culvert", [
     "The 2006 application for a mixed-use development on Donore Avenue, by the engineers Lohan and Donnelly and Collins Maher Martin Architects, shows the culverted Poddle running diagonally across the site, which was then a printing works beside the White Swan Business Park. The drainage drawing marks a strip along the river line “Poddle keep 6 m distance”, and the building is set back from it. The drawing also shows a 300 mm local authority sewer under Donore Avenue, and the surface-water design attenuates a 1-in-30-year storm in 23.26 cubic metres of storage so that the site does not add to the load on the old drains.",
     gal(("donore-drainage", "Drainage layout, mixed-use development at Donore Avenue, with the note “Poddle keep 6 m distance”. Drawing C01, Lohan & Donnelly, Dublin City Council planning ref 4156/06, received 21 July 2006."), ("donore-existing-site", "Existing building plan and elevations, Donore Avenue. Drawing P003/A, Collins Maher Martin Architects, 17 July 2006, Dublin City Council planning ref 4156/06."))]),
+   ("New Row South: the culvert and the mill race", [
+    "The 2019 application for 27 to 29 New Row South, at the junction of Blackpitts and Fumbally Lane (Dublin City Council planning ref 4423/19, for TC Fumbally Properties Ltd), is a hotel and shared-living scheme of 4 to 8 storeys round a protected former laundry building. The Poddle runs under it. The engineers’ report from J.J. Campbell & Associates says the river is enclosed in a culvert along the eastern boundary of the site, with no manholes or access points inside the site. The nearest manhole, on Fumbally Lane, has a cover level of 11.074 m, and the new ground floor is more than a metre higher.",
+    "The flood risk assessment by JBA Consulting (5 November 2019) says the Poddle is a culverted watercourse along the south-eastern boundary and that the culvert system then runs north-north-east to the Liffey, 50 m west of the Ha’penny Bridge. It uses the Eastern CFRAM model: the site is in Flood Zone C, with a small strip along the southern boundary in Zone B. At the 1% flood the modelled depth is 0.25 m, and 0.5 m at the 0.1% flood, only at the corner of Blackpitts and Fumbally Lane. The modelled 1% flow in the culvert at the node 155 m downstream is 2.26 cubic metres a second. The report says the flooding would come from water surcharging out of the system upstream, where the culvert on Donore Avenue is too small, and running overland to the site from the west. It found no recorded flooding on the site, and notes that the October 2011 flood did not reach it.",
+    "The engineers agreed the design with Dublin City Council’s drainage department on 12 July 2019 and discussed the culvert with its Flood Projects and Water Framework Directive Division. Their proposal keeps a clear 3 m on each side of the culvert, with a 4 m high corridor above it for an excavator. Three columns on drilled steel-lined piles are proposed where a protected wall bridges over the culvert, and the foundations are designed so that no building load reaches it. Their correspondence says the same approach was used on the neighbouring site, where about 3.7 m of headroom was provided. A local objector argued that 3 m might not be enough given the piling needed, and the planner’s report recorded that concern.",
+    "The archaeology report from the city archaeologist records that the site lies in the zone of constraint for a Recorded Monument and the zone of archaeological interest. The archaeological impact assessment by Franc Myles (4 November 2019) found the ground floors of three late 17th-century Dutch Billy houses below the present slab, and identified the Poddle culvert and a culverted mill race within the site. The Newmarket and Blackpitts area was developed in the 17th century as a commercial and industrial district, and the report calls the site one of significant industrial heritage. Work down to formation level is to be monitored by an archaeologist, and any deposits above formation level excavated. The planner’s report of 30 March 2020, after further information received on 4 March 2020, recommends a grant of permission with conditions, including drainage conditions."]),
    ("Ship Street and the Castle: the line through the city", [
     "The engineering report for the Ship Street office and convention centre, lodged in 2018 for a site between Ship Street Great and Chancery Lane, has a page on the Poddle. It cites Clair Sweeney’s Rivers of Dublin, which says the river is culverted or piped for about 4 km through the city, and that its exact historic line is not known, although the section through Dublin Castle is well documented. The river ran parallel with Patrick Street, divided into two or more courses down the west and east sides of the street as far as Ross Road and the site of the southern city wall. It then ran along the walls and the castle ramparts, around the Royal Chapel, and out at the Lower Castle Gate at Palace Street and Dame Street. The report also reproduces a map from D. McEntee and M. Corcoran’s study The Rivers Dodder and Poddle: Mills, Storms, Droughts and the Public Water Supply.",
     "Boreholes sunk on the site in 2005 found made ground to between 3 and 5 metres below the surface, glacial till down to about 9 metres, and limestone bedrock between 7 and 9 metres down. The application includes a Dublin City Council drainage record map at 1:1000, dated 16 March 2016, showing the sewers around Ship Street, Chancery Lane and Golden Lane. That shows the kind of record the council will supply for a site: the sheet carries a warning that it is supplied from the corporation’s record sheets without prejudice, and that its accuracy must be checked on site.",
@@ -357,6 +365,7 @@ HISTORY = [
 ]
 
 RESOURCES = [
+ ("Dublin City Council planning application 4423/19, 27–29 New Row South: flood risk assessment (JBA Consulting), engineering report (J.J. Campbell & Associates), city archaeologist and planner’s reports", "https://planning.agileapplications.ie/dublincity/"),
  ("An Bord Pleanála case 306725: River Poddle Flood Alleviation Scheme, EIAR and planning documents", "https://www.pleanala.ie/publicaccess/EIAR-NIS/306725/River%20Poddle%20FAS/Part%203%20EIAR/Volume%202%20EIAR/Part%20I/Volume%202%20Part%201%20-%20Main%20Report.pdf"),
  ("EIAR Chapter 11: archaeology, architecture and cultural heritage (306725)", "https://www.pleanala.ie/publicaccess/EIAR-NIS/306725/River%20Poddle%20FAS/Part%203%20EIAR/Volume%202%20EIAR/Part%20II/11.%20Archaeological%20Architectural%20Cultural%20Heritage.pdf"),
  ("Dublin City Council: presentation on the River Poddle Flood Alleviation Scheme", "https://councilmeetings.dublincity.ie/documents/s20999/Presentation%20on%20River%20Poddle%20Flood%20Alleviation%20Scheme1.pdf"),
@@ -403,8 +412,11 @@ def figures(imgs, lead=False):
         out.append(f'<figure class="{cls}"><img src="img/{f}.jpg" alt="{esc(cap)}" loading="{"eager" if i == 0 else "lazy"}"><figcaption>{esc(cap)}</figcaption></figure>')
     return "\n".join(out)
 
+def slug_id(h):
+    return re.sub(r'[^a-z0-9]+','-',h.lower()).strip('-')
+
 def article(item, kicker, prev, nxt, back):
-    secs = "\n".join(f'<section><h2>{esc(h)}</h2>{"".join(para(p) for p in ps)}</section>' for h, ps in item["sections"])
+    secs = "\n".join(f'<section id="{slug_id(h)}"><h2>{esc(h)}</h2>{"".join(para(p) for p in ps)}</section>' for h, ps in item["sections"])
     flag = f'<aside class="flag"><strong>To check</strong> {esc(item["flag"])}</aside>' if item.get("flag") else ""
     link = f'<p class="xlink"><a href="{item["link"][0]}.html">{esc(item["link"][1])} →</a></p>' if item.get("link") else ""
     if item.get("links"):
