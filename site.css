@@ -160,6 +160,8 @@ html { scroll-behavior: smooth; }
 .k { flex: none; display: inline-grid; place-items: center; }
 .k-open { width: 26px; height: 0; border-top: 4px solid var(--river); }
 .k-under { width: 26px; height: 0; border-top: 4px dotted var(--river); }
+.k-abbey { width: 26px; height: 0; border-top: 8px solid rgba(201,138,27,.5); }
+.k-overflow { width: 26px; height: 0; border-top: 4px dashed #3b8f6a; }
 .k-water { width: 26px; height: 0; border-top: 3px dashed var(--antiquity); }
 .k-stop, .pin-stop span { width: 24px; height: 24px; border-radius: 50%; background: var(--paper); border: 3px solid var(--river); color: var(--river); font: 600 .72rem/1 var(--label); }
 .pin-stop span { display: grid; place-items: center; box-sizing: border-box; width: 28px; height: 28px; }

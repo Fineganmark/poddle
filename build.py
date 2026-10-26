@@ -76,12 +76,13 @@ STOPS = [
     "Upstream of Kimmage Manor, where the Poddle begins its first long run in culverts, the river divides twice. This is the first. Unlike the second, it sends high water out of the Poddle and into the Dodder catchment, by way of storage ponds in Terenure."]),
    ("Overflow to Terenure", [
     "A sluice gate limits how much water carries on towards Kimmage and Kimmage Road Lower. The overflow runs through culverts to the ponds at Terenure College, which drain back to the Dodder at Bushy Park.",
+    "You can follow the overflow on the map page, where it is drawn as a green dashed line from the sluice at Whitehall Park to Bushy Park. The line is schematic, since the culverts are underground.",
     "This is the downstream end of the flow controls and channel works in the River Poddle Flood Alleviation Scheme. The scheme followed serious floods in Harold’s Cross and Kimmage in 1987, 1990, 1993 and 2011. It was approved by An Bord Pleanála in June 2023, the Office of Public Works began building it in April 2024, and it is due to be finished in 2027."]),
    ("Refined and defined", [
     "Along this stretch, the scheme proposes to tidy and define the channel and build walls on both sides.",
     "Flows through the Poddle in earlier centuries must have been large, without the ponds at Tymon or these control structures, and with water diverted in from the Dodder at Balrothery as well."])],
   images=[("dodder-overflow", "Route of the Lakelands overflow to the Dodder"), ("dodder-overflow-image", "The overflow channel"), ("dodder-overflow-fas-scheme", "Proposed works, Poddle Flood Alleviation Scheme")],
-  links=[("River Poddle Flood Alleviation Scheme: news and updates", "https://www.poddlefas.ie/news")]),
+  links=[("See the overflow route on the map", "map.html"), ("River Poddle Flood Alleviation Scheme: news and updates", "https://www.poddlefas.ie/news")]),
  dict(slug="kimmage-manor", name="Kimmage Manor", place="Kimmage",
   teaser="A Victorian MP’s house, now a mission centre, built over the stream.",
   sections=[("1600s to 1800s", [
@@ -136,7 +137,7 @@ STOPS = [
     "As one of Dublin’s main cemeteries it holds many graves of historical interest, among them those of John Millington Synge and Jack B. Yeats."]),
    ("Another diversion?", [
     "To enter Mount Jerome, the Poddle makes an almost right-angled turn.",
-    "In his 1927 paper, Rev. Myles Ronan asks whether this was another diversion of the original river, again made for St Thomas’s Abbey, this time to serve its mills. For that reason this stretch is sometimes called the Abbey Stream, though it is more often just called the Poddle, as it carries most of the river’s water."]),
+    "In his 1927 paper, Rev. Myles Ronan asks whether this was another diversion of the original river, again made for St Thomas’s Abbey, this time to serve its mills. For that reason this stretch is sometimes called the Abbey Stream, though it is more often just called the Poddle, as it carries most of the river’s water. The map page shows the Abbey Stream as an amber band along this stretch."]),
    ("Greenmount and the Hospice", [
     "A flour mill once stood near the cemetery gates. Just downstream, the Poddle powered Greenmount Mills. A corn mill on the site was turned into a cotton mill by James Greenham by 1807, and in the mid-19th century the Quaker Pim family enlarged it, making cotton and linen; the Pims were also known for Irish poplin. The mill pond survived until it was covered over in the late 1960s.",
     "Our Lady’s Hospice, founded in 1845 by Mother Mary Aikenhead, stands on the river’s banks at Harold’s Cross, and the 1910 Ordnance Survey map shows another mill pond in its grounds. In the October 2011 floods, a nurse from the hospice lost her life."]),
@@ -230,6 +231,20 @@ HISTORY = [
     "You can still see both diversions. The first is no longer used, but its workings can be seen at Balrothery, near Tymon Park, just outside the M50. The Tongue, or Stone Boat, is still in the river near Mount Argus."])],
   images=[("stone-boat", "The Stone Boat"), ("dublin-1370", "Dublin c. 1370")],
   link=("stone-boat", "See the Stone Boat on the river walk")),
+ dict(slug="city-watercourse", name="The City Watercourse and the Abbey Stream", when="1245 to 1324",
+  teaser="Two channels made for the monks and the city, and how to find them on the map.",
+  sections=[("The City Watercourse", [
+    "The City Watercourse is an artificial channel. At the Stone Boat, in Harold’s Cross, it took one third of the river’s water: two thirds stayed in the Poddle and one third went into the watercourse, which carried it north-west towards Dolphin’s Barn. Near today’s Basin Lane it turned east along the south side of James’s Street and through Thomas Street into the city.",
+    "It was the city’s main water supply for centuries, which is why the 1719 Act of Parliament was written to keep it clean and to stop mill owners starving it of water. A branch of it, the Tenter Water, rejoined the Poddle at Fumbally Lane.",
+    "On the map page the City Watercourse is shown as a dashed red line. Only its start and its general direction are recorded in the histories, so the line is an approximate route, not a surveyed one."]),
+   ("The Abbey Stream", [
+    "The name is given to the stretch of the Poddle that turns almost at a right angle to enter Mount Jerome and runs on towards the city. In his 1927 paper, Rev. Myles Ronan asks whether this was another diversion of the original river, made for St Thomas’s Abbey to serve its mills. Between 1245 and 1324 the monks redirected the river’s course to serve them, and the stretch is sometimes called the Abbey Stream, though it is more often just called the Poddle, because it carries most of the river’s water.",
+    "On the map page the Abbey Stream is the amber band laid over the river between Mount Jerome and the city."]),
+   ("Two channels, one river", [
+    "The two are easy to confuse. The City Watercourse is a separate, man-made channel that leaves the river at the Stone Boat. The Abbey Stream is the river itself, perhaps moved to a new course so that it could turn the abbey’s mills."])],
+  images=[("stone-boat", "The Stone Boat dividing the flow"), ("st-thomas-abbey", "St Thomas’s Abbey on an early map of Dublin")],
+  links=[("See the City Watercourse, Abbey Stream and Dodder Overflow on the map", "map.html")],
+  link=("mount-jerome", "See the Mount Jerome turn on the river walk")),
  dict(slug="1719-act", name="The 1719 Act", when="1719",
   teaser="Parliament acts to clean up the city’s water.",
   sections=[("The 1719 Act of Parliament", [

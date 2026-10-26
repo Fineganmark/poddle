@@ -39,19 +39,35 @@ stops_js = [dict(n=i + 1, slug=st["slug"], name=st["name"], place=st["place"], t
                  img=(st["images"][0][0] if st["images"] else None),
                  lat=COORDS[st["slug"]][0], lon=COORDS[st["slug"]][1])
             for i, st in enumerate(STOPS)]
-MAPDATA = json.dumps(dict(river=river, stops=stops_js, mills=MILLS, works=WORKS, gauges=GAUGES), ensure_ascii=False)
+# Channels drawn on top of the river line. The Abbey Stream follows the OpenStreetMap river line from the
+# Mount Jerome turn to the city; the other two are schematic routes, labelled approximate on the map.
+ABBEY = [w["c"] for w in river if w["n"] == "Poddle" and 53.3225 <= sum(p[0] for p in w["c"]) / len(w["c"]) <= 53.3395]
+CHANNELS = [
+ dict(k="abbey", n="The Abbey Stream", approx=False, slug="city-watercourse", c=ABBEY,
+      note="The stretch of the Poddle from the turn at Mount Jerome to the city, which Rev. Myles Ronan suggested was a second diversion made for St Thomas’s Abbey’s mills."),
+ dict(k="citywc", n="The City Watercourse", approx=True, slug="city-watercourse",
+      c=[[53.32015, -6.28987], [53.3235, -6.2950], [53.3285, -6.2985], [53.3325, -6.2950], [53.3375, -6.2960], [53.3405, -6.2945], [53.3418, -6.2915], [53.3425, -6.2855], [53.3432, -6.2790]],
+      note="The artificial channel that took a third of the flow from the Stone Boat towards Dolphin’s Barn, Basin Lane, James’s Street and Thomas Street. Route approximate."),
+ dict(k="tenter", n="The Tenter Water", approx=True, slug="city-watercourse",
+      c=[[53.3432, -6.2790], [53.3405, -6.2770], [53.3375, -6.2745]],
+      note="A branch of the City Watercourse that rejoined the Poddle at Fumbally Lane. Route approximate."),
+ dict(k="overflow", n="The Dodder Overflow", approx=True, slug="dodder-overflow",
+      c=[[53.3072, -6.3180], [53.3078, -6.3120], [53.3095, -6.3040], [53.3105, -6.2970], [53.3118, -6.2890], [53.3125, -6.2810], [53.3130, -6.2765]],
+      note="From the sluice at Whitehall Park through culverts to the ponds at Terenure College, then back to the Dodder at Bushy Park. Route schematic."),
+]
+MAPDATA = json.dumps(dict(river=river, stops=stops_js, mills=MILLS, works=WORKS, gauges=GAUGES, channels=CHANNELS), ensure_ascii=False)
 
 map_body = (
  '<div class="wrap page"><header class="page-head"><p class="kicker">Map</p><h1>The Poddle on today’s map</h1>'
- '<p class="dek">Every stop on the river walk, the mill sites and the flood works, on a modern street map. '
+ '<p class="dek">Every stop on the river walk, the City Watercourse, the Abbey Stream, the Dodder Overflow, the mill sites and the flood works, on a modern street map. '
  'Tap a marker to see the place, then follow the link to its history.</p></header>'
  '<div class="map-shell"><div id="map" role="region" aria-label="Map of the River Poddle"></div>'
  '<ul class="legend" aria-label="Map key">'
  '<li><span class="k k-open"></span>River, open channel</li><li><span class="k k-under"></span>River, underground</li>'
- '<li><span class="k k-water"></span>City Watercourse</li><li><span class="k k-stop">1</span>River walk stop</li>'
+ '<li><span class="k k-water"></span>City Watercourse (approx.)</li><li><span class="k k-abbey"></span>Abbey Stream</li><li><span class="k k-overflow"></span>Dodder Overflow (approx.)</li><li><span class="k k-stop">1</span>River walk stop</li>'
  '<li><span class="k k-mill"></span>Mill site</li><li><span class="k k-works"></span>Flood scheme works</li>'
  '<li><span class="k k-gauge"></span>River gauge (Dodder)</li></ul></div>'
- '<p class="note">River line © OpenStreetMap contributors. Some mill sites are approximate, and say so.</p>'
+ '<p class="note">River line © OpenStreetMap contributors. The City Watercourse, Tenter Water and Dodder Overflow are drawn as approximate routes from the written histories, not surveyed lines. Some mill sites are approximate too, and say so.</p>'
  '<noscript><p>The map needs JavaScript. The river walk is also listed on the <a href="index.html#walk">home page</a>.</p></noscript></div>'
  '<link rel="stylesheet" href="vendor/leaflet.css">'
  '<script src="vendor/leaflet.js"></script>'

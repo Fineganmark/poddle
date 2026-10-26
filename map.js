@@ -23,6 +23,23 @@
   });
   riverLayer.addTo(map);
 
+  // Channels: Abbey Stream, City Watercourse, Tenter Water, Dodder Overflow
+  var style = { abbey: { color: "#c98a1b", weight: 9, opacity: 0.45 },
+                citywc: { color: red, weight: 3, dashArray: "8 6", opacity: 0.95 },
+                tenter: { color: red, weight: 3, dashArray: "3 6", opacity: 0.95 },
+                overflow: { color: "#3b8f6a", weight: 4, dashArray: "10 5", opacity: 0.95 } };
+  var groups = { abbey: L.layerGroup(), watercourse: L.layerGroup(), overflow: L.layerGroup() };
+  (DATA.channels || []).forEach(function (ch) {
+    var g = ch.k === "abbey" ? groups.abbey : (ch.k === "overflow" ? groups.overflow : groups.watercourse);
+    var lines = ch.k === "abbey" ? ch.c : [ch.c];
+    lines.forEach(function (c) {
+      L.polyline(c, L.extend({ lineCap: "round" }, style[ch.k])).bindPopup("<div class=\"pop\"><p class=\"pk\">" +
+        (ch.approx ? "Approximate route" : "Channel") + "</p><h3>" + esc(ch.n) + "</h3><p>" + esc(ch.note) +
+        "</p><a href=\"" + ch.slug + ".html\">Read the history →</a></div>", { maxWidth: 260 }).addTo(g);
+    });
+  });
+  groups.abbey.addTo(map); groups.watercourse.addTo(map); groups.overflow.addTo(map);
+
   // River walk stops
   var stops = L.layerGroup();
   DATA.stops.forEach(function (s) {
@@ -59,7 +76,7 @@
   });
 
   L.control.layers(null, {
-    "The river": riverLayer, "River walk stops": stops, "Mill sites": mills,
+    "The river": riverLayer, "Abbey Stream": groups.abbey, "City Watercourse and Tenter Water": groups.watercourse, "Dodder Overflow": groups.overflow, "River walk stops": stops, "Mill sites": mills,
     "Flood scheme works": works, "Dodder gauges": gauges
   }, { collapsed: false }).addTo(map);
 
