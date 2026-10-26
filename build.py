@@ -392,7 +392,9 @@ NAV = [("walk.html", "River walk"), ("map.html", "Map"), ("history.html", "Histo
 def shell(slug, title, desc, body, active):
     nav = "".join(f'<a href="{h}"{" aria-current=\"page\"" if h == active else ""}>{t}</a>' for h, t in NAV)
     head = (f'<title>{esc(title)}</title>\n<meta name="claude:viewport-fit-sides" content="cover">\n'
-            f'<meta name="description" content="{esc(desc)}">\n{FONTS}\n<link rel="stylesheet" href="site.css?v={ASSET_V}">\n')
+            f'<meta name="description" content="{esc(desc)}">\n{FONTS}\n<link rel="stylesheet" href="site.css?v={ASSET_V}">\n'
+            f'<link rel="icon" href="favicon.ico" sizes="32x32">\n<link rel="icon" href="favicon.svg" type="image/svg+xml">\n'
+            f'<link rel="apple-touch-icon" href="apple-touch-icon.png">\n')
     page = (f'<a class="skip" href="#main">Skip to content</a>\n'
             f'<header class="top"><div class="wrap top-in"><a class="brand" href="index.html">The <span>Poddle</span></a>'
             f'<nav aria-label="Main">{nav}</nav></div></header>\n'
