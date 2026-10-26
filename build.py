@@ -1,7 +1,7 @@
 """Builds the Poddle site: one HTML file per page, sharing site.css.
 index.html is written without <html>/<head> wrappers (the Artifact host adds them);
 every other page is a full document so it also works on plain static hosting."""
-import re, html, os, hashlib
+import re, html, os, hashlib, json
 def _v(*names):
     h = hashlib.md5()
     for n in names:
@@ -10,7 +10,14 @@ def _v(*names):
 ASSET_V = _v("site.css", "map.js", "levels.js", "quotes.js", "planmap.js")
 
 OUT = os.path.dirname(os.path.abspath(__file__))
-SITE = "The Poddle"
+SITE = "The River Poddle, Dublin"   # title suffix
+BASE = "https://poddle.ie/"
+OG_DEFAULT = "img/og-poddle.jpg"   # 1200x630 social preview card
+# Search engine verification codes: paste the content="..." value Mark gets from
+# Google Search Console / Bing Webmaster Tools; empty adds no tag.
+GOOGLE_VERIFY = ""
+BING_VERIFY = ""
+SITEMAP = []   # slugs that go into sitemap.xml, filled by shell()
 FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com">'
          '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
          '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=IBM+Plex+Sans+Condensed:wght@500;600&display=swap">')
@@ -442,10 +449,34 @@ def para(p):
 
 NAV = [("walk.html", "River walk"), ("map.html", "Map"), ("history.html", "History"), ("river-data.html", "Live data"), ("media.html", "Media"), ("sources.html", "Sources"), ("shop.html", "Shop"), ("about.html", "About")]
 
-def shell(slug, title, desc, body, active):
+def shell(slug, title, desc, body, active, image=None, article=False, noindex=False):
     nav = "".join(f'<a href="{h}"{" aria-current=\"page\"" if h == active else ""}>{t}</a>' for h, t in NAV)
+    url = BASE if slug == "index" else f"{BASE}{slug}.html"
+    img = BASE + (f"img/{image}.jpg" if image else OG_DEFAULT)
+    if not noindex:
+        SITEMAP.append(slug)
+    site = {"@type": "WebSite", "@id": BASE + "#site", "name": "The Poddle", "url": BASE, "inLanguage": "en-IE"}
+    if article:
+        ld = {"@context": "https://schema.org", "@type": "Article", "headline": title.split(" · ")[0], "description": desc,
+              "image": img, "url": url, "inLanguage": "en-IE", "isPartOf": site,
+              "about": {"@type": "RiverBodyOfWater", "name": "River Poddle", "sameAs": "https://en.wikipedia.org/wiki/River_Poddle"}}
+    elif slug == "index":
+        ld = dict(site, **{"@context": "https://schema.org", "description": desc,
+              "about": {"@type": "RiverBodyOfWater", "name": "River Poddle", "sameAs": "https://en.wikipedia.org/wiki/River_Poddle"}})
+    else:
+        ld = {"@context": "https://schema.org", "@type": "WebPage", "name": title, "description": desc, "url": url, "inLanguage": "en-IE", "isPartOf": site}
+    meta = (f'<link rel="canonical" href="{url}">\n'
+            + ('<meta name="robots" content="noindex">\n' if noindex else '')
+            + (f'<meta name="google-site-verification" content="{GOOGLE_VERIFY}">\n' if GOOGLE_VERIFY and slug == "index" else '')
+            + (f'<meta name="msvalidate.01" content="{BING_VERIFY}">\n' if BING_VERIFY and slug == "index" else '')
+            + f'<meta property="og:site_name" content="The Poddle">\n<meta property="og:locale" content="en_IE">\n'
+            f'<meta property="og:type" content="{"article" if article else "website"}">\n'
+            f'<meta property="og:title" content="{esc(title)}">\n<meta property="og:description" content="{esc(desc)}">\n'
+            f'<meta property="og:url" content="{url}">\n<meta property="og:image" content="{img}">\n'
+            f'<meta name="twitter:card" content="summary_large_image">\n'
+            f'<script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>\n')
     head = (f'<title>{esc(title)}</title>\n<meta name="claude:viewport-fit-sides" content="cover">\n'
-            f'<meta name="description" content="{esc(desc)}">\n{FONTS}\n<link rel="stylesheet" href="site.css?v={ASSET_V}">\n'
+            f'<meta name="description" content="{esc(desc)}">\n{meta}{FONTS}\n<link rel="stylesheet" href="site.css?v={ASSET_V}">\n'
             f'<link rel="icon" href="favicon.ico" sizes="32x32">\n<link rel="icon" href="favicon.svg" type="image/svg+xml">\n'
             f'<link rel="apple-touch-icon" href="apple-touch-icon.png">\n')
     page = (f'<a class="skip" href="#main">Skip to content</a>\n'
@@ -500,7 +531,9 @@ for i, s in enumerate(STOPS):
     nxt = (STOPS[i+1]["slug"], STOPS[i+1]["name"]) if i + 1 < len(STOPS) else None
     kicker = f'Stop {i+1} of {len(STOPS)} <span>·</span> {esc(s["place"])}'
     body = article(s, kicker, prev, nxt, ("walk.html", "The river walk"))
-    write(f'{s["slug"]}.html', shell(s["slug"], f'{s["name"]} · {SITE}', s["teaser"], body, "walk.html"))
+    write(f'{s["slug"]}.html', shell(s["slug"], f'{s["name"]} · {SITE}',
+          f'{s["teaser"]} Stop {i+1} of {len(STOPS)} on the River Poddle walk, at {s["place"]}, Dublin.', body, "walk.html",
+          image=s["images"][0][0] if s["images"] else None, article=True))
 
 # History chapters (prev/next labels say Earlier/Later)
 for i, h in enumerate(HISTORY):
@@ -509,7 +542,9 @@ for i, h in enumerate(HISTORY):
     kicker = f'History <span>·</span> {esc(h["when"])}'
     body = article(h, kicker, prev, nxt, ("history.html", "History"))
     body = body.replace("<span>Upstream</span>", "<span>Earlier</span>").replace("<span>Downstream</span>", "<span>Later</span>")
-    write(f'{h["slug"]}.html', shell(h["slug"], f'{h["name"]} · {SITE}', h["teaser"], body, "history.html"))
+    write(f'{h["slug"]}.html', shell(h["slug"], f'{h["name"]} · {SITE}',
+          f'{h["teaser"]} {h["name"]}: a chapter in the history of the River Poddle, Dublin’s hidden river.', body, "history.html",
+          image=h["images"][0][0] if h["images"] else None, article=True))
 
 # Home: intro + the river walk as a line diagram
 def stop_li(i, s):
@@ -554,15 +589,15 @@ walk_page = f'''<div class="wrap page"><header class="page-head"><p class="kicke
 <p class="dek">The Poddle’s course has been created and recreated by nature and by people over the centuries. Here we plot it as a single line, above and below ground, as best we can. The <a href="map.html">map</a> shows the same stops on today’s streets.</p></header>
 <div class="walk-grid"><ol class="line">{walk}</ol>
 <div class="walk-maps">{figures([("1848-os-map-small", "Ordnance Survey map of Dublin, 1848"), ("poddle-catchment", "The Poddle catchment, from Tallaght north-east to the Liffey")])}</div></div></div>'''
-write("walk.html", shell("walk", f"The river walk · {SITE}", "Sixteen stops along the Poddle, from its source in Tallaght to the Liffey.", walk_page, "walk.html"))
-write("index.html", shell("index", "The Poddle", "A history of Dublin’s hidden river, the Poddle, from its source in Tallaght to the Liffey.", home, "index.html"))
+write("walk.html", shell("walk", f"The river walk · {SITE}", "Walk the River Poddle in sixteen stops, from its source in Tallaght through Kimmage, Harold’s Cross and the Liberties to the Liffey at Wellington Quay.", walk_page, "walk.html"))
+write("index.html", shell("index", "The River Poddle: Dublin’s hidden river, from Tallaght to the Liffey", "The River Poddle gave Dublin its name. Follow Dublin’s hidden river from Tallaght to the Liffey: its history, mills, floods, a sixteen-stop river walk and an interactive map.", home, "index.html"))
 
 # History index
 hist = f'''<div class="wrap page"><header class="page-head"><p class="kicker">History</p><h1>How the Poddle shaped Dublin</h1>
 <p class="dek">From the black pool of Dubh Linn to the flood scheme being built today. This is a friendly telling, drawn from many sources that sometimes disagree; where the record is thin we say so, and corrections are always welcome.</p></header>
 <div class="maps">{figures([("dublin-840","Dublin c. 840"),("dublin-1000","Dublin c. 1000"),("dublin-1170","Dublin c. 1170"),("dublin-1370","Dublin c. 1370")])}</div>
 <ol class="tl big">{"".join(f'<li><a href="{h["slug"]}.html"><span class="when">{esc(h["when"])}</span><strong>{esc(h["name"])}</strong><span>{esc(h["teaser"])}</span></a></li>' for h in HISTORY)}</ol></div>'''
-write("history.html", shell("history", f"History · {SITE}", "How the Poddle shaped Dublin, from Dubh Linn to the 1719 Act.", hist, "history.html"))
+write("history.html", shell("history", f"History · {SITE}", "How the River Poddle shaped Dublin, from the black pool of Dubh Linn to medieval diversions, mills, the 1719 Act and today’s flood scheme.", hist, "history.html"))
 
 # Sources
 src = f'''<div class="wrap page narrow"><header class="page-head"><p class="kicker">Sources</p><h1>Further reading</h1>
@@ -635,8 +670,8 @@ about = f'''<div class="wrap page narrow"><header class="page-head"><p class="ki
 <p><button type="submit">Send message</button></p>
 </form></section>
 </div>'''
-write("about.html", shell("about", f"About · {SITE}", "About The Poddle site.", about, "about.html"))
-write("thanks.html", shell("thanks", f"Thank you · {SITE}", "Message sent.", '<div class="wrap page narrow"><header class="page-head"><h1>Thank you</h1><p class="dek">Your message has been sent. We will be in touch if a reply is needed.</p></header><p><a href="index.html">Back to the home page</a></p></div>', "about.html"))
+write("about.html", shell("about", f"About · {SITE}", "About poddle.ie, a free local-history site about the River Poddle, Dublin’s hidden river. Send corrections, memories and photographs.", about, "about.html"))
+write("thanks.html", shell("thanks", f"Thank you · {SITE}", "Message sent.", '<div class="wrap page narrow"><header class="page-head"><h1>Thank you</h1><p class="dek">Your message has been sent. We will be in touch if a reply is needed.</p></header><p><a href="index.html">Back to the home page</a></p></div>', "about.html", noindex=True))
 
 # ---------------------------------------------------------------- shop / support
 # Hosted checkout links. The site is static, so everything is sold off-site:
@@ -685,7 +720,7 @@ shop_page = f'''<section class="shop-hero"><div class="wrap shop-hero-in">
 <section class="shop-sec" id="workbooks"><div class="sec-head"><p class="kicker">The workbooks</p><h2>Five stories of the river, three levels each</h2>
 <p class="dek">Original writing and artwork about Dublin’s hidden river. Each comes in versions for 1st and 2nd class, 3rd and 4th class, and 5th and 6th class, with notes for the adult, curriculum links and an answer key. One copy covers your own family or one classroom.</p></div>
 <ul class="wb">{wb_cards}</ul></section>
-<section class="set-panel"><figure><img src="img/shop/complete-set.webp" alt="" loading="lazy" width="1200" height="600"></figure>
+<section class="set-panel"><figure><img src="img/shop/complete-set.webp" alt="The complete set of fifteen Poddle workbooks" loading="lazy" width="1200" height="600"></figure>
 <div><p class="kicker">Best value</p><h2>The complete set</h2><p>All fifteen workbooks for {SHOP["price_all"]}. It’s a ready-made local-history programme for a whole school, a teacher with several classes, or a family who wants the lot.</p>
 <p class="cta">{shop_btn(SHOP["downloads"], "Get the complete set")}</p><p class="small">Paid securely by card or PayPal through Payhip. Your download arrives straight away.</p></div></section>
 <section class="shop-sec tee"><div class="sec-head"><p class="kicker">Coming soon</p><h2>Poddle t-shirts</h2>
@@ -701,4 +736,14 @@ shop_page = f'''<section class="shop-hero"><div class="wrap shop-hero-in">
 write("shop.html", shell("shop", f"Workbooks and t-shirts · {SITE}", "Workbooks about Dublin’s hidden river for 1st to 6th class. Every sale helps keep this local-history site free.", shop_page, "shop.html"))
 
 exec(open(os.path.join(OUT, "build_extra.py"), encoding="utf-8").read())
+
+# 404 page, sitemap and robots.txt (after build_extra so its pages are listed)
+write("404.html", shell("404", f"Page not found · {SITE}", "This page could not be found.",
+      '<div class="wrap page narrow"><header class="page-head"><h1>Page not found</h1><p class="dek">This page has gone underground, like the river.</p></header>'
+      '<p><a href="/">Back to the home page</a> or <a href="/walk.html">walk the river</a>.</p></div>', "", noindex=True)
+      .replace('href="', 'href="/').replace('href="/http', 'href="http').replace('href="//', 'href="/').replace('href="/#', 'href="#')
+      .replace('src="', 'src="/').replace('src="/http', 'src="http'))
+write("sitemap.xml", '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+      + "".join(f'<url><loc>{BASE if s == "index" else BASE + s + ".html"}</loc></url>\n' for s in SITEMAP) + '</urlset>\n')
+write("robots.txt", f"User-agent: *\nAllow: /\n\nSitemap: {BASE}sitemap.xml\n")
 print("built", len(STOPS) + len(HISTORY) + 4, "pages")
