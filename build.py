@@ -651,41 +651,54 @@ SHOP = dict(
 )
 LEVELS = [("J", "1st and 2nd class", "ages 6 to 8"), ("M", "3rd and 4th class", "ages 8 to 10"), ("U", "5th and 6th class", "ages 10 to 12")]
 WORKBOOKS = [
- ("The Secret River", "A first look at Dublin’s hidden river: where it rises, where it runs and why the city grew beside it. Fact pages, drawing, matching and a map to colour."),
- ("Hunt for the Hidden River", "A treasure hunt through the city centre, stop by stop, looking for the signs of a river that runs underneath. Clues, rubbings and an answer key."),
- ("Walk the Hidden River", "A self-guided walking tour of the Poddle’s course through the Liberties and the city centre, about 2.5 km, with activities at each stop."),
- ("Mill Detectives", "Water power and the mills of the Poddle, with a waterwheel you can make at home from card and a paper plate."),
- ("Flood Defenders", "Rain, rivers and keeping Dublin dry: why the Poddle floods, what the flood scheme is building, and simple experiments to try."),
+ ("The Secret River", "the-secret-river", "A first look at Dublin’s hidden river: where it rises, where it runs and why the city grew beside it. Fact pages, a historical source, a flood-in-a-tray experiment and a quiz."),
+ ("Hunt for the Hidden River", "treasure-hunt", "A treasure hunt through the city centre. Solve a clue at each of six stops, collect the letters, and spell the secret word."),
+ ("Walk the Hidden River", "walking-tour", "A self-guided walk along the Poddle’s buried course, from Blackpitts to the Liffey: seven stops, about 2.5 km, with something to look for at each."),
+ ("Mill Detectives", "mill-detectives", "Water power and the mills that lined the Poddle, with a waterwheel to build from card and a paper plate, and test with a jug of water."),
+ ("Flood Defenders", "flood-defenders", "Why the Poddle floods and how Dublin is keeping homes dry, with hands-on experiments and a flood defence to design."),
 ]
 
-def shop_btn(url, label):
+def shop_btn(url, label, ghost=False):
     if url:
-        return f'<p class="cta"><a class="btn" href="{url}" target="_blank" rel="noopener noreferrer">{esc(label)}</a></p>'
-    return '<p class="cta"><span class="btn soon" aria-disabled="true">Coming soon</span></p>'
+        return f'<a class="btn{" ghost" if ghost else ""}" href="{url}" target="_blank" rel="noopener noreferrer">{esc(label)}</a>'
+    return '<span class="btn soon" aria-disabled="true">Coming soon</span>'
 
 wb_cards = "".join(
-  f'<li><h3>{esc(n)}</h3><p>{esc(d)}</p>'
-  f'<p class="lv">{"".join(f"<span>{esc(cl)} <em>{esc(ag)}</em></span>" for _, cl, ag in LEVELS)}</p></li>'
-  for n, d in WORKBOOKS)
+  f'<li><a href="{SHOP["downloads"] or "#workbooks"}"{" target=\"_blank\" rel=\"noopener noreferrer\"" if SHOP["downloads"] else ""}>'
+  f'<span class="cover"><img src="img/shop/{img}.jpg" alt="Cover of {esc(n)}" loading="lazy" width="520" height="736"></span>'
+  f'<span class="wb-t"><strong>{esc(n)}</strong><span class="wb-d">{esc(d)}</span>'
+  f'<span class="lv">{"".join(f"<span>{esc(cl)}</span>" for _, cl, _ in LEVELS)}</span>'
+  f'<span class="price">{SHOP["price_single"]} each · {SHOP["price_pack"]} for all three</span></span></a></li>'
+  for n, img, d in WORKBOOKS)
 
-shop_page = f'''<div class="wrap page"><header class="page-head"><p class="kicker">Support this site</p><h1>Workbooks and t-shirts</h1>
-<p class="dek">Everything on this site is free, and will stay that way: no paywall, no sign-up, no adverts. If you would like to help with the hosting, the domain and the hours of digging through maps and reports, you can buy something here. It is the whole business model.</p></header>
-<section class="shop-sec"><div class="sec-head"><h2>Classroom and family workbooks</h2>
-<p class="dek">Five workbooks about the Poddle, each written at three levels for 1st to 6th class, so fifteen in all. They are PDFs you download and print: original writing and artwork, with notes for the adult, curriculum links and an answer key. One copy covers your own family or a single classroom.</p></div>
-<ul class="wb">{wb_cards}</ul>
-<p class="note">{SHOP["price_single"]} for one workbook, {SHOP["price_pack"]} for a title at all three levels, {SHOP["price_all"]} for the complete set of fifteen. Paid by card or PayPal on a shop page; the download arrives by email straight away.</p>
-{shop_btn(SHOP["downloads"], "Browse the workbooks")}</section>
-<section class="shop-sec"><div class="sec-head"><h2>Poddle t-shirts</h2>
-<p class="dek">Shirts and totes printed with the river: the 1848 line of the Poddle, the culvert arch, and the dubh linn that gave Dublin its name. Printed to order by a print-on-demand company, so nothing is made until someone wants it and there is no box of unsold stock in a spare room. They handle the printing, the postage and anything that goes wrong with an order.</p></div>
-{shop_btn(SHOP["tees"], "See the t-shirts")}</section>
+shop_page = f'''<section class="shop-hero"><div class="wrap shop-hero-in">
+ <div class="shop-hero-text">
+  <p class="kicker">Support this site</p>
+  <h1>Workbooks for curious kids</h1>
+  <p class="lede">Everything on this site is free, and it will stay that way, with no paywall and no adverts. If you would like to help with the hosting and the hours spent in the archives, buy a workbook. It is the whole business model.</p>
+  <ul class="facts"><li><strong>15</strong><span>workbooks, 1st to 6th class</span></li><li><strong>A4</strong><span>PDFs to print at home or school</span></li><li><strong>{SHOP["price_single"]}</strong><span>each, with packs and a full set</span></li></ul>
+  <p class="cta">{shop_btn(SHOP["downloads"], "Browse the workbooks")}<a class="btn ghost" href="#workbooks">See what’s inside</a></p>
+ </div>
+ <figure class="shop-hero-fig"><img src="img/shop/complete-set.webp" alt="The five Poddle workbook covers fanned out" width="1200" height="600"></figure>
+</div></section>
+<div class="wrap page">
+<section class="shop-sec" id="workbooks"><div class="sec-head"><p class="kicker">The workbooks</p><h2>Five stories of the river, three levels each</h2>
+<p class="dek">Original writing and artwork about Dublin’s hidden river. Each comes in versions for 1st and 2nd class, 3rd and 4th class, and 5th and 6th class, with notes for the adult, curriculum links and an answer key. One copy covers your own family or one classroom.</p></div>
+<ul class="wb">{wb_cards}</ul></section>
+<section class="set-panel"><figure><img src="img/shop/complete-set.webp" alt="" loading="lazy" width="1200" height="600"></figure>
+<div><p class="kicker">Best value</p><h2>The complete set</h2><p>All fifteen workbooks for {SHOP["price_all"]}. It’s a ready-made local-history programme for a whole school, a teacher with several classes, or a family who wants the lot.</p>
+<p class="cta">{shop_btn(SHOP["downloads"], "Get the complete set")}</p><p class="small">Paid securely by card or PayPal through Payhip. Your download arrives straight away.</p></div></section>
+<section class="shop-sec tee"><div class="sec-head"><p class="kicker">Coming soon</p><h2>Poddle t-shirts</h2>
+<p class="dek">Shirts and totes printed with the river: the 1848 line of the Poddle, the culvert arch, and the dubh linn that gave Dublin its name. They will be printed to order, so nothing is wasted.</p></div>
+<p class="cta">{shop_btn(SHOP["tees"], "See the t-shirts")}</p></section>
 <section class="shop-sec"><div class="sec-head"><h2>Other ways to help</h2></div>
-<ul class="links">
-<li>Tell us what we have wrong. Corrections and local memories are worth more to this site than money: <a href="about.html#contact">get in touch</a>.</li>
-<li>Share the site with a school, a history group or anyone who walks over the river without knowing.</li>
-<li>Ask us to give a talk or lead a walk for your group.</li>
+<ul class="help">
+<li><strong>Tell us what we have wrong.</strong> Corrections and local memories are worth more to this site than money. <a href="about.html#contact">Get in touch</a>.</li>
+<li><strong>Share the site</strong> with a school, a history group or anyone who walks over the river without knowing it.</li>
+<li><strong>Book a talk or a walk</strong> for your group.</li>
 </ul></section>
 </div>'''
-write("shop.html", shell("shop", f"Workbooks and t-shirts · {SITE}", "Workbooks about the Poddle and printed t-shirts, supporting a free local-history site.", shop_page, "shop.html"))
+write("shop.html", shell("shop", f"Workbooks and t-shirts · {SITE}", "Workbooks about Dublin’s hidden river for 1st to 6th class. Every sale helps keep this local-history site free.", shop_page, "shop.html"))
 
 exec(open(os.path.join(OUT, "build_extra.py"), encoding="utf-8").read())
 print("built", len(STOPS) + len(HISTORY) + 4, "pages")
