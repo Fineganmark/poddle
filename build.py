@@ -554,7 +554,7 @@ about = f'''<div class="wrap page narrow"><header class="page-head"><p class="ki
 </ul>
 <form class="contact" action="https://formsubmit.co/quefive@gmail.com" method="POST">
 <input type="hidden" name="_subject" value="Message from the Poddle website">
-<input type="hidden" name="_next" value="https://fineganmark.github.io/poddle/thanks.html">
+<input type="hidden" name="_next" value="https://poddle.ie/thanks.html">
 <input type="hidden" name="_template" value="table">
 <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none">
 <p><label for="c-name">Your name</label><input id="c-name" name="name" type="text" required autocomplete="name"></p>
