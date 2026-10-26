@@ -543,7 +543,24 @@ write("media.html", shell("media", f"Media · {SITE}", "Films, television and wr
 about = f'''<div class="wrap page narrow"><header class="page-head"><p class="kicker">About</p><h1>About this site</h1>
 <p class="dek">A personal project tracing the Poddle from Tallaght to the Liffey.</p></header>
 <section><p>Ironically, the CFRAM Poddle options report of the 2000s examined an option for flood relief: “A suitable diversion route has been identified from the Poddle to the Dodder along Tymon Park running south of the M50.” Eight centuries after the monks turned the Dodder into the Poddle, the engineers proposed sending it back.</p></section>
+<section id="contact"><h2>Get in touch</h2>
+<ul>
+<li>We would love to hear more interesting facts and stories about the Poddle, so please share them.</li>
+<li>We are available to give talks and share what we know, so please reach out if you would like to organise one.</li>
+<li>There is a great deal of information about the Poddle, and much of it conflicts. If you spot something wrong, please let us know.</li>
+</ul>
+<form class="contact" action="https://formsubmit.co/quefive@gmail.com" method="POST">
+<input type="hidden" name="_subject" value="Message from the Poddle website">
+<input type="hidden" name="_next" value="https://fineganmark.github.io/poddle/thanks.html">
+<input type="hidden" name="_template" value="table">
+<input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none">
+<p><label for="c-name">Your name</label><input id="c-name" name="name" type="text" required autocomplete="name"></p>
+<p><label for="c-email">Your email</label><input id="c-email" name="email" type="email" required autocomplete="email"></p>
+<p><label for="c-msg">Your message</label><textarea id="c-msg" name="message" rows="6" required></textarea></p>
+<p><button type="submit">Send message</button></p>
+</form></section>
 </div>'''
 write("about.html", shell("about", f"About · {SITE}", "About The Poddle site.", about, "about.html"))
+write("thanks.html", shell("thanks", f"Thank you · {SITE}", "Message sent.", '<div class="wrap page narrow"><header class="page-head"><h1>Thank you</h1><p class="dek">Your message has been sent. We will be in touch if a reply is needed.</p></header><p><a href="index.html">Back to the home page</a></p></div>', "about.html"))
 exec(open(os.path.join(OUT, "build_extra.py"), encoding="utf-8").read())
 print("built", len(STOPS) + len(HISTORY) + 4, "pages")

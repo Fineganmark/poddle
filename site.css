@@ -241,3 +241,9 @@ html { scroll-behavior: smooth; }
 #planmap { height: 420px; border: 1px solid var(--rule, #d9d4c7); border-radius: 6px; }
 .plan-tip { font: 600 0.78rem/1.2 inherit; background: #fffdf8; border: 1px solid #b9b3a3; box-shadow: none; padding: 2px 6px; }
 @media (max-width: 640px) { #planmap { height: 340px; } }
+
+/* contact form */
+.contact p { margin: .8rem 0; }
+.contact label { display: block; font-weight: 600; margin-bottom: .25rem; }
+.contact input[type=text], .contact input[type=email], .contact textarea { width: 100%; box-sizing: border-box; padding: .6rem .7rem; font: inherit; color: inherit; background: var(--sheet, #fff); border: 1px solid var(--rule, #c9c3b3); border-radius: 3px; }
+.contact button { font: inherit; font-weight: 600; padding: .6rem 1.2rem; border: 0; border-radius: 3px; background: var(--river, #2c6b9a); color: #fff; cursor: pointer; }
