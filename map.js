@@ -67,7 +67,7 @@
   var mills = simple(DATA.mills, "pin-mill", "Mill site");
   var works = simple(DATA.works, "pin-works", "Flood scheme works");
   var digs = simple(DATA.digs || [], "pin-dig", "Archaeological dig");
-  (DATA.digs || []).forEach(function (d, i) { digs.getLayers()[i].bindPopup("<div class=\"pop\"><p class=\"pk\">Archaeological dig</p><h3>" + esc(d[0]) + "</h3><p>" + esc(d[3]) + "</p><a href=\"" + d[4] + ".html\">What the planning file says →</a></div>", { maxWidth: 240 }); });
+  (DATA.digs || []).forEach(function (d, i) { digs.getLayers()[i].bindPopup("<div class=\"pop\"><p class=\"pk\">" + esc(d[5] || "Archaeological site") + "</p><h3>" + esc(d[0]) + "</h3><p>" + esc(d[3]) + "</p><a href=\"" + d[4] + ".html\">What the planning file says →</a></div>", { maxWidth: 240 }); });
   mills.addTo(map);
 
   var gauges = L.layerGroup();
@@ -81,7 +81,7 @@
 
   L.control.layers(null, {
     "The river": riverLayer, "Abbey Stream": groups.abbey, "City Watercourse and Tenter Water": groups.watercourse, "Dodder Overflow": groups.overflow, "River walk stops": stops, "Mill sites": mills,
-    "Flood scheme works": works, "Archaeological digs": digs, "Dodder gauges": gauges
+    "Flood scheme works": works, "Archaeology and monuments": digs, "Dodder gauges": gauges
   }, { collapsed: false }).addTo(map);
 
   var all = L.featureGroup(stops.getLayers());
