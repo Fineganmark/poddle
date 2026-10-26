@@ -207,3 +207,8 @@ html { scroll-behavior: smooth; }
 .mill-flag { font: 500 .75rem/1 var(--label); letter-spacing: .06em; text-transform: uppercase; color: var(--muted); margin-left: 8px; }
 @media (max-width: 760px) { .mill-card { grid-template-columns: 1fr; } }
 .k-dig, .pin-dig { width: 11px; height: 11px; background: #6b4c9a; border: 2px solid var(--paper); transform: rotate(45deg); box-sizing: content-box; }
+.fig-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 18px; margin: 6px 0; max-width: none; }
+.fig-grid img { width: 100%; height: auto; }
+.text section .fig-grid { max-width: 100%; }
+.text section:has(.fig-grid) { max-width: none; }
+.text section:has(.fig-grid) > :not(.fig-grid) { max-width: var(--measure); }
