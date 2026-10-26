@@ -58,7 +58,7 @@
     list.forEach(function (m) {
       var icon = L.divIcon({ className: cls, iconSize: [14, 14], iconAnchor: [7, 7] });
       L.marker([m[1], m[2]], { icon: icon, title: m[0] })
-        .bindPopup("<div class=\"pop\"><p class=\"pk\">" + kicker + "</p><h3>" + esc(m[0]) + "</h3><p>" + esc(m[3]) + "</p>" + (m[4] ? "<a href=\"mill-sites.html#" + m[4] + "\">Read about this mill →</a>" : "") + "</div>", { maxWidth: 240 })
+        .bindPopup("<div class=\"pop\"><p class=\"pk\">" + kicker + "</p><h3>" + esc(m[0]) + "</h3><p>" + esc(m[3]) + "</p>" + (m[4] ? "<a href=\"mill-sites.html#" + m[4] + "\">Read about this mill →</a> · <a href=\"https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=" + m[1] + "," + m[2] + "\" rel=\"noopener\">Street View →</a>" : "") + "</div>", { maxWidth: 240 })
         .addTo(g);
       byId[m[4] || m[0]] = g.getLayers()[g.getLayers().length - 1];
     });

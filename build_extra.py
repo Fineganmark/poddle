@@ -139,9 +139,11 @@ def mill_fig(kind, key):
 cards = ""
 for mid, name, where, flag, text, hist, cur in MILL_PAGES:
     figs = "".join(mill_fig("h", k) for k in hist) + "".join(mill_fig("c", k) for k in cur)
+    mc = next(m for m in MILLS if m[4] == mid)
+    sv = f"https://www.google.com/maps/@?api=1&map_action=pano&viewpoint={mc[1]},{mc[2]}"
     tag = f' <span class="mill-flag">{esc(flag)}</span>' if flag and flag != "Now" else ""
     cards += (f'<article class="mill-card" id="{mid}"><div class="mill-text"><p class="kicker">{esc(where)}{tag}</p><h2>{esc(name)}</h2>'
-              f'<p>{esc(text)}</p><p class="xlink"><a href="map.html?mill={mid}">Show on the map →</a></p></div>'
+              f'<p>{esc(text)}</p><p class="xlink"><a href="map.html?mill={mid}">Show on the map →</a> · <a href="{sv}" rel="noopener">Street View →</a></p></div>'
               f'<div class="mill-figs">{figs}</div></article>')
 mills_body = (
  '<div class="wrap page"><p class="crumb"><a href="history.html">History</a> · <a href="mills.html">The mills</a></p>'
