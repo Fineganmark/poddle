@@ -26,6 +26,9 @@ WORKS = [
  ("Poddle Park and St Martin’s Drive", 53.3165, -6.2955, "Walls, a sloped path, a pedestrian bridge and a right-bank wall."),
  ("Mount Argus Close wall", 53.3202, -6.2899, "A 25m flood wall on the right bank."),
 ]
+DIGS = [
+ ("Tenters Blackpitts, Mill Street", 53.3370, -6.2780, "Digs in 2005, 2007 and 2016 found a possible river channel, a red-brick culvert, tannery remains and two de-hairing barrels. Location approximate.", "planning-record"),
+]
 GAUGES = [
  ("09010", "Waldron’s Bridge, River Dodder", 53.30582, -6.26696),
  ("09369", "Anglesea Road, River Dodder", 53.32788, -6.23091),
@@ -54,7 +57,7 @@ CHANNELS = [
       c=[[53.3072, -6.3180], [53.3071, -6.3142], [53.3068, -6.3138], [53.3069, -6.3127], [53.3065, -6.3117], [53.3055, -6.3112], [53.3056, -6.3108], [53.3060, -6.3068], [53.3047, -6.2962], [53.3065, -6.2930]],
       note="Traced from the flood scheme’s map of the Lakeland Overflow: from the sluice at Whitehall Park past Wainsfort Manor, along College Drive and across Wainsfort and Fortfield Roads to the ponds at Terenure College (the Lakelands), which drain to the Dodder at Bushy Park. Route traced by eye, so approximate."),
 ]
-MAPDATA = json.dumps(dict(river=river, stops=stops_js, mills=MILLS, works=WORKS, gauges=GAUGES, channels=CHANNELS), ensure_ascii=False)
+MAPDATA = json.dumps(dict(river=river, stops=stops_js, mills=MILLS, works=WORKS, digs=DIGS, gauges=GAUGES, channels=CHANNELS), ensure_ascii=False)
 
 map_body = (
  '<div class="wrap page"><header class="page-head"><p class="kicker">Map</p><h1>The Poddle on today’s map</h1>'
@@ -65,7 +68,7 @@ map_body = (
  '<li><span class="k k-open"></span>River, open channel</li><li><span class="k k-under"></span>River, underground</li>'
  '<li><span class="k k-water"></span>City Watercourse (approx.)</li><li><span class="k k-abbey"></span>Abbey Stream</li><li><span class="k k-overflow"></span>Dodder Overflow (approx.)</li><li><span class="k k-stop">1</span>River walk stop</li>'
  '<li><span class="k k-mill"></span>Mill site</li><li><span class="k k-works"></span>Flood scheme works</li>'
- '<li><span class="k k-gauge"></span>River gauge (Dodder)</li></ul></div>'
+ '<li><span class="k k-dig"></span>Archaeological dig</li><li><span class="k k-gauge"></span>River gauge (Dodder)</li></ul></div>'
  '<p class="note">River line © OpenStreetMap contributors. The City Watercourse, Tenter Water and Dodder Overflow are drawn as approximate routes from the written histories, not surveyed lines. Some mill sites are approximate too, and say so.</p>'
  '<noscript><p>The map needs JavaScript. The river walk is also listed on the <a href="index.html#walk">home page</a>.</p></noscript></div>'
  '<link rel="stylesheet" href="vendor/leaflet.css">'
@@ -114,9 +117,10 @@ HIST = {
  "os1848": ("img/1848-os-map-small.jpg", "Ordnance Survey map, 1848"),
 }
 MILL_PAGES = [
- ("ravensdale", "Ravensdale Mills and Farrington’s Mill", "Kimmage Road Lower and Kimmage Cross Roads", "Farrington’s site approximate", "Two mills worked side by side on this stretch. Ravensdale Mills was a corn and flour mill with its own pond, sluice and weir, on maps from the 1830s until 1940. Farrington’s Mill, beside Kimmage Cross Roads, was a flour mill that worked by water turbine until the 1920s. Ravensdale Park, beside the site, is one of the places being reshaped to store flood water in the flood alleviation scheme.", ["valuation"], ["kimmage"]),
- ("larkfield", "Larkfield Mills and the St Martin’s Drive mill", "Sundrive Shopping Centre and St Martin’s Drive", "Approximate site", "Larkfield Mills, a mill with its pond, stood where the Sundrive Shopping Centre is now, and the name Larkfield survives in the area. Close by, near St Martin’s Drive, the first Ordnance Survey map shows another mill, a pond and a windmill together.", ["valuation", "os1848"], ["poddle-park"]),
- ("loaders-park", "Loader’s Park Mills", "Kimmage Road Lower", "Approximate site", "A corn mill on Kimmage Road Lower. The building survives as the Waterwheel apartments, and the name keeps the memory of the wheel.", ["valuation"], []),
+ ("mount-down", "Mount Down Mill (Domville Mill)", "Templeogue", "No map marker", "Duncan’s 1821 map of Dublin shows Domville Mill at Templeogue, upstream of Kimmage. The 1906 to 1909 Ordnance Survey map labels it Mount Down Mill and shows it as disused. Local histories use the mill to mark the end of the Tymon River section.", [], []),
+ ("ravensdale", "Ravensdale Mills and Farrington’s Mill", "Kimmage Road Lower and Kimmage Cross Roads", "Farrington’s site approximate", "Two mills worked side by side on this stretch. Ravensdale Mills was a corn and flour mill with its own pond, sluice and weir, on maps from the 1830s until 1940. Farrington’s Mill, beside Kimmage Cross Roads, was a flour mill that worked by water turbine until the 1920s. The 1843 Ordnance Survey map also shows Cutlers Mill and its millrace, and a flour mill with a pond in the Kimmage demesne, and the flood scheme’s heritage report says remains of the Ravensdale mill and Cutlers millrace may survive below ground. Ravensdale Park, beside the site, is one of the places being reshaped to store flood water in the flood alleviation scheme.", ["valuation"], ["kimmage"]),
+ ("larkfield", "Larkfield Mills and the St Martin’s Drive mill", "Sundrive Shopping Centre and St Martin’s Drive", "Approximate site", "Larkfield Mills, a mill with its pond, stood where the Sundrive Shopping Centre is now, and the name Larkfield survives in the area. Close by, near St Martin’s Drive, the first Ordnance Survey map shows another mill, a pond and a windmill together. The 1876 map names Tinker Mill and Larkfield Mill in the Brook Lawn and Sundrive Road area.", ["valuation", "os1848"], ["poddle-park"]),
+ ("loaders-park", "Loader’s Park Mills", "Kimmage Road Lower", "Approximate site", "Local histories describe a corn mill on Kimmage Road Lower, and the building survives as the Waterwheel apartments. The flood scheme’s heritage report lists Loader’s Park Mill as a paper mill on the 1906 to 1909 map, south-east of Mount Argus, so the site may have changed use over time. The report finds no significant impact on its millrace.", ["valuation"], []),
  ("mount-argus", "Mount Argus mills", "Mount Argus Road", "", "In the 19th century there was a paper mill here, and a flour mill on Mount Argus Road that later became a laundry. The Stone Boat, where the river divides, is nearby.", ["valuation"], ["jerome"]),
  ("harolds-cross-park", "Harold’s Cross Park watermill", "Harold’s Cross Park", "", "One of several 19th-century watermills in Harold’s Cross village. Another was a flour mill by the gates of Mount Jerome.", ["valuation"], ["jerome"]),
  ("greenmount", "Greenmount Mills and the Hospice mill pond", "Greenmount and Our Lady’s Hospice, Harold’s Cross", "", "Greenmount was a corn mill that became a cotton mill by 1807 and was enlarged by the Quaker Pim family for cotton and linen. Beside it, a mill pond by Our Lady’s Hospice is shown on the 1910 Ordnance Survey map, and Rev. Myles Ronan’s 1927 map shows a mill pond and a Wood Mill on this part of the river, with the dotted line of an older water course beside them. Greenmount’s mill pond was among the last to disappear, covered over in the late 1960s. The lanes around it now hold small businesses.", ["ronan"], ["greenmount"]),
@@ -133,16 +137,16 @@ def mill_fig(kind, key):
 cards = ""
 for mid, name, where, flag, text, hist, cur in MILL_PAGES:
     figs = "".join(mill_fig("h", k) for k in hist) + "".join(mill_fig("c", k) for k in cur)
-    mc = next(m for m in MILLS if m[4] == mid)
-    sv = f"https://www.google.com/maps/@?api=1&map_action=pano&viewpoint={mc[1]},{mc[2]}"
+    mc = next((m for m in MILLS if m[4] == mid), None)
+    links = (f' <p class="xlink"><a href="map.html?mill={mid}">Show on the map →</a> · <a href="https://www.google.com/maps/@?api=1&map_action=pano&viewpoint={mc[1]},{mc[2]}" rel="noopener">Street View →</a></p>') if mc else ""
     tag = f' <span class="mill-flag">{esc(flag)}</span>' if flag and flag != "Now" else ""
     cards += (f'<article class="mill-card" id="{mid}"><div class="mill-text"><p class="kicker">{esc(where)}{tag}</p><h2>{esc(name)}</h2>'
-              f'<p>{esc(text)}</p><p class="xlink"><a href="map.html?mill={mid}">Show on the map →</a> · <a href="{sv}" rel="noopener">Street View →</a></p></div>'
+              f'<p>{esc(text)}</p>{links}</div>'
               f'<div class="mill-figs">{figs}</div></article>')
 mills_body = (
  '<div class="wrap page"><p class="crumb"><a href="history.html">History</a> · <a href="mills.html">The mills</a></p>'
  '<header class="page-head"><p class="kicker">Mill sites</p><h1>The mills of the Poddle, one by one</h1>'
- '<p class="dek">Eight mill sites, some of them pairs of neighbours, from Kimmage to New Street, in order from source to sea. Select a mill marker on the <a href="map.html">map</a> to land on its entry here.</p></header>'
+ '<p class="dek">Nine mill sites, some of them groups of neighbours, from Templeogue to New Street, in order from source to sea. Select a mill marker on the <a href="map.html">map</a> to land on its entry here.</p></header>'
  + cards +
  '<p class="note">Almost nothing of these mills is left to see, so the “today” photographs show the river or the street at or near each site, not the mill itself. '
  'Sites marked approximate are placed from old maps and local histories. If you have a photograph or a memory of any of them, <a href="about.html">get in touch</a>.</p></div>')
