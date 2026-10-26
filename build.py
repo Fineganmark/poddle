@@ -137,7 +137,7 @@ STOPS = [
     "As one of Dublin’s main cemeteries it holds many graves of historical interest, among them those of John Millington Synge and Jack B. Yeats."]),
    ("Another diversion?", [
     "To enter Mount Jerome, the Poddle makes an almost right-angled turn.",
-    "In his 1927 paper, Rev. Myles Ronan asks whether this was another diversion of the original river, again made for St Thomas’s Abbey, this time to serve its mills. For that reason this stretch is sometimes called the Abbey Stream, though it is more often just called the Poddle, as it carries most of the river’s water. The map page shows the Abbey Stream as an amber band along this stretch."]),
+    "In his 1927 paper, Rev. Myles Ronan asks whether this was another diversion of the original river, again made for St Thomas’s Abbey, this time to serve its mills. For that reason this stretch is sometimes called the Abbey Stream, though it is more often just called the Poddle, as it carries most of the river’s water. The map page shows the Abbey Stream, which leaves the Poddle just downstream of here, as an amber band."]),
    ("Greenmount and the Hospice", [
     "A flour mill once stood near the cemetery gates. Just downstream, the Poddle powered Greenmount Mills. A corn mill on the site was turned into a cotton mill by James Greenham by 1807, and in the mid-19th century the Quaker Pim family enlarged it, making cotton and linen; the Pims were also known for Irish poplin. The mill pond survived until it was covered over in the late 1960s.",
     "Our Lady’s Hospice, founded in 1845 by Mother Mary Aikenhead, stands on the river’s banks at Harold’s Cross, and the 1910 Ordnance Survey map shows another mill pond in its grounds. In the October 2011 floods, a nurse from the hospice lost her life."]),
@@ -238,10 +238,10 @@ HISTORY = [
     "It was the city’s main water supply for centuries, which is why the 1719 Act of Parliament was written to keep it clean and to stop mill owners starving it of water. A branch of it, the Tenter Water, rejoined the Poddle at Fumbally Lane.",
     "On the map page the City Watercourse is shown as a dashed red line. Only its start and its general direction are recorded in the histories, so the line is an approximate route, not a surveyed one."]),
    ("The Abbey Stream", [
-    "The name is given to the stretch of the Poddle that turns almost at a right angle to enter Mount Jerome and runs on towards the city. In his 1927 paper, Rev. Myles Ronan asks whether this was another diversion of the original river, made for St Thomas’s Abbey to serve its mills. Between 1245 and 1324 the monks redirected the river’s course to serve them, and the stretch is sometimes called the Abbey Stream, though it is more often just called the Poddle, because it carries most of the river’s water.",
-    "On the map page the Abbey Stream is the amber band laid over the river between Mount Jerome and the city."]),
+    "The Abbey Stream is the name given on modern maps to a channel that leaves the Poddle near the Hospice and Greenmount, at Harold’s Cross, and runs north-west towards St Thomas’s Abbey. Rev. Myles Ronan’s 1927 map marks a “course of ancient water” heading the same way, across the fields east of the river. Between 1245 and 1324 the monks redirected the river’s course to serve their mills, and this is the kind of channel that diversion would have made.",
+    "At Mount Jerome the Poddle itself makes an almost right-angled turn, and Ronan asked whether that too was a diversion made for the abbey. On the map page the Abbey Stream is the amber band; its middle section is under streets, so the link across it is a straight, approximate line."]),
    ("Two channels, one river", [
-    "The two are easy to confuse. The City Watercourse is a separate, man-made channel that leaves the river at the Stone Boat. The Abbey Stream is the river itself, perhaps moved to a new course so that it could turn the abbey’s mills."])],
+    "The two are easy to confuse. The City Watercourse leaves the river at the Stone Boat, upstream. The Abbey Stream leaves it further down, at Harold’s Cross, and both were made to serve the abbey and the city."])],
   images=[("stone-boat", "The Stone Boat dividing the flow"), ("st-thomas-abbey", "St Thomas’s Abbey on an early map of Dublin")],
   links=[("See the City Watercourse, Abbey Stream and Dodder Overflow on the map", "map.html")],
   link=("mount-jerome", "See the Mount Jerome turn on the river walk")),

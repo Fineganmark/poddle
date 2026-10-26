@@ -39,12 +39,14 @@ stops_js = [dict(n=i + 1, slug=st["slug"], name=st["name"], place=st["place"], t
                  img=(st["images"][0][0] if st["images"] else None),
                  lat=COORDS[st["slug"]][0], lon=COORDS[st["slug"]][1])
             for i, st in enumerate(STOPS)]
-# Channels drawn on top of the river line. The Abbey Stream follows the OpenStreetMap river line from the
-# Mount Jerome turn to the city; the other two are schematic routes, labelled approximate on the map.
-ABBEY = [w["c"] for w in river if w["n"] == "Poddle" and 53.3225 <= sum(p[0] for p in w["c"]) / len(w["c"]) <= 53.3395]
+# Channels drawn on top of the river line. The Abbey Stream is the three OpenStreetMap ways named "Abbey Stream"
+# (joined across the unmapped gap); the others are schematic routes, labelled approximate on the map.
+ABBEY = [[[53.3277939, -6.2800296], [53.3278556, -6.2800591], [53.3280273, -6.280042], [53.3284619, -6.2808933], [53.3292486, -6.2799204], [53.3294889, -6.2799365], [53.3295818, -6.2799204], [53.3296107, -6.2799687], [53.3296683, -6.2799741], [53.3298798, -6.2799097], [53.3301585, -6.27984]],
+         [[53.3301585, -6.27984], [53.3342733, -6.2846827]],
+         [[53.3342733, -6.2846827], [53.3344196, -6.2849265], [53.3349418, -6.2855188], [53.334991, -6.2857638], [53.3350558, -6.2860863], [53.3351109, -6.287323], [53.3351348, -6.2878031], [53.3353086, -6.2883523], [53.335491, -6.288746], [53.335642, -6.2892779]]]
 CHANNELS = [
  dict(k="abbey", n="The Abbey Stream", approx=False, slug="city-watercourse", c=ABBEY,
-      note="The stretch of the Poddle from the turn at Mount Jerome to the city, which Rev. Myles Ronan suggested was a second diversion made for St Thomas’s Abbey’s mills."),
+      note="The channel marked Abbey Stream on OpenStreetMap, leaving the Poddle near the Hospice and Greenmount at Harold’s Cross and heading north-west towards St Thomas’s Abbey. The straight link across the culverted middle is approximate."),
  dict(k="citywc", n="The City Watercourse", approx=True, slug="city-watercourse",
       c=[[53.32015, -6.28987], [53.3235, -6.2950], [53.3285, -6.2985], [53.3325, -6.2950], [53.3375, -6.2960], [53.3405, -6.2945], [53.3418, -6.2915], [53.3425, -6.2855], [53.3432, -6.2790]],
       note="The artificial channel that took a third of the flow from the Stone Boat towards Dolphin’s Barn, Basin Lane, James’s Street and Thomas Street. Route approximate."),
@@ -52,8 +54,8 @@ CHANNELS = [
       c=[[53.3432, -6.2790], [53.3405, -6.2770], [53.3375, -6.2745]],
       note="A branch of the City Watercourse that rejoined the Poddle at Fumbally Lane. Route approximate."),
  dict(k="overflow", n="The Dodder Overflow", approx=True, slug="dodder-overflow",
-      c=[[53.3072, -6.3180], [53.3078, -6.3120], [53.3095, -6.3040], [53.3105, -6.2970], [53.3118, -6.2890], [53.3125, -6.2810], [53.3130, -6.2765]],
-      note="From the sluice at Whitehall Park through culverts to the ponds at Terenure College, then back to the Dodder at Bushy Park. Route schematic."),
+      c=[[53.3072, -6.3180], [53.3071, -6.3142], [53.3068, -6.3138], [53.3069, -6.3127], [53.3065, -6.3117], [53.3055, -6.3112], [53.3056, -6.3108], [53.3060, -6.3068], [53.3047, -6.2962], [53.3065, -6.2930]],
+      note="Traced from the flood scheme’s map of the Lakeland Overflow: from the sluice at Whitehall Park past Wainsfort Manor, along College Drive and across Wainsfort and Fortfield Roads to the ponds at Terenure College (the Lakelands), which drain to the Dodder at Bushy Park. Route traced by eye, so approximate."),
 ]
 MAPDATA = json.dumps(dict(river=river, stops=stops_js, mills=MILLS, works=WORKS, gauges=GAUGES, channels=CHANNELS), ensure_ascii=False)
 
