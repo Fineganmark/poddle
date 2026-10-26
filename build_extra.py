@@ -73,7 +73,7 @@ map_body = (
  '<li><span class="k k-mill"></span>Mill site</li><li><span class="k k-works"></span>Flood scheme works</li>'
  '<li><span class="k k-dig"></span>Archaeology and monuments</li><li><span class="k k-gauge"></span>River gauge (Dodder)</li></ul></div>'
  '<p class="note">River line © OpenStreetMap contributors. The City Watercourse, Tenter Water and Dodder Overflow are drawn as approximate routes from the written histories, not surveyed lines. Some mill sites are approximate too, and say so.</p>'
- '<noscript><p>The map needs JavaScript. The river walk is also listed on the <a href="index.html#walk">home page</a>.</p></noscript></div>'
+ '<noscript><p>The map needs JavaScript. The river walk is also listed on the <a href="walk.html">river walk page</a>.</p></noscript></div>'
  '<link rel="stylesheet" href="vendor/leaflet.css">'
  '<script src="vendor/leaflet.js"></script>'
  '<script>const DATA = ' + MAPDATA + ';</script>'

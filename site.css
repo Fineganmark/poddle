@@ -212,3 +212,13 @@ html { scroll-behavior: smooth; }
 .text section .fig-grid { max-width: 100%; }
 .text section:has(.fig-grid) { max-width: none; }
 .text section:has(.fig-grid) > :not(.fig-grid) { max-width: var(--measure); }
+
+/* rotating quotations */
+.quotes { padding-block: clamp(20px, 4vw, 44px) clamp(36px, 6vw, 72px); border-top: 1px solid var(--rule); }
+.q-stage { position: relative; max-width: 46rem; margin-inline: auto; text-align: center; }
+.q { margin: 0; display: grid; gap: 12px; }
+.q blockquote { margin: 0; padding: 0; border: 0; font: italic 400 clamp(1.15rem, 2.6vw, 1.6rem)/1.45 var(--serif, "Literata", Georgia, serif); color: var(--ink); }
+.q figcaption { font: 600 .8rem/1.4 var(--label); letter-spacing: .1em; text-transform: uppercase; color: var(--antiquity); }
+.q-stage.js .q { position: absolute; inset: 0; opacity: 0; visibility: hidden; transition: opacity 1.4s ease, visibility 0s linear 1.4s; align-content: start; }
+.q-stage.js .q.on { opacity: 1; visibility: visible; transition: opacity 1.4s ease; }
+.q-stage.calm .q, .q-stage.calm .q.on { transition: none; }

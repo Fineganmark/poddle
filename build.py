@@ -7,7 +7,7 @@ def _v(*names):
     for n in names:
         h.update(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), n), "rb").read())
     return h.hexdigest()[:8]
-ASSET_V = _v("site.css", "map.js", "levels.js")
+ASSET_V = _v("site.css", "map.js", "levels.js", "quotes.js")
 
 OUT = os.path.dirname(os.path.abspath(__file__))
 SITE = "The Poddle"
@@ -378,7 +378,7 @@ def esc(s): return html.escape(s, quote=True)
 def para(p):
     return p if p.startswith("<") else f"<p>{esc(p)}</p>"
 
-NAV = [("index.html", "The river"), ("map.html", "Map"), ("history.html", "History"), ("river-data.html", "Live data"), ("media.html", "Media"), ("sources.html", "Sources"), ("about.html", "About")]
+NAV = [("walk.html", "River walk"), ("map.html", "Map"), ("history.html", "History"), ("river-data.html", "Live data"), ("media.html", "Media"), ("sources.html", "Sources"), ("about.html", "About")]
 
 def shell(slug, title, desc, body, active):
     nav = "".join(f'<a href="{h}"{" aria-current=\"page\"" if h == active else ""}>{t}</a>' for h, t in NAV)
@@ -431,8 +431,8 @@ for i, s in enumerate(STOPS):
     prev = (STOPS[i-1]["slug"], STOPS[i-1]["name"]) if i else None
     nxt = (STOPS[i+1]["slug"], STOPS[i+1]["name"]) if i + 1 < len(STOPS) else None
     kicker = f'Stop {i+1} of {len(STOPS)} <span>·</span> {esc(s["place"])}'
-    body = article(s, kicker, prev, nxt, ("index.html#walk", "The river walk"))
-    write(f'{s["slug"]}.html', shell(s["slug"], f'{s["name"]} · {SITE}', s["teaser"], body, "index.html"))
+    body = article(s, kicker, prev, nxt, ("walk.html", "The river walk"))
+    write(f'{s["slug"]}.html', shell(s["slug"], f'{s["name"]} · {SITE}', s["teaser"], body, "walk.html"))
 
 # History chapters (prev/next labels say Earlier/Later)
 for i, h in enumerate(HISTORY):
@@ -456,6 +456,15 @@ def stop_li(i, s):
             f'<span class="d">{esc(s["teaser"])}</span>{note}</span></a></li>')
 
 walk = "\n".join(stop_li(i, s) for i, s in enumerate(STOPS))
+QUOTES = [
+ ("From its sluice in Wood quay wall under Tom Devan’s office Poddle river hung out in fealty a tongue of liquid sewage.", "James Joyce, Ulysses"),
+ ("…the chief supply of water not only for the inhabitants of the said city; but also for this majesties Castle of Dublin, and without which it would suffer exceeding great prejudice.", "An Act of Parliament, 1719, on the watercourse"),
+ ("…tuck mills, in which urine, soap and other unwolsome materials are made use of, and diers of linnen and woolen cloath and yarn, and skinners dip, wash, scour and cleanse great quantities of died linnen and woolen cloath, yarn and skins in the said water-course", "An Act of Parliament, 1719"),
+ ("…formed an immense sewer … putrefying the streets under which it passes…", "Whitelaw and Walsh, on the Poddle in the early 19th century"),
+ ("…so polluted by paper-making that it has become poisonous, and cattle and horses have died from drinking it.", "William Handcock, 19th century"),
+ ("It occasionally, however, bursts from its caverns and inundates the vicinity.", "Early 19th-century historians of Dublin"),
+]
+QUOTES_HTML = "\n".join(f'<figure class="q{" on" if i == 0 else ""}"><blockquote>“{esc(t)}”</blockquote><figcaption>{esc(a)}</figcaption></figure>' for i, (t, a) in enumerate(QUOTES))
 home = f'''
 <section class="hero"><div class="wrap hero-in">
  <div class="hero-text">
@@ -463,23 +472,21 @@ home = f'''
   <h1>The river that named Dublin</h1>
   <p class="lede">The Poddle is a small stream most Dubliners walk over without knowing. It rises in Tallaght and runs, mostly underground, to the Liffey at Wellington Quay. Yet it gave the city its name. Dubh Linn, the black pool, was a pool on the Poddle beside where Dublin Castle stands. For centuries it was the city’s drinking water, its moat and the power for its mills.</p>
   <p class="lede">This site follows the river from source to sea, stop by stop, and tells the history of how monks, citizens and engineers bent it to the city’s needs.</p>
-  <p class="cta"><a class="btn" href="#walk">Walk the river</a><a class="btn ghost" href="history.html">Read the history</a></p>
+  <p class="cta"><a class="btn" href="walk.html">Walk the river</a><a class="btn ghost" href="history.html">Read the history</a><a class="btn ghost" href="map.html">Open the map</a></p>
  </div>
  <figure class="hero-fig"><img src="img/cover-painting.jpg" alt="Painting of a heart shape in river blue" loading="eager"><figcaption>Cover painting</figcaption></figure>
 </div></section>
-
-<section id="walk" class="walk"><div class="wrap">
- <header class="sec-head"><p class="kicker">The river walk</p><h2>{ {14: "Fourteen", 15: "Fifteen", 16: "Sixteen"}.get(len(STOPS), len(STOPS)) } stops, source to sea</h2>
-  <p>Solid line: open channel. Dotted line: culverted underground.</p></header>
- <div class="walk-grid"><ol class="line">{walk}</ol>
- <div class="walk-maps">{figures([("1848-os-map-small", "Ordnance Survey map of Dublin, 1848"), ("poddle-catchment", "The Poddle catchment, from Tallaght north-east to the Liffey")])}</div></div>
-</div></section>
-
-<section class="timeline"><div class="wrap">
- <header class="sec-head"><p class="kicker">History</p><h2>The river’s story in {len(HISTORY)} chapters</h2></header>
- <ol class="tl">{"".join(f'<li><a href="{h["slug"]}.html"><span class="when">{esc(h["when"])}</span><strong>{esc(h["name"])}</strong><span>{esc(h["teaser"])}</span></a></li>' for h in HISTORY)}</ol>
-</div></section>
+<section class="quotes" aria-label="Quotations about the Poddle"><div class="wrap"><div class="q-stage" id="quotes">
+{QUOTES_HTML}
+</div></div></section>
+<script src="quotes.js?v={ASSET_V}"></script>
 '''
+
+walk_page = f'''<div class="wrap page"><header class="page-head"><p class="kicker">The river walk</p><h1>Source to sea, stop by stop</h1>
+<p class="dek">Solid line: open channel. Dotted line: culverted underground. The <a href="map.html">map</a> shows the same stops on today’s streets.</p></header>
+<div class="walk-grid"><ol class="line">{walk}</ol>
+<div class="walk-maps">{figures([("1848-os-map-small", "Ordnance Survey map of Dublin, 1848"), ("poddle-catchment", "The Poddle catchment, from Tallaght north-east to the Liffey")])}</div></div></div>'''
+write("walk.html", shell("walk", f"The river walk · {SITE}", "Sixteen stops along the Poddle, from its source in Tallaght to the Liffey.", walk_page, "walk.html"))
 write("index.html", shell("index", "The Poddle", "A history of Dublin’s hidden river, the Poddle, from its source in Tallaght to the Liffey.", home, "index.html"))
 
 # History index
