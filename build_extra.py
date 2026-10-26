@@ -9,15 +9,12 @@ COORDS = {
  "ship-street-little": (53.34230, -6.26900), "dubh-linn": (53.34220, -6.26745), "palace-street": (53.34399, -6.26614),
  "liffey": (53.34573, -6.26541)}
 MILLS = [
- ("Ravensdale Mills", 53.3140, -6.2990, "Corn and flour mill with pond, sluice and weir; on maps from the 1830s to 1940.", "ravensdale"),
- ("Farrington’s Mill", 53.3121, -6.2997, "Flour mill by Kimmage Cross Roads; water turbine until the 1920s. Approximate site.", "farringtons"),
- ("Larkfield Mills", 53.3175, -6.2950, "Mill and pond, now Sundrive Shopping Centre. Approximate site.", "larkfield"),
- ("Mill and windmill, St Martin’s Drive", 53.3167, -6.2956, "Mill, pond and windmill on the first Ordnance Survey map.", "st-martins-drive"),
+ ("Ravensdale Mills and Farrington’s Mill", 53.3131, -6.2994, "Corn and flour mill with pond, sluice and weir (Ravensdale, 1830s to 1940), and Farrington’s flour mill by Kimmage Cross Roads, which used a water turbine until the 1920s. Farrington’s site is approximate.", "ravensdale"),
+ ("Larkfield Mills and the St Martin’s Drive mill", 53.3171, -6.2953, "Larkfield mill and pond, now Sundrive Shopping Centre, and a mill, pond and windmill on the first Ordnance Survey map near St Martin’s Drive. Approximate site.", "larkfield"),
  ("Loader’s Park Mills", 53.3207, -6.2872, "Corn mill on Kimmage Road Lower, now the Waterwheel apartments. Approximate site.", "loaders-park"),
  ("Mount Argus mills", 53.3226, -6.2841, "Paper mill, and a flour mill on Mount Argus Road that became a laundry.", "mount-argus"),
  ("Harold’s Cross Park watermill", 53.3246, -6.2789, "One of several 19th-century mills in the village.", "harolds-cross-park"),
- ("Mill pond, Our Lady’s Hospice", 53.3277, -6.2815, "Shown on the 1910 Ordnance Survey map.", "hospice-pond"),
- ("Greenmount Mills", 53.3289, -6.2785, "Corn mill, then a cotton mill by 1807; enlarged by the Pim family.", "greenmount"),
+ ("Greenmount Mills and the Hospice mill pond", 53.3283, -6.2800, "Greenmount: a corn mill, then a cotton mill by 1807, enlarged by the Pim family. Beside it, the mill pond by Our Lady’s Hospice shown on the 1910 Ordnance Survey map.", "greenmount"),
  ("Double mill, Mill Street", 53.3368, -6.2782, "Oil and flour mill linked to St Thomas’s Abbey. Approximate site.", "mill-street"),
  ("Medieval mill, Cross Poddle", 53.3386, -6.2725, "Beside St Nicholas’ Bridge, New Street.", "cross-poddle"),
 ]
@@ -117,15 +114,12 @@ HIST = {
  "os1848": ("img/1848-os-map-small.jpg", "Ordnance Survey map, 1848"),
 }
 MILL_PAGES = [
- ("ravensdale", "Ravensdale Mills", "Kimmage Road Lower", "Now", "A corn and flour mill with its own pond, sluice and weir, on maps from the 1830s until 1940. Ravensdale Park, beside the site, is one of the places being reshaped to store flood water in the flood alleviation scheme.", ["valuation"], ["kimmage"]),
- ("farringtons", "Farrington’s Mill", "Kimmage Cross Roads", "Approximate site", "A flour mill beside Kimmage Cross Roads. It worked by water turbine until the 1920s.", ["valuation"], ["kimmage"]),
- ("larkfield", "Larkfield Mills", "Sundrive Shopping Centre", "Approximate site", "A mill with its pond, on ground now covered by the Sundrive Shopping Centre. The name Larkfield survives in the area.", ["valuation"], ["poddle-park"]),
- ("st-martins-drive", "Mill, pond and windmill, St Martin’s Drive", "St Martin’s Drive", "", "The first Ordnance Survey map shows a mill, a pond and a windmill together here.", ["os1848"], ["poddle-park"]),
+ ("ravensdale", "Ravensdale Mills and Farrington’s Mill", "Kimmage Road Lower and Kimmage Cross Roads", "Farrington’s site approximate", "Two mills worked side by side on this stretch. Ravensdale Mills was a corn and flour mill with its own pond, sluice and weir, on maps from the 1830s until 1940. Farrington’s Mill, beside Kimmage Cross Roads, was a flour mill that worked by water turbine until the 1920s. Ravensdale Park, beside the site, is one of the places being reshaped to store flood water in the flood alleviation scheme.", ["valuation"], ["kimmage"]),
+ ("larkfield", "Larkfield Mills and the St Martin’s Drive mill", "Sundrive Shopping Centre and St Martin’s Drive", "Approximate site", "Larkfield Mills, a mill with its pond, stood where the Sundrive Shopping Centre is now, and the name Larkfield survives in the area. Close by, near St Martin’s Drive, the first Ordnance Survey map shows another mill, a pond and a windmill together.", ["valuation", "os1848"], ["poddle-park"]),
  ("loaders-park", "Loader’s Park Mills", "Kimmage Road Lower", "Approximate site", "A corn mill on Kimmage Road Lower. The building survives as the Waterwheel apartments, and the name keeps the memory of the wheel.", ["valuation"], []),
  ("mount-argus", "Mount Argus mills", "Mount Argus Road", "", "In the 19th century there was a paper mill here, and a flour mill on Mount Argus Road that later became a laundry. The Stone Boat, where the river divides, is nearby.", ["valuation"], ["jerome"]),
  ("harolds-cross-park", "Harold’s Cross Park watermill", "Harold’s Cross Park", "", "One of several 19th-century watermills in Harold’s Cross village. Another was a flour mill by the gates of Mount Jerome.", ["valuation"], ["jerome"]),
- ("hospice-pond", "Mill pond, Our Lady’s Hospice", "Harold’s Cross", "", "A mill pond shown on the 1910 Ordnance Survey map. Rev. Myles Ronan’s 1927 map shows a mill pond and a Wood Mill on this part of the river, next to the Hospice, with the dotted line of an older water course beside them.", ["ronan"], ["jerome"]),
- ("greenmount", "Greenmount Mills", "Greenmount, Harold’s Cross", "", "A corn mill that was turned into a cotton mill by 1807 and enlarged by the Quaker Pim family for cotton and linen. Greenmount’s mill pond was among the last to disappear, covered over in the late 1960s. The lanes around it now hold small businesses.", ["ronan"], ["greenmount"]),
+ ("greenmount", "Greenmount Mills and the Hospice mill pond", "Greenmount and Our Lady’s Hospice, Harold’s Cross", "", "Greenmount was a corn mill that became a cotton mill by 1807 and was enlarged by the Quaker Pim family for cotton and linen. Beside it, a mill pond by Our Lady’s Hospice is shown on the 1910 Ordnance Survey map, and Rev. Myles Ronan’s 1927 map shows a mill pond and a Wood Mill on this part of the river, with the dotted line of an older water course beside them. Greenmount’s mill pond was among the last to disappear, covered over in the late 1960s. The lanes around it now hold small businesses.", ["ronan"], ["greenmount"]),
  ("mill-street", "Double mill, Mill Street", "Mill Street and Sweeney’s Lane", "Approximate site", "An oil and flour mill, linked to St Thomas’s Abbey, which gave Mill Street its name. Mill Street is first mentioned in 1711. By 1830 the street had several tanners and a fancy weaver, and by 1880 five tanners and a parchment maker.", ["valuation"], []),
  ("cross-poddle", "Medieval mill, Cross Poddle", "New Street, beside St Nicholas’ Bridge", "", "A medieval mill beside St Nicholas’ Bridge, outside St Nicholas’ Gate, at the junction of New Street, Patrick Street and Kevin Street. The old Cross Poddle ran beside it.", ["valuation"], []),
 ]
@@ -148,7 +142,7 @@ for mid, name, where, flag, text, hist, cur in MILL_PAGES:
 mills_body = (
  '<div class="wrap page"><p class="crumb"><a href="history.html">History</a> · <a href="mills.html">The mills</a></p>'
  '<header class="page-head"><p class="kicker">Mill sites</p><h1>The mills of the Poddle, one by one</h1>'
- '<p class="dek">Eleven mill sites from Kimmage to New Street, in order from source to sea. Select a mill marker on the <a href="map.html">map</a> to land on its entry here.</p></header>'
+ '<p class="dek">Eight mill sites, some of them pairs of neighbours, from Kimmage to New Street, in order from source to sea. Select a mill marker on the <a href="map.html">map</a> to land on its entry here.</p></header>'
  + cards +
  '<p class="note">Almost nothing of these mills is left to see, so the “today” photographs show the river or the street at or near each site, not the mill itself. '
  'Sites marked approximate are placed from old maps and local histories. If you have a photograph or a memory of any of them, <a href="about.html">get in touch</a>.</p></div>')
