@@ -43,7 +43,7 @@ stops_js = [dict(n=i + 1, slug=st["slug"], name=st["name"], place=st["place"], t
                  lat=COORDS[st["slug"]][0], lon=COORDS[st["slug"]][1])
             for i, st in enumerate(STOPS)]
 # Channels drawn on top of the river line. The Abbey Stream is the three OpenStreetMap ways named "Abbey Stream"
-# (joined across the unmapped gap); the others are schematic routes, labelled approximate on the map.
+# (joined across the unmapped gap); the City Watercourse follows OSM way 1495732873 to Dolphin's Barn; the rest are schematic routes, labelled approximate on the map.
 ABBEY = [[[53.3277939, -6.2800296], [53.3278556, -6.2800591], [53.3280273, -6.280042], [53.3284619, -6.2808933], [53.3292486, -6.2799204], [53.3294889, -6.2799365], [53.3295818, -6.2799204], [53.3296107, -6.2799687], [53.3296683, -6.2799741], [53.3298798, -6.2799097], [53.3301585, -6.27984]],
          [[53.3301585, -6.27984], [53.3342733, -6.2846827]],
          [[53.3342733, -6.2846827], [53.3344196, -6.2849265], [53.3349418, -6.2855188], [53.334991, -6.2857638], [53.3350558, -6.2860863], [53.3351109, -6.287323], [53.3351348, -6.2878031], [53.3353086, -6.2883523], [53.335491, -6.288746], [53.335642, -6.2892779]]]
@@ -51,8 +51,8 @@ CHANNELS = [
  dict(k="abbey", n="The Abbey Stream", approx=False, slug="city-watercourse", c=ABBEY,
       note="The channel marked Abbey Stream on OpenStreetMap, leaving the Poddle near the Hospice and Greenmount at Harold’s Cross and heading north-west towards St Thomas’s Abbey. The straight link across the culverted middle is approximate."),
  dict(k="citywc", n="The City Watercourse", approx=True, slug="city-watercourse",
-      c=[[53.32015, -6.28987], [53.3235, -6.2950], [53.3285, -6.2985], [53.3325, -6.2950], [53.3375, -6.2960], [53.3405, -6.2945], [53.3418, -6.2915], [53.3425, -6.2855], [53.3432, -6.2790]],
-      note="The artificial channel that took a third of the flow from the Stone Boat towards Dolphin’s Barn, Basin Lane, James’s Street and Thomas Street. Route approximate."),
+      c=[[53.32031, -6.29067], [53.32035, -6.29063], [53.32039, -6.29053], [53.32044, -6.29041], [53.32051, -6.29022], [53.32077, -6.29037], [53.32156, -6.29059], [53.32172, -6.29059], [53.32180, -6.29052], [53.32187, -6.29044], [53.32196, -6.29034], [53.32239, -6.29014], [53.32248, -6.28998], [53.32273, -6.28942], [53.32281, -6.28942], [53.32431, -6.28960], [53.32520, -6.28975], [53.32587, -6.28998], [53.32624, -6.29016], [53.32653, -6.29031], [53.32803, -6.29118], [53.32828, -6.29182], [53.33002, -6.29267], [53.33081, -6.29346], [53.33119, -6.29427], [53.33142, -6.29454], [53.33319, -6.29533], [53.33366, -6.29501], [53.33409, -6.29472], [53.33457, -6.29412], [53.3375, -6.2960], [53.3405, -6.2945], [53.3418, -6.2915], [53.3425, -6.2855], [53.3432, -6.2790]],
+      note="The artificial channel that took a third of the flow from the Stone Boat past Eamonn Ceannt Park and along Rutland Avenue to Dolphin’s Barn, then on to Basin Lane, James’s Street and Thomas Street. From the Stone Boat to Dolphin’s Barn the line follows the OpenStreetMap route, which its mappers drew from the 1912 Ordnance Survey six-inch map, the 1870 one-inch map and Taylor’s 1816 map; north of Dolphin’s Barn it is sketched from the written histories. All of it is approximate."),
  dict(k="tenter", n="The Tenter Water", approx=True, slug="city-watercourse",
       c=[[53.3432, -6.2790], [53.3405, -6.2770], [53.3375, -6.2745]],
       note="A branch of the City Watercourse that rejoined the Poddle at Fumbally Lane. Route approximate."),
@@ -72,7 +72,7 @@ map_body = (
  '<li><span class="k k-water"></span>City Watercourse (approx.)</li><li><span class="k k-abbey"></span>Abbey Stream</li><li><span class="k k-overflow"></span>Dodder Overflow (approx.)</li><li><span class="k k-stop">1</span>River walk stop</li>'
  '<li><span class="k k-mill"></span>Mill site</li><li><span class="k k-works"></span>Flood scheme works</li>'
  '<li><span class="k k-dig"></span>Archaeology and monuments</li><li><span class="k k-gauge"></span>River gauge (Dodder)</li></ul></div>'
- '<p class="note">River line © OpenStreetMap contributors. The City Watercourse, Tenter Water and Dodder Overflow are drawn as approximate routes from the written histories, not surveyed lines. Some mill sites are approximate too, and say so.</p>'
+ '<p class="note">River line © OpenStreetMap contributors. The City Watercourse, Tenter Water and Dodder Overflow are approximate routes, not surveyed lines. The City Watercourse as far as Dolphin’s Barn follows the OpenStreetMap line, which was drawn from old Ordnance Survey and Taylor maps; beyond that it is sketched from the written histories. Some mill sites are approximate too, and say so.</p>'
  '<noscript><p>The map needs JavaScript. The river walk is also listed on the <a href="walk.html">river walk page</a>.</p></noscript></div>'
  '<link rel="stylesheet" href="vendor/leaflet.css">'
  '<script src="vendor/leaflet.js"></script>'
