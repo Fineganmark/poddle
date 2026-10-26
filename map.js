@@ -52,13 +52,15 @@
   });
   stops.addTo(map);
 
+  var byId = {};
   function simple(list, cls, kicker) {
     var g = L.layerGroup();
     list.forEach(function (m) {
       var icon = L.divIcon({ className: cls, iconSize: [14, 14], iconAnchor: [7, 7] });
       L.marker([m[1], m[2]], { icon: icon, title: m[0] })
-        .bindPopup("<div class=\"pop\"><p class=\"pk\">" + kicker + "</p><h3>" + esc(m[0]) + "</h3><p>" + esc(m[3]) + "</p></div>", { maxWidth: 240 })
+        .bindPopup("<div class=\"pop\"><p class=\"pk\">" + kicker + "</p><h3>" + esc(m[0]) + "</h3><p>" + esc(m[3]) + "</p>" + (m[4] ? "<a href=\"mill-sites.html#" + m[4] + "\">Read about this mill →</a>" : "") + "</div>", { maxWidth: 240 })
         .addTo(g);
+      byId[m[4] || m[0]] = g.getLayers()[g.getLayers().length - 1];
     });
     return g;
   }
@@ -82,6 +84,8 @@
 
   var all = L.featureGroup(stops.getLayers());
   map.fitBounds(all.getBounds().pad(0.08));
+  var q = /[?&]mill=([\w-]+)/.exec(location.search);
+  if (q && byId[q[1]]) { var mk = byId[q[1]]; map.setView(mk.getLatLng(), 17); mk.openPopup(); }
   map.on("focus", function () { map.scrollWheelZoom.enable(); });
   map.on("blur", function () { map.scrollWheelZoom.disable(); });
 })();

@@ -199,3 +199,10 @@ html { scroll-behavior: smooth; }
 .timeline-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; border-top: 1px solid var(--rule); }
 .timeline-list li { display: grid; grid-template-columns: 6.5em minmax(0, 1fr); gap: 12px; padding: 8px 0; border-bottom: 1px solid var(--rule); }
 .timeline-list span { font: 600 .82rem/1.5 var(--label); color: var(--antiquity); letter-spacing: .04em; font-variant-numeric: tabular-nums; }
+
+.mill-card { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, .85fr); gap: clamp(20px, 4vw, 48px); padding: 32px 0; border-top: 1px solid var(--rule); scroll-margin-top: 80px; }
+.mill-card:target h2 { color: var(--antiquity); }
+.mill-text { display: grid; gap: 12px; align-content: start; max-width: var(--measure); }
+.mill-figs { display: grid; gap: 16px; min-width: 0; }
+.mill-flag { font: 500 .75rem/1 var(--label); letter-spacing: .06em; text-transform: uppercase; color: var(--muted); margin-left: 8px; }
+@media (max-width: 760px) { .mill-card { grid-template-columns: 1fr; } }

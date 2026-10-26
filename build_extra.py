@@ -9,17 +9,17 @@ COORDS = {
  "ship-street-little": (53.34230, -6.26900), "dubh-linn": (53.34220, -6.26745), "palace-street": (53.34399, -6.26614),
  "liffey": (53.34573, -6.26541)}
 MILLS = [
- ("Ravensdale Mills", 53.3140, -6.2990, "Corn and flour mill with pond, sluice and weir; on maps from the 1830s to 1940."),
- ("Farrington’s Mill", 53.3121, -6.2997, "Flour mill by Kimmage Cross Roads; water turbine until the 1920s. Approximate site."),
- ("Larkfield Mills", 53.3175, -6.2950, "Mill and pond, now Sundrive Shopping Centre. Approximate site."),
- ("Mill and windmill, St Martin’s Drive", 53.3167, -6.2956, "Mill, pond and windmill on the first Ordnance Survey map."),
- ("Loader’s Park Mills", 53.3207, -6.2872, "Corn mill on Kimmage Road Lower, now the Waterwheel apartments. Approximate site."),
- ("Mount Argus mills", 53.3226, -6.2841, "Paper mill, and a flour mill on Mount Argus Road that became a laundry."),
- ("Harold’s Cross Park watermill", 53.3246, -6.2789, "One of several 19th-century mills in the village."),
- ("Mill pond, Our Lady’s Hospice", 53.3277, -6.2815, "Shown on the 1910 Ordnance Survey map."),
- ("Greenmount Mills", 53.3289, -6.2785, "Corn mill, then a cotton mill by 1807; enlarged by the Pim family."),
- ("Double mill, Mill Street", 53.3368, -6.2782, "Oil and flour mill linked to St Thomas’s Abbey. Approximate site."),
- ("Medieval mill, Cross Poddle", 53.3386, -6.2725, "Beside St Nicholas’ Bridge, New Street."),
+ ("Ravensdale Mills", 53.3140, -6.2990, "Corn and flour mill with pond, sluice and weir; on maps from the 1830s to 1940.", "ravensdale"),
+ ("Farrington’s Mill", 53.3121, -6.2997, "Flour mill by Kimmage Cross Roads; water turbine until the 1920s. Approximate site.", "farringtons"),
+ ("Larkfield Mills", 53.3175, -6.2950, "Mill and pond, now Sundrive Shopping Centre. Approximate site.", "larkfield"),
+ ("Mill and windmill, St Martin’s Drive", 53.3167, -6.2956, "Mill, pond and windmill on the first Ordnance Survey map.", "st-martins-drive"),
+ ("Loader’s Park Mills", 53.3207, -6.2872, "Corn mill on Kimmage Road Lower, now the Waterwheel apartments. Approximate site.", "loaders-park"),
+ ("Mount Argus mills", 53.3226, -6.2841, "Paper mill, and a flour mill on Mount Argus Road that became a laundry.", "mount-argus"),
+ ("Harold’s Cross Park watermill", 53.3246, -6.2789, "One of several 19th-century mills in the village.", "harolds-cross-park"),
+ ("Mill pond, Our Lady’s Hospice", 53.3277, -6.2815, "Shown on the 1910 Ordnance Survey map.", "hospice-pond"),
+ ("Greenmount Mills", 53.3289, -6.2785, "Corn mill, then a cotton mill by 1807; enlarged by the Pim family.", "greenmount"),
+ ("Double mill, Mill Street", 53.3368, -6.2782, "Oil and flour mill linked to St Thomas’s Abbey. Approximate site.", "mill-street"),
+ ("Medieval mill, Cross Poddle", 53.3386, -6.2725, "Beside St Nicholas’ Bridge, New Street.", "cross-poddle"),
 ]
 WORKS = [
  ("Tymon Lake flood storage", 53.2962, -6.3380, "220m embankment and flow-control structure. In use since 20 February 2025."),
@@ -101,3 +101,53 @@ live_body = '''<div class="wrap page"><header class="page-head"><p class="kicker
 </div></div></div>
 <script src="levels.js?v=''' + ASSET_V + '''"></script>'''
 write("river-data.html", shell("river-data", f"Live data · {SITE}", "Live river levels near the Poddle, flood maps and flood model data.", live_body, "river-data.html"))
+
+
+# ------------------------------------------------------------ mill sites page
+WM = "https://upload.wikimedia.org/wikipedia/commons/thumb/"
+CUR = {
+ "poddle-park": (WM + "9/9e/River_Poddle_at_Poddle_Park.jpg/960px-River_Poddle_at_Poddle_Park.jpg", "The Poddle at Poddle Park, Kimmage, today", "O’Dea, CC BY-SA 4.0", "https://commons.wikimedia.org/wiki/File:River_Poddle_at_Poddle_Park.jpg"),
+ "kimmage": ("https://upload.wikimedia.org/wikipedia/commons/d/d2/The_Poddle_River%2C_Kimmage_-_geograph.org.uk_-_447191.jpg", "The Poddle in Kimmage, 2007", "JP, CC BY-SA 2.0", "https://commons.wikimedia.org/wiki/File:The_Poddle_River,_Kimmage_-_geograph.org.uk_-_447191.jpg"),
+ "jerome": (WM + "3/35/River_Poddle_by_Mount_Jerome_Cemetery_%28geograph_3544859%29.jpg/960px-River_Poddle_by_Mount_Jerome_Cemetery_%28geograph_3544859%29.jpg", "The Poddle by Mount Jerome Cemetery, 2013", "jwd, CC BY-SA 2.0", "https://commons.wikimedia.org/wiki/File:River_Poddle_by_Mount_Jerome_Cemetery_(geograph_3544859).jpg"),
+ "greenmount": (WM + "d/dd/GREENMOUNT_LANE-AVENUE-COURT_%28HOME_TO_A_NUMBER_OF_ENTERPRISING_BUSINESSES%29-200255.jpg/960px-GREENMOUNT_LANE-AVENUE-COURT_%28HOME_TO_A_NUMBER_OF_ENTERPRISING_BUSINESSES%29-200255.jpg", "Greenmount Lane today, home to small businesses", "William Murphy, CC BY-SA 2.0", "https://commons.wikimedia.org/wiki/File:GREENMOUNT_LANE-AVENUE-COURT_(HOME_TO_A_NUMBER_OF_ENTERPRISING_BUSINESSES)-200255.jpg"),
+}
+HIST = {
+ "valuation": ("img/grifiths-valution.jpg", "Griffith’s Valuation map of Dublin, mid-19th century"),
+ "ronan": ("img/mount-jerome-diversion.jpg", "Rev. Myles Ronan’s 1927 map of the Poddle at Harold’s Cross, marking the Wood Mill and a mill pond"),
+ "os1848": ("img/1848-os-map-small.jpg", "Ordnance Survey map, 1848"),
+}
+MILL_PAGES = [
+ ("ravensdale", "Ravensdale Mills", "Kimmage Road Lower", "Now", "A corn and flour mill with its own pond, sluice and weir, on maps from the 1830s until 1940. Ravensdale Park, beside the site, is one of the places being reshaped to store flood water in the flood alleviation scheme.", ["valuation"], ["kimmage"]),
+ ("farringtons", "Farrington’s Mill", "Kimmage Cross Roads", "Approximate site", "A flour mill beside Kimmage Cross Roads. It worked by water turbine until the 1920s.", ["valuation"], ["kimmage"]),
+ ("larkfield", "Larkfield Mills", "Sundrive Shopping Centre", "Approximate site", "A mill with its pond, on ground now covered by the Sundrive Shopping Centre. The name Larkfield survives in the area.", ["valuation"], ["poddle-park"]),
+ ("st-martins-drive", "Mill, pond and windmill, St Martin’s Drive", "St Martin’s Drive", "", "The first Ordnance Survey map shows a mill, a pond and a windmill together here.", ["os1848"], ["poddle-park"]),
+ ("loaders-park", "Loader’s Park Mills", "Kimmage Road Lower", "Approximate site", "A corn mill on Kimmage Road Lower. The building survives as the Waterwheel apartments, and the name keeps the memory of the wheel.", ["valuation"], []),
+ ("mount-argus", "Mount Argus mills", "Mount Argus Road", "", "In the 19th century there was a paper mill here, and a flour mill on Mount Argus Road that later became a laundry. The Stone Boat, where the river divides, is nearby.", ["valuation"], ["jerome"]),
+ ("harolds-cross-park", "Harold’s Cross Park watermill", "Harold’s Cross Park", "", "One of several 19th-century watermills in Harold’s Cross village. Another was a flour mill by the gates of Mount Jerome.", ["valuation"], ["jerome"]),
+ ("hospice-pond", "Mill pond, Our Lady’s Hospice", "Harold’s Cross", "", "A mill pond shown on the 1910 Ordnance Survey map. Rev. Myles Ronan’s 1927 map shows a mill pond and a Wood Mill on this part of the river, next to the Hospice, with the dotted line of an older water course beside them.", ["ronan"], ["jerome"]),
+ ("greenmount", "Greenmount Mills", "Greenmount, Harold’s Cross", "", "A corn mill that was turned into a cotton mill by 1807 and enlarged by the Quaker Pim family for cotton and linen. Greenmount’s mill pond was among the last to disappear, covered over in the late 1960s. The lanes around it now hold small businesses.", ["ronan"], ["greenmount"]),
+ ("mill-street", "Double mill, Mill Street", "Mill Street and Sweeney’s Lane", "Approximate site", "An oil and flour mill, linked to St Thomas’s Abbey, which gave Mill Street its name. Mill Street is first mentioned in 1711. By 1830 the street had several tanners and a fancy weaver, and by 1880 five tanners and a parchment maker.", ["valuation"], []),
+ ("cross-poddle", "Medieval mill, Cross Poddle", "New Street, beside St Nicholas’ Bridge", "", "A medieval mill beside St Nicholas’ Bridge, outside St Nicholas’ Gate, at the junction of New Street, Patrick Street and Kevin Street. The old Cross Poddle ran beside it.", ["valuation"], []),
+]
+def mill_fig(kind, key):
+    if kind == "h":
+        src, cap = HIST[key]
+        return f'<figure class="fig"><img src="{src}" alt="{esc(cap)}" loading="lazy"><figcaption>Historic: {esc(cap)}</figcaption></figure>'
+    src, cap, credit, page = CUR[key]
+    return (f'<figure class="fig"><img src="{src}" alt="{esc(cap)}" loading="lazy" referrerpolicy="no-referrer"><figcaption>Today: {esc(cap)}. '
+            f'<a href="{page}" rel="noopener">{esc(credit)}</a></figcaption></figure>')
+cards = ""
+for mid, name, where, flag, text, hist, cur in MILL_PAGES:
+    figs = "".join(mill_fig("h", k) for k in hist) + "".join(mill_fig("c", k) for k in cur)
+    tag = f' <span class="mill-flag">{esc(flag)}</span>' if flag and flag != "Now" else ""
+    cards += (f'<article class="mill-card" id="{mid}"><div class="mill-text"><p class="kicker">{esc(where)}{tag}</p><h2>{esc(name)}</h2>'
+              f'<p>{esc(text)}</p><p class="xlink"><a href="map.html?mill={mid}">Show on the map →</a></p></div>'
+              f'<div class="mill-figs">{figs}</div></article>')
+mills_body = (
+ '<div class="wrap page"><p class="crumb"><a href="history.html">History</a> · <a href="mills.html">The mills</a></p>'
+ '<header class="page-head"><p class="kicker">Mill sites</p><h1>The mills of the Poddle, one by one</h1>'
+ '<p class="dek">Eleven mill sites from Kimmage to New Street, in order from source to sea. Select a mill marker on the <a href="map.html">map</a> to land on its entry here.</p></header>'
+ + cards +
+ '<p class="note">Almost nothing of these mills is left to see, so the “today” photographs show the river or the street at or near each site, not the mill itself. '
+ 'Sites marked approximate are placed from old maps and local histories. If you have a photograph or a memory of any of them, <a href="about.html">get in touch</a>.</p></div>')
+write("mill-sites.html", shell("mill-sites", f"Mill sites · {SITE}", "The mills on the River Poddle, one by one, with historic maps and photographs of the sites today.", mills_body, "history.html"))

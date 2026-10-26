@@ -271,7 +271,7 @@ HISTORY = [
    ("The end of water power", [
     "Steam, electricity and competition from British and foreign manufacturers closed the mills one by one in the late 19th and early 20th centuries. Their ponds were filled in and their races culverted. Greenmount’s mill pond was among the last to go, covered over in the late 1960s. Almost nothing is left to see, but the names survive: Mill Street, the Waterwheel, Larkfield."])],
   images=[("grifiths-valution", "Griffith’s Valuation map of Dublin, mid-19th century")],
-  link=("map", "See the mill sites on the map")),
+  link=("mill-sites", "Each mill site, with maps and photographs")),
  dict(slug="floods", name="Floods and the flood scheme", when="1437 to 2027",
   teaser="Six centuries of flooding, and the scheme being built to stop it.",
   sections=[("A river that floods", [
