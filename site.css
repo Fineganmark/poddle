@@ -76,12 +76,12 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 /* water hero: title first, the rest arrives after a pause */
 .hero.water .kicker, .hero.water h1 { animation: rise .9s cubic-bezier(.2,.7,.2,1) both; }
 .hero.water h1 { animation-delay: .15s; }
-.hero.water .lede, .hero.water .cta, .hero.water .hero-fig { animation: rise 1s cubic-bezier(.2,.7,.2,1) both; }
+.hero.water .lede, .hero.water .cta, .hero.water .hero-fig { animation: rise 1.6s cubic-bezier(.2,.7,.2,1) both; }
 .hero.water .lede { animation-delay: 1.6s; }
 .hero.water .lede + .lede { animation-delay: 1.85s; }
 .hero.water .cta { animation-delay: 2.1s; }
 .hero.water .hero-fig { animation-delay: 1.3s; }
-@keyframes rise { from { opacity: 0; transform: translateY(14px); } }
+@keyframes rise { from { opacity: 0; transform: translateY(20px); } }
 @keyframes wv-flow { to { transform: translateX(-240px); } }
 @keyframes wv-flow2 { to { transform: translateX(-320px); } }
 
