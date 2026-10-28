@@ -74,14 +74,14 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .waves .w1 { animation: wv-flow 14s linear infinite; }
 .waves .w2 { animation: wv-flow2 22s linear infinite; }
 /* water hero: title first, the rest arrives after a pause */
-.hero.water .kicker, .hero.water h1 { animation: rise .9s cubic-bezier(.2,.7,.2,1) both; }
+.hero.water .kicker, .hero.water h1 { animation: fade 1.2s ease-out both; }
 .hero.water h1 { animation-delay: .15s; }
-.hero.water .lede, .hero.water .cta, .hero.water .hero-fig { animation: rise 1.6s cubic-bezier(.2,.7,.2,1) both; }
+.hero.water .lede, .hero.water .cta, .hero.water .hero-fig { animation: fade 2.6s ease-in-out both; }
 .hero.water .lede { animation-delay: 1.6s; }
 .hero.water .lede + .lede { animation-delay: 1.85s; }
 .hero.water .cta { animation-delay: 2.1s; }
 .hero.water .hero-fig { animation-delay: 1.3s; }
-@keyframes rise { from { opacity: 0; transform: translateY(20px); } }
+@keyframes fade { from { opacity: 0; } }
 @keyframes wv-flow { to { transform: translateX(-240px); } }
 @keyframes wv-flow2 { to { transform: translateX(-320px); } }
 
