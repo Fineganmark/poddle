@@ -583,11 +583,21 @@ QUOTES = [
  ("It occasionally, however, bursts from its caverns and inundates the vicinity.", "Early 19th-century historians of Dublin"),
 ]
 QUOTES_HTML = "\n".join(f'<figure class="q{" on" if i == 0 else ""}"><blockquote>“{esc(t)}”</blockquote><figcaption>{esc(a)}</figcaption></figure>' for i, (t, a) in enumerate(QUOTES))
-home = f'''
-<section class="hero"><div class="wrap hero-in">
+HERO = os.environ.get("HERO", "plain")
+WAVES = ('<svg class="waves" aria-hidden="true" focusable="false" preserveAspectRatio="xMidYMax slice" viewBox="0 0 1440 320">'
+ '<defs><pattern id="wv1" width="240" height="22" patternUnits="userSpaceOnUse"><path d="M0 11 C40 4 80 4 120 11 S200 18 240 11" fill="none" stroke="currentColor" stroke-width="2.2"/></pattern>'
+ '<pattern id="wv2" width="320" height="34" patternUnits="userSpaceOnUse"><path d="M0 17 C55 8 105 8 160 17 S265 26 320 17" fill="none" stroke="currentColor" stroke-width="1.6"/></pattern>'
+ '<linearGradient id="wvf" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".55" stop-color="#fff" stop-opacity=".7"/><stop offset="1" stop-color="#fff"/></linearGradient>'
+ '<mask id="wvm"><rect width="1440" height="320" fill="url(#wvf)"/></mask></defs>'
+ '<g mask="url(#wvm)"><rect class="w1" width="1920" height="320" fill="url(#wv1)"/><rect class="w2" y="9" width="1920" height="320" fill="url(#wv2)"/></g></svg>')
+PHOTO_BAND = ('<section class="hero-photo"><img src="img/hero-mount-argus.webp" alt="" width="880" height="500" fetchpriority="high">'
+ '<div class="wrap hp-in"><p class="kicker">Tallaght to Wellington Quay</p><h1>The river that named Dublin</h1></div>'
+ '<p class="hp-cap">The Poddle at Mount Argus</p></section>')
+home = f'''{PHOTO_BAND if HERO == "photo" else ""}
+<section class="hero{" water" if HERO == "water" else ""}{" after-photo" if HERO == "photo" else ""}">{WAVES if HERO == "water" else ""}<div class="wrap hero-in">
  <div class="hero-text">
-  <p class="kicker">Tallaght to Wellington Quay</p>
-  <h1>The river that named Dublin</h1>
+{"" if HERO == "photo" else '''  <p class="kicker">Tallaght to Wellington Quay</p>
+  <h1>The river that named Dublin</h1>'''}
   <p class="lede">The Poddle is the most important watercourse in Dublin city, yet most Dubliners walk over it without knowing. It rises in Tallaght and runs, both over ground and underground, until it emerges into the Liffey at Wellington Quay. It was the city’s drinking water, its defensive moat and the power for its mills. It gave the city its name.</p>
   <p class="lede">This site follows the river from source to sea, stop by stop, and tells the history of how monks, citizens and engineers harnessed it to meet a growing city’s needs.</p>
   <p class="cta"><a class="btn" href="walk.html">Walk the river</a><a class="btn ghost" href="history.html">Read the history</a><a class="btn ghost" href="map.html">Open the map</a></p>
