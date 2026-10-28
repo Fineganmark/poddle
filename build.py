@@ -583,7 +583,7 @@ QUOTES = [
  ("It occasionally, however, bursts from its caverns and inundates the vicinity.", "Early 19th-century historians of Dublin"),
 ]
 QUOTES_HTML = "\n".join(f'<figure class="q{" on" if i == 0 else ""}"><blockquote>“{esc(t)}”</blockquote><figcaption>{esc(a)}</figcaption></figure>' for i, (t, a) in enumerate(QUOTES))
-HERO = os.environ.get("HERO", "plain")
+HERO = os.environ.get("HERO", "water")
 WAVES = ('<svg class="waves" aria-hidden="true" focusable="false" preserveAspectRatio="xMidYMax slice" viewBox="0 0 1440 320">'
  '<defs><pattern id="wv1" width="240" height="22" patternUnits="userSpaceOnUse"><path d="M0 11 C40 4 80 4 120 11 S200 18 240 11" fill="none" stroke="currentColor" stroke-width="2.2"/></pattern>'
  '<pattern id="wv2" width="320" height="34" patternUnits="userSpaceOnUse"><path d="M0 17 C55 8 105 8 160 17 S265 26 320 17" fill="none" stroke="currentColor" stroke-width="1.6"/></pattern>'
