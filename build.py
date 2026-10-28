@@ -439,6 +439,7 @@ RESOURCES = [
  ("Excavations.ie: The Weir, Firhouse, 2001 (Shane Delaney, IAC, licence 01E0858)", "https://excavations.ie/report/2001/Dublin/0006358/"),
  ("Weston St John Joyce, The Neighbourhood of Dublin (1912): the old city water supply", "https://www.chaptersofdublin.ie/Neighbourhood/chapter43.html"),
  ("William Handcock, The History and Antiquities of Tallaght: the River Dodder and the city weir", "https://www.chaptersofdublin.ie/Handcock/tallaght17.htm"),
+ ("Crumlin and Walkinstown History Group: the Poddle River project and map", "https://poddle.crumlinwalkinstownhistory.ie/"),
  ("Crumlin Walkinstown History: Balrothery (Firhouse) Weir", "https://poddle.crumlinwalkinstownhistory.ie/location/firhouse-weir/"),
  ("Our Irish Heritage: Balrothery Weir, part of Tallaght’s waterways history", "https://www.ouririshheritage.org/content/archive/place/miscellaneous-place/balrothery-weir-on-the-dodder-part-of-tallaght-waterways-history"),
  ("South Dublin County Council: Firhouse Weir", "https://www.sdcc.ie/en/services/tourism/activities/sightseeing/firhouse-weir/"),

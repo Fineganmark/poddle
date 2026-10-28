@@ -23,10 +23,11 @@
   });
   riverLayer.addTo(map);
 
-  // Channels: Abbey Stream, City Watercourse, Tenter Water, Dodder Overflow
+  // Channels: Abbey Stream, City Watercourse, Tenter Water, Commons Water, Dodder Overflow
   var style = { abbey: { color: "#c98a1b", weight: 9, opacity: 0.45 },
                 citywc: { color: red, weight: 3, dashArray: "8 6", opacity: 0.95 },
                 tenter: { color: red, weight: 3, dashArray: "3 6", opacity: 0.95 },
+                commons: { color: "#2a7f9e", weight: 3, dashArray: "6 5", opacity: 0.95 },
                 overflow: { color: "#3b8f6a", weight: 4, dashArray: "10 5", opacity: 0.95 } };
   var groups = { abbey: L.layerGroup(), watercourse: L.layerGroup(), overflow: L.layerGroup() };
   (DATA.channels || []).forEach(function (ch) {
@@ -80,7 +81,7 @@
   });
 
   L.control.layers(null, {
-    "The river": riverLayer, "Abbey Stream": groups.abbey, "City Watercourse and Tenter Water": groups.watercourse, "Dodder Overflow": groups.overflow, "River walk stops": stops, "Mill sites": mills,
+    "The river": riverLayer, "Abbey Stream": groups.abbey, "City Watercourse, Tenter and Commons Waters": groups.watercourse, "Dodder Overflow": groups.overflow, "River walk stops": stops, "Mill sites": mills,
     "Flood scheme works": works, "Archaeology and monuments": digs, "Dodder gauges": gauges
   }, { collapsed: false }).addTo(map);
 
