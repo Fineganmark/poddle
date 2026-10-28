@@ -599,7 +599,7 @@ home = f'''{PHOTO_BAND if HERO == "photo" else ""}
 {"" if HERO == "photo" else '''  <p class="kicker">Tallaght to Wellington Quay</p>
   <h1>The river that named Dublin</h1>'''}
   <p class="lede">The Poddle is the most important watercourse in Dublin city, it provided its water, its defensive moat and powered its mills. It gave the city its name.</p>
-  <p class="lede">Poddle.ie follows it from source to sea, and tells the history of how monks, citizens and engineers harnessed it to meet a growing city’s needs.</p>
+  <p class="lede">Poddle.ie traces the course of its history from source to sea, as it defined the Dublin we know today.</p>
   <p class="cta"><a class="btn" href="walk.html">Walk the river</a><a class="btn ghost" href="history.html">Read the history</a><a class="btn ghost" href="map.html">Open the map</a></p>
  </div>
  <figure class="hero-fig"><img src="img/cover-painting.jpg" alt="Painting of a heart shape in river blue" loading="eager"></figure>
