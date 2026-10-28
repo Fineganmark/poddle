@@ -512,7 +512,7 @@ def figures(imgs, lead=False):
 def slug_id(h):
     return re.sub(r'[^a-z0-9]+','-',h.lower()).strip('-')
 
-def article(item, kicker, prev, nxt, back):
+def article(item, kicker, prev, nxt, back, top_nav=False):
     secs = "\n".join(f'<section id="{slug_id(h)}"><h2>{esc(h)}</h2>{"".join(para(p) for p in ps)}</section>' for h, ps in item["sections"])
     flag = f'<aside class="flag"><strong>To check</strong> {esc(item["flag"])}</aside>' if item.get("flag") else ""
     link = f'<p class="xlink"><a href="{item["link"][0]}.html">{esc(item["link"][1])} →</a></p>' if item.get("link") else ""
@@ -525,8 +525,9 @@ def article(item, kicker, prev, nxt, back):
     pn += f'<a class="prev" href="{prev[0]}.html"><span>Upstream</span>{esc(prev[1])}</a>' if prev else '<span></span>'
     pn += f'<a class="next" href="{nxt[0]}.html"><span>Downstream</span>{esc(nxt[1])}</a>' if nxt else '<span></span>'
     pn += '</nav>'
+    top = pn.replace('class="pn"', 'class="pn pn-top"').replace('aria-label="Previous and next"', 'aria-label="Upstream and downstream"') if top_nav else ""
     return (f'<article class="wrap page">'
-            f'<p class="crumb"><a href="{back[0]}">{esc(back[1])}</a></p>'
+            f'<p class="crumb"><a href="{back[0]}">{esc(back[1])}</a></p>{top}'
             f'<header class="page-head"><p class="kicker">{kicker}</p><h1>{esc(item["name"])}</h1>'
             f'<p class="dek">{esc(item["teaser"])}</p></header>{brief}' +
             (f'<div class="page-grid"><div class="text">{flag}{secs}{link}</div>'
@@ -544,7 +545,7 @@ for i, s in enumerate(STOPS):
     prev = (STOPS[i-1]["slug"], STOPS[i-1]["name"]) if i else None
     nxt = (STOPS[i+1]["slug"], STOPS[i+1]["name"]) if i + 1 < len(STOPS) else None
     kicker = f'Stop {i+1} of {len(STOPS)} <span>·</span> {esc(s["place"])}'
-    body = article(s, kicker, prev, nxt, ("walk.html", "The river walk"))
+    body = article(s, kicker, prev, nxt, ("walk.html", "The river walk"), top_nav=True)
     write(f'{s["slug"]}.html', shell(s["slug"], f'{s["name"]} · {SITE}',
           f'{s["teaser"]} Stop {i+1} of {len(STOPS)} on the River Poddle walk, at {s["place"]}, Dublin.', body, "walk.html",
           image=s["images"][0][0] if s["images"] else None, article=True))

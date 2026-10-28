@@ -120,6 +120,10 @@ figcaption { font: 500 .82rem/1.4 var(--label); color: var(--muted); letter-spac
 .pn a span { font: 600 .75rem/1 var(--label); letter-spacing: .12em; text-transform: uppercase; color: var(--river); }
 .pn .next { text-align: right; }
 .pn a:hover { color: var(--river); }
+.pn-top { margin: 0 0 24px; padding: 0 0 12px; border-top: 0; border-bottom: 1px solid var(--rule); }
+.pn-top a { font-size: .98rem; align-content: start; }
+.pn-top .prev span::before { content: "↑ "; }
+.pn-top .next span::after { content: " ↓"; }
 .maps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; }
 .links { display: grid; gap: 10px; padding-left: 1.1em; margin: 0 0 32px; }
 .links.plain { list-style: square; }
