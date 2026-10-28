@@ -77,10 +77,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .hero.water .kicker, .hero.water h1 { animation: fade 1.2s ease-out both; }
 .hero.water h1 { animation-delay: .15s; }
 .hero.water .lede, .hero.water .cta, .hero.water .hero-fig { animation: fade 2.6s ease-in-out both; }
-.hero.water .lede { animation-delay: 1.6s; }
-.hero.water .lede + .lede { animation-delay: 1.85s; }
-.hero.water .cta { animation-delay: 2.1s; }
-.hero.water .hero-fig { animation-delay: 1.3s; }
+.hero.water .lede, .hero.water .cta, .hero.water .hero-fig { animation-delay: 1.4s; }
 @keyframes fade { from { opacity: 0; } }
 @keyframes wv-flow { to { transform: translateX(-240px); } }
 @keyframes wv-flow2 { to { transform: translateX(-320px); } }
