@@ -7,7 +7,7 @@ def _v(*names):
     for n in names:
         h.update(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), n), "rb").read())
     return h.hexdigest()[:8]
-ASSET_V = _v("site.css", "map.js", "levels.js", "quotes.js", "planmap.js")
+ASSET_V = _v("site.css", "map.js", "levels.js", "quotes.js", "planmap.js", "nav.js", )
 
 OUT = os.path.dirname(os.path.abspath(__file__))
 SITE = "The River Poddle, Dublin"   # title suffix
@@ -491,11 +491,11 @@ def shell(slug, title, desc, body, active, image=None, article=False, noindex=Fa
             f'<link rel="apple-touch-icon" href="apple-touch-icon.png">\n')
     page = (f'<a class="skip" href="#main">Skip to content</a>\n'
             f'<header class="top"><div class="wrap top-in"><a class="brand" href="index.html">The <span>Poddle</span></a>'
-            f'<nav aria-label="Main">{nav}</nav></div></header>\n'
+            f'<button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav"><span class="bars" aria-hidden="true"></span><span class="lbl">Menu</span></button><nav id="site-nav" aria-label="Main">{nav}</nav></div></header>\n'
             f'<main id="main">{body}</main>\n'
             f'<footer class="foot"><div class="wrap foot-in"><p>The Poddle: a history of Dublin’s hidden river, from Tallaght to the Liffey.</p>'
-            f'<p>Photographs and maps are credited where known. Third-party images are used for local-history purposes.</p>'
-            f'<p>This site is free to read. <a href="shop.html">Workbooks and t-shirts</a> help keep it online.</p></div></footer>\n')
+            f'<p>Photographs and maps are credited where known. Third-party images are used for local-history purposes.</p></div></footer>\n'
+            f'<script src="nav.js?v={ASSET_V}" defer></script>\n')
     if slug == "index" and not os.environ.get("STATIC"):
         return head + page
     return ('<!doctype html>\n<html lang="en-IE">\n<head>\n<meta charset="utf-8">\n'
@@ -518,6 +518,9 @@ def article(item, kicker, prev, nxt, back):
     link = f'<p class="xlink"><a href="{item["link"][0]}.html">{esc(item["link"][1])} →</a></p>' if item.get("link") else ""
     if item.get("links"):
         link += '<section class="watch"><h2>Watch and read</h2><ul>' + "".join(f'<li><a href="{u}"{"" if u.endswith(".html") else " rel=\"noopener\""}>{esc(t)}</a></li>' for t, u in item["links"]) + '</ul></section>'
+    if item.get("plan"):
+        link += '<section class="watch plan"><h2>From the planning file</h2><p class="note">Facts from the flood scheme’s planning application and four local planning files.</p><ul>' + "".join(f'<li><a href="{u}">{esc(t)}</a></li>' for u, t in item["plan"]) + '</ul></section>'
+    brief = f'<aside class="brief"><strong>In brief</strong><p>{esc(item["brief"])}</p></aside>' if item.get("brief") else ""
     pn = '<nav class="pn" aria-label="Previous and next">'
     pn += f'<a class="prev" href="{prev[0]}.html"><span>Upstream</span>{esc(prev[1])}</a>' if prev else '<span></span>'
     pn += f'<a class="next" href="{nxt[0]}.html"><span>Downstream</span>{esc(nxt[1])}</a>' if nxt else '<span></span>'
@@ -525,7 +528,7 @@ def article(item, kicker, prev, nxt, back):
     return (f'<article class="wrap page">'
             f'<p class="crumb"><a href="{back[0]}">{esc(back[1])}</a></p>'
             f'<header class="page-head"><p class="kicker">{kicker}</p><h1>{esc(item["name"])}</h1>'
-            f'<p class="dek">{esc(item["teaser"])}</p></header>' +
+            f'<p class="dek">{esc(item["teaser"])}</p></header>{brief}' +
             (f'<div class="page-grid"><div class="text">{flag}{secs}{link}</div>'
              f'<div class="media">{figures(item["images"], lead=True)}</div></div>' if item["images"] else
              f'<div class="page-grid solo"><div class="text">{flag}{secs}{link}</div></div>') + f'{pn}</article>')
@@ -534,6 +537,7 @@ def write(name, content):
     with open(os.path.join(OUT, name), "w", encoding="utf-8") as fh:
         fh.write(content)
 
+exec(open(os.path.join(OUT, "build_enrich.py"), encoding="utf-8").read())
 # ---------------------------------------------------------------- pages
 # River stops
 for i, s in enumerate(STOPS):
@@ -596,7 +600,7 @@ home = f'''
 '''
 
 walk_page = f'''<div class="wrap page"><header class="page-head"><p class="kicker">The river walk</p><h1>Source to sea, stop by stop</h1>
-<p class="dek">The Poddle’s course has been created and recreated by nature and by people over the centuries. Here we plot it as a single line, above and below ground, as best we can. The <a href="map.html">map</a> shows the same stops on today’s streets.</p></header>
+<p class="dek">The Poddle’s course has been created and recreated by nature and by people over the centuries. Here we plot it as a single line, above and below ground, as best we can. The <a href="map.html">map</a> shows the same stops on today’s streets, and <a href="planning-record.html">what the planning files say</a> adds some of the most interesting facts.</p></header>
 <div class="walk-grid"><ol class="line">{walk}</ol>
 <div class="walk-maps">{figures([("1848-os-map-small", "Ordnance Survey map of Dublin, 1848"), ("poddle-catchment", "The Poddle catchment, from Tallaght north-east to the Liffey")])}</div></div></div>'''
 write("walk.html", shell("walk", f"The river walk · {SITE}", "Walk the River Poddle in sixteen stops, from its source in Tallaght through Kimmage, Harold’s Cross and the Liberties to the Liffey at Wellington Quay.", walk_page, "walk.html"))
@@ -604,7 +608,7 @@ write("index.html", shell("index", "The River Poddle: Dublin’s hidden river, f
 
 # History index
 hist = f'''<div class="wrap page"><header class="page-head"><p class="kicker">History</p><h1>How the Poddle shaped Dublin</h1>
-<p class="dek">From the black pool of Dubh Linn to the flood scheme being built today. This is a friendly telling, drawn from many sources that sometimes disagree; where the record is thin we say so, and corrections are always welcome.</p></header>
+<p class="dek">From the black pool of Dubh Linn to the flood scheme being built today. This is a friendly telling, drawn from many sources that sometimes disagree; where the record is thin we say so, and corrections are always welcome. Some of the most interesting facts come from <a href="planning-record.html">the planning files</a>, linked from the chapters below.</p></header>
 <div class="maps">{figures([("dublin-840","Dublin c. 840"),("dublin-1000","Dublin c. 1000"),("dublin-1170","Dublin c. 1170"),("dublin-1370","Dublin c. 1370")])}</div>
 <ol class="tl big">{"".join(f'<li><a href="{h["slug"]}.html"><span class="when">{esc(h["when"])}</span><strong>{esc(h["name"])}</strong><span>{esc(h["teaser"])}</span></a></li>' for h in HISTORY)}</ol></div>'''
 write("history.html", shell("history", f"History · {SITE}", "How the River Poddle shaped Dublin, from the black pool of Dubh Linn to medieval diversions, mills, the 1719 Act and today’s flood scheme.", hist, "history.html"))
