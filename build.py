@@ -243,7 +243,8 @@ STOPS = [
  dict(slug="liffey", name="Liffey Outfall", place="Wellington Quay",
   teaser="Journey’s end, under Wellington Quay.",
   sections=[("The outfall", [
-    "The Poddle’s journey ends here, flowing out under Wellington Quay into the Liffey through a grating in the quay wall. The Liffey is tidal here, so at high tide the grating disappears under the water."]),
+    "The Poddle’s journey ends here, flowing out under Wellington Quay into the Liffey through a grating in the quay wall. The Liffey is tidal here, so at high tide the grating disappears under the water.",
+    "Geological Survey Ireland, in its report on the Poddle as a County Geological Site, describes the grating as worn and dirty and suggests replacing it with stainless steel, spelling out “Poddle” in steel letters on the quay wall, and putting an information board on the far bank so people can see where Dublin’s first river meets the Liffey."]),
    ("Wellington Quay", [
     "Wellington Quay was the last of the Liffey quays to be built. It is named after the Dublin-born Arthur Wellesley, 1st Duke of Wellington, after his victory over Napoleon at Waterloo."]),
    ("Ulysses", [
@@ -269,7 +270,8 @@ HISTORY = [
   sections=[("Origin story", [
     "The stream rises in the foothills of the Dublin Mountains. Its catchment is bounded by the Dodder to the south and the Camac to the north.",
     "Both of those rivers are larger than the Poddle, but the Poddle is the one that runs to the heart of the city, while its neighbours pass to the east and west of the centre.",
-    "Its route is what puts the Poddle at the heart of Dublin, physically and in its history. Today almost all of its last four kilometres, under the south inner city, runs in culverts."]),
+    "Its route is what puts the Poddle at the heart of Dublin, physically and in its history. Today almost all of its last four kilometres, under the south inner city, runs in culverts.",
+    "Geologically it is a young river. Geological Survey Ireland lists the Poddle as a County Geological Site for Dublin City, noting that it formed after the last Ice Age, within roughly the last 11,000 years, on low-permeability glacial till. The survey picks it out because so much of its course runs in man-made channels and tunnels underground, which is unusual in Ireland."]),
    ("Source and names", [
     "The river rises around Cookstown, north-west of Tallaght, about 92 metres above sea level, where its first stretch is known as the Tymon River. Its catchment covers about 16 square kilometres, almost all of it now built up.",
     "The name has changed over the centuries: Podell in 1493, Puddell in 1603, and Poddle from 1695. In Irish it is An Poitéal, and it was also called the Salach, the dirty river. Other names turn up in local histories, among them Glascholach and Cam Uisce, the crooked stream, which has been suggested, without certainty, as the origin of the name Kimmage."])],
@@ -443,6 +445,7 @@ RESOURCES = [
  ("Arran Henderson: The best Poddle river", "https://arranqhenderson.com/2017/07/18/the-best-poddle-river/"),
  ("Eastern CFRAM study: Poddle options report", "http://eastcfram.irish-surge-forecast.ie/wp-content/uploads/2011/10/IBE0600Rp0030_Poddle-Options-Report_F02.pdf"),
  ("Ask About Ireland: Griffith’s Valuation", "http://www.askaboutireland.ie/griffith-valuation/"),
+ ("Geological Survey Ireland: River Poddle, County Geological Site report (Dublin City)", "https://gsi.geodata.gov.ie/downloads/Geoheritage/Reports/DC011_River_Poddle.pdf"),
  ("Wikipedia: River Poddle", "https://en.wikipedia.org/wiki/River_Poddle"),
  ("River Poddle Flood Alleviation Scheme", "https://www.poddlefas.ie/news"),
  ("Henry de Loundres, Archbishop of Dublin (grant of Timothan, 1216)", "https://www.biblicalcyclopedia.com/L/loundres-henry-de.html"),
