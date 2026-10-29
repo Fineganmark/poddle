@@ -244,7 +244,7 @@ STOPS = [
   teaser="Journey’s end, under Wellington Quay.",
   sections=[("The outfall", [
     "The Poddle’s journey ends here, flowing out under Wellington Quay into the Liffey through a grating in the quay wall. The Liffey is tidal here, so at high tide the grating disappears under the water.",
-    "Geological Survey Ireland, in its report on the Poddle as a County Geological Site, describes the grating as worn and dirty and suggests replacing it with stainless steel, spelling out “Poddle” in steel letters on the quay wall, and putting an information board on the far bank so people can see where Dublin’s first river meets the Liffey."]),
+    "Interestingly the Geological Survey Ireland, in its report on the Poddle as a County Geological Site, describes the grating as worn and dirty and suggests replacing it with stainless steel, spelling out “Poddle” in steel letters on the quay wall, and putting an information board on the far bank so people can see where Dublin’s first river meets the Liffey. Maybe that’s something worth considering for the future!"]),
    ("Wellington Quay", [
     "Wellington Quay was the last of the Liffey quays to be built. It is named after the Dublin-born Arthur Wellesley, 1st Duke of Wellington, after his victory over Napoleon at Waterloo."]),
    ("Ulysses", [
