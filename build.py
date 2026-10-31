@@ -16,6 +16,7 @@ OG_DEFAULT = "img/og-poddle.jpg"   # 1200x630 social preview card
 # Search engine verification codes: paste the content="..." value Mark gets from
 # Google Search Console / Bing Webmaster Tools; empty adds no tag.
 GOOGLE_VERIFY = ""
+GOATCOUNTER = "poddle"  # cookieless visitor counter: https://poddle.goatcounter.com
 BING_VERIFY = ""
 SITEMAP = []   # slugs that go into sitemap.xml, filled by shell()
 FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com">'
@@ -513,7 +514,8 @@ def shell(slug, title, desc, body, active, image=None, article=False, noindex=Fa
             f'<main id="main">{body}</main>\n'
             f'<footer class="foot"><div class="wrap foot-in"><p>The Poddle: a history of Dublin’s hidden river, from Tallaght to the Liffey.</p>'
             f'<p>Photographs and maps are credited where known. Third-party images are used for local-history purposes.</p></div></footer>\n'
-            f'<script src="nav.js?v={ASSET_V}" defer></script>\n')
+            f'<script src="nav.js?v={ASSET_V}" defer></script>\n'
+            + (f'<script data-goatcounter="https://{GOATCOUNTER}.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>\n' if GOATCOUNTER else ''))
     if slug == "index" and not os.environ.get("STATIC"):
         return head + page
     return ('<!doctype html>\n<html lang="en-IE">\n<head>\n<meta charset="utf-8">\n'
