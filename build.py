@@ -660,6 +660,26 @@ hist = f'''<div class="wrap page"><header class="page-head"><p class="kicker">Hi
 <ol class="tl big">{"".join(f'<li><a href="{h["slug"]}.html"><span class="when">{esc(h["when"])}</span><strong>{esc(h["name"])}</strong><span>{esc(h["teaser"])}</span></a></li>' for h in HISTORY)}</ol></div>'''
 write("history.html", shell("history", f"History · {SITE}", "How the River Poddle shaped Dublin, from the black pool of Dubh Linn to medieval diversions, mills, the 1719 Act and today’s flood scheme.", hist, "history.html"))
 
+# Wildlife page photos: Wikimedia Commons, converted to black and white (img/wild-*.jpg).
+WILD_PHOTOS = {
+ "tymon-2": ("The Poddle at Poddle Park, Kimmage", "O’Dea", "CC BY-SA 4.0", "https://commons.wikimedia.org/wiki/File:River_Poddle_at_Poddle_Park.jpg", "https://creativecommons.org/licenses/by-sa/4.0"),
+ "tymon-1": ("The waterfall crossing between the lakes in Tymon Park", "Alan James", "CC BY-SA 2.0", "https://commons.wikimedia.org/wiki/File:The_waterfall_crossing_-_geograph.org.uk_-_1821668.jpg", "https://creativecommons.org/licenses/by-sa/2.0"),
+ "stickleback": ("A male three-spined stickleback", "Gilles San Martin", "CC BY-SA 2.0", "https://commons.wikimedia.org/wiki/File:Gasterosteus_aculeatus_-_Epinoche_-_Three-spined_stickleback.jpg", "https://creativecommons.org/licenses/by-sa/2.0"),
+ "otter": ("An otter (photographed in Ukraine)", "Byrdyak", "CC BY-SA 4.0", "https://commons.wikimedia.org/wiki/File:%D0%92%D0%B8%D0%B4%D1%80%D0%B0.jpg", "https://creativecommons.org/licenses/by-sa/4.0"),
+ "pipistrelle": ("A common pipistrelle (photographed in Belgium)", "Gilles San Martin", "CC BY-SA 2.0", "https://commons.wikimedia.org/wiki/File:Pipistrellus_pipistrellus_(5933130195).jpg", "https://creativecommons.org/licenses/by-sa/2.0"),
+ "swan": ("Mute swans and cygnets (photographed in Oxford)", "Charles J. Sharp", "CC BY-SA 4.0", "https://commons.wikimedia.org/wiki/File:Mute_swans_(Cygnus_olor)_and_cygnets.jpg", "https://creativecommons.org/licenses/by-sa/4.0"),
+ "heron": ("A grey heron (photographed in Co. Cork)", "Ken Billington", "CC BY-SA 3.0", "https://commons.wikimedia.org/wiki/File:Grey_Heron_(Ardea_cinerea)_(3).jpg", "https://creativecommons.org/licenses/by-sa/3.0"),
+ "egret": ("A little egret (photographed in Co. Cork)", "Ken Billington", "CC BY-SA 3.0", "https://commons.wikimedia.org/wiki/File:Little_Egret_(Egretta_garzetta)_(4).jpg", "https://creativecommons.org/licenses/by-sa/3.0"),
+ "grey-wagtail": ("A grey wagtail", "Charles J. Sharp", "CC BY-SA 4.0", "https://commons.wikimedia.org/wiki/File:Grey_wagtail_(Motacilla_cinerea_cinerea).jpg", "https://creativecommons.org/licenses/by-sa/4.0"),
+ "flowering-rush": ("Flowering rush", "Michel Langeveld", "CC BY-SA 4.0", "https://commons.wikimedia.org/wiki/File:Butomus_umbellatus_140872752.jpg", "https://creativecommons.org/licenses/by-sa/4.0"),
+ "helleborine": ("Broad-leaved helleborine", "Gllawm", "CC BY-SA 4.0", "https://commons.wikimedia.org/wiki/File:Epipactis_helleborine_(Paizay-le-Chapt)_14072016_01.jpg", "https://creativecommons.org/licenses/by-sa/4.0"),
+}
+def wfig(*keys):
+    figs = "".join(f'<figure class="fig"><img src="img/wild-{k}.jpg" alt="{esc(WILD_PHOTOS[k][0])}" loading="lazy">'
+                   f'<figcaption>{esc(WILD_PHOTOS[k][0])}. Photo: <a href="{WILD_PHOTOS[k][3]}" rel="noopener">{esc(WILD_PHOTOS[k][1])}</a>, '
+                   f'<a href="{WILD_PHOTOS[k][4]}" rel="noopener">{WILD_PHOTOS[k][2]}</a></figcaption></figure>' for k in keys)
+    return f'<div class="fig-grid">{figs}</div>' if len(keys) > 1 else figs
+
 # Sources
 src = f'''<div class="wrap page narrow"><header class="page-head"><p class="kicker">Sources</p><h1>Further reading</h1>
 <p class="dek">Maps, reports and articles used in putting this site together.</p></header>
@@ -674,7 +694,7 @@ src = f'''<div class="wrap page narrow"><header class="page-head"><p class="kick
 <li><a href="https://commons.wikimedia.org/wiki/File:Location_of_the_Well_of_Saint_Patrick.JPG" rel="noopener">The well plaque</a>: Archaeomoonwalker, CC0 (<a href="https://creativecommons.org/publicdomain/zero/1.0/deed.en" rel="noopener">licence</a>)</li>
 <li><a href="https://commons.wikimedia.org/wiki/File:Saint_Patricks_Cathedral_%E2%80%93_Pre_Guinness_Restoration.jpg" rel="noopener">The cathedral in 1814</a>: James Whitelaw, Public domain</li>
 <li><a href="https://commons.wikimedia.org/wiki/File:St_Patrick%27s_Cathedral,_Dublin_-_WL.jpg" rel="noopener">Lawrence Collection photograph</a>: William Lawrence (Lawrence Collection), Public domain</li>
-</ul></section>
+{"".join(f'<li><a href="{v[3]}" rel="noopener">{esc(v[0])}</a>: {esc(v[1])}, {v[2]} (<a href="{v[4]}" rel="noopener">licence</a>)</li>' for v in WILD_PHOTOS.values())}</ul></section>
 <section><h2>Printed sources</h2><ul class="links plain">
 <li>Rev. Myles V. Ronan, “The Poddle River and its Branches”, Journal of the Royal Society of Antiquaries of Ireland, 6th series, vol. 17, no. 1 (1927), pp. 39–46</li>
 <li>D. McEntee and M. Corcoran, The Rivers Dodder and Poddle: Mills, Storms, Droughts and the Public Water Supply</li>
@@ -698,6 +718,7 @@ write("sources.html", shell("sources", f"Sources · {SITE}", "Maps, reports and 
 # withheld in the reports on purpose, so never add them here.
 WILDLIFE = [
  ("Where the wildlife is", [
+   wfig("tymon-2", "tymon-1"),
    "Almost everything that has been recorded lives on the open stretch of the river, through Tymon North, Tymon Park, Whitehall Park and Ravensdale Park. From Kimmage down, the Poddle runs mostly in walls and culverts, and very little has been found there.",
    "Most of what we know comes from the ecologists who surveyed the river for the River Poddle Flood Alleviation Scheme between 2018 and 2022. Their reports are in the scheme’s planning file, and they are listed at the bottom of this page."]),
  ("The water", [
@@ -705,24 +726,30 @@ WILDLIFE = [
    "The city and county councils are working hard to address that. As part of the flood scheme, an integrated constructed wetland is being created in Tymon Park: a series of planted ponds that cleans the water naturally as it passes through, with the aim of bringing it up to a “good” standard.",
    "Pollution is an old problem for the Poddle. In the 18th century the mills along its banks had already turned it into what Whitelaw and Walsh called “an immense sewer”, and there are accounts of cattle and horses dying after drinking from it."]),
  ("Fish", [
+   wfig("stickleback"),
    "The only fish caught when the river was electrofished in August and September 2020 was the three-spined stickleback. There were hundreds at Whitehall Park, but only five to ten at each of the other sites. Inland Fisheries Ireland says minnows live in the river too.",
    "There are no trout, salmon or eels. Inland Fisheries Ireland told the engineers that the Poddle is “not a salmonid river”. The 2020 survey found that the gravel beds should suit young brown trout and eels, and said their absence “suggests that there are barriers to fish movement”: the culverts, and the syphon that carries the river under the Grand Canal."]),
  ("Otters", [
+   wfig("otter"),
    "The otter is the river’s good-news story. In the surveys of 2018 and 2019, the ecologists found “no otter holts, nor any other evidence of otter”. Then in September 2020 a holt was found in Tymon North.",
    "A survey in February 2021 recorded 11 signs of otters, including droppings (called spraints) and two holts, one in use. Fish scales from roach were found near Kimmage Cross Roads, possibly left by an otter, but no other signs were found below Tymon North. The ecologists described it as “a natural colonisation of the river by otters”.",
    "The Poddle is still a minor otter river. A study of Dublin’s rivers for Dublin City Council found many more signs on the Dodder and the Tolka, and said the Poddle and the Camac “appeared to support far fewer otters”."]),
  ("Bats, badgers and other mammals", [
+   wfig("pipistrelle"),
    "Bats feed along the river and over the Tymon lakes. Surveys in 2018 and 2019 recorded the common pipistrelle, which was active all night, the soprano pipistrelle, including at Mount Argus, and Leisler’s bat, Ireland’s largest. A bat that was probably a Daubenton’s, which hunts insects just above the water, was also picked up over Tymon. Most activity was over the reedbeds at the edge of Tymon Lake. Old trees in Mount Argus Park and the grounds of Kimmage Manor could make good roosts.",
    "Badgers have setts in Tymon North. Their exact location is kept out of the reports to protect them.",
    "Hedgehogs, pygmy shrews and stoats have been recorded in the surrounding area and may use the river banks, though none were seen in the surveys."]),
  ("Birds", [
+   wfig("swan"),
    "The Tymon lakes are the best place for birds on the river. Ecologists counted 19 kinds of waterbird there in early 2018, and 2,616 birds over eight visits in the winter of 2021–22. The commonest are black-headed gulls, common gulls, herring gulls, mallard, moorhens, coots, mute swans, tufted ducks, little grebes and teal. Wigeon, shoveler and snipe have also been seen.",
    "Mute swans, mallard, coots and moorhens nest around the ponds. In April 2022 a swan was sitting on a nest in the reedbed at the south-east corner of Tymon Lake. The flood scheme’s plans include floating nesting platforms for the lake.",
    "Grey herons and little egrets fish in the river and the ponds, and grey wagtails feed along the stream. A water rail was reported in the Tymon reedbeds in the winter of 2021–22, a new record that the ecologists rated of county importance. No kingfishers or dippers were seen, though both live on the Dodder nearby.",
+   wfig("heron", "egret", "grey-wagtail"),
    "Tymon Park used to be an important feeding ground for Brent geese, which fly in from Arctic Canada for the winter: about 1,200 were reported in 2008 and 700 in 2009. Disturbance by dogs has largely stopped this, and only a few have been seen since. An Taisce argued that the flood scheme’s report played them down."]),
  ("Frogs, newts and insects", [
    "Common frogs and smooth newts probably breed in the ponds at Tymon Park and Mount Argus, although the surveys did not find any. Dragonflies, including the brown rod dragonfly, hunt over the Tymon lakes, and the meadows and reedbeds hold a wide variety of insects."]),
  ("Plants", [
+   wfig("flowering-rush", "helleborine"),
    "In the river itself grow watercress, spiked water-milfoil, pink water-speedwell, pondweed and green algae. Around Tymon Lake there are reedbeds of common reed and bulrush, with yellow iris, great willowherb, meadowsweet and purple-loosestrife. The meadow north and east of the lake is rich in wildflowers, including yellow-rattle, selfheal and what is probably a common spotted-orchid.",
    "Three rare plants have been found. Flowering rush, which is rare in Dublin, grows in the river below Tymon Lake, and the council has planted more at the Limekiln lakes. Galingale, a tall sedge, grows around Tymon Lake, in what may be its only wild site in Ireland, though it was probably brought in. And four stems of broad-leaved helleborine, a wild orchid, were found on bare ground near Fortfield Road.",
    "The woods of Tymon Park are mostly beech, poplar, ash, horse chestnut, willow, maple, sycamore and birch, with wet willow and alder woodland around some of the ponds.",
