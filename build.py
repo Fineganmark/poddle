@@ -713,7 +713,7 @@ write("media.html", shell("media", f"Media · {SITE}", "Films, television and wr
 # About
 about = f'''<div class="wrap page narrow"><header class="page-head"><p class="kicker">About</p><h1>About this site</h1>
 <p class="dek">A personal project tracing the Poddle from Tallaght to the Liffey.</p></header>
-<section><p>Ironically, the CFRAM Poddle options report of the 2000s examined an option for flood relief: “A suitable diversion route has been identified from the Poddle to the Dodder along Tymon Park running south of the M50.” Eight centuries after the monks turned the Dodder into the Poddle, the engineers proposed sending it back.</p></section>
+<section><p>As an engineer with an interest in both history and how things work, the Poddle has long been a fascination of mine. I hope you have enjoyed these pages, and if you get a chance to <a href="shop.html">support the page</a> to keep it alive and free, that would be amazing.</p></section>
 <section id="contact"><h2>Get in touch</h2>
 <ul>
 <li>We would love to hear more interesting facts and stories about the Poddle, so please share them.</li>
