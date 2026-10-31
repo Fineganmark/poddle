@@ -7,7 +7,7 @@ def _v(*names):
     for n in names:
         h.update(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), n), "rb").read())
     return h.hexdigest()[:8]
-ASSET_V = _v("site.css", "map.js", "levels.js", "quotes.js", "planmap.js", "nav.js", )
+ASSET_V = _v("site.css", "map.js", "levels.js", "quotes.js", "planmap.js", "nav.js", "maps.js", )
 
 OUT = os.path.dirname(os.path.abspath(__file__))
 SITE = "The River Poddle, Dublin"   # title suffix
@@ -633,10 +633,28 @@ walk_page = f'''<div class="wrap page"><header class="page-head"><p class="kicke
 write("walk.html", shell("walk", f"The river walk · {SITE}", "Walk the River Poddle in sixteen stops, from its source in Tallaght through Kimmage, Harold’s Cross and the Liberties to the Liffey at Wellington Quay.", walk_page, "walk.html"))
 write("index.html", shell("index", "The River Poddle: Dublin’s hidden river, from Tallaght to the Liffey", "The River Poddle gave Dublin its name. Follow Dublin’s hidden river from Tallaght to the Liffey: its history, mills, floods, a sixteen-stop river walk and an interactive map.", home, "index.html"))
 
-# History index
+# History index: one large map that cross-fades through the four periods (maps.js),
+# with dated thumbnails to pick one. The Poddle is baked in light blue by scripts/poddle_highlight.py.
+def map_show(maps):
+    slides = "".join(
+        f'<figure class="ms-slide{" on" if i == 0 else ""}" id="ms-{y}"{"" if i == 0 else " aria-hidden=\"true\""}>'
+        f'<img src="img/dublin-{y}-poddle.jpg" alt="{esc(cap)}, with the River Poddle highlighted in light blue" width="1600" height="1145" loading="{"eager" if i == 0 else "lazy"}"></figure>'
+        for i, (y, cap) in enumerate(maps))
+    thumbs = "".join(
+        f'<li><a class="ms-thumb" href="img/dublin-{y}-poddle.jpg" data-i="{i}"{" aria-current=\"true\"" if i == 0 else ""}>'
+        f'<img src="img/dublin-{y}-poddle-thumb.jpg" alt="" width="320" height="229" loading="lazy"><span>c. {cap.split("c. ")[1]}</span></a></li>'
+        for i, (y, cap) in enumerate(maps))
+    return (f'<section class="map-show" aria-label="Maps of Dublin from c. 840 to c. 1300">'
+            f'<div class="ms-stage">{slides}</div>'
+            f'<div class="ms-bar"><p class="ms-cap" aria-live="polite">{esc(maps[0][1])}</p>'
+            f'<button class="ms-play" type="button" hidden aria-pressed="false">Pause</button></div>'
+            f'<ol class="ms-thumbs">{thumbs}</ol>'
+            f'<p class="ms-note">The River Poddle is picked out in light blue. Maps from the Irish Historic Towns Atlas (2002).</p></section>'
+            f'<script src="maps.js?v={ASSET_V}" defer></script>')
+
 hist = f'''<div class="wrap page"><header class="page-head"><p class="kicker">History</p><h1>How the Poddle shaped Dublin</h1>
 <p class="dek">From the black pool of Dubh Linn to the flood scheme being built today. This is a friendly telling, drawn from many sources that sometimes disagree; where the record is thin we say so, and corrections are always welcome. Some of the most interesting facts come from <a href="planning-record.html">the planning files</a>, linked from the chapters below.</p></header>
-<div class="maps">{figures([("dublin-840","Dublin c. 840"),("dublin-1000","Dublin c. 1000"),("dublin-1170","Dublin c. 1170"),("dublin-1370","Dublin c. 1370")])}</div>
+{map_show([("840","Dublin c. 840"),("1000","Dublin c. 1000"),("1170","Dublin c. 1170"),("1370","Dublin c. 1300")])}
 <ol class="tl big">{"".join(f'<li><a href="{h["slug"]}.html"><span class="when">{esc(h["when"])}</span><strong>{esc(h["name"])}</strong><span>{esc(h["teaser"])}</span></a></li>' for h in HISTORY)}</ol></div>'''
 write("history.html", shell("history", f"History · {SITE}", "How the River Poddle shaped Dublin, from the black pool of Dubh Linn to medieval diversions, mills, the 1719 Act and today’s flood scheme.", hist, "history.html"))
 
