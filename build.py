@@ -294,7 +294,7 @@ HISTORY = [
   sections=[("The second diversion", [
     "The second diversion was no less ingenious. In 1245, at what is now Harold’s Cross, the stream was split by the Tongue, a stone shaped like the bow of a boat and known locally as the Stone Boat. It sent part of the Poddle’s water west to St Thomas’s Abbey.",
     "You can still see both diversions. The first is no longer used, but its workings can be seen at Balrothery, near Tymon Park, just outside the M50. The Tongue, or Stone Boat, is still in the river near Mount Argus."])],
-  images=[("stone-boat", "The Stone Boat"), ("dublin-1370", "Dublin c. 1370")],
+  images=[("stone-boat", "The Stone Boat"), ("dublin-1370", "Dublin c. 1300")],
   link=("stone-boat", "See the Stone Boat on the river walk")),
  dict(slug="city-watercourse", name="The City Watercourse and the Abbey Stream", when="1245 to 1324",
   teaser="Two channels made for the monks and the city, and how to find them on the map.",
