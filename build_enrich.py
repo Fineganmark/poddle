@@ -2,7 +2,7 @@
 BRIEF = {
  "fettercairn-house": "The Poddle’s catchment begins around Fettercairn House in Tallaght. From the hills above, the river runs about 11.6 km to the Liffey.",
  "bancroft": "Bancroft Park is the first public stretch of the Poddle, named after a castle that has long since gone.",
- "tymon": "A ruined tower house, an Ice Age esker and now the flood lake: Tymon Park holds both the river’s past and its protection.",
+ "tymon": "A ruined tower house, an Ice Age esker and now the flood lake: Tymon Park holds the river’s past and is the most accessible part of the watercourse today.",
  "balrothery-weir": "Medieval monks turned part of the Dodder towards Dublin here before 1244, and the Poddle has been part of the Dodder’s story ever since.",
  "m50-crossing": "The river passes under the M50 here, in a culvert, where the motorway splits Tymon Park in two.",
  "dodder-overflow": "A sluice and channel that send flood water from the Poddle back towards the Dodder at Terenure.",
