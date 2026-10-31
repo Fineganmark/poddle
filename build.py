@@ -286,7 +286,9 @@ HISTORY = [
     "Who built the weir in the first place is less certain. Most accounts say the monks of St Thomas’s had it before 1244 and the citizens enlarged it. Others date the watercourse to between 1245 and 1254, or the weir itself to 1254, and one reading of the evidence puts the weir as early as the late 12th century. The Balrothery Weir page sets these out side by side."]),
    ("A shared river", [
     "The city and the Abbey had to share. Under their agreement the city paid for works on the monks’ weir on the Dodder, and the Abbey was paid a mark and a yearly rent of five marks, though the payments were sometimes late or missed. A public cistern outside James’s Gate is recorded supplying citizens in 1254, and a second conduit was built at the Cornmarket by the mayor John Le Decer in 1308.",
-    "<p>Further down, at Harold’s Cross, the combined stream was split again by the Tongue, so that one third went to the city and two thirds to the Abbey mills. That is <a href=\"second-diversion.html\">the second diversion</a>.</p>"])],
+    "<p>Further down, at Harold’s Cross, the combined stream was split again by the Tongue, so that one third went to the city and two thirds to the Abbey mills. That is <a href=\"second-diversion.html\">the second diversion</a>.</p>"]),
+   ("Sending it back", [
+    "Ironically, the CFRAM Poddle options report of the 2000s examined an option for flood relief: “A suitable diversion route has been identified from the Poddle to the Dodder along Tymon Park running south of the M50.” Eight centuries after the monks turned the Dodder into the Poddle, the engineers proposed sending it back."])],
   images=[("ronan-1927-map-ii", "The Dodder, the Poddle and the City Water, with the weir (B, “Head”) and the Tongue (E). Map II from Rev. Myles V. Ronan, “The Poddle River and its Branches”, Journal of the Royal Society of Antiquaries of Ireland, 1927."), ("diversion-map", "The diversion from the Dodder to the Poddle"), ("dublin-1170", "Dublin c. 1170")],
   link=("balrothery-weir", "Read the full story of Balrothery Weir on the river walk")),
  dict(slug="second-diversion", name="The second diversion", when="1245",
