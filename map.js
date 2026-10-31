@@ -84,15 +84,9 @@
     "The river": riverLayer, "Abbey Stream": groups.abbey, "City Watercourse, Tenter and Commons Waters": groups.watercourse, "Dodder Overflow": groups.overflow, "River walk stops": stops, "Mill sites": mills,
     "Flood scheme works": works, "Archaeology and monuments": digs, "Dodder gauges": gauges
   }, { collapsed: false }).addTo(map);
-  // On phones the tick boxes would cover half the map, so move them into the box below it.
-  var below = document.getElementById("layers"), narrow = window.matchMedia ? window.matchMedia("(max-width: 760px)") : null;
-  function placeLayers() {
-    var box = layerCtl.getContainer(), onPhone = narrow && narrow.matches;
-    if (onPhone && below && box.parentNode !== below) below.appendChild(box);
-    else if (!onPhone && below && box.parentNode === below) { layerCtl.remove(); layerCtl.addTo(map); }
-  }
-  placeLayers();
-  if (narrow) { if (narrow.addEventListener) narrow.addEventListener("change", placeLayers); else if (narrow.addListener) narrow.addListener(placeLayers); }
+  // The tick boxes sit in the box below the map, so they never cover it.
+  var below = document.getElementById("layers");
+  if (below) below.appendChild(layerCtl.getContainer());
 
   var all = L.featureGroup(stops.getLayers());
   map.fitBounds(all.getBounds().pad(0.08));
