@@ -9,7 +9,7 @@ BRIEF = {
  "kimmage-manor": "A Victorian MP’s house, now a mission centre, built over the stream at Kimmage.",
  "ravensdale": "A valley of old mills, and now the scheme’s main flood storage within the city.",
  "stone-boat": "A stone shaped like a boat’s bow splits the river at Kimmage, sending part of it to St Thomas’s Abbey.",
- "mount-argus": "A park beside a monastery, where mills once stood and flood defences now go in.",
+ "mount-argus": "A park beside a historic monastery, where mills once stood.",
  "mount-jerome": "A Victorian cemetery beside the river, and the place where it starts to go underground.",
  "st-patricks": "The cathedral was built on an island between two streams, and the river flooded it for centuries.",
  "ship-street-little": "A street named for sheep, beside a ravine that is among the deepest digs in Dublin’s history.",
