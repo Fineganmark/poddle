@@ -64,7 +64,7 @@ STOPS = [
     "Tymon Esker, along which Tymon Lane now runs, is a rare and important feature of the park. An esker is a long ridge of sand and gravel laid down by a stream flowing under a glacier, in this case during the last Ice Age, more than 10,000 years ago.",
     "Tymon Lane, along the ridge, was an important link between Tallaght and the townlands of Dublin, and Tymon Castle was built beside it."])],
   images=[("timon-castle-1791", "Timon Castle, 1791"), ("tymon-aerial-picture", "Tymon Park from the air"), ("greenhills-esker", "The line of the Greenhills Esker")],
-  links=[("Video: Tymon Park’s esker (The Echo)", "https://youtu.be/-oMSnnBhdbI"), ("Tymon Park impoundment area becomes operational (Poddle FAS)", "https://www.poddlefas.ie/news/tymon-park-impoundment-area-becomes-operational")]),
+  links=[("Wildlife of the Poddle: otters, bats and the birds of the Tymon lakes", "wildlife.html"), ("Video: Tymon Park’s esker (The Echo)", "https://youtu.be/-oMSnnBhdbI"), ("Tymon Park impoundment area becomes operational (Poddle FAS)", "https://www.poddlefas.ie/news/tymon-park-impoundment-area-becomes-operational")]),
  dict(slug="balrothery-weir", name="Balrothery Weir", place="Firhouse, on the Dodder",
   teaser="Where medieval engineers turned the Dodder towards the city.",
   sections=[("The City Weir", [
@@ -475,7 +475,7 @@ def esc(s): return html.escape(s, quote=True)
 def para(p):
     return p if p.startswith("<") else f"<p>{esc(p)}</p>"
 
-NAV = [("walk.html", "River walk"), ("map.html", "Map"), ("history.html", "History"), ("river-data.html", "Live data"), ("media.html", "Media"), ("sources.html", "Sources"), ("shop.html", "Shop"), ("about.html", "About")]
+NAV = [("walk.html", "River walk"), ("map.html", "Map"), ("history.html", "History"), ("wildlife.html", "Wildlife"), ("river-data.html", "Live data"), ("media.html", "Media"), ("sources.html", "Sources"), ("shop.html", "Shop"), ("about.html", "About")]
 
 def shell(slug, title, desc, body, active, image=None, article=False, noindex=False):
     nav = "".join(f'<a href="{h}"{" aria-current=\"page\"" if h == active else ""}>{t}</a>' for h, t in NAV)
@@ -693,6 +693,61 @@ src = f'''<div class="wrap page narrow"><header class="page-head"><p class="kick
 <figure class="fig"><img src="img/journal-article.jpg" alt="Cover of the Journal of the Royal Society of Antiquaries of Ireland" loading="lazy"><figcaption>Journal of the Royal Society of Antiquaries of Ireland, 1927</figcaption></figure>
 </div>'''
 write("sources.html", shell("sources", f"Sources · {SITE}", "Maps, reports and articles about the River Poddle.", src, "sources.html"))
+
+# Wildlife: from the flood scheme's ecology surveys (2018-2022). Badger sett locations are
+# withheld in the reports on purpose, so never add them here.
+WILDLIFE = [
+ ("Where the wildlife is", [
+   "Almost everything that has been recorded lives on the open stretch of the river, through Tymon North, Tymon Park, Whitehall Park and Ravensdale Park. From Kimmage down, the Poddle runs mostly in walls and culverts, and very little has been found there.",
+   "Most of what we know comes from the ecologists who surveyed the river for the River Poddle Flood Alleviation Scheme between 2018 and 2022. Their reports are in the scheme’s planning file, and they are listed at the bottom of this page."]),
+ ("The water", [
+   "The Poddle is not a clean river. When the Environmental Protection Agency sampled it at Priory Road, Kimmage, in 2007, it scored Q3 on the EPA’s scale, which means moderately polluted. It has not been monitored since, and the flood scheme’s ecologists thought its status was probably “poor” or “bad”.",
+   "A second set of samples in 2020 also scored Q3 at all four sites tested. The ecologists found none of the mayflies or stoneflies that need clean water, only hardier creatures: leeches, midge larvae, water hoglice and small snails. At Tymon Park the water was grey, which they took as a sign of some pollution.",
+   "It is an old problem. In the 18th century the mills had already turned the river into what Whitelaw and Walsh called “an immense sewer”, and there are accounts of cattle and horses dying after drinking from it."]),
+ ("Fish", [
+   "The only fish caught when the river was electrofished in August and September 2020 was the three-spined stickleback. There were hundreds at Whitehall Park, but only five to ten at each of the other sites. Inland Fisheries Ireland says minnows live in the river too.",
+   "There are no trout, salmon or eels. Inland Fisheries Ireland told the engineers that the Poddle is “not a salmonid river”. The 2020 survey found that the gravel beds should suit young brown trout and eels, and said their absence “suggests that there are barriers to fish movement”: the culverts, and the syphon that carries the river under the Grand Canal."]),
+ ("Otters", [
+   "The otter is the river’s good-news story. In the surveys of 2018 and 2019, the ecologists found “no otter holts, nor any other evidence of otter”. Then in September 2020 a holt was found in Tymon North.",
+   "A survey in February 2021 recorded 11 signs of otters, including droppings (called spraints) and two holts, one in use. Fish scales from roach were found near Kimmage Cross Roads, possibly left by an otter, but no other signs were found below Tymon North. The ecologists described it as “a natural colonisation of the river by otters”.",
+   "The Poddle is still a minor otter river. A study of Dublin’s rivers for Dublin City Council found many more signs on the Dodder and the Tolka, and said the Poddle and the Camac “appeared to support far fewer otters”."]),
+ ("Bats, badgers and other mammals", [
+   "Bats feed along the river and over the Tymon lakes. Surveys in 2018 and 2019 recorded the common pipistrelle, which was active all night, the soprano pipistrelle, including at Mount Argus, and Leisler’s bat, Ireland’s largest. A bat that was probably a Daubenton’s, which hunts insects just above the water, was also picked up over Tymon. Most activity was over the reedbeds at the edge of Tymon Lake. Old trees in Mount Argus Park and the grounds of Kimmage Manor could make good roosts.",
+   "Badgers have setts in Tymon North. Their exact location is kept out of the reports to protect them.",
+   "Hedgehogs, pygmy shrews and stoats have been recorded in the surrounding area and may use the river banks, though none were seen in the surveys."]),
+ ("Birds", [
+   "The Tymon lakes are the best place for birds on the river. Ecologists counted 19 kinds of waterbird there in early 2018, and 2,616 birds over eight visits in the winter of 2021–22. The commonest are black-headed gulls, common gulls, herring gulls, mallard, moorhens, coots, mute swans, tufted ducks, little grebes and teal. Wigeon, shoveler and snipe have also been seen.",
+   "Mute swans, mallard, coots and moorhens nest around the ponds. In April 2022 a swan was sitting on a nest in the reedbed at the south-east corner of Tymon Lake. The flood scheme’s plans include floating nesting platforms for the lake.",
+   "Grey herons and little egrets fish in the river and the ponds, and grey wagtails feed along the stream. A water rail was reported in the Tymon reedbeds in the winter of 2021–22, a new record that the ecologists rated of county importance. No kingfishers or dippers were seen, though both live on the Dodder nearby.",
+   "Tymon Park used to be an important feeding ground for Brent geese, which fly in from Arctic Canada for the winter: about 1,200 were reported in 2008 and 700 in 2009. Disturbance by dogs has largely stopped this, and only a few have been seen since. An Taisce argued that the flood scheme’s report played them down."]),
+ ("Frogs, newts and insects", [
+   "Common frogs and smooth newts probably breed in the ponds at Tymon Park and Mount Argus, although the surveys did not find any. Dragonflies, including the brown rod dragonfly, hunt over the Tymon lakes, and the meadows and reedbeds hold a wide variety of insects."]),
+ ("Plants", [
+   "In the river itself grow watercress, spiked water-milfoil, pink water-speedwell, pondweed and green algae. Around Tymon Lake there are reedbeds of common reed and bulrush, with yellow iris, great willowherb, meadowsweet and purple-loosestrife. The meadow north and east of the lake is rich in wildflowers, including yellow-rattle, selfheal and what is probably a common spotted-orchid.",
+   "Three rare plants have been found. Flowering rush, which is rare in Dublin, grows in the river below Tymon Lake, and the council has planted more at the Limekiln lakes. Galingale, a tall sedge, grows around Tymon Lake, in what may be its only wild site in Ireland, though it was probably brought in. And four stems of broad-leaved helleborine, a wild orchid, were found on bare ground near Fortfield Road.",
+   "The woods of Tymon Park are mostly beech, poplar, ash, horse chestnut, willow, maple, sycamore and birch, with wet willow and alder woodland around some of the ponds.",
+   "Three invasive plants have been recorded: giant rhubarb at Tymon Lake, which has since been removed, a small patch of Japanese knotweed in the north-west of Tymon Park, and Nuttall’s waterweed in the river channel."])]
+WILDLIFE_SRC = [
+ ("Flood scheme EIAR, Chapter 7: Biodiversity (NM Ecology, February 2020)", "https://www.pleanala.ie/publicaccess/EIAR-NIS/306725/River%20Poddle%20FAS/Part%203%20EIAR/Volume%202%20EIAR/Part%20II/7.%20Biodiversity.pdf"),
+ ("Electrofishing survey and Q-value analysis (AQUAFACT, 2020)", "https://www.poddlefas.ie/_fileupload/Appendix%206%20Electrofishing%20Survey%20&%20Q%20Value%20Analysis/Appendix%206_%20River%20Poddle%20Electrofishing%20Report%20&%20Q%20Value%20Analysis.pdf"),
+ ("Winter bird and mammal surveys, including the 2021 otter survey (NM Ecology, April 2022)", "https://www.poddlefas.ie/_fileupload/RFI%20Attachment%20no_%202%20Wintering%20Birds%20&%20Mammals%20Report.pdf"),
+ ("The Echo: study of Dublin’s waterways finds 200 signs of otters", "https://www.echo.ie/?p=119981"),
+ ("Ask About Ireland: wildlife of the lakes in South Dublin’s parks", "https://askaboutireland.ie/reading-room/environment-geography/flora-fauna/wildlife-of-the-parks-of-/lakes-and-lakesides"),
+ ("Dublin Inquirer: residents debate the environmental impact of the flood scheme (March 2020)", "https://www.dublininquirer.com/residents-debate-environmental-impact-of-a-plan-to-build-flood-defences-on-the-river-poddle/"),
+]
+wild = (f'<article class="wrap page">'
+  f'<header class="page-head"><p class="kicker">Nature</p><h1>Wildlife of the Poddle</h1>'
+  f'<p class="dek">Otters, bats, herons and a rare orchid: what lives along Dublin’s hidden river.</p></header>'
+  f'<aside class="brief"><strong>In brief</strong><p>The Poddle is still a polluted river, and only sticklebacks and minnows live in it. But otters have moved into its upper reaches since 2020, bats hunt along it, and the lakes at Tymon Park hold swans, herons, egrets and rare plants.</p></aside>'
+  f'<div class="page-grid solo"><div class="text">'
+  + "\n".join(f'<section id="{slug_id(h)}"><h2>{esc(h)}</h2>{"".join(para(p) for p in ps)}</section>' for h, ps in WILDLIFE)
+  + '<section class="watch"><h2>Sources</h2><p class="note">These surveys were done for the River Poddle Flood Alleviation Scheme, except where noted. Records are of what the surveyors saw on the days they visited, so other animals and plants may well be there.</p><ul>'
+  + "".join(f'<li><a href="{u}" rel="noopener">{esc(t)}</a></li>' for t, u in WILDLIFE_SRC)
+  + '</ul></section>'
+  f'<p class="xlink"><a href="tymon.html">Walk the river: Tymon Park →</a></p></div></div></article>')
+write("wildlife.html", shell("wildlife", f"Wildlife of the Poddle · {SITE}",
+      "Otters, bats, herons, sticklebacks and rare plants: what lives along the River Poddle in Dublin, from the flood scheme’s ecology surveys.",
+      wild, "wildlife.html", article=True))
 
 # Media
 MEDIA = [
