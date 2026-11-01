@@ -18,6 +18,7 @@ OG_DEFAULT = "img/og-poddle.jpg"   # 1200x630 social preview card
 GOOGLE_VERIFY = ""
 GOATCOUNTER = "poddle"  # cookieless visitor counter: https://poddle.goatcounter.com
 BING_VERIFY = ""
+SOCIAL = [("Facebook", "https://www.facebook.com/profile.php?id=61595988096383"), ("Instagram", "https://www.instagram.com/poddle.ie/")]
 SITEMAP = []   # slugs that go into sitemap.xml, filled by shell()
 FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com">'
          '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
@@ -516,7 +517,7 @@ def shell(slug, title, desc, body, active, image=None, article=False, noindex=Fa
               "image": img, "url": url, "inLanguage": "en-IE", "isPartOf": site,
               "about": {"@type": "RiverBodyOfWater", "name": "River Poddle", "sameAs": "https://en.wikipedia.org/wiki/River_Poddle"}}
     elif slug == "index":
-        ld = dict(site, **{"@context": "https://schema.org", "description": desc,
+        ld = dict(site, **{"@context": "https://schema.org", "description": desc, "sameAs": [u for _, u in SOCIAL],
               "about": {"@type": "RiverBodyOfWater", "name": "River Poddle", "sameAs": "https://en.wikipedia.org/wiki/River_Poddle"}})
     else:
         ld = {"@context": "https://schema.org", "@type": "WebPage", "name": title, "description": desc, "url": url, "inLanguage": "en-IE", "isPartOf": site}
@@ -539,7 +540,8 @@ def shell(slug, title, desc, body, active, image=None, article=False, noindex=Fa
             f'<button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav"><span class="bars" aria-hidden="true"></span><span class="lbl">Menu</span></button><nav id="site-nav" aria-label="Main">{nav}</nav></div></header>\n'
             f'<main id="main">{body}</main>\n'
             f'<footer class="foot"><div class="wrap foot-in"><p>The Poddle: a history of Dublin’s hidden river, from Tallaght to the Liffey.</p>'
-            f'<p>Photographs and maps are credited where known. Third-party images are used for local-history purposes.</p></div></footer>\n'
+            f'<p>Photographs and maps are credited where known. Third-party images are used for local-history purposes.</p>'
+            f'<p class="social">Follow the river on ' + " and ".join(f'<a href="{u}" rel="noopener me">{n}</a>' for n, u in SOCIAL) + '.</p></div></footer>\n'
             f'<script src="nav.js?v={ASSET_V}" defer></script>\n'
             + (f'<script data-goatcounter="https://{GOATCOUNTER}.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>\n' if GOATCOUNTER else ''))
     if slug == "index" and not os.environ.get("STATIC"):
