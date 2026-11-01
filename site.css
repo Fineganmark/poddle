@@ -376,3 +376,10 @@ html { scroll-behavior: smooth; }
 .fig.diagram img { width: 100%; height: auto; }
 .text section:has(.fig.diagram) { max-width: none; }
 .text section:has(.fig.diagram) > :not(.fig) { max-width: var(--measure); }
+
+/* teachers' page: suggested pages by class level */
+.levels-grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); }
+.level { background: var(--sheet); border: 1px solid var(--rule); border-top: 3px solid var(--river); padding: 14px 16px; display: grid; gap: 8px; align-content: start; }
+.level h3 { font-size: 1.15rem; }
+.level ul { margin: 0; padding-left: 1.1em; display: grid; gap: 6px; font-size: .95rem; }
+.page.narrow ul { margin: 0; padding-left: 1.2em; display: grid; gap: 6px; }

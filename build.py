@@ -541,7 +541,8 @@ def shell(slug, title, desc, body, active, image=None, article=False, noindex=Fa
             f'<main id="main">{body}</main>\n'
             f'<footer class="foot"><div class="wrap foot-in"><p>The Poddle: a history of Dublin’s hidden river, from Tallaght to the Liffey.</p>'
             f'<p>Photographs and maps are credited where known. Third-party images are used for local-history purposes.</p>'
-            f'<p class="social">Follow the river on ' + " and ".join(f'<a href="{u}" rel="noopener me">{n}</a>' for n, u in SOCIAL) + '.</p></div></footer>\n'
+            f'<p class="social">Follow the river on ' + " and ".join(f'<a href="{u}" rel="noopener me">{n}</a>' for n, u in SOCIAL) + '.</p>'
+            f'<p><a href="schools.html">For teachers</a> · <a href="privacy.html">Privacy</a></p></div></footer>\n'
             f'<script src="nav.js?v={ASSET_V}" defer></script>\n'
             + (f'<script data-goatcounter="https://{GOATCOUNTER}.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>\n' if GOATCOUNTER else ''))
     if slug == "index" and not os.environ.get("STATIC"):
@@ -832,7 +833,7 @@ about = f'''<div class="wrap page narrow"><header class="page-head"><p class="ki
 <section id="contact"><h2>Get in touch</h2>
 <ul>
 <li>We would love to hear more interesting facts and stories about the Poddle, so please share them.</li>
-<li>We are available to give talks and share what we know, so please reach out if you would like to organise one.</li>
+<li>We are available to give talks and share what we know, so please reach out if you would like to organise one. Teachers, there are free class ideas on the <a href="schools.html">teachers’ page</a>.</li>
 <li>There is a great deal of information about the Poddle, and much of it conflicts. If you spot something wrong, please let us know.</li>
 </ul>
 <form class="contact" action="https://formsubmit.co/quefive@gmail.com" method="POST">
@@ -849,6 +850,68 @@ about = f'''<div class="wrap page narrow"><header class="page-head"><p class="ki
 write("about.html", shell("about", f"About · {SITE}", "About poddle.ie, a free local-history site about the River Poddle, Dublin’s hidden river. Send corrections, memories and photographs.", about, "about.html"))
 write("thanks.html", shell("thanks", f"Thank you · {SITE}", "Message sent.", '<div class="wrap page narrow"><header class="page-head"><h1>Thank you</h1><p class="dek">Your message has been sent. We will be in touch if a reply is needed.</p></header><p><a href="index.html">Back to the home page</a></p></div>', "about.html", noindex=True))
 
+# ---------------------------------------------------------------- teachers and privacy
+# For teachers: free classroom use of the site, pages suggested by class level.
+# Linked from the footer, the shop and the schools email (poddle.ie/schools).
+SCHOOL_LEVELS = [
+ ("1st and 2nd class", "Where is the river?", [
+   ("map.html", "The map", "find the school, then follow the blue line to the Liffey"),
+   ("wildlife.html", "Wildlife", "otters, swans, herons and sticklebacks"),
+   ("tymon.html", "Tymon Park", "the river out in the open, with lakes and ducks")]),
+ ("3rd and 4th class", "How did the river shape our area?", [
+   ("walk.html", "The river walk", "sixteen stops from Tallaght to the Liffey, with photos"),
+   ("dubh-linn.html", "Dubh Linn", "the black pool that gave Dublin its name"),
+   ("mills.html", "The mills", "how the river powered the city for seven centuries")]),
+ ("5th and 6th class", "Why does it matter now?", [
+   ("history.html", "The history", "from Dubh Linn to medieval diversions and the 1719 Act"),
+   ("floods.html", "Floods and the flood scheme", "six centuries of flooding and the works to stop it"),
+   ("river-data.html", "Live data", "today’s river levels and the flood maps")]),
+]
+SCHOOL_IDEAS = [
+ "Find your school on the <a href=\"map.html\">map</a> and trace the river from there to the sea. Is it above ground or below it near you?",
+ "Compare the 1848 Ordnance Survey map on the <a href=\"walk.html\">river walk</a> with today’s streets on the <a href=\"map.html\">map</a>. What has changed, and what is still there?",
+ "Check the <a href=\"river-data.html\">live river levels</a> after a wet weekend, and talk about why the river rises so fast in a city of roofs and roads.",
+ "Pick a <a href=\"mill-sites.html\">mill site</a> near the school and find out what was made there and what stands there now.",
+ "Make a wildlife list for the river from the <a href=\"wildlife.html\">wildlife page</a>, then look for the same birds in a local park.",
+]
+schools = f'''<div class="wrap page narrow"><header class="page-head"><p class="kicker">For teachers</p><h1>Teaching the Poddle</h1>
+<p class="dek">Dublin’s hidden river runs from Tallaght to the Liffey, past or under many of south Dublin’s schools. Everything on this site is free to use in class, with no sign-up.</p></header>
+<aside class="brief"><strong>In brief</strong><p>The Poddle makes a ready-made local study for SESE history and geography: local history, rivers and water, change over time and caring for the environment. It also suits the Green-Schools Water theme.</p></aside>
+<section id="by-class"><h2>Pages for each class</h2>
+<div class="levels-grid">''' + "".join(
+  f'<div class="level"><h3>{esc(cl)}</h3><p class="note">{esc(q)}</p><ul>'
+  + "".join(f'<li><a href="{h}">{esc(t)}</a>: {esc(d)}</li>' for h, t, d in pages) + '</ul></div>'
+  for cl, q, pages in SCHOOL_LEVELS) + '''</div></section>
+<section id="ideas"><h2>Ideas for the classroom</h2><ul>''' + "".join(f'<li>{i}</li>' for i in SCHOOL_IDEAS) + f'''</ul></section>
+<section id="curriculum"><h2>Where it fits</h2><ul>
+<li><strong>History:</strong> local studies, and working with evidence such as old maps, photographs and written accounts.</li>
+<li><strong>Geography:</strong> rivers and the natural environment, and how a city was built over a river.</li>
+<li><strong>Environmental awareness and care:</strong> pollution, wildlife and keeping homes safe from flooding.</li>
+<li><strong>Green-Schools:</strong> a local river study for the Water theme.</li>
+</ul></section>
+<section id="walks"><h2>Visiting the river</h2>
+<p>The river is open to the air through Tymon Park, Whitehall Park and Ravensdale Park, and these are the best places to see it with a class. From Kimmage down it runs mostly in walls and culverts, though you can still follow its route through the streets.</p>
+<p class="note">Please plan any visit under your school’s own outings policy. Keep children back from the water’s edge, and never go near culvert openings or grilles.</p></section>
+<section id="workbooks"><h2>Workbooks, talks and walks</h2>
+<p>There are five <a href="shop.html">activity workbooks</a> about the river, each at three levels: 1st and 2nd class, 3rd and 4th class, and 5th and 6th class. Sales help keep this site free.</p>
+<p>I also give talks and guided walks for schools and groups. Please <a href="about.html#contact">get in touch</a> to arrange one, or to ask about anything on the site.</p></section>
+</div>'''
+write("schools.html", shell("schools", f"For teachers · {SITE}",
+      "Free classroom resources on the River Poddle, Dublin’s hidden river: pages for 1st to 6th class, classroom ideas and curriculum links for SESE history and geography.",
+      schools, ""))
+
+privacy = f'''<div class="wrap page narrow"><header class="page-head"><p class="kicker">Privacy</p><h1>Privacy notice</h1>
+<p class="dek">This site collects as little as it can. Here is what is kept, why, and how to ask for it to be removed.</p></header>
+<section><h2>Who runs this site</h2><p>poddle.ie is a personal, non-commercial project run by Mark Finegan in Dublin. You can contact me through the <a href="about.html#contact">form on the About page</a>.</p></section>
+<section><h2>Visitor counts</h2><p>The site counts visits with <a href="https://www.goatcounter.com" rel="noopener">GoatCounter</a>. It uses no cookies and does not track you across sites. It records which page was viewed, the site you came from, your browser and screen size and your country. Your IP address is not stored. There is no advertising on this site.</p></section>
+<section><h2>Messages you send</h2><p>If you use the contact form, your name, email address and message are passed through <a href="https://formsubmit.co" rel="noopener">FormSubmit</a> and delivered to me by email. I use them only to reply to you, and delete them when they are no longer needed, usually within a year.</p></section>
+<section><h2>Buying a workbook</h2><p>Workbooks are sold through <a href="https://payhip.com" rel="noopener">Payhip</a>, which handles payment and delivery under its own privacy policy. Payhip shares your name, email address and what you bought with me so I can help with any problem with your order. I never see your card details.</p></section>
+<section><h2>Schools</h2><p>I may email a school’s published office address to tell it about this free resource. I keep the school’s name, its published email address and the principal’s name, because it is in my legitimate interest to tell local schools about a free local-history resource, and the impact on them is small. Each email says how to opt out, and if a school asks me not to write again I keep a note of that so I never do. I delete the other details after a year if there is no reply.</p></section>
+<section><h2>Other sites</h2><p>The maps load street tiles from OpenStreetMap and the text uses Google Fonts, so your browser connects to those services to fetch them. Links to Facebook, Instagram, YouTube and other sites take you to services with their own privacy policies.</p></section>
+<section><h2>Your rights</h2><p>You can ask to see, correct or delete anything I hold about you, or object to my using it, through the <a href="about.html#contact">contact form</a>. If you are unhappy with how I have handled your data, you can complain to the <a href="https://www.dataprotection.ie" rel="noopener">Data Protection Commission</a>.</p>
+<p class="note">Last updated November 2026.</p></section>
+</div>'''
+write("privacy.html", shell("privacy", f"Privacy · {SITE}", "How poddle.ie handles visitor counts, contact messages, workbook orders and emails to schools.", privacy, ""))
 # ---------------------------------------------------------------- shop / support
 # Hosted checkout links. The site is static, so everything is sold off-site:
 # workbooks through a digital-download shop, t-shirts through print on demand.
