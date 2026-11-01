@@ -71,6 +71,18 @@
   (DATA.digs || []).forEach(function (d, i) { digs.getLayers()[i].bindPopup("<div class=\"pop\"><p class=\"pk\">" + esc(d[5] || "Archaeological site") + "</p><h3>" + esc(d[0]) + "</h3><p>" + esc(d[3]) + "</p><a href=\"" + d[4] + ".html\">What the planning file says →</a></div>", { maxWidth: 240 }); });
   mills.addTo(map);
 
+  // Where the river and the City Watercourse pass the Grand Canal
+  var crossings = L.layerGroup();
+  (DATA.crossings || []).forEach(function (c) {
+    var icon = L.divIcon({ className: "pin-cross", iconSize: [16, 16], iconAnchor: [8, 8] });
+    var img = c[5] ? "<img src=\"img/" + c[5] + "\" alt=\"Diagram of the siphon\" loading=\"lazy\">" : "";
+    L.marker([c[1], c[2]], { icon: icon, title: c[0] })
+      .bindPopup("<div class=\"pop\">" + img + "<p class=\"pk\">Canal crossing</p><h3>" + esc(c[0]) + "</h3><p>" + esc(c[3]) +
+        "</p><a href=\"" + c[4] + "\">How it works →</a></div>", { maxWidth: 280 })
+      .addTo(crossings);
+  });
+  crossings.addTo(map);
+
   var gauges = L.layerGroup();
   DATA.gauges.forEach(function (g) {
     var icon = L.divIcon({ className: "pin-gauge", iconSize: [16, 16], iconAnchor: [8, 8] });
@@ -81,7 +93,7 @@
   });
 
   var layerCtl = L.control.layers(null, {
-    "The river": riverLayer, "Abbey Stream": groups.abbey, "City Watercourse, Tenter and Commons Waters": groups.watercourse, "Dodder Overflow": groups.overflow, "River walk stops": stops, "Mill sites": mills,
+    "The river": riverLayer, "Abbey Stream": groups.abbey, "City Watercourse, Tenter and Commons Waters": groups.watercourse, "Dodder Overflow": groups.overflow, "River walk stops": stops, "Mill sites": mills, "Canal crossings": crossings,
     "Flood scheme works": works, "Archaeology and monuments": digs, "Dodder gauges": gauges
   }, { collapsed: false }).addTo(map);
   // The tick boxes sit in the box below the map, so they never cover it.
