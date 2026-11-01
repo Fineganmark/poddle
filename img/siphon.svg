@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 380" role="img" aria-labelledby="t d" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+<title id="t">How the Poddle siphon under the Grand Canal works</title>
+<desc id="d">Cross-section, not to scale. The river arrives in its culvert, drops down below the canal bed, runs along a pipe that stays full of water, and rises on the city side a little lower than it came in. In floods, extra water spills into the drainage tunnel beside the canal.</desc>
+<defs>
+<marker id="ar" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1c2530"/></marker>
+</defs>
+<rect width="720" height="380" fill="#fbfbf8"/>
+<!-- ground -->
+<path d="M0,110 L250,110 L290,180 L430,180 L470,110 L720,110 L720,380 L0,380 z" fill="#e3ddcf"/>
+<path d="M0,110 L250,110 M470,110 L720,110" stroke="#8a7f6a" stroke-width="2" fill="none"/>
+<!-- canal clay lining and water -->
+<path d="M246,110 L288,186 L432,186 L474,110" stroke="#b49a6c" stroke-width="10" fill="none" stroke-linejoin="round"/>
+<path d="M250,112 L290,180 L430,180 L470,112 z" fill="#9cc6e6"/>
+<path d="M250,112 L470,112" stroke="#2c6b9a" stroke-width="2"/>
+<text x="360" y="150" text-anchor="middle" font-size="17" font-weight="600" fill="#1c2530">Grand Canal</text>
+<text x="360" y="100" text-anchor="middle" font-size="12" fill="#5b6672">Near Robert Emmet Bridge, known locally as Harold’s Cross Bridge</text>
+<!-- direction labels -->
+<text x="16" y="34" font-size="13" font-weight="600" fill="#9b3b2a" letter-spacing="1">SOUTH</text>
+<text x="16" y="54" font-size="13" fill="#1c2530">from Greenmount and Harold’s Cross</text>
+<text x="704" y="34" text-anchor="end" font-size="13" font-weight="600" fill="#9b3b2a" letter-spacing="1">NORTH</text>
+<text x="704" y="54" text-anchor="end" font-size="13" fill="#1c2530">to Clanbrassil Street and the city</text>
+<!-- overflow branch -->
+<path d="M110,165 L110,300" stroke="#1c2530" stroke-width="12" fill="none"/>
+<path d="M110,165 L110,300" stroke="#9cc6e6" stroke-width="6" stroke-dasharray="7 5" fill="none"/>
+<circle cx="110" cy="326" r="28" fill="#c9c2b2" stroke="#1c2530" stroke-width="3"/>
+<text x="110" y="331" text-anchor="middle" font-size="11" font-weight="600" fill="#1c2530">tunnel</text>
+<text x="148" y="324" font-size="13" fill="#1c2530">In floods, extra water spills</text>
+<text x="148" y="341" font-size="13" fill="#1c2530">into the drainage tunnel (1970s)</text>
+<!-- the siphon pipe -->
+<path d="M0,150 L182,150 L182,244 L548,244 L548,162 L720,162" stroke="#1c2530" stroke-width="28" fill="none" stroke-linejoin="round"/>
+<path d="M0,150 L182,150 L182,244 L548,244 L548,162 L720,162" stroke="#78b4e2" stroke-width="20" fill="none" stroke-linejoin="round"/>
+<!-- flow arrows -->
+<g stroke="#1c2530" stroke-width="2.5" marker-end="url(#ar)">
+<path d="M40,150 L80,150"/><path d="M182,180 L182,214"/><path d="M330,244 L390,244"/><path d="M548,214 L548,184"/><path d="M630,162 L670,162"/>
+</g>
+<!-- step labels -->
+<text x="16" y="186" font-size="13" fill="#1c2530"><tspan font-weight="700">1</tspan> River arrives</text>
+<text x="16" y="202" font-size="13" fill="#1c2530">in its culvert</text>
+<text x="204" y="210" font-size="13" fill="#1c2530"><tspan font-weight="700">2</tspan> Drops below the canal bed</text>
+<text x="380" y="282" text-anchor="middle" font-size="13" fill="#1c2530"><tspan font-weight="700">3</tspan> The pipe stays full of water, so the</text>
+<text x="380" y="299" text-anchor="middle" font-size="13" fill="#1c2530">water coming in behind pushes it along</text>
+<text x="570" y="206" font-size="13" fill="#1c2530"><tspan font-weight="700">4</tspan> Rises and flows on,</text>
+<text x="570" y="222" font-size="13" fill="#1c2530">a little lower than</text>
+<text x="570" y="238" font-size="13" fill="#1c2530">it came in</text>
+<!-- level line -->
+<path d="M196,136 L244,136 M476,136 L704,136" stroke="#2c6b9a" stroke-width="1.2" stroke-dasharray="3 4"/>
+<text x="704" y="130" text-anchor="end" font-size="11" fill="#2c6b9a">water level coming in</text>
+<text x="704" y="372" text-anchor="end" font-size="11" fill="#5b6672">Simplified, not to scale</text>
+</svg>

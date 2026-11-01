@@ -371,3 +371,8 @@ html { scroll-behavior: smooth; }
 @media (max-width: 1000px) { .wb { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 @media (max-width: 600px) { .wb { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 16px; } .wb-d { display: none; } .facts strong { font-size: 1.35rem; } }
 @media (max-width: 760px) { .shop-hero-in, .set-panel { grid-template-columns: minmax(0, 1fr); } .shop-hero-fig { order: -1; } }
+.k-cross, .pin-cross { width: 12px; height: 12px; background: var(--river); border: 2px solid var(--paper); border-radius: 0 0 8px 8px; box-sizing: content-box; box-shadow: 0 0 0 1px var(--ink); }
+.fig.diagram { margin: 18px 0 6px; max-width: 100%; }
+.fig.diagram img { width: 100%; height: auto; }
+.text section:has(.fig.diagram) { max-width: none; }
+.text section:has(.fig.diagram) > :not(.fig) { max-width: var(--measure); }
