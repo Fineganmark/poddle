@@ -259,11 +259,18 @@ STOPS = [
     "The Poddle’s journey ends here, flowing out under Wellington Quay into the Liffey through a grating in the quay wall. The Liffey is tidal here, so at high tide the grating disappears under the water.",
     "Interestingly the Geological Survey Ireland, in its report on the Poddle as a County Geological Site, describes the grating as worn and dirty and suggests replacing it with stainless steel, spelling out “Poddle” in steel letters on the quay wall, and putting an information board on the far bank so people can see where Dublin’s first river meets the Liffey. Maybe that’s something worth considering for the future!"]),
    ("Wellington Quay", [
-    "Wellington Quay was the last of the Liffey quays to be built. It is named after the Dublin-born Arthur Wellesley, 1st Duke of Wellington, after his victory over Napoleon at Waterloo."]),
+    "Wellington Quay was the last of the Liffey quays to be built. Until the early 1800s the houses along this stretch backed straight onto the river, and Faden’s map of 1797 still shows the riverside closed off by buildings.",
+    "The Wide Streets Commissioners changed that. Between 1812 and 1815 they built a granite quay wall from Essex Bridge, now Grattan Bridge, to where the Ha’penny Bridge stands, to give the city a continuous quayside. Sources differ a little on the dates: one says the quay was built around 1812, another that it was laid out about 1815.",
+    "The western end was already called Custom House Quay, after Thomas Burgh’s Custom House of 1704 to 1707. Gandon’s new Custom House took over its work in 1791, the old building was used partly as a barracks from 1798, and it was pulled down as the new quay went in. The Clarence Hotel now stands on much of its site.",
+    "The quay is named after the Dublin-born Arthur Wellesley, 1st Duke of Wellington, after his victory over Napoleon at Waterloo in 1815, and it had its new name by 1817.",
+    "The National Inventory of Architectural Heritage describes the Poddle’s outfall as an elliptical-headed culvert in the face of the wall. The arch probably dates from the building of the wall, when the river had to be carried out to the new quay line, but we haven’t found a source that says so."]),
+   ("The Merchants’ Arch", [
+    "On the new quay the Commissioners offered the Merchants’ Guild a site for a hall, on condition that a public right of way ran through it from Temple Bar to the Ha’penny Bridge. Frederick Darley designed the Merchants’ Hall, built in 1821 and 1822, and that passage is the Merchants’ Arch. It is one of only three guild halls left in the city."]),
    ("Ulysses", [
     "In James Joyce’s Ulysses the outfall is placed, wrongly, at Wood Quay, in words that are unflattering but memorable:",
     "<blockquote>“From its sluice in Wood quay wall under Tom Devan’s office Poddle river hung out in fealty a tongue of liquid sewage.”</blockquote>"])],
-  images=[("quay-outfall", "The Poddle outfall into the Liffey"), ("wellington-quay", "Wellington Quay"), ("ulysses-cover", "Ulysses, James Joyce")]),
+  images=[("quay-outfall", "The Poddle outfall into the Liffey"), ("wellington-quay", "Wellington Quay"), ("ulysses-cover", "Ulysses, James Joyce")],
+  links=[("National Inventory of Architectural Heritage: Wellington Quay", "https://www.buildingsofireland.ie/buildings-search/building/50020254/wellington-quay-dublin-2-dublin"), ("National Inventory of Architectural Heritage: The Merchants’ Arch", "https://www.buildingsofireland.ie/buildings-search/building/50020156/the-merchants-arch-48-49-wellington-quay-wellington-quay-dublin-2-dublin-city"), ("Archiseek: Wellington Quay", "https://www.archiseek.com/tag/wellington-quay-dublin/"), ("Crumlin and Walkinstown History Group: Wellington Quay", "https://poddle.crumlinwalkinstownhistory.ie/location/wellington-quay/")]),
 ]
 
 def gal(*items):

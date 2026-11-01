@@ -15,7 +15,7 @@ BRIEF = {
  "ship-street-little": "A street named for sheep, beside a ravine that is among the deepest digs in Dublin’s history.",
  "dubh-linn": "The black pool on the Poddle that gave Dublin its name now lies under the castle gardens.",
  "palace-street": "The river leaves Dublin Castle by the Palace Street gate and runs north under Dame Street and the Olympia.",
- "liffey": "The Poddle ends its journey through a grating in the Liffey wall at Wellington Quay, visible at low tide.",
+ "liffey": "The Poddle ends its journey through an arch in the granite wall of Wellington Quay, built by the Wide Streets Commissioners between 1812 and 1815.",
  "heart-of-dublin": "The Poddle gave medieval Dublin its drinking water, part of its defences and the power for its mills.",
  "origins": "A small stream from the Dublin Mountains ended up running through the middle of the city.",
  "first-diversion": "Before 1244 the monks of St Thomas’s Abbey dug a channel to bring water from the Dodder into the Poddle.",
@@ -66,9 +66,6 @@ EXTRA = {
  "palace-street": [("Out of the Lower Castle Gate", [
    "The engineering report for the Ship Street development cites Clair Sweeney’s Rivers of Dublin, which says the exact historic line of the river through the city is not known, although the section through Dublin Castle is well documented.",
    "According to that account the river ran along the city walls and the castle ramparts, around the Royal Chapel, and out at the Lower Castle Gate at Palace Street and Dame Street."])],
- "liffey": [("At low tide", [
-   "The flood scheme’s planning report says the meeting of the Poddle and the Liffey is visible at low tide, at a grated opening in the Liffey walls at Wellington Quay.",
-   "Before it gets there the river crosses under the Grand Canal and flows under the city centre in a culverted section. A Dublin City Council area report describes the route as running through Tymon Park, Harold’s Cross and Blackpitts to the outfall at Wellington Quay."])],
  "ship-street-little": [("The ground beneath", [
    "Boreholes sunk for the nearby Ship Street application in 2005 found made ground, soil built up by people, to between 3 and 5 metres down, glacial till to about 9 metres, and limestone bedrock between 7 and 9 metres down.",
    "The application includes a Dublin City Council drainage record map from March 2016, showing the sewers around Ship Street, Chancery Lane and Golden Lane. The sheet carries a warning that its accuracy must be checked on site."])],
