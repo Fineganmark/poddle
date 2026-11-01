@@ -33,10 +33,11 @@ DIGS = [
  ("Site of Donore Castle", 53.3372, -6.2812, "A medieval castle in a borough mentioned in 1228, shown on the 1837 map. No trace is visible; the site is now a business park. The 2006 plans for the neighbouring Donore Avenue site show the Poddle culvert running diagonally across it, with a 6 m keep-clear strip.", "planning-record", "Recorded monument"),
  ("Site of Tymon Castle", 53.2883, -6.3606, "A 15th-century tower house in Tymon Park, drawn by Beranger in 1763 and demolished in 1960.", "planning-record", "Recorded monument"),
 ]
-# Where the river and the City Watercourse get past the Grand Canal. Positions are estimates where each line meets the canal.
+# Where the river and the City Watercourse get past the Grand Canal. Pins sit on the canal: its line taken between the NIAH grid
+# references for Parnell Bridge (314374, 232507) and Camac/Dolphin's Barn Bridge (313754, 232659), Irish Grid converted to WGS84.
 CROSSINGS = [
- ("The siphon under the Grand Canal", 53.33040, -6.27690, "The Poddle dips under the canal in a siphon: a pipe that drops below the canal bed and rises again on the city side, a little lower than it went in. The canal was dug across the river in the 1790s; the structure there now is late 20th century, with an overflow into the Grand Canal drainage tunnel for floods. Position approximate, near Robert Emmet (Harold’s Cross) Bridge.", "mount-jerome.html#under-the-grand-canal", "siphon.svg"),
- ("City Watercourse at Dolphin’s Barn", 53.33060, -6.29320, "The City Watercourse reached the canal just east of Dolphin’s Barn Bridge. In 1937 it ran underground for 400 yards from above Rutland Cottages and emptied into the canal here; today the Grand Canal drainage tunnel intercepts it. Position approximate.", "mount-jerome.html#the-siphon-today", None),
+ ("The siphon under the Grand Canal", 53.32990, -6.27711, "The Poddle dips under the canal in a siphon: a pipe that drops below the canal bed and rises again on the city side, a little lower than it went in. The canal was dug across the river in the 1790s; the structure there now is late 20th century, with an overflow into the Grand Canal drainage tunnel for floods. Position approximate, near Robert Emmet (Harold’s Cross) Bridge.", "mount-jerome.html#under-the-grand-canal", "siphon.svg"),
+ ("City Watercourse at Dolphin’s Barn", 53.33212, -6.29280, "The City Watercourse reached the canal just east of Dolphin’s Barn Bridge. In 1937 it ran underground for 400 yards from above Rutland Cottages and emptied into the canal here; today the Grand Canal drainage tunnel intercepts it. Position approximate.", "mount-jerome.html#the-siphon-today", None),
 ]
 GAUGES = [
  ("09010", "Waldron’s Bridge, River Dodder", 53.30582, -6.26696),
