@@ -7,7 +7,7 @@ def _v(*names):
     for n in names:
         h.update(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), n), "rb").read())
     return h.hexdigest()[:8]
-ASSET_V = _v("site.css", "map.js", "levels.js", "quotes.js", "planmap.js", "nav.js", "maps.js", )
+ASSET_V = _v("site.css", "map.js", "levels.js", "quotes.js", "planmap.js", "nav.js", "maps.js", "gallery.js", )
 
 OUT = os.path.dirname(os.path.abspath(__file__))
 SITE = "The River Poddle, Dublin"   # title suffix
@@ -65,7 +65,9 @@ STOPS = [
    ("Tymon and Greenhills Esker", [
     "Tymon Esker, along which Tymon Lane now runs, is a rare and important feature of the park. An esker is a long ridge of sand and gravel laid down by a stream flowing under a glacier, in this case during the last Ice Age, more than 10,000 years ago.",
     "Tymon Lane, along the ridge, was an important link between Tallaght and the townlands of Dublin, and Tymon Castle was built beside it."])],
-  images=[("timon-castle-1791", "Timon Castle, 1791"), ("tymon-aerial-picture", "Tymon Park from the air"), ("greenhills-esker", "The line of the Greenhills Esker"), ("tymon-flow-control", "The new flow-control structure at the eastern end of the Limekiln lake, part of the River Poddle Flood Alleviation Scheme. Photo: poddle.ie, November 2026."), ("tymon-beech-wood", "The Poddle running through the beech wood in Tymon Park. Photo: poddle.ie, November 2026."), ("tymon-weir", "A small weir on the Poddle in Tymon Park. Photo: poddle.ie, November 2026."), ("tymon-twin-culverts", "A twin-arched culvert on the Poddle in Tymon Park, just west of the M50. Photo: poddle.ie, November 2026."), ("tymon-wetland-boardwalk", "The integrated constructed wetland in Tymon Park, which helps clean the water, with its boardwalk. Photo: poddle.ie, November 2026.")],
+  images=[("timon-castle-1791", "Timon Castle, 1791"), ("tymon-aerial-picture", "Tymon Park from the air"), ("greenhills-esker", "The line of the Greenhills Esker")],
+  gallery=[("tymon-flow-control", "The new flow-control structure at the eastern end of the Limekiln lake, part of the River Poddle Flood Alleviation Scheme."), ("tymon-beech-wood", "The Poddle running through the beech wood in Tymon Park."), ("tymon-weir", "A small weir on the Poddle in Tymon Park."), ("tymon-twin-culverts", "A twin-arched culvert on the Poddle in Tymon Park, just west of the M50."), ("tymon-wetland-boardwalk", "The integrated constructed wetland in Tymon Park, which helps clean the water, with its boardwalk.")],
+  gallery_credit="Photos: poddle.ie, November 2026.",
   links=[("Wildlife of the Poddle: otters, bats and the birds of the Tymon lakes", "wildlife.html"), ("Video: Tymon Park’s esker (The Echo)", "https://youtu.be/-oMSnnBhdbI"), ("Tymon Park impoundment area becomes operational (Poddle FAS)", "https://www.poddlefas.ie/news/tymon-park-impoundment-area-becomes-operational")]),
  dict(slug="balrothery-weir", name="Balrothery Weir", place="Firhouse, on the Dodder",
   teaser="Where medieval engineers turned the Dodder towards the city.",
@@ -558,6 +560,20 @@ def figures(imgs, lead=False):
         out.append(f'<figure class="{cls}"><img src="img/{f}.jpg" alt="{esc(cap)}" loading="{"eager" if i == 0 else "lazy"}"><figcaption>{esc(cap)}</figcaption></figure>')
     return "\n".join(out)
 
+# Photo gallery for a stop page: one large photo with square thumbnails to pick from
+# (gallery.js). Without JavaScript each thumbnail links to its full-size photo.
+def gallery(photos, credit):
+    first, cap0 = photos[0]
+    thumbs = "".join(
+        f'<li><a class="gal-thumb" href="img/{f}.jpg" data-cap="{esc(cap)}"{" aria-current=\"true\"" if i == 0 else ""}>'
+        f'<img src="img/{f}-thumb.jpg" alt="{esc(cap)}" width="240" height="240" loading="lazy"></a></li>'
+        for i, (f, cap) in enumerate(photos))
+    return (f'<section class="gallery" aria-label="Photographs">'
+            f'<figure class="gal-stage"><img src="img/{first}.jpg" alt="{esc(cap0)}" loading="lazy">'
+            f'<figcaption><span class="gal-cap" aria-live="polite">{esc(cap0)}</span> {esc(credit)}</figcaption></figure>'
+            f'<ul class="gal-thumbs">{thumbs}</ul></section>'
+            f'<script src="gallery.js?v={ASSET_V}" defer></script>')
+
 def slug_id(h):
     return re.sub(r'[^a-z0-9]+','-',h.lower()).strip('-')
 
@@ -580,7 +596,7 @@ def article(item, kicker, prev, nxt, back, top_nav=False):
             f'<header class="page-head"><p class="kicker">{kicker}</p><h1>{esc(item["name"])}</h1>'
             f'<p class="dek">{esc(item["teaser"])}</p></header>{brief}' +
             (f'<div class="page-grid"><div class="text">{flag}{secs}{link}</div>'
-             f'<div class="media">{figures(item["images"], lead=True)}</div></div>' if item["images"] else
+             f'<div class="media">{figures(item["images"], lead=True)}{gallery(item["gallery"], item["gallery_credit"]) if item.get("gallery") else ""}</div></div>' if item["images"] else
              f'<div class="page-grid solo"><div class="text">{flag}{secs}{link}</div></div>') + f'{pn}</article>')
 
 def write(name, content):
