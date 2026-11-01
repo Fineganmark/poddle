@@ -18,7 +18,7 @@ OG_DEFAULT = "img/og-poddle.jpg"   # 1200x630 social preview card
 GOOGLE_VERIFY = ""
 GOATCOUNTER = "poddle"  # cookieless visitor counter: https://poddle.goatcounter.com
 BING_VERIFY = ""
-SOCIAL = [("Facebook", "https://www.facebook.com/profile.php?id=61595988096383"), ("Instagram", "https://www.instagram.com/poddle.ie/")]
+SOCIAL = [("Facebook", "https://www.facebook.com/thepoddle"), ("Instagram", "https://www.instagram.com/poddle.ie/")]
 SITEMAP = []   # slugs that go into sitemap.xml, filled by shell()
 FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com">'
          '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
