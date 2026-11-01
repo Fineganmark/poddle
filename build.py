@@ -64,7 +64,7 @@ STOPS = [
    ("Tymon and Greenhills Esker", [
     "Tymon Esker, along which Tymon Lane now runs, is a rare and important feature of the park. An esker is a long ridge of sand and gravel laid down by a stream flowing under a glacier, in this case during the last Ice Age, more than 10,000 years ago.",
     "Tymon Lane, along the ridge, was an important link between Tallaght and the townlands of Dublin, and Tymon Castle was built beside it."])],
-  images=[("timon-castle-1791", "Timon Castle, 1791"), ("tymon-aerial-picture", "Tymon Park from the air"), ("greenhills-esker", "The line of the Greenhills Esker")],
+  images=[("timon-castle-1791", "Timon Castle, 1791"), ("tymon-aerial-picture", "Tymon Park from the air"), ("greenhills-esker", "The line of the Greenhills Esker"), ("tymon-flow-control", "The new flow-control structure at the eastern end of the Limekiln lake, part of the River Poddle Flood Alleviation Scheme. Photo: Mark Finegan, November 2026."), ("tymon-lake-west", "The Poddle’s lake in Tymon Park, west of the M50. Photo: Mark Finegan, November 2026."), ("tymon-beech-wood", "The Poddle running through the beech wood in Tymon Park. Photo: Mark Finegan, November 2026."), ("tymon-weir", "A small weir on the Poddle in Tymon Park. Photo: Mark Finegan, November 2026."), ("tymon-wetland-boardwalk", "The boardwalk across the integrated constructed wetland, Tymon Park. Photo: Mark Finegan, November 2026.")],
   links=[("Wildlife of the Poddle: otters, bats and the birds of the Tymon lakes", "wildlife.html"), ("Video: Tymon Park’s esker (The Echo)", "https://youtu.be/-oMSnnBhdbI"), ("Tymon Park impoundment area becomes operational (Poddle FAS)", "https://www.poddlefas.ie/news/tymon-park-impoundment-area-becomes-operational")]),
  dict(slug="balrothery-weir", name="Balrothery Weir", place="Firhouse, on the Dodder",
   teaser="Where medieval engineers turned the Dodder towards the city.",
@@ -110,7 +110,7 @@ STOPS = [
     "The state’s purchase of the Tymon estate for the park was probably either a result of the road scheme or part of the same plan. The Poddle was presumably culverted at this point to carry it under the future motorway."]),
    ("Western Parkway", [
     "In 1990 the N3 to N81 section of the M50 opened, including the West Link bridge across the Liffey Valley, and this stretch was upgraded from single carriageway to motorway."])],
-  images=[("m50-crossing", "The M50 crossing the line of the Poddle"), ("m50-crossing-upgrade", "Plan of the M50 crossing upgrade")]),
+  images=[("m50-crossing", "The M50 crossing the line of the Poddle"), ("m50-crossing-upgrade", "Plan of the M50 crossing upgrade"), ("m50-from-footbridge", "The M50 from the footbridge in Tymon Park. Photo: Mark Finegan, November 2026."), ("m50-twin-culverts", "Twin culverts carrying the Poddle, just west of the M50 in Tymon Park. Photo: Mark Finegan, November 2026.")]),
  dict(slug="dodder-overflow", name="Dodder Overflow", place="Lakelands, Terenure",
   teaser="A sluice that sends flood water back to the Dodder.",
   sections=[("Diversion", [
@@ -122,7 +122,7 @@ STOPS = [
    ("Refined and defined", [
     "Along this stretch, the scheme proposes to tidy and define the channel and build walls on both sides.",
     "Flows through the Poddle in earlier centuries must have been large, without the ponds at Tymon or these control structures, and with water diverted in from the Dodder at Balrothery as well."])],
-  images=[("dodder-overflow", "Route of the Lakelands overflow to the Dodder"), ("dodder-overflow-image", "The overflow channel"), ("dodder-overflow-fas-scheme", "Proposed works, Poddle Flood Alleviation Scheme")],
+  images=[("dodder-overflow", "Route of the Lakelands overflow to the Dodder"), ("dodder-overflow-image", "The overflow channel"), ("dodder-overflow-fas-scheme", "Proposed works, Poddle Flood Alleviation Scheme"), ("whitehall-channel", "The Poddle in its open channel near Whitehall. Photo: Mark Finegan, November 2026.")],
   links=[("See the overflow route on the map", "map.html"), ("River Poddle Flood Alleviation Scheme: news and updates", "https://www.poddlefas.ie/news")]),
  dict(slug="kimmage-manor", name="Kimmage Manor", place="Kimmage",
   teaser="A Victorian MP’s house, now a mission centre, built over the stream.",
