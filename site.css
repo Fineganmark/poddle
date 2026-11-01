@@ -53,6 +53,8 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .cta { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 6px; }
 .btn { font: 600 .95rem/1 var(--label); letter-spacing: .03em; padding: 12px 18px; border-radius: 3px; background: var(--river); color: var(--sheet); text-decoration: none; border: 1px solid var(--river); }
 .btn.ghost { background: transparent; color: var(--river); }
+.home-cta { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); width: 100%; max-width: 440px; margin-inline: auto; }
+.home-cta .btn { display: flex; align-items: center; justify-content: center; text-align: center; padding: 14px 10px; min-height: 48px; }
 .hero-fig img { border-radius: 2px; max-height: 460px; width: auto; margin-inline: auto; }
 .hero-fig figcaption { text-align: center; }
 
