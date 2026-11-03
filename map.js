@@ -101,9 +101,9 @@
   if (below) below.appendChild(layerCtl.getContainer());
 
   var all = L.featureGroup(stops.getLayers());
-  map.fitBounds(all.getBounds().pad(0.08));
+  function home() { map.fitBounds(all.getBounds().pad(0.08)); }
+  home();
+  if (window.poddleMapSafe) poddleMapSafe(map, home);
   var q = /[?&]mill=([\w-]+)/.exec(location.search);
   if (q && byId[q[1]]) { var mk = byId[q[1]]; map.setView(mk.getLatLng(), 17); mk.openPopup(); }
-  map.on("focus", function () { map.scrollWheelZoom.enable(); });
-  map.on("blur", function () { map.scrollWheelZoom.disable(); });
 })();

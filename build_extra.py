@@ -93,7 +93,7 @@ map_body = (
  '<link rel="stylesheet" href="vendor/leaflet.css">'
  '<script src="vendor/leaflet.js"></script>'
  '<script>const DATA = ' + MAPDATA + ';</script>'
- '<script src="map.js?v=' + ASSET_V + '"></script>')
+ '<script src="mapsafe.js?v=' + ASSET_V + '"></script><script src="map.js?v=' + ASSET_V + '"></script>')
 write("map.html", shell("map", f"Map · {SITE}", "Interactive map of the River Poddle: river walk stops, mill sites and flood works.", map_body, "map.html"))
 
 live_body = '''<div class="wrap page"><header class="page-head"><p class="kicker">Live data</p><h1>River levels, flood maps and models</h1>
@@ -189,7 +189,7 @@ PLANDATA = json.dumps(dict(river=river, channels=CHANNELS, works=WORKS, files=PL
 _pm = ('<div class="plan-map"><div id="planmap" role="region" aria-label="Map of the planning files"></div>'
        '<p class="note">River line © OpenStreetMap contributors. Marker positions are approximate, from the site addresses.</p></div>'
        '<link rel="stylesheet" href="vendor/leaflet.css"><script src="vendor/leaflet.js"></script>'
-       '<script>const PLAN = ' + PLANDATA + ';</script><script src="planmap.js?v=' + ASSET_V + '"></script>')
+       '<script>const PLAN = ' + PLANDATA + ';</script><script src="mapsafe.js?v=' + ASSET_V + '"></script><script src="planmap.js?v=' + ASSET_V + '"></script>')
 _p = os.path.join(OUT, "planning-record.html")
 _t = open(_p, encoding="utf-8").read()
 assert "<!--PLANMAP-->" in _t

@@ -22,5 +22,7 @@
         "</p><a href=\"#" + f[5] + "\">Read this section ↓</a></div>", { maxWidth: 260 }).addTo(map);
     bounds.push([f[2], f[3]]);
   });
-  map.fitBounds(bounds, { padding: [60, 60], maxZoom: 15 });
+  function home() { map.fitBounds(bounds, { padding: [60, 60], maxZoom: 15 }); }
+  home();
+  if (window.poddleMapSafe) poddleMapSafe(map, home);
 })();
