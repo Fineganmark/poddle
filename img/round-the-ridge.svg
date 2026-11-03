@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 470" role="img" aria-labelledby="t d" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+<title id="t">How the Poddle goes round the Castle ridge</title>
+<desc id="d">Simplified plan, not to scale, north at the top. The old city stands on a ridge running from west to east, with Christ Church on top and Dublin Castle at its eastern tip. The Poddle comes north from St Patrick's Cathedral in the low ground, turns east along the foot of the ridge by the old city wall, passes under Ship Street and around the Castle, where it fed the Dubh Linn, and runs north under Palace Street to the Liffey. A walker going north up Patrick Street climbs the ridge; the river never does.</desc>
+<defs>
+<marker id="ar" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#2c6b9a"/></marker>
+<marker id="aw" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#9b3b2a"/></marker>
+</defs>
+<rect width="720" height="470" fill="#fbfbf8"/>
+<!-- Liffey -->
+<path d="M0,22 L720,22 L720,64 L0,64 z" fill="#9cc6e6"/>
+<path d="M0,64 L720,64" stroke="#2c6b9a" stroke-width="2"/>
+<text x="24" y="49" font-size="16" font-weight="600" fill="#1c2530">River Liffey</text>
+<!-- ridge: soft contours -->
+<path d="M0,96 C150,86 380,92 530,118 C610,132 640,170 620,215 C600,262 520,272 440,268 C300,262 120,262 0,258 z" fill="#ebe3d1"/>
+<path d="M0,126 C160,116 360,122 480,140 C560,152 590,180 570,210 C548,240 470,240 400,236 C280,232 120,232 0,228 z" fill="#ddd1b6"/>
+<path d="M0,160 C160,152 340,156 430,168 C500,178 510,200 470,210 C400,214 260,210 0,206 z" fill="#cfbf9c"/>
+<text x="40" y="186" font-size="13" font-weight="600" fill="#5b4a2c" letter-spacing="1">HIGH GROUND: THE OLD CITY RIDGE</text>
+<circle cx="300" cy="150" r="5" fill="#1c2530"/>
+<text x="312" y="155" font-size="13" fill="#1c2530">Christ Church</text>
+<!-- castle -->
+<rect x="455" y="168" width="96" height="70" rx="4" fill="none" stroke="#1c2530" stroke-width="3"/>
+<text x="503" y="200" text-anchor="middle" font-size="13" font-weight="600" fill="#1c2530">Dublin</text>
+<text x="503" y="216" text-anchor="middle" font-size="13" font-weight="600" fill="#1c2530">Castle</text>
+<!-- city wall line -->
+<path d="M30,286 L455,286" stroke="#8a7f6a" stroke-width="2" stroke-dasharray="6 5"/>
+<text x="250" y="279" font-size="11.5" fill="#6b604c">line of the old south city wall</text>
+<!-- walker climbing -->
+<path d="M150,440 L150,222" stroke="#9b3b2a" stroke-width="2.5" stroke-dasharray="3 5" marker-end="url(#aw)"/>
+<text x="138" y="380" text-anchor="end" font-size="12" fill="#9b3b2a">Walk north up</text>
+<text x="138" y="396" text-anchor="end" font-size="12" fill="#9b3b2a">Patrick St and</text>
+<text x="138" y="412" text-anchor="end" font-size="12" fill="#9b3b2a">you climb the ridge</text>
+<!-- river -->
+<path d="M235,462 L235,312 C235,300 245,300 260,300 L470,300 C560,300 612,282 622,240 C632,190 624,130 616,66" stroke="#1c2530" stroke-width="11" fill="none" stroke-linecap="round"/>
+<path d="M235,462 L235,312 C235,300 245,300 260,300 L470,300 C560,300 612,282 622,240 C632,190 624,130 616,66" stroke="#9cc6e6" stroke-width="6" fill="none" stroke-linecap="round"/>
+<path d="M235,420 L235,380" stroke="#2c6b9a" stroke-width="2" marker-end="url(#ar)"/>
+<path d="M330,300 L380,300" stroke="#2c6b9a" stroke-width="2" marker-end="url(#ar)"/>
+<path d="M626,190 L624,150" stroke="#2c6b9a" stroke-width="2" marker-end="url(#ar)"/>
+<!-- Dubh Linn pool -->
+<ellipse cx="590" cy="276" rx="30" ry="15" fill="#9cc6e6" stroke="#2c6b9a" stroke-width="2"/>
+<text x="626" y="300" font-size="13" font-weight="600" fill="#1c2530">Dubh Linn</text>
+<!-- labels -->
+<text x="250" y="440" font-size="13" font-weight="600" fill="#1c2530">River Poddle</text>
+<text x="250" y="456" font-size="12" fill="#1c2530">by St Patrick’s Cathedral, in the low ground</text>
+<text x="270" y="322" font-size="12.5" fill="#1c2530">along the foot of the ridge, under Ship St</text>
+<text x="640" y="110" font-size="12.5" fill="#1c2530">Palace St</text>
+<text x="640" y="126" font-size="12.5" fill="#1c2530">to the quay</text>
+<text x="704" y="456" text-anchor="end" font-size="11" fill="#5b6672">Simplified, not to scale. North is up.</text>
+</svg>
