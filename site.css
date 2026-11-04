@@ -194,6 +194,7 @@ html { scroll-behavior: smooth; }
 .legend { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; font: 500 .85rem/1.3 var(--label); color: var(--muted); }
 .legend li { display: flex; align-items: center; gap: 10px; }
 .k { flex: none; display: inline-grid; place-items: center; }
+.k-flow { width: 26px; height: 14px; color: var(--river); display: inline-flex; }
 .k-open { width: 26px; height: 0; border-top: 4px solid var(--river); }
 .k-under { width: 26px; height: 0; border-top: 4px dotted var(--river); }
 .k-abbey { width: 26px; height: 0; border-top: 8px solid rgba(201,138,27,.5); }

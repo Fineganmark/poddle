@@ -13,9 +13,10 @@
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", "\"": "&quot;" }[c]; }); }
 
   // River line: solid where open, dotted where culverted; the City Watercourse dashed.
-  var riverLayer = L.layerGroup();
+  var riverLayer = L.layerGroup(), riverLines = [], riverWc = [];
   DATA.river.forEach(function (w) {
     var isWc = /watercourse/i.test(w.n);
+    (isWc ? riverWc : riverLines).push(w.c);
     L.polyline(w.c, {
       color: isWc ? red : river, weight: isWc ? 3 : 4, opacity: 0.9,
       dashArray: isWc ? "8 6" : (w.t ? "2 7" : null), lineCap: "round"
@@ -40,6 +41,18 @@
     });
   });
   groups.abbey.addTo(map); groups.watercourse.addTo(map); groups.overflow.addTo(map);
+
+  // Arrowheads along every water line, pointing downstream.
+  if (window.poddleFlow) {
+    var flow = [{ group: riverLayer, color: river, weight: 4, lines: riverLines },
+                { group: riverLayer, color: red, weight: 3, lines: riverWc }];
+    var tint = { abbey: "#9a6512", citywc: red, tenter: red, commons: "#2a7f9e", overflow: "#3b8f6a" };
+    (DATA.channels || []).forEach(function (ch) {
+      flow.push({ group: ch.k === "abbey" ? groups.abbey : (ch.k === "overflow" ? groups.overflow : groups.watercourse),
+                  color: tint[ch.k], weight: style[ch.k].weight, lines: ch.k === "abbey" ? ch.c : [ch.c] });
+    });
+    poddleFlow(map, flow);
+  }
 
   // River walk stops
   var stops = L.layerGroup();
