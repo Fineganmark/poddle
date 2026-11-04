@@ -7,7 +7,7 @@ def _v(*names):
     for n in names:
         h.update(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), n), "rb").read())
     return h.hexdigest()[:8]
-ASSET_V = _v("site.css", "map.js", "levels.js", "quotes.js", "planmap.js", "nav.js", "maps.js", "gallery.js", "mapsafe.js", "flow.js", )
+ASSET_V = _v("site.css", "map.js", "levels.js", "quotes.js", "planmap.js", "nav.js", "maps.js", "gallery.js", "mapsafe.js", "flow.js", "walkmap.js")
 
 OUT = os.path.dirname(os.path.abspath(__file__))
 SITE = "The River Poddle, Dublin"   # title suffix
@@ -673,6 +673,16 @@ def stop_li(i, s):
             f'<span class="t"><strong>{esc(s["name"])}</strong><em>{esc(s["place"])}</em>'
             f'<span class="d">{esc(s["teaser"])}</span>{note}</span></a></li>')
 
+
+# Short school walks (pages written by build_walks.py); cards shown on the walk and teachers' pages.
+SCHOOL_WALK_CARDS = [
+ ("walk-tymon", "Tymon Park", "About 1.6 km · 1 to 1½ hours", "The lake, the flood gate and the wetland, on park paths away from traffic."),
+ ("walk-kimmage-harolds-cross", "Kimmage to Harold’s Cross", "About 3 km · 2 to 2½ hours", "The old mill road, the Stone Boat and Mount Argus, to where the river dives under the Grand Canal."),
+]
+def walk_cards():
+    return '<div class="walk-cards">' + "".join(
+        f'<a class="walk-card" href="{h}.html"><em>School walk</em><strong>{esc(t)}</strong><span>{esc(m)}</span><span>{esc(d)}</span></a>'
+        for h, t, m, d in SCHOOL_WALK_CARDS) + '</div>'
 walk = "\n".join(stop_li(i, s) for i, s in enumerate(STOPS))
 QUOTES = [
  ("From its sluice in Wood quay wall under Tom Devan’s office Poddle river hung out in fealty a tongue of liquid sewage.", "James Joyce, Ulysses"),
@@ -713,7 +723,9 @@ home = f'''{PHOTO_BAND if HERO == "photo" else ""}
 walk_page = f'''<div class="wrap page"><header class="page-head"><p class="kicker">The river walk</p><h1>Source to sea, stop by stop</h1>
 <p class="dek">The Poddle’s course has been created and recreated by nature and by people over the centuries. Here we plot it as a single line, above and below ground, as best we can. The <a href="map.html">map</a> shows the same stops on today’s streets, and <a href="planning-record.html">what the planning files say</a> adds some of the most interesting facts.</p></header>
 <div class="walk-grid"><ol class="line">{walk}</ol>
-<div class="walk-maps">{figures([("1848-os-map-small", "Ordnance Survey map of Dublin, 1848"), ("poddle-catchment", "The Poddle catchment, from Tallaght north-east to the Liffey")])}</div></div></div>'''
+<div class="walk-maps">{figures([("1848-os-map-small", "Ordnance Survey map of Dublin, 1848"), ("poddle-catchment", "The Poddle catchment, from Tallaght north-east to the Liffey")])}</div></div>
+<section class="school-walks" id="school-walks"><h2>Shorter walks for schools</h2>
+<p>Two class-sized walks on stretches where the river is out in the open, each with things to look for, activities and safety notes for teachers.</p>{walk_cards()}</section></div>'''
 write("walk.html", shell("walk", f"The river walk · {SITE}", "Walk the River Poddle in sixteen stops, from its source in Tallaght through Kimmage, Harold’s Cross and the Liberties to the Liffey at Wellington Quay.", walk_page, "walk.html"))
 write("index.html", shell("index", "The River Poddle: Dublin’s hidden river, from Tallaght to the Liffey", "The River Poddle gave Dublin its name. Follow Dublin’s hidden river from Tallaght to the Liffey: its history, mills, floods, a sixteen-stop river walk and an interactive map.", home, "index.html"))
 
@@ -947,6 +959,7 @@ schools = f'''<div class="wrap page narrow"><header class="page-head"><p class="
 </ul></section>
 <section id="walks"><h2>Visiting the river</h2>
 <p>The river is open to the air through Tymon Park, Whitehall Park and Ravensdale Park, and these are the best places to see it with a class. From Kimmage down it runs mostly in walls and culverts, though you can still follow its route through the streets.</p>
+<p>Two ready-made school walks give a route, stops, things to look for and activities:</p>''' + walk_cards() + '''
 <p class="note">Please plan any visit under your school’s own outings policy. Keep children back from the water’s edge, and never go near culvert openings or grilles.</p></section>
 <section id="workbooks"><h2>Workbooks, talks and walks</h2>
 <p>There are five <a href="shop.html">activity workbooks</a> about the river, each at three levels: 1st and 2nd class, 3rd and 4th class, and 5th and 6th class. Sales help keep this site free.</p>
@@ -1031,6 +1044,7 @@ shop_page = f'''<section class="shop-hero"><div class="wrap shop-hero-in">
 write("shop.html", shell("shop", f"Workbooks and t-shirts · {SITE}", "Workbooks about Dublin’s hidden river for 1st to 6th class. Every sale helps keep this local-history site free.", shop_page, "shop.html"))
 
 exec(open(os.path.join(OUT, "build_extra.py"), encoding="utf-8").read())
+exec(open(os.path.join(OUT, "build_walks.py"), encoding="utf-8").read())
 
 # 404 page, sitemap and robots.txt (after build_extra so its pages are listed)
 write("404.html", shell("404", f"Page not found · {SITE}", "This page could not be found.",
