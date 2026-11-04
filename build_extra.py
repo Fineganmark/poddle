@@ -85,7 +85,7 @@ map_body = (
  '<div class="map-shell"><div id="map" role="region" aria-label="Map of the River Poddle"></div>'
  '<div id="layers" class="layers-below" aria-label="Choose what to show on the map"></div><ul class="legend" aria-label="Map key">'
  '<li><span class="k k-open"></span>River, open channel</li><li><span class="k k-under"></span>River, underground</li>'
- '<li><span class="k k-water"></span>City Watercourse (approx.)</li><li><span class="k k-abbey"></span>Abbey Stream</li><li><span class="k k-commons"></span>Commons Water (approx.)</li><li><span class="k k-overflow"></span>Dodder Overflow (approx.)</li><li><span class="k k-stop">1</span>River walk stop</li>'
+ '<li><span class="k k-water"></span>City Watercourse (approx.)</li><li><span class="k k-abbey"></span>Abbey Stream</li><li><span class="k k-commons"></span>Commons Water (approx.)</li><li><span class="k k-overflow"></span>Dodder Overflow (approx.)</li><li><span class="k k-flow" aria-hidden="true"><svg viewBox="0 0 26 14" width="26" height="14"><path d="M1 7h24" stroke="currentColor" stroke-width="4"/><path d="M10 2.5l5.5 4.5-5.5 4.5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Direction of flow</li><li><span class="k k-stop">1</span>River walk stop</li>'
  '<li><span class="k k-mill"></span>Mill site</li><li><span class="k k-works"></span>Flood scheme works</li>'
  '<li><span class="k k-cross"></span>Canal crossing</li><li><span class="k k-dig"></span>Archaeology and monuments</li><li><span class="k k-gauge"></span>River gauge (Dodder)</li></ul></div>'
  '<p class="note">River line © OpenStreetMap contributors. The City Watercourse, Tenter Water and Dodder Overflow are approximate routes, not surveyed lines. The City Watercourse as far as Dolphin’s Barn follows the OpenStreetMap line, which was drawn from old Ordnance Survey and Taylor maps; The rest of the City Watercourse, the Tenter Water, the Commons Water and the lower Abbey Stream follow the hand-drawn map of the <a href=\"https://poddle.crumlinwalkinstownhistory.ie/\" rel=\"noopener\">Crumlin and Walkinstown History Group’s Poddle project</a>, which gives no source for its lines. The underground Poddle from Patrick Street to Wellington Quay, including the City Hall branch, is redrawn along today’s streets from written descriptions and a plan in McEntee and Corcoran, Ronan (1927) and Fitzgerald (1973); the route is theirs, but the exact line under each street is our best fit. Some mill sites are approximate too, and say so.</p>'
@@ -93,7 +93,7 @@ map_body = (
  '<link rel="stylesheet" href="vendor/leaflet.css">'
  '<script src="vendor/leaflet.js"></script>'
  '<script>const DATA = ' + MAPDATA + ';</script>'
- '<script src="mapsafe.js?v=' + ASSET_V + '"></script><script src="map.js?v=' + ASSET_V + '"></script>')
+ '<script src="mapsafe.js?v=' + ASSET_V + '"></script><script src="flow.js?v=' + ASSET_V + '"></script><script src="map.js?v=' + ASSET_V + '"></script>')
 write("map.html", shell("map", f"Map · {SITE}", "Interactive map of the River Poddle: river walk stops, mill sites and flood works.", map_body, "map.html"))
 
 live_body = '''<div class="wrap page"><header class="page-head"><p class="kicker">Live data</p><h1>River levels, flood maps and models</h1>
@@ -189,7 +189,7 @@ PLANDATA = json.dumps(dict(river=river, channels=CHANNELS, works=WORKS, files=PL
 _pm = ('<div class="plan-map"><div id="planmap" role="region" aria-label="Map of the planning files"></div>'
        '<p class="note">River line © OpenStreetMap contributors. Marker positions are approximate, from the site addresses.</p></div>'
        '<link rel="stylesheet" href="vendor/leaflet.css"><script src="vendor/leaflet.js"></script>'
-       '<script>const PLAN = ' + PLANDATA + ';</script><script src="mapsafe.js?v=' + ASSET_V + '"></script><script src="planmap.js?v=' + ASSET_V + '"></script>')
+       '<script>const PLAN = ' + PLANDATA + ';</script><script src="mapsafe.js?v=' + ASSET_V + '"></script><script src="flow.js?v=' + ASSET_V + '"></script><script src="planmap.js?v=' + ASSET_V + '"></script>')
 _p = os.path.join(OUT, "planning-record.html")
 _t = open(_p, encoding="utf-8").read()
 assert "<!--PLANMAP-->" in _t

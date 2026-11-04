@@ -7,10 +7,16 @@
   L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", { maxZoom: 19,
     attribution: "&copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors" }).addTo(map);
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", "\"": "&quot;" }[c]; }); }
+  var blue = [], reds = [];
   PLAN.river.forEach(function (w) {
     var wc = /watercourse/i.test(w.n);
+    (wc ? reds : blue).push(w.c);
     L.polyline(w.c, { color: wc ? red : river, weight: wc ? 3 : 4, opacity: 0.85, dashArray: wc ? "8 6" : (w.t ? "2 7" : null) }).addTo(map);
   });
+  if (window.poddleFlow) {
+    var flowLayer = L.layerGroup().addTo(map);
+    poddleFlow(map, [{ group: flowLayer, color: river, weight: 4, lines: blue }, { group: flowLayer, color: red, weight: 3, lines: reds }]);
+  }
   var bounds = [];
   var dirs = { "2768/09": ["bottom", [0, 10]], "4423/19": ["top", [0, -10]], "4156/06": ["bottom", [0, 10]], "4223/18": ["left", [-10, 0]] };
   PLAN.files.forEach(function (f) {
