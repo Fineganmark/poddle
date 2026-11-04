@@ -950,6 +950,7 @@ schools = f'''<div class="wrap page narrow"><header class="page-head"><p class="
 <p class="note">Please plan any visit under your school’s own outings policy. Keep children back from the water’s edge, and never go near culvert openings or grilles.</p></section>
 <section id="workbooks"><h2>Workbooks, talks and walks</h2>
 <p>There are five <a href="shop.html">activity workbooks</a> about the river, each at three levels: 1st and 2nd class, 3rd and 4th class, and 5th and 6th class. Sales help keep this site free.</p>
+<p>There is also an <a href="poster.pdf">A4 poster</a> (PDF) for a classroom or staffroom wall.</p>
 <p>The project also offers talks and guided walks for schools and groups. Please <a href="about.html#contact">get in touch</a> to arrange one, or to ask about anything on the site.</p></section>
 </div>'''
 write("schools.html", shell("schools", f"For teachers · {SITE}",
