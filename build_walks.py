@@ -47,6 +47,7 @@ SCHOOL_WALKS = [
     ask="The river goes underground in the city. Why do you think people covered it over?",
     more=("walk", "Follow the river all the way to the Liffey")),
   ],
+  workbook="Tymon Park River Walk",
   extra=("Want to go further?", ["Older classes can follow the river upstream on the other side of the M50, where it runs through a beech wood with small ponds and a weir, and then under the motorway through a pair of arched tunnels. The footbridge over the M50 at the south of the park links the two halves; allow at least another hour.",
           "The <a href=\"m50-crossing.html\">M50 crossing</a> and <a href=\"tymon.html\">Tymon</a> pages have photos of that stretch, and the story of Tymon Castle and the esker, a ridge left by the Ice Age."])),
 
@@ -119,6 +120,7 @@ SCHOOL_WALKS = [
     ask="Why didn’t the canal builders just let the river flow into the canal?",
     more=("mount-jerome", "Under the Grand Canal")),
   ],
+  workbook="The Mill Road Walk",
   extra=("Want to go further?", ["From the canal, older classes can carry on along the river’s buried route through the Liberties to St Patrick’s Cathedral, about 1.5 km more, using the <a href=\"st-patricks.html\">St Patrick’s Cathedral</a> page. The <a href=\"shop.html\">Walk the Hidden River</a> workbook covers the city end, from Blackpitts to the Liffey."])),
 ]
 
@@ -147,6 +149,7 @@ def walk_page(w):
       f'<header class="page-head"><p class="kicker">School walk <span>·</span> {esc(w["area"])}</p><h1>{esc(w["name"])}</h1><p class="dek">{esc(w["dek"])}</p></header>'
       f'<dl class="walk-facts">{facts}</dl>'
       f'<aside class="brief"><strong>In brief</strong><p>{esc(w["brief"])}</p></aside>'
+      f'<p class="walk-wb">There is a printable workbook for this walk, <a href="shop.html#workbooks">{esc(w["workbook"])}</a>, at three levels from 1st to 6th class, with activities for every stop.</p>'
       f'<p class="walk-tools"><button class="btn ghost" type="button" onclick="window.print()">Print this walk</button></p>'
       f'<section class="walk-safe"><h2>Before you go</h2><ul>' + "".join(f"<li>{esc(x)}</li>" for x in w["safety"]) +
       f'</ul><p class="note">Please plan the visit under your school’s own outings policy, and walk the route yourself first: paths and works change.</p></section>'

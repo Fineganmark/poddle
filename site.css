@@ -410,6 +410,7 @@ html { scroll-behavior: smooth; }
 .walk-facts dt { font: 600 .72rem/1.2 var(--label); letter-spacing: .12em; text-transform: uppercase; color: var(--river); }
 .walk-facts dd { margin: 4px 0 0; font-size: .98rem; line-height: 1.45; }
 .walk-tools { margin: 0; }
+.walk-wb { margin: 0 0 18px; max-width: var(--measure, 40rem); }
 .walk-tools .btn { cursor: pointer; }
 .walk-safe ul { margin: 0; padding-left: 1.2em; display: grid; gap: 6px; max-width: var(--measure, 40rem); }
 .school-walk #map.map-walk { height: min(60vh, 520px); min-height: 320px; }

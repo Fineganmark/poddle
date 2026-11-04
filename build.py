@@ -998,7 +998,8 @@ WORKBOOKS = [
  ("Hunt for the Hidden River", "treasure-hunt", "A treasure hunt through the city centre. Solve a clue at each of six stops, collect the letters, and spell the secret word."),
  ("Walk the Hidden River", "walking-tour", "A self-guided walk along the Poddle’s buried course, from Blackpitts to the Liffey: seven stops, about 2.5 km, with something to look for at each."),
  ("Mill Detectives", "mill-detectives", "Water power and the mills that lined the Poddle, with a waterwheel to build from card and a paper plate, and test with a jug of water."),
- ("Flood Defenders", "flood-defenders", "Why the Poddle floods and how Dublin is keeping homes dry, with hands-on experiments and a flood defence to design."),
+ ("Flood Defenders", "flood-defenders", "Why the Poddle floods and how Dublin is keeping homes dry, with hands-on experiments and a flood defence to design."), ("Tymon Park River Walk", "tymon-walk", "A walk beside the open river in Tymon Park: the lake and its birds, the flood gate and the wetland that cleans the water, with a bird tally to fill in."),
+ ("The Mill Road Walk", "mill-road-walk", "A walk from Kimmage to Harold’s Cross through the old mill country, past the Stone Boat and Mount Argus to the siphon under the Grand Canal."),
 ]
 
 def shop_btn(url, label, ghost=False):
@@ -1019,13 +1020,13 @@ shop_page = f'''<section class="shop-hero"><div class="wrap shop-hero-in">
   <p class="kicker">Support this site</p>
   <h1>Workbooks for curious kids</h1>
   <p class="lede">Everything on this site is free, and it will stay that way, with no paywall and no adverts. If you would like to help with the hosting and the hours spent in the archives, buy a workbook. It is the whole business model.</p>
-  <ul class="facts"><li><strong>15</strong><span>workbooks, 1st to 6th class</span></li><li><strong>A4</strong><span>PDFs to print at home or school</span></li><li><strong>{SHOP["price_single"]}</strong><span>each, with packs and a full set</span></li></ul>
+  <ul class="facts"><li><strong>21</strong><span>workbooks, 1st to 6th class</span></li><li><strong>A4</strong><span>PDFs to print at home or school</span></li><li><strong>{SHOP["price_single"]}</strong><span>each, with packs and a full set</span></li></ul>
   <p class="cta">{shop_btn(SHOP["downloads"], "Browse the workbooks")}<a class="btn ghost" href="#workbooks">See what’s inside</a></p>
  </div>
  <figure class="shop-hero-fig"><img src="img/shop/complete-set.webp" alt="The five Poddle workbook covers fanned out" width="1200" height="600"></figure>
 </div></section>
 <div class="wrap page">
-<section class="shop-sec" id="workbooks"><div class="sec-head"><p class="kicker">The workbooks</p><h2>Five stories of the river, three levels each</h2>
+<section class="shop-sec" id="workbooks"><div class="sec-head"><p class="kicker">The workbooks</p><h2>Seven stories of the river, three levels each</h2>
 <p class="dek">Original writing and artwork about Dublin’s hidden river. Each comes in versions for 1st and 2nd class, 3rd and 4th class, and 5th and 6th class, with notes for the adult, curriculum links and an answer key. One copy covers your own family or one classroom.</p></div>
 <ul class="wb">{wb_cards}</ul></section>
 <section class="set-panel"><figure><img src="img/shop/complete-set.webp" alt="The complete set of fifteen Poddle workbooks" loading="lazy" width="1200" height="600"></figure>
