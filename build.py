@@ -872,6 +872,7 @@ MEDIA = [
  ("Video", "Tymon Park’s esker", "The Echo, on the glacial ridge beside Tymon Castle.", "https://youtu.be/-oMSnnBhdbI"),
  ("Video", "Kimmage Manor from the air", "Drone footage of the manor where the river is piped under the buildings.", "https://youtu.be/e3bgOMpW9Z4"),
  ("Video", "Medieval Dublin Online: Wood Quay", "How the Viking and medieval town grew beside the Poddle and the Liffey.", "https://vimeo.com/147322671"),
+ ("Television", "Go Outside and Play: Dublin’s Secret River (RTÉ, 2023)", "Carl Mullan follows his local river, the Poddle, from source to mouth.", "https://www.youtube.com/watch?v=yrl9EXPO2ko"),
  ("Television", "Cities of the Underworld: Viking Underground (History Channel, 2008)", "Don Wildman goes beneath the Viking towns of Europe, including Dublin.", "https://www.youtube.com/watch?v=ue_KBxfdI8Q"),
  ("Television", "The Liffey, episode 1: Protection and Defence (RTÉ, 2022)", "Dublin City Council’s David Green takes the cameras underground on the Poddle.", "https://presspack.rte.ie/2022/05/15/the-liffey-brand-new-series"),
  ("Article", "Underground Dublin: a pilgrimage through an ancient tunnel network", "Patrick Freyne in The Irish Times, 2021, walking the Poddle beneath the city.", "https://www.irishtimes.com/culture/heritage/underground-dublin-a-pilgrimage-through-an-ancient-tunnel-network-1.4662108"),
