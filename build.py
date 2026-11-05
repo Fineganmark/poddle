@@ -788,6 +788,7 @@ def wfig(*keys):
 # Sources
 src = f'''<div class="wrap page narrow"><header class="page-head"><p class="kicker">Sources</p><h1>Further reading</h1>
 <p class="dek">Maps, reports and articles used in putting this site together.</p></header>
+<section class="shout-out"><h2>Thank you, fellow Poddlers</h2><p>Here’s to the local historians who were following this river long before this site existed. A huge shout-out to my fellow Poddlers at <a href="https://www.hidden-dublin.com/poddle/poddle_resources.html" rel="noopener">Hidden Dublin</a> and the <a href="https://poddle.crumlinwalkinstownhistory.ie/" rel="noopener">Crumlin and Walkinstown History Group</a>, and of course to the great <a href="https://arranqhenderson.com/2017/07/18/the-best-poddle-river/" rel="noopener">Arran Henderson</a>.</p></section>
 <ul class="links">{"".join(f'<li><a href="{u}" rel="noopener">{esc(t)}</a></li>' for t, u in RESOURCES)}</ul>
 <section><h2>Photo credits</h2><p>Photographs from Wikimedia Commons, shown in black and white. Licences as stated; adapted (converted to black and white and resized).</p><ul class="links plain">
 <li><a href="https://commons.wikimedia.org/wiki/File:County_Dublin_-_Firhouse_Weir_-_20210110130610.jpg" rel="noopener">Firhouse Weir, 2021</a>: Tdr112, CC BY-SA 4.0 (<a href="https://creativecommons.org/licenses/by-sa/4.0" rel="noopener">licence</a>)</li>
