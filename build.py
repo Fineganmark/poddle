@@ -267,7 +267,7 @@ STOPS = [
  dict(slug="palace-street", name="Palace Street", place="Dame Street",
   teaser="Under the castle gate, Dame Street and the Olympia.",
   sections=[("Bifurcation", [
-    "Inside the gates of Dublin Castle the river divides again. McEntee and Corcoran describe it: “Turning northwards opposite the Chapel Royal, the Poddle bifurcates inside the Palace Street Gate, the more westerly branch flowing under the open space beside City Hall before going under Dame Street. The eastern branch flows under Palace Street, beside a bank, which a gang of would-be robbers tried to access from the culvert in the 1980s.”",
+    "Inside the gates of Dublin Castle the river divides again. McEntee and Corcoran describe it: “Turning northwards opposite the Chapel Royal, the Poddle bifurcates inside the Palace Street Gate, the more westerly branch flowing under the open space beside City Hall before going under Dame Street. The eastern branch flows under Palace Street, beside a bank, which a gang of would-be robbers tried to access from the culvert in the 1980s.” The film Dublin’s Hidden Rivers shows that wall, from about 4:06 in (linked below), and the Media page has more on the 1985 raid.",
     "Rev. Myles Ronan, writing in 1927, gives an older version of the same split: past the Lower Castle Yard the Poddle “anciently divided again into two branches, one going by Exchange Court, Crane Lane, south side of Essex Street, to the bottom of Sycamore Street, where it met the other branch”. Sister Ann Dominica Fitzgerald’s 1973 plan of the river from Warrenmount to the Liffey shows the two channels crossing Dame Street and joining again by Essex Street East."]),
    ("Dame Street", [
     "The river continues north under the Palace Street pedestrian gate of Dublin Castle and on to Dame Street. Dame Street takes its name from the dam on the Poddle, used both for defence and to power a mill."]),
@@ -279,7 +279,7 @@ STOPS = [
    ("Into the Castle by the river", [
     "The culvert has always worried the Castle’s guardians. On 8 March 1921, during the War of Independence, Crown forces took George Harty, Dublin Corporation’s engineer in charge of sewers, to his office in an armoured car, made him hand over the drawings of the Poddle and the sewers near the Castle, and had him lead a British officer through a length of the culvert. Manholes along the route are still checked, and welded shut, before high-profile visits to the Castle."])],
   images=[("dublin-castle-gate", "The Palace Street gate of Dublin Castle"), ("under-olympia-cropped", "The Poddle beneath the Olympia Theatre"), ("podle-beneath-dame-street", "The culvert beneath Dame Street")],
-  links=[("The Irish Times: Underground Dublin, a pilgrimage through an ancient tunnel network (2021)", "https://www.irishtimes.com/culture/heritage/underground-dublin-a-pilgrimage-through-an-ancient-tunnel-network-1.4662108"), ("Video: River Poddle in Dublin’s city centre, previously unseen", "https://www.youtube.com/watch?v=SLwzXheosOI")]),
+  links=[("The Irish Times: Underground Dublin, a pilgrimage through an ancient tunnel network (2021)", "https://www.irishtimes.com/culture/heritage/underground-dublin-a-pilgrimage-through-an-ancient-tunnel-network-1.4662108"), ("Video: River Poddle in Dublin’s city centre, previously unseen", "https://www.youtube.com/watch?v=SLwzXheosOI"), ("Video: Dublin’s Hidden Rivers, the wall the 1985 bank robbers tried to use (from 4:06)", "https://www.youtube.com/watch?v=K5ygnHSLKLY&t=246s")]),
  dict(slug="liffey", name="Liffey Outfall", place="Wellington Quay",
   teaser="Journey’s end, under Wellington Quay.",
   sections=[("The outfall", [
@@ -891,10 +891,11 @@ med += '</ol>'
 BANK_TUNNEL = [
  ("Television", "AIB bank robbery foiled (RTÉ News, 1985)", "Gardaí examine the tunnel dug towards the AIB on Dame Street, where the alarm foiled the raid.", "https://www.rte.ie/archives/collections/news/21193044-aib-bank-robbery-foiled/"),
  ("Article", "Bungling bank robbers tunnel into ladies’ room (UPI, 10 April 1985)", "The gang dug 25 yards from beside the Castle wall, crawled through sewers and cut into a basement washroom.", "https://www.upi.com/Archives/1985/04/10/Bungling-bank-robbers-tunnel-into-ladies-room/6614481957200/"),
+ ("Video", "Dublin’s Hidden Rivers: the wall the robbers broke through", "The film goes into the culvert and shows the wall the gang tried to get through, from about 4:06.", "https://www.youtube.com/watch?v=K5ygnHSLKLY&t=246s"),
  ("Podcast", "Did you know about Dublin’s bank robbery? (98FM)", "A short episode on the Easter 1985 attempt to reach the bank through the city’s tunnels and sewers.", "https://www.98fm.com/podcasts/98fms-did-you-know/did-you-know-about-dublins-bank-robbery"),
 ]
 med += ('<section class="media-group"><h2>The Dame Street bank tunnel, 1985</h2>'
-        '<p>Over the Easter weekend of 1985 a gang tunnelled from waste ground beside the Dublin Castle wall, crawled through the sewers under Dame Street and cut through a basement wall of the AIB branch. It was the ladies’ toilet. The alarm went off and they fled empty-handed. None of these reports names the Poddle, but the river runs under this corner of Dame Street, so it may well have been part of their route.</p>'
+        '<p>Over the Easter weekend of 1985 a gang tunnelled from waste ground beside the Dublin Castle wall, crawled through the sewers under Dame Street and cut through a basement wall of the AIB branch. It was the ladies’ toilet. The alarm went off and they fled empty-handed. The news reports of the time don’t name the Poddle, but the river runs under this corner of Dame Street, and the film Dublin’s Hidden Rivers shows the wall in the culvert that the gang tried to use.</p>'
         '<ol class="media-list">')
 med += "".join(f'<li><a href="{u}" target="_blank" rel="noopener noreferrer"><span class="mtype">{esc(k)}</span><strong>{esc(t)}</strong><span>{esc(d)}</span></a></li>' for k, t, d, u in BANK_TUNNEL)
 med += '</ol></section></div>'
