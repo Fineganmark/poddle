@@ -720,25 +720,29 @@ write("index.html", shell("index", "The River Poddle: Dublin’s hidden river, f
 # History index: one large map that cross-fades through the four periods (maps.js),
 # with dated thumbnails to pick one. The Poddle is baked in light blue by scripts/poddle_highlight.py.
 def map_show(maps):
+    # maps: (image base name, thumbnail label, caption, highlighted?)
+    def alt(cap, hl): return f"{cap}, with the River Poddle highlighted in light blue" if hl else cap
     slides = "".join(
-        f'<figure class="ms-slide{" on" if i == 0 else ""}" id="ms-{y}"{"" if i == 0 else " aria-hidden=\"true\""}>'
-        f'<img src="img/dublin-{y}-poddle.jpg" alt="{esc(cap)}, with the River Poddle highlighted in light blue" width="1600" height="1145" loading="{"eager" if i == 0 else "lazy"}"></figure>'
-        for i, (y, cap) in enumerate(maps))
+        f'<figure class="ms-slide{" on" if i == 0 else ""}" id="ms-{i}" data-cap="{esc(cap)}"{"" if i == 0 else " aria-hidden=\"true\""}>'
+        f'<img src="img/{f}.jpg" alt="{esc(alt(cap, hl))}" width="1600" height="1145" loading="{"eager" if i == 0 else "lazy"}"></figure>'
+        for i, (f, lab, cap, hl) in enumerate(maps))
     thumbs = "".join(
-        f'<li><a class="ms-thumb" href="img/dublin-{y}-poddle.jpg" data-i="{i}"{" aria-current=\"true\"" if i == 0 else ""}>'
-        f'<img src="img/dublin-{y}-poddle-thumb.jpg" alt="" width="320" height="229" loading="lazy"><span>c. {cap.split("c. ")[1]}</span></a></li>'
-        for i, (y, cap) in enumerate(maps))
-    return (f'<section class="map-show" aria-label="Maps of Dublin from c. 840 to c. 1300">'
+        f'<li><a class="ms-thumb" href="img/{f}.jpg" data-i="{i}"{" aria-current=\"true\"" if i == 0 else ""}>'
+        f'<img src="img/{f}-thumb.jpg" alt="" width="320" height="229" loading="lazy"><span>{esc(lab)}</span></a></li>'
+        for i, (f, lab, cap, hl) in enumerate(maps))
+    return (f'<section class="map-show" aria-label="Maps of Dublin from c. 840 to 1904">'
             f'<div class="ms-stage">{slides}</div>'
-            f'<div class="ms-bar"><p class="ms-cap" aria-live="polite">{esc(maps[0][1])}</p>'
+            f'<div class="ms-bar"><p class="ms-cap" aria-live="polite">{esc(maps[0][2])}</p>'
             f'<button class="ms-play" type="button" hidden aria-pressed="false">Pause</button></div>'
             f'<ol class="ms-thumbs">{thumbs}</ol>'
-            f'<p class="ms-note">The River Poddle is picked out in light blue. Maps from the Irish Historic Towns Atlas (2002).</p></section>'
+            f'<p class="ms-note">On the four atlas maps the River Poddle is picked out in light blue (Irish Historic Towns Atlas, 2002). '
+            f'John Speed’s “Dubline”, surveyed 1610, shown from a 19th-century reprint (British Library, via Wikimedia Commons, public domain): the Poddle comes in at the bottom, by St Patrick’s (63), and runs north to the Castle (23). '
+            f'Leonard R. Strangways, “The Walls of Dublin”, 1904 (via Wikimedia Commons, public domain): south is at the top, and the River Poddle is marked near Pole Gate, south of the Castle.</p></section>'
             f'<script src="maps.js?v={ASSET_V}" defer></script>')
 
 hist = f'''<div class="wrap page"><header class="page-head"><p class="kicker">History</p><h1>How the Poddle shaped Dublin</h1>
 <p class="dek">From the black pool of Dubh Linn to the flood scheme being built today. This is a friendly telling, drawn from many sources that sometimes disagree; where the record is thin we say so, and corrections are always welcome. Some of the most interesting facts come from <a href="planning-record.html">the planning files</a>, linked from the chapters below.</p></header>
-{map_show([("840","Dublin c. 840"),("1000","Dublin c. 1000"),("1170","Dublin c. 1170"),("1370","Dublin c. 1300")])}
+{map_show([("dublin-840-poddle","c. 840","Dublin c. 840",True),("dublin-1000-poddle","c. 1000","Dublin c. 1000",True),("dublin-1170-poddle","c. 1170","Dublin c. 1170",True),("dublin-1370-poddle","c. 1300","Dublin c. 1300",True),("dublin-1610-speed","1610","Dublin in 1610, by John Speed",False),("dublin-1904-strangways","1904","The walls of medieval Dublin, by Leonard Strangways, 1904",False)])}
 <ol class="tl big">{"".join(f'<li><a href="{h["slug"]}.html"><span class="when">{esc(h["when"])}</span><strong>{esc(h["name"])}</strong><span>{esc(h["teaser"])}</span></a></li>' for h in HISTORY)}</ol></div>'''
 write("history.html", shell("history", f"History · {SITE}", "How the River Poddle shaped Dublin, from the black pool of Dubh Linn to medieval diversions, mills, the 1719 Act and today’s flood scheme.", hist, "history.html"))
 
