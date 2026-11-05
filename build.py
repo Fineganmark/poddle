@@ -509,6 +509,11 @@ HISTORY = [
 ]
 
 RESOURCES = [
+ ("Hidden Dublin: the River Poddle, photographs and resources", "https://www.hidden-dublin.com/poddle/poddle_resources.html"),
+ ("Crumlin and Walkinstown History Group: the Poddle River project and map", "https://poddle.crumlinwalkinstownhistory.ie/"),
+ ("Crumlin Walkinstown History: Balrothery (Firhouse) Weir", "https://poddle.crumlinwalkinstownhistory.ie/location/firhouse-weir/"),
+ ("Arran Henderson: The best Poddle river", "https://arranqhenderson.com/2017/07/18/the-best-poddle-river/"),
+ ("Arran Henderson: origins of Saint Patrick’s Cathedral, the chapel on the island", "https://arranqhenderson.com/2014/01/12/origins-of-saint-patricks-cathedral-part-one-the-chapel-on-the-island-early-celtic-church/"),
  ("Dublin City Council planning application 4423/19, 27–29 New Row South: flood risk assessment (JBA Consulting), engineering report (J.J. Campbell & Associates), city archaeologist and planner’s reports", "https://planning.agileapplications.ie/dublincity/"),
  ("An Bord Pleanála case 306725: River Poddle Flood Alleviation Scheme, EIAR and planning documents", "https://www.pleanala.ie/publicaccess/EIAR-NIS/306725/River%20Poddle%20FAS/Part%203%20EIAR/Volume%202%20EIAR/Part%20I/Volume%202%20Part%201%20-%20Main%20Report.pdf"),
  ("EIAR Chapter 11: archaeology, architecture and cultural heritage (306725)", "https://www.pleanala.ie/publicaccess/EIAR-NIS/306725/River%20Poddle%20FAS/Part%203%20EIAR/Volume%202%20EIAR/Part%20II/11.%20Archaeological%20Architectural%20Cultural%20Heritage.pdf"),
@@ -517,7 +522,6 @@ RESOURCES = [
  ("UCD Digital Library: historic maps of Dublin", "https://digital.ucd.ie/view/ucdlib:40377#c0055-6-6.1"),
  ("South Dublin County Council: River Poddle Flood Alleviation Scheme", "https://consult.sdublincoco.ie/en/consultation/river-poddle-flood-alleviation-scheme-part-10-planning-submission"),
  ("Dublin.ie: The Poddle and Dublin’s hidden rivers", "https://dublin.ie/live/stories/the-poddle-and-dublins-hidden-rivers/"),
- ("Arran Henderson: The best Poddle river", "https://arranqhenderson.com/2017/07/18/the-best-poddle-river/"),
  ("Eastern CFRAM study: Poddle options report", "http://eastcfram.irish-surge-forecast.ie/wp-content/uploads/2011/10/IBE0600Rp0030_Poddle-Options-Report_F02.pdf"),
  ("Ask About Ireland: Griffith’s Valuation", "http://www.askaboutireland.ie/griffith-valuation/"),
  ("Geological Survey Ireland: River Poddle, County Geological Site report (Dublin City)", "https://gsi.geodata.gov.ie/downloads/Geoheritage/Reports/DC011_River_Poddle.pdf"),
@@ -528,8 +532,6 @@ RESOURCES = [
  ("Excavations.ie: The Weir, Firhouse, 2001 (Shane Delaney, IAC, licence 01E0858)", "https://excavations.ie/report/2001/Dublin/0006358/"),
  ("Weston St John Joyce, The Neighbourhood of Dublin (1912): the old city water supply", "https://www.chaptersofdublin.ie/Neighbourhood/chapter43.html"),
  ("William Handcock, The History and Antiquities of Tallaght: the River Dodder and the city weir", "https://www.chaptersofdublin.ie/Handcock/tallaght17.htm"),
- ("Crumlin and Walkinstown History Group: the Poddle River project and map", "https://poddle.crumlinwalkinstownhistory.ie/"),
- ("Crumlin Walkinstown History: Balrothery (Firhouse) Weir", "https://poddle.crumlinwalkinstownhistory.ie/location/firhouse-weir/"),
  ("Our Irish Heritage: Balrothery Weir, part of Tallaght’s waterways history", "https://www.ouririshheritage.org/content/archive/place/miscellaneous-place/balrothery-weir-on-the-dodder-part-of-tallaght-waterways-history"),
  ("South Dublin County Council: Firhouse Weir", "https://www.sdcc.ie/en/services/tourism/activities/sightseeing/firhouse-weir/"),
  ("William Handcock, The History and Antiquities of Tallaght: the church and Talbot’s Leap", "https://www.chaptersofdublin.ie/Handcock/tallaght3.htm"),
@@ -538,7 +540,6 @@ RESOURCES = [
  ("Wikipedia: Henry Barry, 4th Baron Barry of Santry", "https://en.wikipedia.org/wiki/Henry_Barry,_4th_Baron_Barry_of_Santry"),
  ("St Patrick’s Cathedral: Saint Patrick and the cathedral", "https://www.stpatrickscathedral.ie/saint-patrick-and-the-cathedral/"),
  ("Wikipedia: St Patrick’s Cathedral, Dublin", "https://en.wikipedia.org/wiki/St_Patrick%27s_Cathedral,_Dublin"),
- ("Arran Henderson: origins of Saint Patrick’s Cathedral, the chapel on the island", "https://arranqhenderson.com/2014/01/12/origins-of-saint-patricks-cathedral-part-one-the-chapel-on-the-island-early-celtic-church/"),
 ]
 
 # ---------------------------------------------------------------- templates
