@@ -943,7 +943,8 @@ about = f'''<div class="wrap page narrow"><header class="page-head"><p class="ki
 <p><label for="c-email">Your email</label><input id="c-email" name="email" type="email" required autocomplete="email"></p>
 <p><label for="c-msg">Your message</label><textarea id="c-msg" name="message" rows="6" required></textarea></p>
 <p><button type="submit">Send message</button></p>
-</form></section>
+</form>
+<p>If the form doesn’t work, you can email <a href="mailto:hello@poddle.ie">hello@poddle.ie</a> instead.</p></section>
 </div>'''
 write("about.html", shell("about", f"About · {SITE}", "About poddle.ie, a free local-history site about the River Poddle, Dublin’s hidden river. Send corrections, memories and photographs.", about, "about.html"))
 write("thanks.html", shell("thanks", f"Thank you · {SITE}", "Message sent.", '<div class="wrap page narrow"><header class="page-head"><h1>Thank you</h1><p class="dek">Your message has been sent. We will be in touch if a reply is needed.</p></header><p><a href="index.html">Back to the home page</a></p></div>', "about.html", noindex=True))
