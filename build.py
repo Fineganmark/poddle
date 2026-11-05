@@ -868,6 +868,7 @@ write("wildlife.html", shell("wildlife", f"Wildlife of the Poddle · {SITE}",
 MEDIA = [
  ("Video", "Dublin’s Hidden Rivers", "A short film on the Poddle and the city’s other buried rivers.", "https://www.youtube.com/watch?v=K5ygnHSLKLY"),
  ("Video", "River Poddle in Dublin’s city centre, previously unseen", "Footage from inside the culverted river in the city centre.", "https://www.youtube.com/watch?v=SLwzXheosOI"),
+ ("Video", "The Poddle, by Gerard O’Kelly (1975)", "A 1975 film following the river from Fettercairn to Wellington Quay, with the Dubh Linn, the 1244 diversion and Red Hugh O’Donnell’s escape. Shared by the Harold’s Cross Festival.", "https://www.youtube.com/watch?v=42T1AVpYQTM"),
  ("Video", "Tymon Park’s esker", "The Echo, on the glacial ridge beside Tymon Castle.", "https://youtu.be/-oMSnnBhdbI"),
  ("Video", "Kimmage Manor from the air", "Drone footage of the manor where the river is piped under the buildings.", "https://youtu.be/e3bgOMpW9Z4"),
  ("Video", "Medieval Dublin Online: Wood Quay", "How the Viking and medieval town grew beside the Poddle and the Liffey.", "https://vimeo.com/147322671"),
