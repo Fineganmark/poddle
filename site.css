@@ -187,6 +187,8 @@ html { scroll-behavior: smooth; }
 .media-list strong { font: 400 1.2rem/1.25 var(--display); }
 .media-list a:hover strong { color: var(--river); }
 .media-list span:last-child { color: var(--muted); font-size: .95rem; }
+.media-group { margin-top: 48px; }
+.media-group > p { max-width: 42rem; margin: 0 0 18px; }
 
 /* map */
 .map-shell { display: grid; grid-template-columns: minmax(0, 1fr) 200px; gap: 18px; align-items: start; }

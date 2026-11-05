@@ -881,7 +881,18 @@ MEDIA = [
 ]
 med = '<div class="wrap page"><header class="page-head"><p class="kicker">Media</p><h1>Watch, read and listen</h1><p class="dek">Films, television and writing about the Poddle. Links open on other sites.</p></header><ol class="media-list">'
 med += "".join(f'<li><a href="{u}" target="_blank" rel="noopener noreferrer"><span class="mtype">{esc(k)}</span><strong>{esc(t)}</strong><span>{esc(d)}</span></a></li>' for k, t, d, u in MEDIA)
-med += '</ol></div>'
+med += '</ol>'
+# Clips grouped under their own heading (Mark, 5 Nov 2026)
+BANK_TUNNEL = [
+ ("Television", "AIB bank robbery foiled (RTÉ News, 1985)", "Gardaí examine the tunnel dug towards the AIB on Dame Street, where the alarm foiled the raid.", "https://www.rte.ie/archives/collections/news/21193044-aib-bank-robbery-foiled/"),
+ ("Article", "Bungling bank robbers tunnel into ladies’ room (UPI, 10 April 1985)", "The gang dug 25 yards from beside the Castle wall, crawled through sewers and cut into a basement washroom.", "https://www.upi.com/Archives/1985/04/10/Bungling-bank-robbers-tunnel-into-ladies-room/6614481957200/"),
+ ("Podcast", "Did you know about Dublin’s bank robbery? (98FM)", "A short episode on the Easter 1985 attempt to reach the bank through the city’s tunnels and sewers.", "https://www.98fm.com/podcasts/98fms-did-you-know/did-you-know-about-dublins-bank-robbery"),
+]
+med += ('<section class="media-group"><h2>The Dame Street bank tunnel, 1985</h2>'
+        '<p>Over the Easter weekend of 1985 a gang tunnelled from waste ground beside the Dublin Castle wall, crawled through the sewers under Dame Street and cut through a basement wall of the AIB branch. It was the ladies’ toilet. The alarm went off and they fled empty-handed. None of these reports names the Poddle, but the river runs under this corner of Dame Street, so it may well have been part of their route.</p>'
+        '<ol class="media-list">')
+med += "".join(f'<li><a href="{u}" target="_blank" rel="noopener noreferrer"><span class="mtype">{esc(k)}</span><strong>{esc(t)}</strong><span>{esc(d)}</span></a></li>' for k, t, d, u in BANK_TUNNEL)
+med += '</ol></section></div>'
 write("media.html", shell("media", f"Media · {SITE}", "Films, television and writing about the River Poddle.", med, "media.html"))
 
 # About
