@@ -203,8 +203,13 @@ STOPS = [
  dict(slug="st-patricks", name="St Patrick’s Cathedral", place="Blackpitts and the Liberties",
   teaser="Built between two streams, and flooded by them for centuries.",
   sections=[("Through the Liberties", [
-    "North of the Grand Canal, the culverted river runs along Clanbrassil Street, past Donore Avenue, Warrenmount and Blackpitts. Blackpitts, a name on maps by 1728, probably comes from the pits used by tanners along the river, and Mill Street, first mentioned in 1711, recalls a double mill for oil and flour that is linked to St Thomas’s Abbey. In 1830 the street had several tanners and a fancy weaver; by 1880 it had five tanners and a parchment maker. During a great fire on 22 June 1875, burning whiskey ran into the Poddle beneath Ardee Street and set the river alight.",
+    "North of the Grand Canal, the culverted river runs along Clanbrassil Street, past Donore Avenue, Warrenmount and Blackpitts. Blackpitts, a name on maps by 1728, probably comes from the pits used by tanners along the river, and Mill Street, first mentioned in 1711, recalls a double mill for oil and flour that is linked to St Thomas’s Abbey. In 1830 the street had several tanners and a fancy weaver; by 1880 it had five tanners and a parchment maker. During a great fire on 22 June 1875, burning whiskey ran into the Poddle beneath Ardee Street and set the river alight. Faddle Alley, a lane off Blackpitts, is where the blind street rhymer Michael Moran, known as Zozimus, was born in about 1794. He died in lodgings on Patrick Street, also on the river’s course, in 1846.",
     " Near New Row it picks up its ancient course again, and at the junction of New Street, Patrick Street and Kevin Street, the old Cross Poddle (renamed Dean Street by the Wide Streets Commissioners in 1826), a medieval mill stood on its bank beside St Nicholas’ Bridge, outside St Nicholas’ Gate. At Fumbally Lane it is joined by the Tenter Water, a branch of the City Watercourse, and at the corner of the Coombe and Patrick Street by its one real tributary, the Commons Water, which rises in Crumlin."]),
+   ("The Blackpitts tanners", [
+    "Cross Poddle was much older than its mill. In the Middle Ages it was the lowest point at which the Poddle could be forded, so several important roads met there, with a gate outside the city walls and a market. The area may already have been settled before the Normans came, with several early churches and possibly an Irish suburb of the Norse town.",
+    "Just upstream, the river gave Blackpitts its trade. In 2004 archaeologists excavating at 48 New Street South found more than a hundred tanning pits, dating from the late 13th century to the 17th. The archaeologist Antoine Giacometti argues that this was not one big tannery but a quarter of small household tanyards, worked behind the houses on New Street. Tanners needed a steady supply of water to soak and rinse hides, and late medieval records show ditches being dug off the Poddle to serve the tanneries. From the 15th century, laws often ordered those ditches filled in, because the Poddle kept flooding and the tanners were fouling the water.",
+    "The site ran along the top of a steep slope down into the Poddle valley. A ditch dug along it in the 13th or 14th century ran into or out of the river near a medieval millpond, which was excavated just north-west of the site. The millpond was dug in the 13th or 14th century and filled in during the 14th or 15th, the same dates as the ditch, which may have been its tail race or overflow. Giacometti suggests both were part of the great programme of works in the mid-13th century, when the river was diverted round the Liberties and mills and water channels were set along its old and new courses, marking the edges of the church lands. Disputes over those mills and watercourses fill the medieval records.",
+    '<div class="fig-grid"><figure class="fig"><a href="img/blackpitts-tanning-pits.jpg"><img src="img/blackpitts-tanning-pits.jpg" alt="Rows of tanning pits uncovered during an archaeological excavation at Blackpitts. Photo courtesy of Reddit user Few_shine2208." loading="lazy"></a><figcaption>Rows of tanning pits uncovered during an archaeological excavation at Blackpitts. Photo courtesy of Reddit user Few_shine2208. <a href="img/blackpitts-tanning-pits.jpg">Open full size</a></figcaption></figure></div>']),
    ("Donore Avenue, 1901", [
     "Donore Avenue was once Love Lane, and the Poddle ran open beside it. Dublin Corporation’s printed reports for 1901 (Report No. 129 of the Paving Committee, pages 301 to 316) tell the story of how it came to be covered.",
     "In 1894 an architect, Robert Stirling, laid out new roads on the Huband estate off the South Circular Road, reached through Love Lane. The Borough Surveyor, Spencer Harty, agreed to narrower roads on condition that a stretch of the Poddle he marked “A” was covered over: “this will be a great improvement.” The Corporation approved this in 1896, but the new road was never built, so the river was never covered.",
@@ -231,7 +236,7 @@ STOPS = [
    ("What to see", [
     "Stand in St Patrick’s Park and you are standing roughly on the island between the two old streams. The Poddle still runs beneath Patrick Street, along the west side of the park, in its culvert on the way to the Castle. Inside the cathedral, look for the old well slab, and notice that there are no steps down: the floor is as low as the water will allow."])],
   images=[("st-patricks-from-park", "St Patrick’s Cathedral from St Patrick’s Park, the old island between the two streams, 2015. Photo: Clara.munecas, Wikimedia Commons, CC BY-SA 4.0."), ("st-patricks-1814", "The cathedral in 1814, before the Guinness restoration. Engraving credited to James Whitelaw, public domain, via Wikimedia Commons."), ("st-patricks-lawrence", "St Patrick’s Cathedral after the restoration. Photo: William Lawrence, Lawrence Collection, public domain, via Wikimedia Commons."), ("st-patricks-west-front", "The west front and Minot’s Tower from Patrick Street, under which the Poddle runs, 2012. Photo: Andreas F. Borchert, Wikimedia Commons, CC BY-SA 4.0."), ("st-patricks-nave", "The nave, looking east. There is no crypt below it. Photo: Diliff, Wikimedia Commons, CC BY-SA 3.0."), ("st-patricks-well-stone", "The carved stone found over the old well, now in the cathedral. Photo: Wknight94, Wikimedia Commons, CC BY-SA 3.0."), ("st-patricks-well-plaque", "The plaque in St Patrick’s Park marking the reputed site of the well. Photo: Archaeomoonwalker, Wikimedia Commons, CC0."), ("ronan-1927-map-vi", "The Poddle and its ditch branches around St Patrick’s Cathedral, with St Patrick’s Well beside the cathedral, from a Dublin Corporation map. Map VI from Rev. Myles V. Ronan, “The Poddle River and its Branches”, Journal of the Royal Society of Antiquaries of Ireland, 1927.")],
-  links=[("St Patrick’s Cathedral: Saint Patrick and the cathedral", "https://www.stpatrickscathedral.ie/saint-patrick-and-the-cathedral/"), ("Weston St John Joyce, The Neighbourhood of Dublin: the old city water supply", "https://www.chaptersofdublin.ie/Neighbourhood/chapter43.html"), ("Arran Henderson: the chapel on the island", "https://arranqhenderson.com/2014/01/12/origins-of-saint-patricks-cathedral-part-one-the-chapel-on-the-island-early-celtic-church/"), ("Wikipedia: St Patrick’s Cathedral, Dublin", "https://en.wikipedia.org/wiki/St_Patrick%27s_Cathedral,_Dublin")]),
+  links=[("Antoine Giacometti, Blackpitts: Dublin’s medieval tanning quarter (PDF)", "https://static1.squarespace.com/static/61b0b814414fb8020e89e9d1/t/61d6c7289232d563f5e95aab/1641465663128/07+Giacometti.pdf"), ("St Patrick’s Cathedral: Saint Patrick and the cathedral", "https://www.stpatrickscathedral.ie/saint-patrick-and-the-cathedral/"), ("Weston St John Joyce, The Neighbourhood of Dublin: the old city water supply", "https://www.chaptersofdublin.ie/Neighbourhood/chapter43.html"), ("Wikipedia: Zozimus (Michael Moran), citing P. J. McCall, Dublin Historical Record, 1945", "https://en.wikipedia.org/wiki/Zozimus"), ("Arran Henderson: The best Poddle river", "https://arranqhenderson.com/2017/07/18/the-best-poddle-river/"), ("Arran Henderson: the chapel on the island", "https://arranqhenderson.com/2014/01/12/origins-of-saint-patricks-cathedral-part-one-the-chapel-on-the-island-early-celtic-church/"), ("Wikipedia: St Patrick’s Cathedral, Dublin", "https://en.wikipedia.org/wiki/St_Patrick%27s_Cathedral,_Dublin")]),
  dict(slug="ship-street-little", name="Ship Street Little", place="Dublin Castle",
   teaser="A sheep market, and a ravine as deep as any dig in Dublin.",
   sections=[("Sráid na gCaorach", [
@@ -267,7 +272,7 @@ STOPS = [
  dict(slug="palace-street", name="Palace Street", place="Dame Street",
   teaser="Under the castle gate, Dame Street and the Olympia.",
   sections=[("Bifurcation", [
-    "Inside the gates of Dublin Castle the river divides again. McEntee and Corcoran describe it: “Turning northwards opposite the Chapel Royal, the Poddle bifurcates inside the Palace Street Gate, the more westerly branch flowing under the open space beside City Hall before going under Dame Street. The eastern branch flows under Palace Street, beside a bank, which a gang of would-be robbers tried to access from the culvert in the 1980s.”",
+    "Inside the gates of Dublin Castle the river divides again. McEntee and Corcoran describe it: “Turning northwards opposite the Chapel Royal, the Poddle bifurcates inside the Palace Street Gate, the more westerly branch flowing under the open space beside City Hall before going under Dame Street. The eastern branch flows under Palace Street, beside a bank, which a gang of would-be robbers tried to access from the culvert in the 1980s.” The film Dublin’s Hidden Rivers shows that wall, from about 4:06 in (linked below), and the Media page has more on the 1985 raid.",
     "Rev. Myles Ronan, writing in 1927, gives an older version of the same split: past the Lower Castle Yard the Poddle “anciently divided again into two branches, one going by Exchange Court, Crane Lane, south side of Essex Street, to the bottom of Sycamore Street, where it met the other branch”. Sister Ann Dominica Fitzgerald’s 1973 plan of the river from Warrenmount to the Liffey shows the two channels crossing Dame Street and joining again by Essex Street East."]),
    ("Dame Street", [
     "The river continues north under the Palace Street pedestrian gate of Dublin Castle and on to Dame Street. Dame Street takes its name from the dam on the Poddle, used both for defence and to power a mill."]),
@@ -279,7 +284,7 @@ STOPS = [
    ("Into the Castle by the river", [
     "The culvert has always worried the Castle’s guardians. On 8 March 1921, during the War of Independence, Crown forces took George Harty, Dublin Corporation’s engineer in charge of sewers, to his office in an armoured car, made him hand over the drawings of the Poddle and the sewers near the Castle, and had him lead a British officer through a length of the culvert. Manholes along the route are still checked, and welded shut, before high-profile visits to the Castle."])],
   images=[("dublin-castle-gate", "The Palace Street gate of Dublin Castle"), ("under-olympia-cropped", "The Poddle beneath the Olympia Theatre"), ("podle-beneath-dame-street", "The culvert beneath Dame Street")],
-  links=[("The Irish Times: Underground Dublin, a pilgrimage through an ancient tunnel network (2021)", "https://www.irishtimes.com/culture/heritage/underground-dublin-a-pilgrimage-through-an-ancient-tunnel-network-1.4662108"), ("Video: River Poddle in Dublin’s city centre, previously unseen", "https://www.youtube.com/watch?v=SLwzXheosOI")]),
+  links=[("The Irish Times: Underground Dublin, a pilgrimage through an ancient tunnel network (2021)", "https://www.irishtimes.com/culture/heritage/underground-dublin-a-pilgrimage-through-an-ancient-tunnel-network-1.4662108"), ("Video: River Poddle in Dublin’s city centre, previously unseen", "https://www.youtube.com/watch?v=SLwzXheosOI"), ("Video: Dublin’s Hidden Rivers, the wall the 1985 bank robbers tried to use (from 4:06)", "https://www.youtube.com/watch?v=K5ygnHSLKLY&t=246s")]),
  dict(slug="liffey", name="Liffey Outfall", place="Wellington Quay",
   teaser="Journey’s end, under Wellington Quay.",
   sections=[("The outfall", [
@@ -394,7 +399,7 @@ HISTORY = [
  dict(slug="mills", name="The mills", when="1240s to the 1960s",
   teaser="Seven centuries of water power, from abbey mills to cotton and poplin.",
   sections=[("Why the water mattered", [
-    "The Poddle was bent and diverted above all to turn mill wheels. The monks of St Thomas’s Abbey brought Dodder water into it in the 1240s partly for their mills, and between 1245 and 1324 they redirected its course again to serve them. By 1719 Parliament was complaining that mills along the watercourse were building dams and ponds and starving the city of water."]),
+    "The Poddle was bent and diverted above all to turn mill wheels. The monks of St Thomas’s Abbey brought Dodder water into it in the 1240s partly for their mills, and between 1245 and 1324 they redirected its course again to serve them. Archaeology backs this up: a millpond excavated on the Poddle’s bank off New Street was dug in the 13th or 14th century and filled in during the 14th or 15th (Antoine Giacometti, “Blackpitts: Dublin’s medieval tanning quarter”). By 1719 Parliament was complaining that mills along the watercourse were building dams and ponds and starving the city of water."]),
    ("From source to sea", [
     "<ul class=\"mill-list\"><li><strong>Mount Down Mill</strong>: where the City Watercourse met the Tymon River, upstream of Kimmage. In 1952 its owner, Peter Cullen, sued Dublin Corporation for £20,000 over the mill’s ancient water right, after the Corporation lowered the crest of the city weir. Sources differ on the details: McEntee and Corcoran say he was awarded £20,000 in the High Court in 1952, while Sister Ann Dominica Fitzgerald says the weir was lowered in 1943 and the £20,000 awarded by the Supreme Court in 1960.</li>"
     "<li><strong>Ravensdale Mills</strong>, Kimmage Road Lower: corn and flour, with a pond, sluice and weir, on maps from the 1830s to 1940.</li>"
@@ -732,25 +737,29 @@ write("index.html", shell("index", "The River Poddle: Dublin’s hidden river, f
 # History index: one large map that cross-fades through the four periods (maps.js),
 # with dated thumbnails to pick one. The Poddle is baked in light blue by scripts/poddle_highlight.py.
 def map_show(maps):
+    # maps: (image base name, thumbnail label, caption, highlighted?)
+    def alt(cap, hl): return f"{cap}, with the River Poddle highlighted in light blue" if hl else cap
     slides = "".join(
-        f'<figure class="ms-slide{" on" if i == 0 else ""}" id="ms-{y}"{"" if i == 0 else " aria-hidden=\"true\""}>'
-        f'<img src="img/dublin-{y}-poddle.jpg" alt="{esc(cap)}, with the River Poddle highlighted in light blue" width="1600" height="1145" loading="{"eager" if i == 0 else "lazy"}"></figure>'
-        for i, (y, cap) in enumerate(maps))
+        f'<figure class="ms-slide{" on" if i == 0 else ""}" id="ms-{i}" data-cap="{esc(cap)}"{"" if i == 0 else " aria-hidden=\"true\""}>'
+        f'<img src="img/{f}.jpg" alt="{esc(alt(cap, hl))}" width="1600" height="1145" loading="{"eager" if i == 0 else "lazy"}"></figure>'
+        for i, (f, lab, cap, hl) in enumerate(maps))
     thumbs = "".join(
-        f'<li><a class="ms-thumb" href="img/dublin-{y}-poddle.jpg" data-i="{i}"{" aria-current=\"true\"" if i == 0 else ""}>'
-        f'<img src="img/dublin-{y}-poddle-thumb.jpg" alt="" width="320" height="229" loading="lazy"><span>c. {cap.split("c. ")[1]}</span></a></li>'
-        for i, (y, cap) in enumerate(maps))
-    return (f'<section class="map-show" aria-label="Maps of Dublin from c. 840 to c. 1300">'
+        f'<li><a class="ms-thumb" href="img/{f}.jpg" data-i="{i}"{" aria-current=\"true\"" if i == 0 else ""}>'
+        f'<img src="img/{f}-thumb.jpg" alt="" width="320" height="229" loading="lazy"><span>{esc(lab)}</span></a></li>'
+        for i, (f, lab, cap, hl) in enumerate(maps))
+    return (f'<section class="map-show" aria-label="Maps of Dublin from c. 840 to 1904">'
             f'<div class="ms-stage">{slides}</div>'
-            f'<div class="ms-bar"><p class="ms-cap" aria-live="polite">{esc(maps[0][1])}</p>'
+            f'<div class="ms-bar"><p class="ms-cap" aria-live="polite">{esc(maps[0][2])}</p>'
             f'<button class="ms-play" type="button" hidden aria-pressed="false">Pause</button></div>'
             f'<ol class="ms-thumbs">{thumbs}</ol>'
-            f'<p class="ms-note">The River Poddle is picked out in light blue. Maps from the Irish Historic Towns Atlas (2002).</p></section>'
+            f'<p class="ms-note">On the four atlas maps the River Poddle is picked out in light blue (Irish Historic Towns Atlas, 2002). '
+            f'John Speed’s “Dubline”, surveyed 1610, shown from a 19th-century reprint (British Library, via Wikimedia Commons, public domain): the Poddle comes in at the bottom, by St Patrick’s (63), and runs north to the Castle (23). '
+            f'Leonard R. Strangways, “The Walls of Dublin”, 1904 (via Wikimedia Commons, public domain): south is at the top, and the River Poddle is marked near Pole Gate, south of the Castle.</p></section>'
             f'<script src="maps.js?v={ASSET_V}" defer></script>')
 
 hist = f'''<div class="wrap page"><header class="page-head"><p class="kicker">History</p><h1>How the Poddle shaped Dublin</h1>
 <p class="dek">From the black pool of Dubh Linn to the flood scheme being built today. This is a friendly telling, drawn from many sources that sometimes disagree; where the record is thin we say so, and corrections are always welcome. Some of the most interesting facts come from <a href="planning-record.html">the planning files</a>, linked from the chapters below.</p></header>
-{map_show([("840","Dublin c. 840"),("1000","Dublin c. 1000"),("1170","Dublin c. 1170"),("1370","Dublin c. 1300")])}
+{map_show([("dublin-840-poddle","c. 840","Dublin c. 840",True),("dublin-1000-poddle","c. 1000","Dublin c. 1000",True),("dublin-1170-poddle","c. 1170","Dublin c. 1170",True),("dublin-1370-poddle","c. 1300","Dublin c. 1300",True),("dublin-1610-speed","1610","Dublin in 1610, by John Speed",False),("dublin-1904-strangways","1904","The walls of medieval Dublin, by Leonard Strangways, 1904",False)])}
 <ol class="tl big">{"".join(f'<li><a href="{h["slug"]}.html"><span class="when">{esc(h["when"])}</span><strong>{esc(h["name"])}</strong><span>{esc(h["teaser"])}</span></a></li>' for h in HISTORY)}</ol></div>'''
 write("history.html", shell("history", f"History · {SITE}", "How the River Poddle shaped Dublin, from the black pool of Dubh Linn to medieval diversions, mills, the 1719 Act and today’s flood scheme.", hist, "history.html"))
 
@@ -880,9 +889,12 @@ write("wildlife.html", shell("wildlife", f"Wildlife of the Poddle · {SITE}",
 MEDIA = [
  ("Video", "Dublin’s Hidden Rivers", "A short film on the Poddle and the city’s other buried rivers.", "https://www.youtube.com/watch?v=K5ygnHSLKLY"),
  ("Video", "River Poddle in Dublin’s city centre, previously unseen", "Footage from inside the culverted river in the city centre.", "https://www.youtube.com/watch?v=SLwzXheosOI"),
+ ("Video", "The Poddle, by Gerard O’Kelly (1975)", "A 1975 film following the river from Fettercairn to Wellington Quay, with the Dubh Linn, the 1244 diversion and Red Hugh O’Donnell’s escape. Shared by the Harold’s Cross Festival.", "https://www.youtube.com/watch?v=42T1AVpYQTM"),
  ("Video", "Tymon Park’s esker", "The Echo, on the glacial ridge beside Tymon Castle.", "https://youtu.be/-oMSnnBhdbI"),
  ("Video", "Kimmage Manor from the air", "Drone footage of the manor where the river is piped under the buildings.", "https://youtu.be/e3bgOMpW9Z4"),
  ("Video", "Medieval Dublin Online: Wood Quay", "How the Viking and medieval town grew beside the Poddle and the Liffey.", "https://vimeo.com/147322671"),
+ ("Television", "Go Outside and Play: Dublin’s Secret River (RTÉ, 2023)", "Carl Mullan follows his local river, the Poddle, from source to mouth.", "https://www.youtube.com/watch?v=yrl9EXPO2ko"),
+ ("Television", "Cities of the Underworld: Viking Underground (History Channel, 2008)", "Don Wildman goes beneath the Viking towns of Europe, including Dublin.", "https://www.youtube.com/watch?v=ue_KBxfdI8Q"),
  ("Television", "The Liffey, episode 1: Protection and Defence (RTÉ, 2022)", "Dublin City Council’s David Green takes the cameras underground on the Poddle.", "https://presspack.rte.ie/2022/05/15/the-liffey-brand-new-series"),
  ("Article", "Underground Dublin: a pilgrimage through an ancient tunnel network", "Patrick Freyne in The Irish Times, 2021, walking the Poddle beneath the city.", "https://www.irishtimes.com/culture/heritage/underground-dublin-a-pilgrimage-through-an-ancient-tunnel-network-1.4662108"),
  ("Article", "The Ship Street archaeological dig", "RTÉ News, June 2020, on the ravine found south of Dublin Castle.", "https://www.rte.ie/news/dublin/2020/0609/1146385-archaeological-dig/"),
@@ -891,7 +903,19 @@ MEDIA = [
 ]
 med = '<div class="wrap page"><header class="page-head"><p class="kicker">Media</p><h1>Watch, read and listen</h1><p class="dek">Films, television and writing about the Poddle. Links open on other sites.</p></header><ol class="media-list">'
 med += "".join(f'<li><a href="{u}" target="_blank" rel="noopener noreferrer"><span class="mtype">{esc(k)}</span><strong>{esc(t)}</strong><span>{esc(d)}</span></a></li>' for k, t, d, u in MEDIA)
-med += '</ol></div>'
+med += '</ol>'
+# Clips grouped under their own heading (Mark, 5 Nov 2026)
+BANK_TUNNEL = [
+ ("Television", "AIB bank robbery foiled (RTÉ News, 1985)", "Gardaí examine the tunnel dug towards the AIB on Dame Street, where the alarm foiled the raid.", "https://www.rte.ie/archives/collections/news/21193044-aib-bank-robbery-foiled/"),
+ ("Article", "Bungling bank robbers tunnel into ladies’ room (UPI, 10 April 1985)", "The gang dug 25 yards from beside the Castle wall, crawled through sewers and cut into a basement washroom.", "https://www.upi.com/Archives/1985/04/10/Bungling-bank-robbers-tunnel-into-ladies-room/6614481957200/"),
+ ("Video", "Dublin’s Hidden Rivers: the wall the robbers broke through", "The film goes into the culvert and shows the wall the gang tried to get through, from about 4:06.", "https://www.youtube.com/watch?v=K5ygnHSLKLY&t=246s"),
+ ("Podcast", "Did you know about Dublin’s bank robbery? (98FM)", "A short episode on the Easter 1985 attempt to reach the bank through the city’s tunnels and sewers.", "https://www.98fm.com/podcasts/98fms-did-you-know/did-you-know-about-dublins-bank-robbery"),
+]
+med += ('<section class="media-group"><h2>The Dame Street bank tunnel, 1985</h2>'
+        '<p>Over the Easter weekend of 1985 a gang tunnelled from waste ground beside the Dublin Castle wall, crawled through the sewers under Dame Street and cut through a basement wall of the AIB branch. It was the ladies’ toilet. The alarm went off and they fled empty-handed. The news reports of the time don’t name the Poddle, but the river runs under this corner of Dame Street, and the film Dublin’s Hidden Rivers shows the wall in the culvert that the gang tried to use.</p>'
+        '<ol class="media-list">')
+med += "".join(f'<li><a href="{u}" target="_blank" rel="noopener noreferrer"><span class="mtype">{esc(k)}</span><strong>{esc(t)}</strong><span>{esc(d)}</span></a></li>' for k, t, d, u in BANK_TUNNEL)
+med += '</ol></section></div>'
 write("media.html", shell("media", f"Media · {SITE}", "Films, television and writing about the River Poddle.", med, "media.html"))
 
 # About
@@ -963,6 +987,7 @@ schools = f'''<div class="wrap page narrow"><header class="page-head"><p class="
 <p class="note">Please plan any visit under your school’s own outings policy. Keep children back from the water’s edge, and never go near culvert openings or grilles.</p></section>
 <section id="workbooks"><h2>Workbooks, talks and walks</h2>
 <p>There are five <a href="shop.html">activity workbooks</a> about the river, each at three levels: 1st and 2nd class, 3rd and 4th class, and 5th and 6th class. Sales help keep this site free.</p>
+<p>There is also an <a href="poster.pdf">A4 poster</a> (PDF) for a classroom or staffroom wall.</p>
 <p>The project also offers talks and guided walks for schools and groups. Please <a href="about.html#contact">get in touch</a> to arrange one, or to ask about anything on the site.</p></section>
 </div>'''
 write("schools.html", shell("schools", f"For teachers · {SITE}",
@@ -1029,8 +1054,8 @@ shop_page = f'''<section class="shop-hero"><div class="wrap shop-hero-in">
 <section class="shop-sec" id="workbooks"><div class="sec-head"><p class="kicker">The workbooks</p><h2>Seven stories of the river, three levels each</h2>
 <p class="dek">Original writing and artwork about Dublin’s hidden river. Each comes in versions for 1st and 2nd class, 3rd and 4th class, and 5th and 6th class, with notes for the adult, curriculum links and an answer key. One copy covers your own family or one classroom.</p></div>
 <ul class="wb">{wb_cards}</ul></section>
-<section class="set-panel"><figure><img src="img/shop/complete-set.webp" alt="The complete set of fifteen Poddle workbooks" loading="lazy" width="1200" height="600"></figure>
-<div><p class="kicker">Best value</p><h2>The complete set</h2><p>All fifteen workbooks for {SHOP["price_all"]}. It’s a ready-made local-history programme for a whole school, a teacher with several classes, or a family who wants the lot.</p>
+<section class="set-panel"><figure><img src="img/shop/complete-set.webp" alt="The complete set of Poddle workbooks" loading="lazy" width="1200" height="600"></figure>
+<div><p class="kicker">Best value</p><h2>The complete set</h2><p>All twenty-one workbooks for {SHOP["price_all"]}. It’s a ready-made local-history programme for a whole school, a teacher with several classes, or a family who wants the lot.</p>
 <p class="cta">{shop_btn(SHOP["downloads"], "Get the complete set")}</p><p class="small">Paid securely by card or PayPal through Payhip. Your download arrives straight away.</p></div></section>
 <section class="shop-sec tee"><div class="sec-head"><p class="kicker">Coming soon</p><h2>Poddle t-shirts</h2>
 <p class="dek">Shirts and totes printed with the river: the 1848 line of the Poddle, the culvert arch, and the dubh linn that gave Dublin its name. They will be printed to order, so nothing is wasted.</p></div>

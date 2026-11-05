@@ -1,0 +1,54 @@
+HISTORIC DUBLIN MAPS - SOURCES (compiled 5 Nov 2026)
+====================================================
+
+1) speed-1610.jpg
+-----------------
+Title:       "Dubline" - inset plan of Dublin from John Speed's map of Leinster
+             (The Theatre of the Empire of Great Britaine). Caption on this
+             copy: "From JOHN SPEED'S ORIGINAL MAP, SURVEYED IN 1610."
+Date:        Surveyed 1610 (published 1611/12). This scan is of a 19th-century
+             reprint in "Remains of St. Mary's Abbey, Dublin. Their
+             explorations and researches, A.D. 1886" (Dublin: Forster & Co.,
+             1887), page 10. Commons calls it the "reprint of 1896".
+Maker:       John Speed (1551/2-1629). Scan by the British Library
+             (shelfmarks HMNTS 10390.h.14 / 4735.g.4), via Flickr Commons.
+Downloaded:  https://commons.wikimedia.org/wiki/Special:FilePath/Dublin_in_1610_-_reprint_of_1896.jpg?width=2400
+             (redirected to the full original:
+             https://upload.wikimedia.org/wikipedia/commons/5/50/Dublin_in_1610_-_reprint_of_1896.jpg)
+File page:   https://commons.wikimedia.org/wiki/File:Dublin_in_1610_-_reprint_of_1896.jpg
+Wikipedia:   https://en.wikipedia.org/wiki/John_Speed%27s_Map_of_Dublin_(1610)
+Licence:     Public domain ({{PD-old}} on Commons). British Library Flickr
+             Commons release, "no known copyright restrictions".
+Pixel size:  2676 x 2288 (the full original. Commons didn't serve a smaller
+             2400 px copy, so this is the highest-resolution version.)
+Credit line: John Speed, "Dubline", 1610. British Library / Wikimedia Commons (public domain).
+
+2) strangways-1904.jpg
+----------------------
+Title:       Map of the walls of Dublin (also catalogued as "Leonard
+             Strangeway's map of Medieval Dublin City" by the RSAI). Commons
+             quotes the map as: "Map of the walls of Dublin by Leonard R.
+             Strangways, 1904".
+Date:        1904
+Maker:       Leonard R. (Ffleming) Strangways, antiquary and member of the RSAI,
+             co-author with E. MacDowel Cosgrave of "The Dictionary of Dublin"
+             (1895, 1908).
+Publisher:   NOT CONFIRMED. The NLI Sources database lists a manuscript "Map
+             of the walls of Dublin by Leonard R. Strangways, 1904" at Trinity
+             College Library, Ms. 2931. The RSAI holds lantern slides of it
+             (rsai.locloudhosting.net items 24974, 29144, 29145, 29146; that
+             site was down for maintenance on 5 Nov 2026, so I couldn't check
+             them). The Commons uploader's copy is a printed sheet "from some
+             historical journal?". I found no printed imprint.
+Death:       His obituary appeared in the Journal of the Royal Society of
+             Antiquaries of Ireland, Series 7, Vol. III (1933), pp. 149-150,
+             so he died around 1932-33 (exact date not confirmed). That is
+             before 1956, so the map is public domain in Ireland (life + 70).
+Downloaded:  https://upload.wikimedia.org/wikipedia/commons/f/fa/Walls_of_Dublin_with_Bridge%2C_R_Poddle_and_other_waterways.jpg
+File page:   https://commons.wikimedia.org/wiki/File:Walls_of_Dublin_with_Bridge,_R_Poddle_and_other_waterways.jpg
+Licence:     Public domain ({{PD-old}} on Commons; "Own scan of PD work,
+             freely reuseable").
+Pixel size:  956 x 563. This is the only copy online. Commons has no larger
+             version, and none turned up on archive.org. A ~2400 px image would
+             need a new scan, e.g. from TCD Ms. 2931 or from the RSAI.
+Credit line: Leonard R. Strangways, Map of the walls of Dublin, 1904. Wikimedia Commons (public domain).

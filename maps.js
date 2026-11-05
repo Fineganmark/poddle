@@ -1,4 +1,4 @@
-/* History page: the four Dublin maps cross-fade in order; the dated thumbnails show one.
+/* History page: the Dublin maps cross-fade in order; the dated thumbnails show one.
    Picking a thumbnail stops the slideshow (the Play button restarts it). People who ask
    for reduced motion get no autoplay and no fade; the thumbnails still work. */
 (function () {
@@ -17,7 +17,7 @@
       if (on) slides[k].removeAttribute("aria-hidden"); else slides[k].setAttribute("aria-hidden", "true");
       if (on) thumbs[k].setAttribute("aria-current", "true"); else thumbs[k].removeAttribute("aria-current");
     }
-    cap.textContent = slides[cur].querySelector("img").alt.split(",")[0];
+    cap.textContent = slides[cur].getAttribute("data-cap") || slides[cur].querySelector("img").alt.split(",")[0];
   }
   function tick() { show(cur + 1); }
   function setPlaying(p) {
