@@ -1048,11 +1048,16 @@ def shop_btn(url, label, ghost=False):
 
 # Payhip product codes: the part after payhip.com/b/ in each product's link.
 # Buttons open Payhip's checkout over this page (payhip.js); without a code they
-# fall back to the store front. Fill in the rest when Mark sends the links.
+# fall back to the store front. Codes from Mark's store, 7 Nov 2026.
 PAYHIP = {
+  "the-secret-river": dict(J="p6kGx", M="82dyc", U="i5kzG", pack="1USgz"),
+  "treasure-hunt": dict(J="XKp8c", M="kPIb0", U="VOMJs", pack="8SuWB"),
+  "walking-tour": dict(J="581V3", M="16urc", U="3yxiO", pack="7grTS"),
+  "mill-detectives": dict(J="VoDPH", M="cSQvg", U="lWoyb", pack="L2XQh"),
+  "flood-defenders": dict(J="Ikn43", M="03IBS", U="9sdEo", pack="QjHg7"),
   "tymon-walk": dict(J="3YKip", M="ov2hM", U="Vk0Xw", pack="j6MT2"),
   "mill-road-walk": dict(J="2Pt9s", M="y0sdG", U="Myc9O", pack="JmWAi"),
-  "complete-set": "",
+  "complete-set": "UFrNf",
 }
 SHORT_LV = {"J": "1st–2nd", "M": "3rd–4th", "U": "5th–6th"}
 
