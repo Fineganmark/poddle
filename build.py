@@ -1013,7 +1013,7 @@ privacy = f'''<div class="wrap page narrow"><header class="page-head"><p class="
 <section><h2>Who runs this site</h2><p>poddle.ie is a personal, non-commercial local-history project based in Dublin. You can contact the project by emailing <a href="mailto:hello@poddle.ie">hello@poddle.ie</a>.</p></section>
 <section><h2>Visitor counts</h2><p>The site counts visits with <a href="https://www.goatcounter.com" rel="noopener">GoatCounter</a>. It uses no cookies and does not track you across sites. It records which page was viewed, the site you came from, your browser and screen size and your country. Your IP address is not stored. There is no advertising on this site.</p></section>
 <section><h2>Messages you send</h2><p>If you use the contact form, your name, email address and message are passed through <a href="https://formsubmit.co" rel="noopener">FormSubmit</a> and delivered to the project by email. They are used only to reply to you, and deleted when no longer needed, usually within a year.</p></section>
-<section><h2>Buying a workbook</h2><p>Workbooks are sold through <a href="https://payhip.com" rel="noopener">Payhip</a>, which handles payment and delivery under its own privacy policy. Payhip shares your name, email address and what you bought with the project, so it can help with any problem with your order. The project never sees your card details.</p></section>
+<section><h2>Buying a workbook</h2><p>Workbooks are sold through <a href="https://payhip.com" rel="noopener">Payhip</a>, which handles payment and delivery under its own privacy policy. Payhip shares your name, email address and what you bought with the project, so it can help with any problem with your order. The project never sees your card details. The checkout opens on the shop page itself, so that page loads a small script from Payhip; other pages do not.</p></section>
 <section><h2>Schools</h2><p>The project may email a school’s published office address to tell it about this free resource. It keeps the school’s name, its published email address and the principal’s name, because telling local schools about a free local-history resource is a legitimate interest, and the impact on them is small. Each email says how to opt out, and if a school asks not to be contacted again, the project keeps a note of that so it never is. The other details are deleted after a year if there is no reply.</p></section>
 <section><h2>Other sites</h2><p>The maps load street tiles from OpenStreetMap and the text uses Google Fonts, so your browser connects to those services to fetch them. Links to Facebook, Instagram, YouTube and other sites take you to services with their own privacy policies.</p></section>
 <section><h2>Your rights</h2><p>You can ask to see, correct or delete anything the project holds about you, or object to its use, by emailing <a href="mailto:hello@poddle.ie">hello@poddle.ie</a>. If you are unhappy with how your data has been handled, you can complain to the <a href="https://www.dataprotection.ie" rel="noopener">Data Protection Commission</a>.</p>
@@ -1046,13 +1046,39 @@ def shop_btn(url, label, ghost=False):
         return f'<a class="btn{" ghost" if ghost else ""}" href="{url}" target="_blank" rel="noopener noreferrer">{esc(label)}</a>'
     return '<span class="btn soon" aria-disabled="true">Coming soon</span>'
 
-wb_cards = "".join(
-  f'<li><a href="{SHOP["downloads"] or "#workbooks"}"{" target=\"_blank\" rel=\"noopener noreferrer\"" if SHOP["downloads"] else ""}>'
-  f'<span class="cover"><img src="img/shop/{img}.jpg" alt="Cover of {esc(n)}" loading="lazy" width="520" height="736"></span>'
-  f'<span class="wb-t"><strong>{esc(n)}</strong><span class="wb-d">{esc(d)}</span>'
-  f'<span class="lv">{"".join(f"<span>{esc(cl)}</span>" for _, cl, _ in LEVELS)}</span>'
-  f'<span class="price">{SHOP["price_single"]} each · {SHOP["price_pack"]} for all three</span></span></a></li>'
-  for n, img, d in WORKBOOKS)
+# Payhip product codes: the part after payhip.com/b/ in each product's link.
+# Buttons open Payhip's checkout over this page (payhip.js); without a code they
+# fall back to the store front. Fill in the rest when Mark sends the links.
+PAYHIP = {
+  "tymon-walk": dict(J="3YKip", M="ov2hM", U="Vk0Xw", pack="j6MT2"),
+  "mill-road-walk": dict(J="2Pt9s", M="y0sdG", U="Myc9O", pack="JmWAi"),
+  "complete-set": "",
+}
+SHORT_LV = {"J": "1st–2nd", "M": "3rd–4th", "U": "5th–6th"}
+
+def buy_btn(code, label, price, cls="buy"):
+    if code:
+        href = f"https://payhip.com/b/{code}"
+        extra = f' class="{cls} payhip-buy-button" data-theme="none" data-product="{code}"'
+    elif SHOP["downloads"]:
+        href, extra = SHOP["downloads"], f' class="{cls}"'
+    else:
+        return '<span class="btn soon" aria-disabled="true">Coming soon</span>'
+    return (f'<a href="{href}"{extra} target="_blank" rel="noopener noreferrer">'
+            f'<span>{esc(label)}</span><b>{price}</b></a>')
+
+def wb_card(n, img, d):
+    codes = PAYHIP.get(img, {})
+    btns = "".join(buy_btn(codes.get(k, ""), SHORT_LV[k] + " class", SHOP["price_single"]) for k, _, _ in LEVELS)
+    pack = buy_btn(codes.get("pack", ""), "All three levels", SHOP["price_pack"], "buy pack")
+    return (f'<li><span class="cover"><img src="img/shop/{img}.jpg" alt="Cover of {esc(n)}" loading="lazy" width="520" height="736"></span>'
+            f'<span class="wb-t"><strong>{esc(n)}</strong><span class="wb-d">{esc(d)}</span></span>'
+            f'<span class="buys" role="group" aria-label="Buy {esc(n)}">{btns}{pack}</span></li>')
+
+wb_cards = "".join(wb_card(n, img, d) for n, img, d in WORKBOOKS)
+set_code = PAYHIP["complete-set"]
+set_btn = (f'<a class="btn payhip-buy-button" data-theme="none" data-product="{set_code}" href="https://payhip.com/b/{set_code}" target="_blank" rel="noopener noreferrer">Get the complete set · {SHOP["price_all"]}</a>'
+           if set_code else shop_btn(SHOP["downloads"], f'Get the complete set · {SHOP["price_all"]}'))
 
 shop_page = f'''<section class="shop-hero"><div class="wrap shop-hero-in">
  <div class="shop-hero-text">
@@ -1060,17 +1086,18 @@ shop_page = f'''<section class="shop-hero"><div class="wrap shop-hero-in">
   <h1>Workbooks for curious kids</h1>
   <p class="lede">Everything on this site is free, and it will stay that way, with no paywall and no adverts. If you would like to help with the hosting and the hours spent in the archives, buy a workbook. It is the whole business model.</p>
   <ul class="facts"><li><strong>21</strong><span>workbooks, 1st to 6th class</span></li><li><strong>A4</strong><span>PDFs to print at home or school</span></li><li><strong>{SHOP["price_single"]}</strong><span>each, with packs and a full set</span></li></ul>
-  <p class="cta">{shop_btn(SHOP["downloads"], "Browse the workbooks")}<a class="btn ghost" href="#workbooks">See what’s inside</a></p>
+  <p class="cta"><a class="btn" href="#workbooks">Browse the workbooks</a><a class="btn ghost" href="#complete-set">The complete set</a></p>
  </div>
  <figure class="shop-hero-fig"><img src="img/shop/complete-set.webp" alt="The five Poddle workbook covers fanned out" width="1200" height="600"></figure>
 </div></section>
 <div class="wrap page">
 <section class="shop-sec" id="workbooks"><div class="sec-head"><p class="kicker">The workbooks</p><h2>Seven stories of the river, three levels each</h2>
 <p class="dek">Original writing and artwork about Dublin’s hidden river. Each comes in versions for 1st and 2nd class, 3rd and 4th class, and 5th and 6th class, with notes for the adult, curriculum links and an answer key. One copy covers your own family or one classroom.</p></div>
-<ul class="wb">{wb_cards}</ul></section>
-<section class="set-panel"><figure><img src="img/shop/complete-set.webp" alt="The complete set of Poddle workbooks" loading="lazy" width="1200" height="600"></figure>
+<ul class="wb">{wb_cards}</ul>
+<p class="small buy-note">Pick a class level to buy one workbook, or “All three levels” for the pack. Checkout opens on this page, and your PDF arrives straight away by download and email.</p></section>
+<section class="set-panel" id="complete-set"><figure><img src="img/shop/complete-set.webp" alt="The complete set of Poddle workbooks" loading="lazy" width="1200" height="600"></figure>
 <div><p class="kicker">Best value</p><h2>The complete set</h2><p>All twenty-one workbooks for {SHOP["price_all"]}. It’s a ready-made local-history programme for a whole school, a teacher with several classes, or a family who wants the lot.</p>
-<p class="cta">{shop_btn(SHOP["downloads"], "Get the complete set")}</p><p class="small">Paid securely by card or PayPal through Payhip. Your download arrives straight away.</p></div></section>
+<p class="cta">{set_btn}</p><p class="small">Paid securely by card or PayPal through Payhip. Your download arrives straight away.</p></div></section>
 <section class="shop-sec tee"><div class="sec-head"><p class="kicker">Coming soon</p><h2>Poddle t-shirts</h2>
 <p class="dek">Shirts and totes printed with the river: the 1848 line of the Poddle, the culvert arch, and the dubh linn that gave Dublin its name. They will be printed to order, so nothing is wasted.</p></div>
 <p class="cta">{shop_btn(SHOP["tees"], "See the t-shirts")}</p></section>
@@ -1081,6 +1108,7 @@ shop_page = f'''<section class="shop-hero"><div class="wrap shop-hero-in">
 <li><strong>Book a talk or a walk</strong> for your group.</li>
 </ul></section>
 </div>'''
+shop_page += '\n<script src="https://payhip.com/payhip.js" defer></script>'
 write("shop.html", shell("shop", f"Workbooks and t-shirts · {SITE}", "Workbooks about Dublin’s hidden river for 1st to 6th class. Every sale helps keep this local-history site free.", shop_page, "shop.html"))
 
 exec(open(os.path.join(OUT, "build_extra.py"), encoding="utf-8").read())
