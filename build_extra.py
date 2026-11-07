@@ -20,7 +20,7 @@ MILLS = [
  ("Medieval mill, Cross Poddle", 53.3386, -6.2725, "Beside St Nicholas’ Bridge, New Street.", "cross-poddle"),
 ]
 WORKS = [
- ("Tymon Lake flood storage", 53.2962, -6.3380, "220m embankment and flow-control structure. In use since 20 February 2025."),
+ ("Tymon Lake flood storage", 53.30347, -6.33598, "220m embankment and flow-control structure. In use since 20 February 2025."),
  ("Integrated constructed wetland", 53.3010, -6.3330, "Tymon Park, east of the M50."),
  ("Whitehall Park storage", 53.3072, -6.3180, "Channel realignment, embankments and walls beside the Lakelands Overflow."),
  ("Ravensdale Park storage", 53.3144, -6.2996, "Reshaped to store flood water, with flood walls and a new footbridge."),
