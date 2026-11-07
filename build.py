@@ -309,7 +309,11 @@ STOPS = [
     "James Joyce knew it too. In a 1927 draft of the Anna Livia Plurabelle chapter of Finnegans Wake he wrote of “a rise every morning for Standfast Dick and a drop every minute for Stumblestone Davy”."]),
    ("Ulysses", [
     "In James Joyce’s Ulysses the outfall is placed, wrongly, at Wood Quay, in words that are unflattering but memorable:",
-    "<blockquote>“From its sluice in Wood quay wall under Tom Devan’s office Poddle river hung out in fealty a tongue of liquid sewage.”</blockquote>"])],
+    "<blockquote>“From its sluice in Wood quay wall under Tom Devan’s office Poddle river hung out in fealty a tongue of liquid sewage.”</blockquote>"]),
+   # In song: River Saile note (Mark, 7 Nov 2026; thread "Research River Saile song link to Poddle")
+   ("In song", [
+    "Dubliners have long claimed that “the River Saile” in the street song “Weila Waile”, made famous by The Dubliners on A Drop of the Hard Stuff (1967), is the Poddle, from its old Irish name the Salach, “the dirty river”. The song itself is traditional, an Irish form of the old ballad “The Cruel Mother”, and it is sung far beyond Dublin, sometimes with other river names. So the link is a cherished local tradition rather than a proven fact.",
+    '<p class="note">Sources: Frank Hopkins, <em>Hidden Dublin</em> (Mercier Press, 2008), p. 147; Clare County Library song archive (<a href="https://www.clarelibrary.ie/eolas/coclare/songs/cmc/weela_weela_wallia_vboyle.htm" rel="noopener">clarelibrary.ie</a>).</p>'])],
   images=[("quay-outfall", "The Poddle outfall into the Liffey"), ("wellington-quay", "Wellington Quay"), ("ulysses-cover", "Ulysses, James Joyce")],
   links=[("National Inventory of Architectural Heritage: Wellington Quay", "https://www.buildingsofireland.ie/buildings-search/building/50020254/wellington-quay-dublin-2-dublin"), ("National Inventory of Architectural Heritage: The Merchants’ Arch", "https://www.buildingsofireland.ie/buildings-search/building/50020156/the-merchants-arch-48-49-wellington-quay-wellington-quay-dublin-2-dublin-city"), ("Archiseek: Wellington Quay", "https://www.archiseek.com/tag/wellington-quay-dublin/"), ("Crumlin and Walkinstown History Group: Wellington Quay", "https://poddle.crumlinwalkinstownhistory.ie/location/wellington-quay/"), ("Wikipedia: The Old Custom House, Dublin", "https://en.wikipedia.org/wiki/The_Old_Custom_House,_Dublin"), ("Wikipedia: Ha’penny Bridge", "https://en.wikipedia.org/wiki/Ha%27penny_Bridge")]),
 ]
