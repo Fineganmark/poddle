@@ -939,19 +939,16 @@ about = f'''<div class="wrap page narrow"><header class="page-head"><p class="ki
 <li>We are available to give talks and share what we know, so please reach out if you would like to organise one. Teachers, there are free class ideas on the <a href="schools.html">teachers’ page</a>.</li>
 <li>There is a great deal of information about the Poddle, and much of it conflicts. If you spot something wrong, please let us know.</li>
 </ul>
-<!-- Contact form hidden 6 Nov 2026 until it moves off FormSubmit.
-<form class="contact" action="https://formsubmit.co/0f8d699887fd9b4ce088266bc980986d" method="POST">
-<input type="hidden" name="_subject" value="Message from the Poddle website">
-<input type="hidden" name="_next" value="https://poddle.ie/thanks.html">
-<input type="hidden" name="_template" value="table">
-<input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none">
+<form class="contact" name="contact" method="POST" action="/thanks.html" data-netlify="true" netlify-honeypot="bot-field">
+<input type="hidden" name="form-name" value="contact">
+<input type="hidden" name="subject" value="Message from the Poddle website">
+<p style="display:none"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
 <p><label for="c-name">Your name</label><input id="c-name" name="name" type="text" required autocomplete="name"></p>
 <p><label for="c-email">Your email</label><input id="c-email" name="email" type="email" required autocomplete="email"></p>
 <p><label for="c-msg">Your message</label><textarea id="c-msg" name="message" rows="6" required></textarea></p>
 <p><button type="submit">Send message</button></p>
 </form>
--->
-<p>To get in touch, please email <a href="mailto:hello@poddle.ie">hello@poddle.ie</a>.</p></section>
+<p>If the form doesn’t work, you can email <a href="mailto:hello@poddle.ie">hello@poddle.ie</a> instead.</p></section>
 </div>'''
 write("about.html", shell("about", f"About · {SITE}", "About poddle.ie, a free local-history site about the River Poddle, Dublin’s hidden river. Send corrections, memories and photographs.", about, "about.html"))
 write("thanks.html", shell("thanks", f"Thank you · {SITE}", "Message sent.", '<div class="wrap page narrow"><header class="page-head"><h1>Thank you</h1><p class="dek">Your message has been sent. We will be in touch if a reply is needed.</p></header><p><a href="index.html">Back to the home page</a></p></div>', "about.html", noindex=True))
@@ -1012,7 +1009,7 @@ privacy = f'''<div class="wrap page narrow"><header class="page-head"><p class="
 <p class="dek">This site collects as little as it can. Here is what is kept, why, and how to ask for it to be removed.</p></header>
 <section><h2>Who runs this site</h2><p>poddle.ie is a personal, non-commercial local-history project based in Dublin. You can contact the project by emailing <a href="mailto:hello@poddle.ie">hello@poddle.ie</a>.</p></section>
 <section><h2>Visitor counts</h2><p>The site counts visits with <a href="https://www.goatcounter.com" rel="noopener">GoatCounter</a>. It uses no cookies and does not track you across sites. It records which page was viewed, the site you came from, your browser and screen size and your country. Your IP address is not stored. There is no advertising on this site.</p></section>
-<section><h2>Messages you send</h2><p>If you use the contact form, your name, email address and message are passed through <a href="https://formsubmit.co" rel="noopener">FormSubmit</a> and delivered to the project by email. They are used only to reply to you, and deleted when no longer needed, usually within a year.</p></section>
+<section><h2>Messages you send</h2><p>If you use the contact form, your name, email address and message are stored by <a href="https://www.netlify.com" rel="noopener">Netlify</a>, which hosts this site, and sent on to the project by email. They are used only to reply to you, and deleted when no longer needed, usually within a year.</p></section>
 <section><h2>Buying a workbook</h2><p>Workbooks are sold through <a href="https://payhip.com" rel="noopener">Payhip</a>, which handles payment and delivery under its own privacy policy. Payhip shares your name, email address and what you bought with the project, so it can help with any problem with your order. The project never sees your card details. The checkout opens on the shop page itself, so that page loads a small script from Payhip; other pages do not.</p></section>
 <section><h2>Schools</h2><p>The project may email a school’s published office address to tell it about this free resource. It keeps the school’s name, its published email address and the principal’s name, because telling local schools about a free local-history resource is a legitimate interest, and the impact on them is small. Each email says how to opt out, and if a school asks not to be contacted again, the project keeps a note of that so it never is. The other details are deleted after a year if there is no reply.</p></section>
 <section><h2>Other sites</h2><p>The maps load street tiles from OpenStreetMap and the text uses Google Fonts, so your browser connects to those services to fetch them. Links to Facebook, Instagram, YouTube and other sites take you to services with their own privacy policies.</p></section>
