@@ -64,6 +64,15 @@
         "</h3><p>" + esc(s.teaser) + "</p><a href=\"" + s.slug + ".html\">Read the history →</a></div>", { maxWidth: 260 })
       .addTo(stops);
   });
+  // Meanders: short detours off the main walk, shown in the same layer as the stops
+  var meanderById = {};
+  (DATA.meanders || []).forEach(function (m) {
+    var icon = L.divIcon({ className: "pin-stop pin-meander", html: "<span>M</span>", iconSize: [22, 22], iconAnchor: [11, 11] });
+    meanderById[m.slug] = L.marker([m.lat, m.lon], { icon: icon, title: "Meander: " + m.name, keyboard: true })
+      .bindPopup("<div class=\"pop\"><p class=\"pk\">Meander off stop " + m.parent + " · " + esc(m.place) + "</p><h3>" + esc(m.name) +
+        "</h3><p>" + esc(m.teaser) + "</p><a href=\"" + m.slug + ".html\">Take the meander →</a></div>", { maxWidth: 260 })
+      .addTo(stops);
+  });
   stops.addTo(map);
 
   var byId = {};
@@ -105,31 +114,44 @@
       .addTo(gauges);
   });
 
-  // Landmarks from the Crumlin and Walkinstown History Group's Poddle archive
-  var places = L.layerGroup(), placeById = {};
-  (DATA.landmarks || []).forEach(function (p) {
-    var icon = L.divIcon({ className: "pin-place", iconSize: [12, 12], iconAnchor: [6, 6] });
-    var mk = L.marker([p[1], p[2]], { icon: icon, title: p[0] })
-      .bindPopup("<div class=\"pop\"><p class=\"pk\">Poddle archive</p><h3>" + esc(p[0]) + "</h3><p>" + esc(p[3]) + "</p><a href=\"place-" + p[4] + ".html\">Read more →</a></div>", { maxWidth: 240 })
-      .addTo(places);
-    placeById[p[4]] = mk;
-  });
-
   var layerCtl = L.control.layers(null, {
     "The river": riverLayer, "Abbey Stream": groups.abbey, "City Watercourse, Tenter and Commons Waters": groups.watercourse, "Dodder Overflow": groups.overflow, "River walk stops": stops, "Mill sites": mills, "Canal crossings": crossings,
-    "Flood scheme works": works, "Archaeology and monuments": digs, "Poddle archive places": places, "Dodder gauges": gauges
+    "Flood scheme works": works, "Archaeology and monuments": digs, "Dodder gauges": gauges
   }, { collapsed: false }).addTo(map);
   // The tick boxes sit in the box below the map, so they never cover it.
   var below = document.getElementById("layers");
   if (below) below.appendChild(layerCtl.getContainer());
 
-  var all = L.featureGroup(stops.getLayers());
+  var all = L.featureGroup(stops.getLayers().filter(function (l) { return !/Meander/.test(l.options.title || ""); }));
   function home() { map.fitBounds(all.getBounds().pad(0.08)); }
   home();
   if (window.poddleMapSafe) poddleMapSafe(map, home);
   var q = /[?&]mill=([\w-]+)/.exec(location.search);
   if (q && byId[q[1]]) { var mk = byId[q[1]]; map.setView(mk.getLatLng(), 17); mk.openPopup(); }
-  if (/[?&]layer=places/.test(location.search)) { places.addTo(map); map.fitBounds(L.featureGroup(places.getLayers()).getBounds().pad(0.05)); }
-  var pq = /[?&]place=([\w-]+)/.exec(location.search);
-  if (pq && placeById[pq[1]]) { places.addTo(map); map.setView(placeById[pq[1]].getLatLng(), 16); placeById[pq[1]].openPopup(); }
+  // ?at=lat,lon&n=Name drops a temporary marker for one place on the walk or a meander (no extra layer)
+  var at = /[?&]at=(-?[\d.]+),(-?[\d.]+)/.exec(location.search);
+  if (at) {
+    var nm = /[?&]n=([^&]+)/.exec(location.search);
+    var label = nm ? decodeURIComponent(nm[1].replace(/\+/g, " ")) : "This place";
+    var here = L.marker([+at[1], +at[2]], { icon: L.divIcon({ className: "pin-here", iconSize: [18, 18], iconAnchor: [9, 9] }), title: label })
+      .bindPopup("<div class=\"pop\"><p class=\"pk\">Approximate position</p><h3>" + esc(label) + "</h3><a href=\"javascript:history.back()\">← Back to the page</a></div>", { maxWidth: 240 })
+      .addTo(map);
+    map.setView(here.getLatLng(), 16); here.openPopup();
+  }
+  // ?meander=slug shows the meander and its places
+  var mq = /[?&]meander=([\w-]+)/.exec(location.search);
+  if (mq) {
+    var md = (DATA.meanders || []).filter(function (m) { return m.slug === mq[1]; })[0];
+    if (md) {
+      var g = L.featureGroup();
+      md.pts.forEach(function (p) {
+        L.marker([p[1], p[2]], { icon: L.divIcon({ className: "pin-here", iconSize: [14, 14], iconAnchor: [7, 7] }), title: p[0] })
+          .bindPopup("<div class=\"pop\"><p class=\"pk\">" + esc(md.name) + "</p><h3>" + esc(p[0]) + "</h3><a href=\"" + p[3] + "\">Read more →</a></div>", { maxWidth: 240 })
+          .addTo(g);
+      });
+      g.addTo(map);
+      if (g.getLayers().length) map.fitBounds(g.getBounds().pad(0.3));
+      if (meanderById[md.slug]) meanderById[md.slug].openPopup();
+    }
+  }
 })();
