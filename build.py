@@ -761,7 +761,7 @@ def map_show(maps):
             f'<ol class="ms-thumbs">{thumbs}</ol>'
             f'<p class="ms-note">On the four atlas maps the River Poddle is picked out in light blue (Irish Historic Towns Atlas, 2002). '
             f'John Speed’s “Dubline”, surveyed 1610, shown from a 19th-century reprint (British Library, via Wikimedia Commons, public domain): the Poddle comes in at the bottom, by St Patrick’s (63), and runs north to the Castle (23). '
-            f'Leonard R. Strangways, “The Walls of Dublin”, 1904 (via Wikimedia Commons, public domain): south is at the top, and the River Poddle is marked near Pole Gate, south of the Castle.</p></section>'
+            f'Leonard R. Strangways, “The Walls of Dublin”, 1904 (via Wikimedia Commons, public domain): south is at the top, and the River Poddle is marked near Pole Gate, south of the Castle. For street-by-street Ordnance Survey town plans of 1847 to 1876, see <a href="sources.html">Sources</a>.</p></section>'
             f'<script src="maps.js?v={ASSET_V}" defer></script>')
 
 hist = f'''<div class="wrap page"><header class="page-head"><p class="kicker">History</p><h1>How the Poddle shaped Dublin</h1>
@@ -806,6 +806,19 @@ src = f'''<div class="wrap page narrow"><header class="page-head"><p class="kick
 <li><a href="https://commons.wikimedia.org/wiki/File:Saint_Patricks_Cathedral_%E2%80%93_Pre_Guinness_Restoration.jpg" rel="noopener">The cathedral in 1814</a>: James Whitelaw, Public domain</li>
 <li><a href="https://commons.wikimedia.org/wiki/File:St_Patrick%27s_Cathedral,_Dublin_-_WL.jpg" rel="noopener">Lawrence Collection photograph</a>: William Lawrence (Lawrence Collection), Public domain</li>
 {"".join(f'<li><a href="{v[3]}" rel="noopener">{esc(v[0])}</a>: {esc(v[1])}, {v[2]} (<a href="{v[4]}" rel="noopener">licence</a>)</li>' for v in WILD_PHOTOS.values())}</ul></section>
+<section><h2>Old town plans to explore</h2><p>Ordnance Survey of Ireland’s large five-foot town plans of Dublin (1847, revised 1864) and of the Rathmines and Rathgar township (1876) show the Poddle street by street, often with mills, sluices and the open river before it was culverted. UCD Library has scanned them in its <a href="https://digital.ucd.ie/c0055/timeline.html" rel="noopener">OSi 19th Century Historical Maps collection</a>. Their licence (Creative Commons BY-NC-SA 4.0, non-commercial only) means we link to them here rather than copy them onto this site. These are the sheets along the river, from upstream to the Liffey:</p><ul class="links plain">
+<li><a href="https://digital.ucd.ie/c0055/items/c0055_o0559.html" rel="noopener">Rathmines and Rathgar Township, sheet XVIII.95 (1876)</a>: Mount Argus</li>
+<li><a href="https://digital.ucd.ie/c0055/items/c0055_o0560.html" rel="noopener">Rathmines and Rathgar Township, sheet XVIII.96 (1876)</a>: Harold’s Cross, east of the river</li>
+<li><a href="https://digital.ucd.ie/c0055/items/c0055_o0552.html" rel="noopener">Rathmines and Rathgar Township, sheet XVIII.85 (1876)</a>: north of Mount Argus, up to the Grand Canal</li>
+<li><a href="https://digital.ucd.ie/c0055/items/c0055_o0492.html" rel="noopener">City of Dublin, sheet 30 (1847)</a>: Dolphin’s Barn and the City Watercourse</li>
+<li><a href="https://digital.ucd.ie/c0055/items/c0055_o0496.html" rel="noopener">City of Dublin, sheet 31 (1847)</a>: Greenmount, Harold’s Cross Bridge and Clanbrassil Street</li>
+<li><a href="https://digital.ucd.ie/c0055/items/c0055_o0497.html" rel="noopener">City of Dublin, sheet 31, 2nd edition (1864)</a>: the same area, revised</li>
+<li><a href="https://digital.ucd.ie/c0055/items/c0055_o0484.html" rel="noopener">City of Dublin, sheet 26 (1847)</a>: Blackpitts, New Row and St Patrick’s Cathedral</li>
+<li><a href="https://digital.ucd.ie/c0055/items/c0055_o0472.html" rel="noopener">City of Dublin, sheet 20 (1847)</a>: Patrick Street and Christ Church</li>
+<li><a href="https://digital.ucd.ie/c0055/items/c0055_o0473.html" rel="noopener">City of Dublin, sheet 20, 2nd edition (1864)</a>: the same area, revised</li>
+<li><a href="https://digital.ucd.ie/c0055/items/c0055_o0474.html" rel="noopener">City of Dublin, sheet 21 (1847)</a>: Dublin Castle, Dame Street and Wellington Quay, where the Poddle meets the Liffey</li>
+<li><a href="https://digital.ucd.ie/c0055/items/c0055_o0475.html" rel="noopener">City of Dublin, sheet 21, 2nd edition (1864)</a>: “The Castle Sheet”, revised</li>
+</ul><p>Maps: Ordnance Survey Ireland, published by UCD Library (UCD Digital Library), CC BY-NC-SA 4.0. Which sheet covers which stretch is our own reading of each sheet’s position, so a stretch may run onto the next sheet.</p></section>
 <section><h2>Printed sources</h2><ul class="links plain">
 <li>Rev. Myles V. Ronan, “The Poddle River and its Branches”, Journal of the Royal Society of Antiquaries of Ireland, 6th series, vol. 17, no. 1 (1927), pp. 39–46</li>
 <li>D. McEntee and M. Corcoran, The Rivers Dodder and Poddle: Mills, Storms, Droughts and the Public Water Supply (Dublin City Council), chapters 5, 11 and 19</li>
