@@ -76,7 +76,7 @@ CHANNELS = [
       c=[[53.3072, -6.3180], [53.3071, -6.3142], [53.3068, -6.3138], [53.3069, -6.3127], [53.3065, -6.3117], [53.3055, -6.3112], [53.3056, -6.3108], [53.3060, -6.3068], [53.3047, -6.2962], [53.3065, -6.2930]],
       note="Traced from the flood scheme’s map of the Lakeland Overflow: from the sluice at Whitehall Park past Wainsfort Manor, along College Drive and across Wainsfort and Fortfield Roads to the ponds at Terenure College (the Lakelands), which drain to the Dodder at Bushy Park. Route traced by eye, so approximate."),
 ]
-MAPDATA = json.dumps(dict(river=river, stops=stops_js, mills=MILLS, works=WORKS, digs=DIGS, gauges=GAUGES, channels=CHANNELS, crossings=CROSSINGS), ensure_ascii=False)
+MAPDATA = json.dumps(dict(river=river, stops=stops_js, mills=MILLS, works=WORKS, digs=DIGS, gauges=GAUGES, channels=CHANNELS, crossings=CROSSINGS, landmarks=LANDMARKS), ensure_ascii=False)
 
 map_body = (
  '<div class="wrap page"><header class="page-head"><p class="kicker">Map</p><h1>The Poddle on today’s map</h1>'
@@ -87,7 +87,7 @@ map_body = (
  '<li><span class="k k-open"></span>River, open channel</li><li><span class="k k-under"></span>River, underground</li>'
  '<li><span class="k k-water"></span>City Watercourse (approx.)</li><li><span class="k k-abbey"></span>Abbey Stream</li><li><span class="k k-commons"></span>Commons Water (approx.)</li><li><span class="k k-overflow"></span>Dodder Overflow (approx.)</li><li><span class="k k-flow" aria-hidden="true"><svg viewBox="0 0 26 14" width="26" height="14"><path d="M1 7h24" stroke="currentColor" stroke-width="4"/><path d="M10 2.5l5.5 4.5-5.5 4.5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Direction of flow</li><li><span class="k k-stop">1</span>River walk stop</li>'
  '<li><span class="k k-mill"></span>Mill site</li><li><span class="k k-works"></span>Flood scheme works</li>'
- '<li><span class="k k-cross"></span>Canal crossing</li><li><span class="k k-dig"></span>Archaeology and monuments</li><li><span class="k k-gauge"></span>River gauge (Dodder)</li></ul></div>'
+ '<li><span class="k k-cross"></span>Canal crossing</li><li><span class="k k-dig"></span>Archaeology and monuments</li><li><span class="k k-place"></span>Poddle archive place</li><li><span class="k k-gauge"></span>River gauge (Dodder)</li></ul></div>'
  '<p class="note">River line © OpenStreetMap contributors. The City Watercourse, Tenter Water and Dodder Overflow are approximate routes, not surveyed lines. The City Watercourse as far as Dolphin’s Barn follows the OpenStreetMap line, which was drawn from old Ordnance Survey and Taylor maps; The rest of the City Watercourse, the Tenter Water, the Commons Water and the lower Abbey Stream follow the hand-drawn map of the <a href=\"https://poddle.crumlinwalkinstownhistory.ie/\" rel=\"noopener\">Crumlin and Walkinstown History Group’s Poddle project</a>, which gives no source for its lines. The underground Poddle from Patrick Street to Wellington Quay, including the City Hall branch, is redrawn along today’s streets from written descriptions and a plan in McEntee and Corcoran, Ronan (1927) and Fitzgerald (1973); the route is theirs, but the exact line under each street is our best fit. Some mill sites are approximate too, and say so.</p>'
  '<noscript><p>The map needs JavaScript. The river walk is also listed on the <a href="walk.html">river walk page</a>.</p></noscript></div>'
  '<link rel="stylesheet" href="vendor/leaflet.css">'

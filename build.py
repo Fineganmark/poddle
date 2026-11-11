@@ -552,7 +552,7 @@ def esc(s): return html.escape(s, quote=True)
 def para(p):
     return p if p.startswith("<") else f"<p>{esc(p)}</p>"
 
-NAV = [("walk.html", "River walk"), ("map.html", "Map"), ("history.html", "History"), ("wildlife.html", "Wildlife"), ("river-data.html", "Live data"), ("media.html", "Media"), ("sources.html", "Sources"), ("shop.html", "Shop"), ("about.html", "About")]
+NAV = [("walk.html", "River walk"), ("map.html", "Map"), ("history.html", "History"), ("archive.html", "Archive"), ("wildlife.html", "Wildlife"), ("river-data.html", "Live data"), ("media.html", "Media"), ("sources.html", "Sources"), ("shop.html", "Shop"), ("about.html", "About")]
 
 def shell(slug, title, desc, body, active, image=None, article=False, noindex=False):
     nav = "".join(f'<a href="{h}"{" aria-current=\"page\"" if h == active else ""}>{t}</a>' for h, t in NAV)
@@ -632,6 +632,8 @@ def article(item, kicker, prev, nxt, back, top_nav=False):
         link += '<section class="watch"><h2>Watch and read</h2><ul>' + "".join(f'<li><a href="{u}"{"" if u.endswith(".html") else " rel=\"noopener\""}>{esc(t)}</a></li>' for t, u in item["links"]) + '</ul></section>'
     if item.get("plan"):
         link += '<section class="watch plan"><h2>From the planning file</h2><p class="note">Facts from the flood scheme’s planning application and four local planning files.</p><ul>' + "".join(f'<li><a href="{u}">{esc(t)}</a></li>' for u, t in item["plan"]) + '</ul></section>'
+    if globals().get("ARCH_BACKLINKS", {}).get(item.get("slug")):
+        link += '<section class="watch arch-links"><h2>In the Poddle archive</h2><p class="note">More about this stretch of the river from the Poddle archive.</p><ul>' + "".join(f'<li><a href="{u}">{esc(t)}</a></li>' for u, t in ARCH_BACKLINKS[item["slug"]]) + '</ul></section>'
     brief = f'<aside class="brief"><strong>In brief</strong><p>{esc(item["brief"])}</p></aside>' if item.get("brief") else ""
     pn = '<nav class="pn" aria-label="Previous and next">'
     pn += f'<a class="prev" href="{prev[0]}.html"><span>Upstream</span>{esc(prev[1])}</a>' if prev else '<span></span>'
@@ -651,6 +653,7 @@ def write(name, content):
         fh.write(content)
 
 exec(open(os.path.join(OUT, "build_enrich.py"), encoding="utf-8").read())
+exec(open(os.path.join(OUT, "build_archive.py"), encoding="utf-8").read())
 # ---------------------------------------------------------------- pages
 # River stops
 for i, s in enumerate(STOPS):
