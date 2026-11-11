@@ -1,0 +1,310 @@
+# Edited place texts for the river walk, meanders and history pages.
+# Based on the Crumlin and Walkinstown History Group's Poddle research (2024), merged with their agreement (Nov 2026).
+# Format: "@@ slug | home | Title" starts a place; home is a stop slug, "meander:<slug>" or "history:<slug>".
+# "## Heading" starts a section on the home page; "Source: ..." lines become small notes.
+
+@@ tallaght | fettercairn-house | The source at Cookstown
+## The source at Cookstown
+The Poddle rises from a spring, now underground, opposite St Mark’s School in Cookstown, close to Fettercairn House. At its source it is called the Tymon River. Nothing marks the spot.
+Its first course ran east through what is now Cookstown Industrial Estate, but building has rerouted it and put it in pipes as far as the Belgard Road. The first open water you can see is behind the Trulife factory on Airton Road, along the northern edge of the TU Dublin Tallaght campus. From there the river runs east to the Gallagher factory, turns south to the Greenhills Road and passes under it, then flows east through Bancroft Park, under the Castletymon Road and through the grounds of Tallaght Community School before it turns north into Tymon Park.
+
+@@ greenhills | tymon | Greenhills
+## Greenhills
+Greenhills was mostly farmland until the 1950s and 1960s, when the housing estates were built. The Greenhills Road runs from Tallaght village to the Walkinstown Roundabout, and the Poddle passes under it near St Mary’s Priory before it enters Tymon Park. The wider Greenhills area takes in part of Tymon and runs east as far as Templeville Road.
+
+@@ tymon-castle | tymon | Tymon Park
+## Building the park
+The lands for Tymon Park were bought by compulsory purchase in the 1970s. They had been farmed, some by the same families for a hundred years or more. The park covers about 130 hectares between Tallaght, Templeogue and Walkinstown and opened to the public in June 1986. The M50 later split it in two, and footbridges near the Greenhills Road and the Tallaght–Templeogue road join the halves.
+In the western park the Poddle first follows its old line beside Tymon Lane, then turns into a new course of ponds, cascades and waterfalls made in the 1980s. The western lakes were dug in 1985, one of them in an old quarry. About 50,000 cubic metres of soil were moved to shape the banks and viewing mounds. Four ponds are linked by sluices, cascades and underground channels, and a dense clay called marl in the ground holds the water without a liner. Within two years mallard were nesting.
+In 1997 three more lakes, covering 2.2 hectares, were dug in the eastern park near Limekiln Road. They were paid for partly by the developer of new housing at Kimmage Manor, which was required to reduce the flood risk downstream, and they were built to hold at least 13,000 cubic metres of flood water. Four football pitches went, more than 100,000 cubic metres of earth were moved, and islands were left in the lakes for water birds.
+Source: South Dublin County Council, a book on the facilities and history of Tymon Park (2001), South Dublin Libraries <a href="https://hdl.handle.net/10599/8965" rel="noopener">hdl.handle.net/10599/8965</a>.
+## What the castle looked like
+Tymon Castle was a two-storey tower on the ridge beside Tymon Lane, with a vaulted ceiling, a flat roof, a projecting stair turret and machicolations, the overhanging parapets from which defenders could drop missiles on attackers. It was described as ruinous by 1547. In the 1770s it was partly repaired and briefly lived in by a poor family, and for generations it was a place for picnics. By the 20th century it was a dangerous ruin, and it was knocked down in 1960. Local tradition says the castle was built to guard the river’s source.
+
+@@ firhouse-weir | balrothery-weir | What’s in a name
+## What’s in a name
+People in Firhouse tend to call it Firhouse Weir and people in Tallaght Balrothery Weir. In 2021 a motion at South Dublin County Council to rename it officially as Firhouse Weir was voted down, and the Record of Protected Structures still lists it as “City Watercourse, Firhouse”. It is also recorded as a historic engineering work.
+
+@@ templeogue-house | balrothery-weir | Templeogue House
+## Templeogue House
+From the weir the City Watercourse ran across the fields, under the Tallaght road and through the grounds of Templeogue House before turning north to meet the Tymon River. Whoever held Templeogue held the city’s water.
+In the 14th century the lands belonged to the Harold family, and by the 16th century to the Talbots, who held them for about 200 years. The owner kept the watercourse in repair and was paid in corn by the mills that used the water. In 1655 there was a castle, a tuck mill, a house and cottages, with about 40 people.
+In 1686 the lands were mortgaged to Sir Thomas Domville for £3,000, and after Sir James Talbot was attainted in 1688 for supporting James II, Domville took them. He built a brick mansion on the site of the castle, keeping its vaulted undercroft and two round towers. His son, Sir Compton Domville, laid out the grounds around the watercourse, lining it up on the front door and sending it down a flight of steps decorated with statues, and built a circular temple on a mound in one of the fields. The Domvilles took the miller’s corn and rents from St Patrick’s Cathedral and the Earl of Meath, and they were not afraid to use their power over the water: see the story of Lord Santry above.
+After Sir Compton died in 1768 his nephew Charles Pocklington lived at Templeogue until about 1780, then moved to Santry, taking many of the ornaments, the temple among them. Around 1820 a Mr Gogerty rebuilt the house, again keeping the old undercroft and towers. The novelist Charles Lever lived there from 1842 to 1845. The dry channel of the watercourse still runs straight to the front door, lined with mature trees. In 1972 an archaeologist from the National Museum examined the temple mound to see whether it was an ancient burial mound; nothing ancient was found.
+
+@@ mount-down-house-mill | dodder-overflow | Mount Down: where the Poddle begins
+## Mount Down: where the Poddle begins
+Just east of Tymon Park the river runs behind the houses on Limekiln Road, under a bridge at Wellington Lane, and turns north towards Templeville Road. Near here, on land between today’s Glendown Grove and Wellington Lane, the City Watercourse from the Dodder met the Tymon River, and from that meeting the stream is the Poddle proper. Mount Down House and its mill stood beside the junction.
+The house had 47 acres beside Kimmage Manor and Orwell House. Its residents included Anna Danford (1886 to 1888), Anna and Sir Robert Herron (1888 to 1895), and Thomas Franks and John Kean (1895 to 1916). The Cullen family farmed there from 1916 to 1969, mostly dairy cattle, and lit the house with a generator driven by the two streams. The mill beside the house was not worked in their time. The house was knocked down in 1973 for the Glendown estate and St Mary’s Rugby Club; two chestnut trees from its avenue still stand in Glendown.
+In 1952 Peter Cullen sued Dublin Corporation for £20,000 and an injunction, claiming that the ancient water supply that had turned his mill since 1244 had been dwindling since 1938. He valued the property at £10,000 with the water and £7,000 without. The Corporation denied reducing the flow or that he had any right to it, and the claim was dismissed.
+Source: The Story of Templeogue (1992); newspaper reports, 1952.
+
+@@ willington-osprey-drive | dodder-overflow | Willington and Osprey
+## Willington and Osprey
+On the eastern side of Tymon Park the river runs between the Willington and Osprey estates and Limekiln Road. The Willington name may come from nearby Wellington Lane.
+In 1954 this was the scene of a famous arrest. John Broe, a 30-year-old housebreaker the papers called “The Phantom”, had kept Dublin talking with a run of daring burglaries. Detective Officer Christopher Lang spotted him hiding under a haycock near Wellington Lane and chased him to the Poddle, where they fought for twenty minutes. Broe got away, but Gardaí John Egan and Walter Dowd soon found him in a ditch nearby.
+When the estates were built in the early 1970s, they went over the 700-year-old Dodder branch of the City Watercourse, and under the neighbouring Glendown estate the channel was put in a culvert. Historians objected at the time: a 1972 article warned that the watercourse at Wellington Lane faced destruction with no plan to preserve it, and Sister Ann Dominica Fitzgerald campaigned to save it.
+In 1978, only six years after the houses went up, storms flooded the new estates. The Poddle burst its banks at Templeogue and homes in Osprey Drive were flooded again and again; residents such as Peter and Kathleen Smith described struggling with each new flood. Councillor Seán Walsh blamed the drainage, especially a culvert at Wellington Lane too small for the run-off from the new estates. Residents felt the council had been slow to act, and said it was the State, not the developer, that paid into the emergency fund for repairs.
+
+@@ perrystown | kimmage-manor | Perrystown
+## Perrystown
+Below Templeville Road the river flows north-east through the edge of Perrystown towards Kimmage Manor, running more or less parallel to Whitehall Road. It passes between the Wainsfort and Manor estates and behind Whitehall Gardens into the St Anne’s estate. Much of this stretch is still open, despite the housing built around it.
+The river was the boundary between Perrystown and Kimmage House. In 1905, in a fair rent case, Mary Ida Clayton, the tenant of Perrystown, argued that it was a separate farm and not part of Sir Frederick Shaw’s demesne at Kimmage. Her counsel pointed to the Poddle dividing the two, with three bridges over it.
+
+@@ kimmage-manor-kimmage-house | kimmage-manor | From Kimmage House to Kimmage Manor
+## From Kimmage House to Kimmage Manor
+The house stands in the townland of Kimmage, but its grounds cross the Poddle into Perrystown. It was “The House” of Frederick Shaw’s Crumlin estate, and he had the architects Richard and William Morrison remodel it in a Tudor revival style, with gables, spiral turrets and tall chimneys.
+Shaw also built a new approach, Whitehall Road, in place of the old avenue from the Kimmage side, which ran from about where Greenlea Road is now. The road’s Irish name, Bóthar an Racardáir, the Recorder’s Road, recalls his post as Recorder of Dublin. He is said to have voted with Peel to repeal the Corn Laws, against most of his party, and to have turned down the post of Lord Lieutenant. One of his granddaughters, Flora Shaw, proposed the name Nigeria in 1897 while she was colonial editor of The Times. Sir Frederick was buried in St Mary’s churchyard, Crumlin.
+After his death the house was let, to Erskine Chetwode among others, and in 1898 it was leased in perpetuity to William and Mary Ida Clayton. Only then was it called Kimmage Manor; the title was a name, not a manor in any legal sense. In 1911 the Holy Ghost Fathers, now the Spiritans, bought it as a training house for missionary priests, and it became their headquarters. Its church served Crumlin parish as a chapel of ease until it became a parish itself in 1990. Land was given for Templeogue College in the 1960s, and more was sold in the 1990s for the housing on Whitehall Road and Wainsfort Road.
+Source: T. McCarthy, The Shaws of Terenure (Four Courts Press, 2010); P. J. Ryan, Kimmage Manor: 100 Years of Service to the Mission (Columba Press, 2011).
+
+@@ st-annes | ravensdale | Kimmage Cross Roads
+## Kimmage Cross Roads
+The big houses around the crossroads are remembered by Finola Watchorn in Crumlin and the Way it Was. Kimmage Lodge, a large Georgian house behind today’s Glenanne apartments, was the home of the Davy family; the Rev. Humphrey Davy was rector of St Mary’s, Crumlin, from 1867 to 1913. Wainsfort and Fortfield Lodge stood on Fortfield Road, and Fortfield Lodge marked the edge of Kimmage, which ran from Harold’s Cross Green up to it. Her grandfather, P. J. Watchorn, built the KCR petrol station in the early 1930s.
+The Glenanne Sports Club, formed in 1943 from the Graftonians, played on the grounds of St Anne’s, a small estate running from the crossroads up to the back of Kimmage Manor. The Poddle ran through it between banks 15 to 20 feet high, which gave the place the look of a glen and the club its name. The club lost its grounds in 1970, when the land was sold for building.
+
+@@ ravensdale-park | ravensdale | Ravensdale Mill
+## Ravensdale Mill
+Ravensdale Mill, also called the Tinker flour mill, stood at the corner of Kimmage Road Lower and Captain’s Lane, now Captain’s Road, with its entrance on Captain’s Lane. Pat Johnson of the Old Dublin Society remembered its iron wheel, about eight feet across, turned by the Poddle, driving the mill’s three floors through gears and a vertical shaft; the millstone was still intact in 1928. The Drake family ran the mill and lived in a two-storey house nearby. Milling stopped around 1917. From 1924 Joe P. Kelly and his three sons made furniture there until the business failed in 1928. By the 1940s little was left. Finola Watchorn played in the ruins on the way home from school, and Lizzie Moran kept a small sweet shop in part of them.
+Source: Finola Watchorn, Crumlin and the Way it Was.
+
+@@ poddle-park-st-martins | ravensdale | Poddle Park and St Martin’s
+## Poddle Park and St Martin’s
+Between Ravensdale Park and Bangor Road the river gives its name to the streets: Poddle Park, Poddle Green, Poddle View and Poddle Close. The Poddle Park cottages were built for labourers in the 1920s and 1930s, St Martin’s Park and Drive in the 1960s, the Riverside apartments in the 2000s on the site of Brennan’s bakery, Poddle Close on the back gardens of the Clonard Road cottages, and Poddle Green and Poddle View on the grounds of Waterpark House.
+In 1967 Dublin Corporation laid out St Martin’s on Martin’s Lands and realigned, deepened and regraded the river to cut flooding. The stretch from Ravensdale Park to Poddle Park was put in a culvert and the river was turned under the Poddle Park road. The stepping stones at the top of Bangor Road, a shortcut for hundreds of factory workers, gave way to a concrete and steel footbridge, which vandals wrecked in 1968.
+Local people have long looked after this stretch. In 1973 a city commissioner, George Butler, asked for action on rubbish dumped in the river at St Martin’s Drive and on oil pollution that kept appearing at weekends. In September 1974 the St Martin’s Residents’ Association and Dublin Corporation cleaned the river together, and the association drew up a ten-point plan: notices against dumping, a safe bridge at Bangor Road, an end to oil from local industry, and trees and flowers on the banks.
+The floods kept coming. In October 2002 Mary Byrne, then 84, spent the night with her family fighting 18 inches of water in her kitchen in Poddle Park, as she had in the 1986 storm. A new footbridge upstream of the old one was proposed in 2004, and the current flood scheme adds a 1.5-metre wall in Poddle Park.
+
+@@ larkfield-mills | stone-boat | Larkfield Mill and the Kimmage Garrison
+## Larkfield Mill and the Kimmage Garrison
+Larkfield Mill stood where Sundrive Shopping Centre is now. In 1816 it was a skin mill; in the 1880s William Danford ran a corn mill there; later it was Larkfield Roller Mills, run by Harron, Connolly and Co.; and by the 1930s it housed St Kevin’s Paint Works.
+Before the 1916 Rising the lease was held by Countess Plunkett, wife of Count George Noble Plunkett: twenty acres, some cottages, a barn and the mill, by then idle. Her sons, among them Joseph Mary Plunkett, used it as a base. Arms from the Howth gun-running of 1914 passed through it, and in the months before the Rising about 90 Irish Volunteers who had come over from Britain lived and trained there, making munitions. They became known as the Kimmage Garrison. Patrick Pearse spoke to them the week before the Rising.
+
+@@ tongue | stone-boat | Tonguefield
+## Tonguefield
+The wedge-shaped stone that splits the river gave its name to the Tongue Fields and the Tonguefield housing around them, and in turn to the Stone Boat pub nearby. A newspaper correspondent once remembered a button factory in the Tongue Fields, driven by the river.
+Finola Watchorn traces the two branches from here. The artificial branch, with a third of the water, went north to Dolphin’s Barn and was carried on a raised bank, remembered as the Back of the Pipes, to the City Basin near James’s Street. The old course carried on through the grounds of Mount Argus and Loader’s Park Mills, along Kimmage Road Lower, under the front gardens of some of its houses, and down Harold’s Cross Road to the canal, then on by Clanbrassil Street, Blackpitts, New Row and Patrick Street.
+Source: Finola Watchorn, Crumlin and the Way it Was.
+
+@@ mount-argus | mount-argus | The first Mount Argus
+## The first Mount Argus
+The first Mount Argus was a tall red-brick house on a few acres through which the Poddle “lazed”. It belonged to Mrs Elizabeth Byrne, a widow and a cousin of Cardinal Cullen. At the suggestion of Father Matthew Collier, a curate in Rathmines, and with the Cardinal’s consent, the Passionists set up their house there in 1856. The old house and its temporary church stood where the community’s cemetery is now. The first Mass was said in August 1856 by Father Paul Mary Pakenham, a son of the second Earl of Longford, who had been a captain in the British Army before he became a Catholic.
+Source: Irish Independent, 16 October 1956.
+
+@@ loader-park | mount-argus | Loader’s Park Mill
+## Loader’s Park Mill
+Loader’s Park Mill stood beside the grounds of Mount Argus. A “C. Mill”, a corn mill, is marked here on Rocque’s map of 1760; by 1843 it was a paper mill, and the 1911 Ordnance Survey map shows a corn mill again. The Gothic stone scout hall at the back entrance to Mount Argus, on Mount Argus Road, seems to have been part of the mill and was standing by 1843. Patrick Pearse is said to have taught Irish there. The ruined mill and a few small cottages, perhaps for the mill workers, survived until the late 20th century.
+
+@@ kimmage-road-lower | mount-argus | Kimmage Road Lower
+## Kimmage Road Lower
+Kimmage Road Lower runs from Kimmage Cross Roads to Harold’s Cross Road. The first Ordnance Survey map, of 1837, shows cottages along it, and the terraces at its northern end were built in the late 19th and early 20th centuries. The river runs close beneath them.
+On a Saturday in February 1910 the Poddle overflowed on high ground near Mount Argus and poured down the Upper and Lower Kimmage roads, three or four feet deep in places. The Rathmines township sent a “float” that spent the evening ferrying people “from shore to shore”. In March 1937 the fire brigade was pumping out houses here again.
+On 29 November 1985 Maureen Cooke opened her front door at 9 Kimmage Road to find a hole ten feet square where part of her garden had been. The culvert carrying the river, less than six feet under the front gardens, had collapsed.
+Source: Irish Independent, 21 February 1910; Irish Press, 13 March 1937 and 30 November 1985.
+
+@@ harolds-cross-road | mount-jerome | Harold’s Cross village
+## Harold’s Cross village
+Harold’s Cross was a small village south of the city until the middle of the 18th century; Rocque’s map of 1760 shows houses clustered around its green. It grew quickly in the late 18th and early 19th centuries with the Grand Canal, and Taylor’s map of 1816 and Duncan’s of 1821 show terraces along Harold’s Cross Road. The wedge-shaped park in the middle is the old village green and medieval common, which stayed open ground until the Rathmines Township Commissioners laid out the present park in 1893 and 1894. Harold’s Cross had its mills too: a sketch of the old Harold’s Cross laundry shows its water wheel in the Poddle.
+Source: Kimmage BusConnects scheme documentation.
+
+@@ mount-jerome-cemetery | mount-jerome | Mount Jerome’s name
+## Mount Jerome’s name
+Mount Jerome is named after the Rev. Stephen Jerome, a 17th-century preacher and vicar of St Kevin’s. The lands had belonged to St Thomas’s Abbey; after the abbey was dissolved they passed to the Brabazons, later Earls of Meath, and the house was later home to the Wilkinsons and the Keoghs. The General Cemetery Company bought the 47-acre estate in 1836 and modelled the cemetery on Highgate in London. It was mainly a Protestant burial ground at first. By the late 20th century it was badly neglected and went into voluntary liquidation in 1984; new owners took over in 1998 and opened a crematorium in 2000.
+Behind the Russian Orthodox church by the cemetery gates there is a short open stretch of the river with some interesting old stonework, before it follows the cemetery wall and goes into its culvert.
+
+@@ grand-canal | mount-jerome | Plans to bury the river
+## Plans to bury the river
+The Poddle, the Abbey Stream and the Tenter Water all pass under the Grand Canal, and in the 20th century the canal and the river were caught up in the same plans. In 1961 Dublin Corporation’s Streets Committee proposed using the line of the canal for a new sewer to Ringsend, and in October 1963 the City Engineer proposed turning the canal itself into a culvert with a sewer beside it, together with the “long-overdue” culverting of the Poddle from Kimmage Manor. Canal societies objected, and in the end the Grand Canal Tunnel was laid beside the canal instead.
+In the early 1970s the Corporation asked for £35,000 to culvert the river. Eventually, it said, the whole 1,000 metres from south of Kimmage Manor to the canal would have to go underground; the urgent part was the 240 metres from Greenmount Lane to the canal, whose walls were weak and at risk of collapse in places.
+The canal has its own memories of the river. On the Night of the Big Wind, 6 January 1839, trees along the canal banks were torn up, a boat capsized in Portobello Harbour, and the Poddle burst over its banks.
+
+@@ blackpitts | blackpitts | Blackpitts today
+## A boundary on the river
+St Kevin’s National School for boys, built in 1894 and 1895 and opened on 20 April 1895, faces onto Blackpitts. Its site follows the old course of the Poddle, which was also an old boundary: on one side the lands of St Thomas’s Abbey, later the Earl of Meath’s Liberty, and on the other those of St Patrick’s Cathedral, later the Liberty of St Sepulchre.
+The lanes off Blackpitts have their own stories. Dowker’s Lane was once Tucker’s Lane. Warrenmount is named after Nathaniel Warren, Lord Mayor in 1782 and an MP for the city, who was rumoured to be a partner in “The Sham”, a notorious gambling house. Fumbally Lane had Barnatt’s food stores in an old brewery building, where fire broke out on the morning of 15 September 1906; the brigade had it out within an hour.
+## Washing rights in the Poddle
+Much of the housing around Blackpitts was built in the 1880s by Arthur Hammond, a Catholic builder. His daughter, Mary Agnes Hammond, inherited 150 houses in 1902; she is remembered as a British spy during and after the First World War. Many of her tenants worked at the Guinness brewery, and the deeds of her houses carried an unusual right: to wash in the River Poddle, long after it had gone underground. She never married and died in Switzerland in 1956. Her estate of 26 terraced houses in Blackpitts, Emerald Square and Dolphin’s Barn was still largely together when it was sold in the 1980s.
+
+@@ new-row | cross-poddle | New Row on the Poddle
+## New Row on the Poddle
+New Row, once “New Row on the Poddle”, runs between Blackpitts and the Coombe. The river passes behind its buildings and those of New Street. Its newspaper history is lively. On 12 September 1730 two sharpers who had just robbed a man fell out over the purse in New Row; one was killed and the other badly beaten, and the victim never saw his money again. In November 1787 the Poddle flooded houses from New Row to Meath Street, driving people into their upper rooms. The storm of 12 June 1822 brought down chimneys in New Row and Malpas Street, and on the Night of the Big Wind in 1839 a falling chimney killed a mother and child in New Row.
+In the days of the Penal Laws, Catholic lay teachers such as Catherine Anderson and Catherine Hanley kept illegal schools in New Row.
+
+@@ poddle-cross | cross-poddle | Cross Poddle
+## Cross Poddle
+Dean Street, where Patrick Street, New Street and Kevin Street meet, was called Cross Poddle until May 1826, when the Wide Streets Commissioners renamed it. Rocque’s map of 1756 simply marks it “Poddle”, as do the Pool and Cash map of the 1780s and maps of 1787 and 1797; the first map found with “Cross Poddle” is an 1818 plan of the precincts of St Patrick’s Cathedral. The “Cross” may refer to church lands or to the crossing of the stream itself.
+It was a bottleneck less than 25 feet wide where six streets met. In 1814 a resident wrote to the Paving Board that snow had blocked it so badly that carriages could neither pass nor turn, and suggested that if every householder, the dairymen included, took away one cartful, the street would be clear in two hours. Where New Street, Patrick Street and Dean Street meet was once Freestone Alley, later Freeman’s Stone; a stone here is recorded in 1603 as marking the boundary between the city and the archbishop’s liberty.
+Punishment was public. In 1766 Dennis Sullivan was whipped from Cross Poddle to Harold’s Cross for stealing meal, with a bag of meal tied round his neck, on the order of Mr Justice Drury.
+Source: Faulkner’s Dublin Journal, 1766; Rocque (1756); 19th-century plan of St Patrick’s precincts.
+
+@@ poddle-hole | cross-poddle | The Poddle Hole
+## The Poddle Hole
+The Poddle Hole was the name for the covered channels of the river near St Patrick’s Cathedral, and things turned up in it. On a Sunday evening in September 1770, “to the amazement of many people”, several hundred live herrings were taken out of the Poddle Hole water under the house at the Sign of the Royal Oak at Nicholas’ Gate. In October 1789 drinkers in a tavern in Essex Street heard roaring under their kitchen and found a young bull trapped beneath the flags over the Poddle channel. It was rescued; nobody claimed it, and it was thought to have been swept in at the Poddle Hole.
+To give someone a “Poddle Hole step” was to plunge your foot into the gutter and splash them. When rioters from Cavan were carted through the Liberty to be punished in November 1735, one of them gave the hangman a Poddle Hole step, which earned him a harder beating.
+Source: Dublin Chronicle, 13 September 1770 and 1 October 1789; Dublin Evening Post, 15 November 1735.
+
+@@ archiepiscopal-palace | cross-poddle | St Sepulchre’s Palace
+## St Sepulchre’s Palace
+Kevin Street Garda Station stands on the site of the archbishops’ palace of St Sepulchre, built in the late 12th century by John Comyn, the first Norman archbishop of Dublin. Its name recalls the Crusades and the Holy Sepulchre in Jerusalem. It stood near the Slighe Chualann, the old road south, and the archbishops’ lands stretched from Harold’s Cross to Donnybrook and Crumlin; by the 14th century there were mills on the Poddle and houses all around. The palace was damaged in the Bruce invasion of 1315. It is often said the river was part of its defences, though no map has been found to show it; the archbishop’s grounds did once reach as far as Cross Poddle. In 1806 it was handed to the government and became a police barracks, later the headquarters of the Dublin Metropolitan Police. A 16th-century window and parts of the vaulted kitchens survive.
+In 1751 William Jackson, a butcher from Kevin Street, was shot climbing the palace garden wall after a run of thefts. Days later his family and a crowd stormed the house to find the man who fired, and it took the Poddle Guard, called out by Justice Drury, to stop them.
+
+@@ bishop-street | cross-poddle | Bishop Street
+## Bishop Street
+Bishop Street dates from about 1610. It was Butter Lane, then Boater Lane by 1756, and took its present name in 1774, probably from the archbishop who owned it. Old maps show a watch house at its Kevin Street end, near St Patrick’s Well and the river. It is often said the Poddle ran under Jacob’s biscuit factory here, and a newspaper once told of two workers who fished in it on quiet shifts, but no map evidence has been found that the river ever flowed under the factory.
+
+@@ st-patricks-cathedral | st-patricks | The buttress that fell
+## The buttress that fell
+Shortly after noon on 14 September 1882, without a moment’s warning, one of the great buttresses of the north chancel fell, killing three people. The Freeman’s Journal blamed the river: the cathedral was built on the lowest ground in the city, and the Poddle beneath it kept water lodged around its foundations.
+Source: Freeman’s Journal, 15 September 1882.
+
+@@ 13th-century-corn-mill | st-patricks | The 1990 dig: a medieval mill
+## The 1990 dig: a medieval mill
+When Dublin Corporation widened Patrick Street and laid a new sewer in 1990, the archaeologist Claire Walsh excavated the old bed of the Poddle between March and July. In April her team found 13th-century timber revetments, stout oak walls sunk along the river’s banks to hold back floods, carry water into the city and win dry land from the marsh around the cathedral. In July they found a 13th-century corn mill of wood and stone, about ten metres long, the first medieval mill found in the city; it worked until the 15th century, when the river was diverted. The dig also turned up leather shoes, 12th-century coins, bronze pins and burials, one in an old lime kiln. At Nicholas Street there was evidence of the town wall and its ditch, with a lime kiln older than the channelling of the Poddle in the late 12th century; along Patrick Street, early wattle fences against flooding, a cobbled road and a tanning pit.
+The site was recorded but not kept. Pat Wallace of the National Museum said it could add a great deal to our picture of medieval Dublin; the Corporation’s spokesman, Noel Carroll, said the dig was there to record the old river before the sewer went in.
+Source: newspaper reports, 26 April, 15, 16 and 17 July 1990.
+
+@@ bull-alley-improvement-scheme | st-patricks | Bull Alley and Bride Street
+## The Iveagh Buildings
+Bull Alley Street runs from Bride Street to Patrick Street, with St Patrick’s Park along its south side. Around 1900 the Bride’s Alley district, the “Poddle Valley”, was some of the worst housing in Dublin, and some houses in Anderson’s Court and Patrick Street had collapsed into the river beneath them. Lord Iveagh paid for much of the rebuilding. The Corporation moved part of the Poddle so the new buildings would stand on firm ground, and rebuilt the old sewers that ran into it. The plan was for 29 blocks housing 210 families, in 112 three-room and 98 two-room flats. The two streams of the Poddle met again at the corner of Patrick Street and Dean Street, and from there the united river ran under Patrick Street, Ross Lane, Bride Street and Ship Street to the Castle.
+
+@@ little-ship-street | ship-street-little | The pool at Ship Street
+## The pool at Ship Street
+Ship Street was split into Little and Great around 1700: Sir Bernard de Gomme’s map of 1673 shows a single street, and “Little Ship Street” appears in the will of Isaac Vauteau in 1711. Medieval records call it Vicus Ovinus. De Gomme’s map also shows a pool where Little and Great Ship Streets meet, and some have taken this pool, rather than the river, as the origin of the name Poddle. In 1678 the parish of St Andrew stated that the sea had once reached Ship Street, meeting the stream from the Pole Gate bridge, before the old harbour at Parliament Street was filled in. The hollow where the two streets meet is still there.
+One old writer remembered the river before it hid: in the days of Queen Elizabeth it “boldly entered the city at New Street, swept around St Patrick’s, washed the sides of the Castle, near Ship Street, and fell unconcernedly into the Liffey close to Dame’s Gate.” In January 1784 it did just that, rising six feet at the cathedral and covering Ship Street, the Lower Castle Yard and Dame Street as far as Sycamore Alley, before pouring through Crampton Court and Crane Lane into the Liffey.
+
+@@ st-michael-de-le-pole-church | ship-street-little | St Michael le Pole
+## St Michael le Pole
+On the high ground above the river, where Great Ship Street now dips below Chancery Lane, stood the church of St Michael le Pole, with a round tower beside it. It took its name from the pool on the Poddle, which also gave its name to the Pole Gate in the city wall at St Werburgh Street. Tradition says it was founded by St Mac Táil in the 8th century, and a lintel grave found under it suggests worship here very early. Churches to St Michael were often built on high places. The church was deconsecrated in 1682 and was a school by 1706, the year a storm brought down the round tower; the rest was demolished in 1789 despite protests. Gabriel Beranger’s drawings record what it looked like.
+St Michael’s was one of a ring of early churches along the Poddle, with St Brigid’s in Bride Street, St Kevin’s, St Patrick’s “on the island” and St Nicholas’.
+
+@@ st-nicholas-without | ship-street-little | St Nicholas Without
+## St Nicholas Without
+Under Archbishop Alexander de Bicknor (1317 to 1349) the parish of St Nicholas was split into St Nicholas Within the walls and St Nicholas Without. The outer parish took in both sides of Patrick Street, New Street and most of Kevin Street, and for a long time used the north transept of St Patrick’s as its church, walled off from the rest of the cathedral. In 1666 ground off Kevin Street was set aside as its burial ground, the Cabbage Garden. The transept was a ruin from 1784 until it was reroofed in 1825, and in 1861 the parish joined St Luke’s on the Coombe.
+In 1829 the householders of these parishes, St Nicholas Within and Without among them, met at the Tailors’ Hall about the Poddle Tax, which was charged on houses built over the river to keep its walls and arches in repair.
+
+@@ dublin-castle | dubh-linn | Under the Castle yards
+## Under the Castle yards
+The river that once filled the Castle moat now runs in a brick sewer under the roads around it. When the Castle was made ready for a state reception in June 1932, visitors walked in by the Cork Hill gate over the line of the old ditch, with the Poddle still running underneath. On the garden side, a small footbridge from the State Apartments crosses the line of the moat into the grounds that were the viceroy’s garden after 1700.
+Working in the river was dangerous. On 12 June 1913 John Roche, a labourer on the drainage works, had his right hand crushed while working in the Poddle in the Lower Castle Yard; blood poisoning followed. The Recorder awarded him £40 in compensation.
+On 2 February 1961 workmen probing for rock under Cork Hill broke into a tunnel seven feet high, only two feet below the road, bricked up at both ends and with a gas main laid over it. People wondered whether it was part of the old moat. Inside were five tons of coal, thought to explain a coal delivery that had gone missing years before down a forgotten manhole.
+
+@@ olympia-theatre | palace-street | The Olympia and the river
+## The Olympia and the river
+The Olympia opened in 1879 as the Star of Erin Music Hall, the venture of Dan Lowrey. It became Dan Lowrey’s Music Hall in 1881, Dan Lowrey’s Palace of Varieties in 1889, the Empire Palace in 1897 and the Olympia in 1923. The river shaped the building: Lowrey wanted a Dame Street entrance and the stage in a different place, but the Poddle was in the way, so the audience reached the auditorium through a tunnel under the stage.
+In 1971 Dublin Corporation refused a plan to redevelop the site, partly because two branches of the river in culverts beneath it were higher than the proposed basements. A manhole in the theatre gives on to the river. In 1975 a newspaper recalled the story that Michael Collins’s men thought of it as an escape route during the War of Independence, though there is no evidence that anyone used it.
+
+@@ wellington-quay | liffey | The gate at the river’s end
+## The gate at the river’s end
+The quay was Custom House Quay until 1817. In 1881 workmen spent two days cutting through the outfall arch, then the only underground way into Dublin Castle, and fitted a high iron grille with heavy locks. Before that, it was said, the adventurous could walk the river’s bed between tides, past rats and foul smells, from the quay under Crampton Court, Dame Street, Exchange Court and Ship Street. The lower Poddle still runs in a large brick tunnel, and it has been said you can walk along it for almost three miles from Harold’s Cross; please don’t try.
+In the 1990s Temple Bar Properties proposed a copper-topped “Poddle bridge” for pedestrians here. 24 of the 42 councillors voted for it, but it needed a three-quarters majority because it conflicted with the city’s development plan, and it fell.
+
+# ---------------- Meander: Dolphin's Barn and the City Watercourse (from the Stone Boat)
+
+@@ rutland-mills | meander:meander-dolphins-barn | Rutland Avenue
+## Rutland Avenue and Shaw’s mill
+From the Stone Boat the City Watercourse ran north-west, between today’s Mount Jerome and Eamonn Ceannt Park, and along Rutland Avenue to Dolphin’s Barn. Rutland Avenue was once Hall’s Lane, and may have been renamed after the 4th Duke of Rutland, Lord Lieutenant from 1784 until he died at the Viceregal Lodge in 1787.
+Rutland flour mill stood on the watercourse here, on the country side of the canal at the end of what George Bernard Shaw called “a rather pretty little village street”. His father, George Carr Shaw, ran it with a partner, George Clibborn, as Clibborn and Shaw, flour and corn merchants, with an office and warehouse at 67 Jervis Street. In 1938 a newspaper found that the pair had borrowed on the mill, its pond and machinery near Hall’s Lane, and that the ruins of “Shaw’s Mill” could still be seen; one Blackpitts resident remembered the playwright from childhood. Shaw himself wrote that neither partner knew anything about flour, so the business “proceeded by its own momentum”: “They did not work the industry: it worked them.”
+Rutland Avenue had football too. Jacob’s FC, formed by workers at the Bishop Street biscuit factory, played here, and in 1921 were founder members of the League of Ireland with their neighbours St James’s Gate. Three Jacob’s players were capped for Ireland: Frank Collins, Tommy Dunne and a Crumlin man, Shay Keogh.
+
+@@ clarkes-tobacco-factory | meander:meander-dolphins-barn | Clarke’s tobacco factory
+## Clarke’s tobacco factory
+William Clarke and Son, tobacco and snuff makers, began in South Main Street, Cork, in 1830 and moved production to Liverpool by 1870. When the Irish Free State brought in its own customs duties, the firm came back, and in 1923 and 1924 built a factory at 276 to 288 South Circular Road, on what the old maps show as open fields. Beckett and Harrington designed it with R. Earle, chief engineer of Clarke’s parent, the Imperial Tobacco Company: a single-storey works lit by north lights, then an office building on the road in brick with stone dressings. A staff restaurant followed in 1949, and in the 1960s Player Wills added offices.
+The Tenter Water, a branch of the City Watercourse, ran by the site. In December 1924 the Dublin Borough Commissioners began a relief scheme, with a £45,000 government grant, to give work to the unemployed. One of its jobs, costing £2,600, was to divert the Poddle into a culvert at Clarke’s new factory, so that its water no longer ran into the sewers or lay stagnant.
+
+@@ dolphins-barn | meander:meander-dolphins-barn | Dolphin’s Barn
+## Dolphin’s Barn
+In the 19th century Dolphin’s Barn was busy with tanneries and mills. In the 1840s tanners such as James O’Neill, Patrick Ledwidge, Peter Byrne and Margaret Jones worked side by side on Dolphin’s Barn Lane, and the city’s records are full of disputes with tanners over what they did to the water. Better-off residents were allowed to supply their poorer neighbours from private fountains, landlords piped water to tenants through pipes no thicker than a goose quill, and near Kimmage and Dolphin’s Barn people cut holes in the banks to water their fields.
+The river was dangerous. In August 1877 a child, Eliza McMahon, fell into the Poddle near her home at 20 Rutland Avenue and drowned; the inquest jury asked the Corporation to do something about the state of the river. In September 1931 a boy named Rooney from Rutland Avenue found the body of an infant in it.
+In March 1937 a grating above Rutland Cottages choked, where the river went underground for 400 yards before it emptied into the canal near Dolphin’s Barn Bridge. Cottages flooded three feet deep. Mrs McNamara of 5 Rutland Cottages spent the night carrying her children to safety, and in the morning made breakfast standing knee-deep in water.
+In January 1938 Dublin Corporation announced 556 flats for 550 families between Dolphin’s Barn Street and Donore Avenue, a £250,000 scheme that meant widening both streets and diverting the part of the Poddle that ran through the site.
+
+@@ back-of-the-pipes | meander:meander-dolphins-barn | The Back of the Pipes
+## The Back of the Pipes
+From Dolphin’s Barn the watercourse was carried on a raised bank to the City Basin. The lane along it, between Dolphin’s Barn and James’s Walk, was known as the Back of the Pipes. It ran behind Reuben Street, Fatima Mansions, Mallin Avenue and Lourdes Road, past the “Stone Sofa”, and came out on James’s Walk opposite the old iron footbridge. For generations it was a place for courting couples, and in Dublin slang anything that could not be found was “at the back of the pipes”. Nearby stood the Leinster cinema, later the Dublin Ice Rink. The line of the old canal branch here was filled in and the Luas now runs along it.
+In March 1879 the Irish Times reported “a crime of a most fiendish nature”. A woman lured a four-year-old girl from Pill Lane to the Back of the Pipes, stripped her and threw her over a six-foot wall into the Poddle. The river was usually four feet deep and swift, but that day there were only two feet of water; the child stood up and screamed, and a neighbour saved her. Her clothes turned up in a pawn office the next morning.
+In 1958 a writer in the Evening Herald recalled that you could still ask at Dolphin’s Barn for the Back of the Pipes and be sent to the lone footpath to the canal bank behind St Kevin’s Hospital, and remembered the iron hand pumps in old city basements that lifted the basin’s low-pressure water to the cisterns upstairs, if you could afford one, and a maid to work it.
+Source: Irish Times, 4 March 1879 and 27 November 2020 (Frank McNally); Evening Herald, 2 May 1958.
+
+@@ st-james-basin | meander:meander-dolphins-barn | The City Basin
+## The City Basin
+The first City Basin, a reservoir filled from the watercourse, was made around 1670. Between 1682 and 1721 Dublin’s population roughly doubled, from about 60,000 to 120,000, and in 1721 a new basin was built off James’s Street, between where St James’s Hospital and the Guinness Storehouse are now. It could hold about three months’ supply and served 90 streets. It was later joined to the Grand Canal. In the 18th century it was a fashionable promenade, approached through an ornamental arch at the end of Basin Lane, with walks lined with lime and elm, garden seats, bands, concerts and fireworks.
+The visitor Richard Twiss was less impressed in 1775: both the springs and the reservoir were dry while he was in Dublin, and of the canal begun from it in 1765 he wrote that “it bids fair for being completed in three or four centuries.”
+After the canal line closed in 1974 the basin and harbour were filled in, but the names Basin View and Basin Street remain. In March 2023 Dublin City Council workers regenerating the linear park at Rialto, near the Fatima Luas stop, uncovered part of the old basin.
+Source: Betty Brunkard, Basin Street Harbour (Fountain Resource Group, 2014); The Journal, 16 March 2023.
+
+@@ st-thomas-abbey | meander:meander-dolphins-barn | St Thomas’s Abbey
+## St Thomas’s Abbey
+The water ended its journey at the Abbey of St Thomas the Martyr, off today’s Thomas Street. Henry II founded it in 1177 in atonement for the murder of Thomas Becket, and it was the only royal foundation in medieval Ireland. Its liberty, Thomas Court and Donore, controlled the western approach to the walled city, and it grew rich on lands in Meath, Dublin and Wicklow. Henry VIII dissolved it in the 1530s and gave it to William Brabazon, whose family became the Earls of Meath; the Earl of Meath’s Liberty lasted into the 19th century and gave the Liberties their name. Nothing of the abbey stands, but excavations on South Earl Street have found its remains.
+
+# ---------------- Meander: along the Abbey Stream (from Mount Jerome)
+
+@@ our-ladys-hospice | meander:meander-abbey-stream | Our Lady’s Hospice
+## Our Lady’s Hospice
+Near the gates of Mount Jerome the Poddle divides. The main river runs close to Harold’s Cross Road, and the second channel, the Abbey Stream, was a mill race that ran through the cemetery and into a mill pond at the far end of the hospice grounds. Both have long been culverted, and none of the river can be seen at the hospice today.
+In 1845 Mary Aikenhead, who founded the Religious Sisters of Charity in 1815 and St Vincent’s Hospital in 1834, bought Greenmount at Harold’s Cross and named it Our Lady’s Mount. It became the congregation’s mother house, with a night school, Sunday school and day school. After smallpox spread among the Sisters in 1879 they moved to Milltown, and the hospice for the incurable and dying that they had long planned opened at Harold’s Cross in the years that followed. In later years city councillors objected to plans to culvert more of the river through the hospice grounds.
+
+@@ greenmount-lane | meander:meander-abbey-stream | Greenmount
+## Greenmount
+The river ran on from the hospice through what is now the Greenmount industrial estate, to a large mill pond. A corn mill here was turned into a cotton mill by James Greenham by 1807, the Greenmount Spinning Manufactory. In the mid-19th century the Quaker Pim family, of Pim Brothers on William Street, enlarged it into the Greenmount Spinning Company, making cotton, linen and the Irish poplin the family was known for; Frederic Pim later ran it. Its polychrome brick building, granite stairs and timber floors still stand. The mill pond was later used by bottling works, and was covered over in the late 1960s when the river to the canal was culverted, a change blamed for floods in the 1970s.
+
+@@ boxing-stadium | meander:meander-abbey-stream | The National Boxing Stadium
+## The National Boxing Stadium
+North of the canal the Abbey Stream ran into the grounds of the Richmond Bridewell, a prison built for about £40,000 on the site of Grimwood’s nursery and used from 1813 to 1877. It held minor offenders in two walled quadrangles, with solitary confinement and flogging. The Fenian Joseph Poole was hanged there, and is thought to have been buried under what is now the boxing stadium. The War Department took the site in 1877, and it became Griffith Barracks; Griffith College is there now.
+The National Stadium opened in 1939 over the river. The Poddle added to its cost and delayed it, but the bowl-shaped hall seated 2,600, and boxing clubs paid 15 per cent of their takings towards the debt.
+
+@@ donore-avenue | meander:meander-abbey-stream | Donore Avenue
+## Donore Avenue
+Donore Avenue, once Love Lane, runs from Cork Street to the South Circular Road and Parnell Bridge on the canal. The Abbey Stream came down it to meet the Tenter Water near the entrance to St Teresa’s Gardens, then turned at Brown Street towards the Coombe. Rev. Myles Ronan traced the abbey’s mill stream from Harold’s Cross to Donore Avenue and round by Pimlico, Ardee Street and Warrenmount, rejoining the old course of the Poddle, and dated it to between 1245 and 1324. When the abbey was dissolved in 1540 the stream drove four watermills: the Wattle Mill, the Wood Mill and the Double Mills. After the Reformation it was known as the Earl of Meath’s Watercourse.
+When the foundation stone of the new national schools on Donore Avenue was laid, the rector, the Rev. Fergus Greer, called the open river a drawback, and the Lord Mayor promised the Corporation would deal with it. In November 1902 the Local Government Board approved a loan of £450 for covering the river at Donore Avenue. In 1938 the Corporation diverted another stretch to build St Teresa’s Gardens. A footbridge over the stream could be seen until recently, and the river is still visible in the Greenville industrial estate.
+
+@@ sweeneys-terrace | meander:meander-abbey-stream | Sweeney’s Terrace and Mill Street
+## Sweeney’s Terrace and Mill Street
+At the southern corner of Mill Street, by Sweeney’s Terrace, about 30 yards of the Poddle came up into the open. In the 1970s William Talbot, a local man descended from Huguenot weavers, showed reporters where it had been used for tanning, and kept timber from the old tanning tanks. The stream here fed the Double Mill of St Thomas’s Abbey, which made oil and flour. Local people had always known it: children played and fished in the mill race behind 6 Sweeney’s Terrace, and a man was said to have drowned there. In 1973 Sister Ann Dominica Fitzgerald led walks along the Poddle for the Dublin Arts Festival from Mount Argus to Warrenmount; by then the mill pond beside it had been cemented over. A student housing block on Mill Street was later required to keep part of the river visible, and an old millstone is on display.
+Mill Street is first named in 1711, in the will of Isaac Vauteau, a Huguenot whose descendants were tanners here. On 22 June 1875 fire broke out in the bonded stores off Cork Street. Whiskey from 5,000 burning hogsheads ran down Chamber Street, Ardee Street and Mill Street; people scooped it up in anything they had, even their boots, and several died from drinking it. Where the Poddle ran under Ardee Street the spirit ignited and the river exploded.
+
+@@ cork-street | meander:meander-abbey-stream | Cork Street
+## Cork Street
+Cork Street runs from the Coombe to Donore Avenue on the line of the old road west, the Slighe Dála, and is named after the first Earl of Cork. The Abbey Stream crosses it twice, near Emerald Square coming from the Coombe Hospital and again at Ardee Street on its way to Sweeney’s Terrace; the Commons Water runs behind the buildings on the north side; and the City Watercourse crossed it near the old ice rink on its way to the Back of the Pipes. You cannot see any of them now.
+It was a street of weavers. In 1815 Thomas Pleasants built the Tenter House here, a heated hall where weavers could stretch their cloth out of the weather. The Cork Street Fever Hospital opened in 1804 to fight typhus, was enlarged in 1817 to 1819, and later became the Brú Chaoimhín nursing home, which closed in 2011. The slender chimney behind the old Court furniture works belonged to J. and T. Ord’s tannery, later the Eustace Brothers’ dye works; deep vats and ox skulls were found during renovation.
+The 1925 relief works also turned a watercourse at Cork Street and Vauxhall into a sewer, at a cost of £2,000, to stop it flooding.
+
+@@ marrowbone-lane | meander:meander-abbey-stream | Marrowbone Lane
+## Marrowbone Lane
+Marrowbone Lane, off Cork Street, probably took its name from Marylebone in London, brought by London wool workers after 1690; Brooking’s map of 1728 has a version of the name, and by 1743 it was Marrowbone Lane. The City Watercourse, the Abbey Stream and the Commons Water all pass under or close to it, between Robert Street and Price’s Row. Huguenot, Dutch and Flemish weavers lived here in gabled “Dutch Billy” houses, a few of which survived into the 1980s. In 1916 Éamonn Ceannt’s men held the distillery here as an outpost of the South Dublin Union, and in the late 1930s Herbert Simms designed the curved flats that still follow the line of the street. Robert Collis’s play Marrowbone Lane (1939), staged by Hilton Edwards and Micheál Mac Liammóir, told of tenement life here.
+The river ran beneath the yards. Early in the 20th century Catherine Duffy was drawing water through a wooden trap in her courtyard when she lost her balance and fell into the swollen Poddle. Her neighbours watched her swept away into the dark; the street was dug up along the river, but her body was never found.
+
+# ---------------- Meander: the Liberties (from Cross Poddle)
+
+@@ liberties | meander:meander-liberties | The Liberties
+## Why “the Liberties”
+The Liberties take their name from the manors outside the city walls that kept their own courts after the Normans came: the archbishop’s Liberty of St Sepulchre, and the Liberty of Thomas Court and Donore belonging to St Thomas’s Abbey. Between them they ran from the Liffey to St Patrick’s. Huguenot weavers made the area famous for cloth in the 17th and 18th centuries, but trade laws and changing markets brought decline, and by the 19th century it was a place of tenements.
+The Poddle and its branches run all through it. The main river comes from Blackpitts behind New Row and Clanbrassil Street, through Cross Poddle and down Patrick Street. The City Watercourse ran down the middle of Thomas Street from James’s Street towards Christ Church. The Commons Water runs behind Cork Street and the Coombe to St Patrick’s, and the Abbey Stream through Marrowbone Lane, Ardee Street and Mill Street.
+## The Poddle Guard and the City Sword
+The Liberties kept their own peace, with the help of the Poddle Guard. On 4 August 1752, when the Lord Mayor and city officials rode the bounds of the Liberties, some mischief-makers at the Poddle snatched the ceremonial City Sword. The Poddle Guard caught the thief, who was sent to Newgate. In the same year, when the Liberty Boys heard that English cloth was being got ready for sale in Chamber Street and Weaver’s Square, they turned out in force and took more than ten pieces, burning or tearing five or six before the Poddle Guard broke them up.
+According to Rev. Myles Ronan, the Dodder and Poddle together brought the old city an average of 613,200 gallons a day, and after turning the mills the water served the dyers of the Liberties.
+
+@@ weaver-square | meander:meander-liberties | Weaver’s Square
+## Weaver’s Square
+Weaver’s Square and Ormond Street, off Cork Street, recall the Huguenot weavers who came in large numbers in the late 1600s at the invitation of the Duke of Ormond. Newmarket, laid out by the Earl of Meath in the 1670s, was their trading place. Weaving here is much older: digs in the Liberties have found Hiberno-Norse spindle whorls, weights and bone needles. The Weavers’ Hall on the Coombe, with its statue of George II holding the tools of the trade, is long gone, but its picture is kept in Dublin City Library and Archive. When the trade declined, the weavers turned to upholstery, lace and later motoring scarves and bow ties.
+The river did not run through the square, but its water did. In the early 1970s Corporation workmen laying new pipes found seven feet of oak water pipe, about seven inches across and with steel joints, five feet down. Thought to be about 250 years old, they were larger than any found in the city before. The workmen were Tommy Conway, John Burke, Peter Foran and Paddy Dunne.
+
+@@ crosstick-alley | meander:meander-liberties | Crosstick Alley
+## Crosstick Alley
+Crosstick Alley, in the Liberty of St Thomas, ran from Francis Street to Meath Street. A 1971 article suggested its name came from a forgotten shrine or a crossing on the Poddle, but no map shows the river anywhere near it.
+
+# ---------------- Meander: Christ Church (from Ship Street Little)
+
+@@ christchurch-cathedral | meander:meander-christ-church | Christ Church Cathedral
+## Christ Church Cathedral
+Christ Church stands on the ridge above the Poddle and the Liffey, at the end of Lord Edward Street. It was founded around 1028, after the Norse king Sitric Silkenbeard went on pilgrimage to Rome, with Dúnán as its first bishop. Henry II heard Mass here at Christmas 1171. It was rebuilt in stone from the 1180s, and its nave in the 1230s. In 1487 a pretender, Lambert Simnel, was crowned here, and in 1551 the service was sung in English for the first time in Ireland. George Edmund Street rebuilt much of it between 1871 and 1878, paid for by the distiller Henry Roe, and joined it by his covered bridge to the new Synod Hall, which takes in the tower of the old church of St Michael. The road schemes and the loss of the old houses at Wood Quay left it standing on its own.
+St Patrick’s, down by the river, often flooded, and in 1744 its chapter had to ask to hold their Lenten services at Christ Church, because their own cathedral was “dangerous to assemble in from the late floods”. Christ Church had its own water trouble in April 1953, when water was seeping into the basement of the Synod Hall. A water diviner found water 21 feet under High Street, though workmen digging 18 feet under the hall found none. Some blamed the Poddle; others a spring that had come back to life.
+
+# ---------------- Meander: St Andrew's and Grafton Street (from Palace Street)
+
+@@ st-andrew-street-church | meander:meander-st-andrews | St Andrew’s
+## St Andrew’s
+St Andrew’s church first stood in the fields near the Poddle, outside the walls; one writer imagines a pilgrim crossing a wooden bridge over the river on the way to it from St Mary del Dam. In 1670 it moved to St Andrew Street, to a site that had been a bowling green called Tib and Tom. The round church built there in 1793 to 1807 to designs by Francis Johnston burned in 1860, and Lanyon, Lynn and Lanyon’s church replaced it in 1862. The parish was one of those that paid the Poddle Tax in 1829.
+
+@@ grafton-street | meander:meander-st-andrews | Grafton Street
+## Grafton Street
+The Poddle never ran under Grafton Street; the Stein, another of Dublin’s hidden rivers, runs nearby. Even so, from 24 January 1988 the stretch between Chatham Street and South Anne Street was closed to traffic for about three weeks “to facilitate culverting of the Poddle River at Kimmage”, a notice that is still a puzzle.
