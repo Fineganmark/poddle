@@ -929,6 +929,18 @@ med += "".join(f'<li><a href="{u}" target="_blank" rel="noopener noreferrer"><sp
 med += '</ol></section></div>'
 write("media.html", shell("media", f"Media · {SITE}", "Films, television and writing about the River Poddle.", med, "media.html"))
 
+# About: visitor comments. Comments arrive through the Netlify form "comments" and
+# appear here only once Mark approves them. Add each approved comment as
+# (name, place or "", "Month YYYY", text). Newest first.
+COMMENTS = [
+]
+if COMMENTS:
+    comments_list = '<ol class="comment-list">' + "".join(
+        f'<li><blockquote><p>{esc(t)}</p></blockquote><p class="comment-by">{esc(n)}{(", " + esc(pl)) if pl else ""} · {esc(d)}</p></li>'
+        for n, pl, d, t in COMMENTS) + '</ol>'
+else:
+    comments_list = '<p class="comment-empty">No comments yet. Be the first to share a memory or a thought about the Poddle.</p>'
+
 # About
 about = f'''<div class="wrap page narrow"><header class="page-head"><p class="kicker">About</p><h1>About this site</h1>
 <p class="dek">A personal project tracing the Poddle from Tallaght to the Liffey.</p></header>
@@ -949,8 +961,22 @@ about = f'''<div class="wrap page narrow"><header class="page-head"><p class="ki
 <p><button type="submit">Send message</button></p>
 </form>
 <p>If the form doesn’t work, you can email <a href="mailto:hello@poddle.ie">hello@poddle.ie</a> instead.</p></section>
+<section id="comments"><h2>Comments</h2>
+<p>Do you remember the Poddle flooding, playing beside it as a child, or a story your family told about it? Leave a comment and it will be added here, usually within a week. Comments are read before they go up.</p>
+{comments_list}
+<h3 class="comment-head">Leave a comment</h3>
+<form class="contact" name="comments" method="POST" action="/comment-thanks.html" data-netlify="true" netlify-honeypot="bot-field">
+<input type="hidden" name="form-name" value="comments">
+<p style="display:none"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+<p><label for="m-name">Your name, as you’d like it shown</label><input id="m-name" name="name" type="text" required autocomplete="name"></p>
+<p><label for="m-place">Where you’re from <span class="opt">(optional, e.g. Kimmage)</span></label><input id="m-place" name="place" type="text"></p>
+<p><label for="m-email">Your email <span class="opt">(optional, never shown)</span></label><input id="m-email" name="email" type="email" autocomplete="email"></p>
+<p><label for="m-text">Your comment</label><textarea id="m-text" name="comment" rows="5" required maxlength="2000"></textarea></p>
+<p><button type="submit">Post comment</button></p>
+</form></section>
 </div>'''
 write("about.html", shell("about", f"About · {SITE}", "About poddle.ie, a free local-history site about the River Poddle, Dublin’s hidden river. Send corrections, memories and photographs.", about, "about.html"))
+write("comment-thanks.html", shell("comment-thanks", f"Thank you · {SITE}", "Comment received.", '<div class="wrap page narrow"><header class="page-head"><h1>Thank you</h1><p class="dek">Your comment has been received. It will appear on the About page once it has been read, usually within a week.</p></header><p><a href="about.html#comments">Back to the comments</a> · <a href="index.html">Home page</a></p></div>', "about.html", noindex=True))
 write("thanks.html", shell("thanks", f"Thank you · {SITE}", "Message sent.", '<div class="wrap page narrow"><header class="page-head"><h1>Thank you</h1><p class="dek">Your message has been sent. We will be in touch if a reply is needed.</p></header><p><a href="index.html">Back to the home page</a></p></div>', "about.html", noindex=True))
 
 # ---------------------------------------------------------------- teachers and privacy
@@ -1010,6 +1036,7 @@ privacy = f'''<div class="wrap page narrow"><header class="page-head"><p class="
 <section><h2>Who runs this site</h2><p>poddle.ie is a personal, non-commercial local-history project based in Dublin. You can contact the project by emailing <a href="mailto:hello@poddle.ie">hello@poddle.ie</a>.</p></section>
 <section><h2>Visitor counts</h2><p>The site counts visits with <a href="https://www.goatcounter.com" rel="noopener">GoatCounter</a>. It uses no cookies and does not track you across sites. It records which page was viewed, the site you came from, your browser and screen size and your country. Your IP address is not stored. There is no advertising on this site.</p></section>
 <section><h2>Messages you send</h2><p>If you use the contact form, your name, email address and message are stored by <a href="https://www.netlify.com" rel="noopener">Netlify</a>, which hosts this site, and sent on to the project by email. They are used only to reply to you, and deleted when no longer needed, usually within a year.</p></section>
+<section><h2>Comments</h2><p>If you leave a comment, it is stored by Netlify in the same way. Your name, the place you give and your comment may be published on the About page; your email address, if you give one, is never shown and is used only to contact you about your comment. To have a comment changed or removed, email <a href="mailto:hello@poddle.ie">hello@poddle.ie</a>.</p></section>
 <section><h2>Buying a workbook</h2><p>Workbooks are sold through <a href="https://payhip.com" rel="noopener">Payhip</a>, which handles payment and delivery under its own privacy policy. Payhip shares your name, email address and what you bought with the project, so it can help with any problem with your order. The project never sees your card details. The checkout opens on the shop page itself, so that page loads a small script from Payhip; other pages do not.</p></section>
 <section><h2>Schools</h2><p>The project may email a school’s published office address to tell it about this free resource. It keeps the school’s name, its published email address and the principal’s name, because telling local schools about a free local-history resource is a legitimate interest, and the impact on them is small. Each email says how to opt out, and if a school asks not to be contacted again, the project keeps a note of that so it never is. The other details are deleted after a year if there is no reply.</p></section>
 <section><h2>Other sites</h2><p>The maps load street tiles from OpenStreetMap and the text uses Google Fonts, so your browser connects to those services to fetch them. Links to Facebook, Instagram, YouTube and other sites take you to services with their own privacy policies.</p></section>
