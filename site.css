@@ -472,3 +472,30 @@ html { scroll-behavior: smooth; }
   .ws-do div, .walk-facts div { background: #fff; }
   a { color: #000; }
 }
+
+/* Poddle archive (Crumlin and Walkinstown History Group) */
+.k-place, .pin-place { width: 10px; height: 10px; background: #b0306a; border: 2px solid var(--paper); border-radius: 50%; box-sizing: content-box; }
+.arch-credit { margin: 32px 0 0; padding: 14px 18px; border-top: 1px solid var(--rule); font: 500 .88rem/1.5 var(--label); color: var(--muted); max-width: var(--measure, 40rem); }
+.arch-credit p { margin: 0; }
+.arch .src { font: 500 .85rem/1.45 var(--label); color: var(--muted); }
+.arch-cards, .arch-list { list-style: none; margin: 0 0 32px; padding: 0; display: grid; gap: 14px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr)); }
+.arch-cards a, .arch-list a { display: grid; gap: 6px; align-content: start; height: 100%; padding: 16px 18px; border: 1px solid var(--rule); border-radius: 8px; text-decoration: none; color: inherit; background: var(--paper); }
+.arch-cards a:hover, .arch-list a:hover { border-color: var(--river); }
+.arch-cards strong, .arch-list strong { font: 700 1.05rem/1.25 var(--label); color: var(--river); }
+.arch-cards span, .arch-list span { font-size: .95rem; line-height: 1.45; color: var(--muted); }
+.arch-area { margin-bottom: 12px; }
+.arch-area h2 { margin-bottom: 4px; }
+.arch-area .note { margin: 0 0 14px; }
+.arch-toc ul { list-style: none; padding: 0; margin: 0 0 28px; display: flex; flex-wrap: wrap; gap: 8px; }
+.arch-toc a { display: inline-block; padding: 6px 12px; border: 1px solid var(--rule); border-radius: 999px; font: 500 .9rem/1.2 var(--label); text-decoration: none; }
+.arch-search { display: grid; gap: 6px; max-width: 28rem; margin: 0 0 16px; font: 600 .9rem/1 var(--label); }
+.arch-search input { font: inherit; font-weight: 400; font-size: 1rem; padding: 10px 12px; border: 1px solid var(--rule); border-radius: 6px; background: var(--paper); color: inherit; }
+.arch-filter { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 8px; }
+.arch-filter .chip { font: 500 .88rem/1.2 var(--label); padding: 6px 12px; border: 1px solid var(--rule); border-radius: 999px; background: var(--paper); color: inherit; cursor: pointer; }
+.arch-filter .chip span { color: var(--muted); }
+.arch-filter .chip.on { background: var(--river); border-color: var(--river); color: var(--paper); }
+.arch-filter .chip.on span { color: inherit; opacity: .8; }
+.arch-news { list-style: none; padding: 0; margin: 16px 0 0; display: grid; gap: 0; max-width: 46rem; }
+.arch-news li { padding: 10px 0; border-bottom: 1px solid var(--rule); display: grid; gap: 2px; }
+.arch-news li[hidden] { display: none; }
+.arch-news .tags { font: 500 .8rem/1.3 var(--label); color: var(--muted); }
