@@ -105,9 +105,19 @@
       .addTo(gauges);
   });
 
+  // Landmarks from the Crumlin and Walkinstown History Group's Poddle archive
+  var places = L.layerGroup(), placeById = {};
+  (DATA.landmarks || []).forEach(function (p) {
+    var icon = L.divIcon({ className: "pin-place", iconSize: [12, 12], iconAnchor: [6, 6] });
+    var mk = L.marker([p[1], p[2]], { icon: icon, title: p[0] })
+      .bindPopup("<div class=\"pop\"><p class=\"pk\">Poddle archive</p><h3>" + esc(p[0]) + "</h3><p>" + esc(p[3]) + "</p><a href=\"place-" + p[4] + ".html\">Read more →</a></div>", { maxWidth: 240 })
+      .addTo(places);
+    placeById[p[4]] = mk;
+  });
+
   var layerCtl = L.control.layers(null, {
     "The river": riverLayer, "Abbey Stream": groups.abbey, "City Watercourse, Tenter and Commons Waters": groups.watercourse, "Dodder Overflow": groups.overflow, "River walk stops": stops, "Mill sites": mills, "Canal crossings": crossings,
-    "Flood scheme works": works, "Archaeology and monuments": digs, "Dodder gauges": gauges
+    "Flood scheme works": works, "Archaeology and monuments": digs, "Poddle archive places": places, "Dodder gauges": gauges
   }, { collapsed: false }).addTo(map);
   // The tick boxes sit in the box below the map, so they never cover it.
   var below = document.getElementById("layers");
@@ -119,4 +129,7 @@
   if (window.poddleMapSafe) poddleMapSafe(map, home);
   var q = /[?&]mill=([\w-]+)/.exec(location.search);
   if (q && byId[q[1]]) { var mk = byId[q[1]]; map.setView(mk.getLatLng(), 17); mk.openPopup(); }
+  if (/[?&]layer=places/.test(location.search)) { places.addTo(map); map.fitBounds(L.featureGroup(places.getLayers()).getBounds().pad(0.05)); }
+  var pq = /[?&]place=([\w-]+)/.exec(location.search);
+  if (pq && placeById[pq[1]]) { places.addTo(map); map.setView(placeById[pq[1]].getLatLng(), 16); placeById[pq[1]].openPopup(); }
 })();
