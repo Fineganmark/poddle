@@ -105,7 +105,7 @@ STOPS = [
     "It is a protected structure, and the National Inventory rates it of regional importance for its archaeological, architectural and technical interest. From the weir, a path under the M50 takes you into Tymon Park and on to the Poddle itself.",
     "The Dodder rises fast after heavy rain. Keep to the paths and the bridge, and do not try to cross on the weir."])],
   images=[("firhouse-weir-2021", "Firhouse Weir stepping down across the Dodder, January 2021. Photo: Tdr112, Wikimedia Commons, CC BY-SA 4.0."), ("firhouse-footbridge", "The footbridge over the Dodder at Firhouse, near the M50, 2012. Photo: Deitel55, Wikimedia Commons, CC BY-SA 3.0."), ("duncan-1821-city-weir", "“City Wear” on the Dodder, south of Templeogue, on Duncan’s map of the County of Dublin, 1821. Figure 11-6, EIAR Chapter 11, River Poddle Flood Alleviation Scheme (An Bord Pleanála case 306725)."), ("ronan-1927-map-ii", "The Dodder, the Poddle and the City Water, with the weir marked “Head” (B) and the Tongue (E). Map II from Rev. Myles V. Ronan, “The Poddle River and its Branches”, Journal of the Royal Society of Antiquaries of Ireland, 1927."), ("roque-1760-tymon", "The City Watercourse leaving the Dodder at Templeogue, on Rocque’s map of County Dublin, 1760. Figure 11-3, EIAR Chapter 11, River Poddle Flood Alleviation Scheme."), ("diversion-map", "The route of the diversion from the Dodder to the Poddle")],
-  links=[("National Inventory of Architectural Heritage: Firhouse Weir (reg. no. 11215019)", "https://www.buildingsofireland.ie/buildings-search/building/11215019/firhouse-weir-south-dublin-county"), ("Excavations.ie: The Weir, Firhouse, 2001", "https://excavations.ie/report/2001/Dublin/0006358/"), ("Weston St John Joyce, The Neighbourhood of Dublin: the old city water supply", "https://www.chaptersofdublin.ie/Neighbourhood/chapter43.html"), ("William Handcock, The History and Antiquities of Tallaght: the River Dodder", "https://www.chaptersofdublin.ie/Handcock/tallaght17.htm"), ("Crumlin Walkinstown History: Balrothery (Firhouse) Weir, with newspaper articles", "https://poddle.crumlinwalkinstownhistory.ie/location/firhouse-weir/"), ("Our Irish Heritage: Balrothery Weir, with photographs by Tallaght Community Council", "https://www.ouririshheritage.org/content/archive/place/miscellaneous-place/balrothery-weir-on-the-dodder-part-of-tallaght-waterways-history"), ("South Dublin County Council: Firhouse Weir", "https://www.sdcc.ie/en/services/tourism/activities/sightseeing/firhouse-weir/")]),
+  links=[("National Inventory of Architectural Heritage: Firhouse Weir (reg. no. 11215019)", "https://www.buildingsofireland.ie/buildings-search/building/11215019/firhouse-weir-south-dublin-county"), ("Excavations.ie: The Weir, Firhouse, 2001", "https://excavations.ie/report/2001/Dublin/0006358/"), ("Weston St John Joyce, The Neighbourhood of Dublin: the old city water supply", "https://www.chaptersofdublin.ie/Neighbourhood/chapter43.html"), ("William Handcock, The History and Antiquities of Tallaght: the River Dodder", "https://www.chaptersofdublin.ie/Handcock/tallaght17.htm"), ("Our Irish Heritage: Balrothery Weir, with photographs by Tallaght Community Council", "https://www.ouririshheritage.org/content/archive/place/miscellaneous-place/balrothery-weir-on-the-dodder-part-of-tallaght-waterways-history"), ("South Dublin County Council: Firhouse Weir", "https://www.sdcc.ie/en/services/tourism/activities/sightseeing/firhouse-weir/")]),
  dict(slug="m50-crossing", name="M50 Crossing", place="Tymon Park",
   teaser="Where the motorway sent the river underground.",
   sections=[("The M50", [
@@ -120,7 +120,7 @@ STOPS = [
     "Upstream of Kimmage Manor, where the Poddle begins its first long run in culverts, the river divides twice. This is the first. Unlike the second, it sends high water out of the Poddle and into the Dodder catchment, by way of storage ponds in Terenure."]),
    ("Overflow to Terenure", [
     "A sluice gate limits how much water carries on towards Kimmage and Kimmage Road Lower. The overflow runs through culverts to the ponds at Terenure College, which drain back to the Dodder at Bushy Park.",
-    "An old record of the City Watercourse says a stream taken off it in Terenure fed three fishponds, so the idea of ponds there is an old one. You can follow the overflow on the map page, where it is drawn as a green dashed line from the sluice at Whitehall Park to Bushy Park. The line is schematic, since the culverts are underground.",
+    "An old record of the City Watercourse says a stream taken off it in Terenure fed three fishponds, so the idea of ponds there is an old one. You can follow the overflow on the map page, where it is drawn as a green dashed line from the point where it leaves the Poddle beside Whitehall Park to the lake in the grounds of Terenure College. The line is approximate, since the culverts are underground.",
     "This is the downstream end of the flow controls and channel works in the River Poddle Flood Alleviation Scheme. The scheme followed serious floods in Harold’s Cross and Kimmage in 1987, 1990, 1993 and 2011. It was approved by An Bord Pleanála in June 2023, the Office of Public Works began building it in April 2024, and it is due to be finished in 2027."]),
    ("Refined and defined", [
     "Along this stretch, the scheme proposes to tidy and define the channel and build walls on both sides.",
@@ -309,9 +309,13 @@ STOPS = [
     "James Joyce knew it too. In a 1927 draft of the Anna Livia Plurabelle chapter of Finnegans Wake he wrote of “a rise every morning for Standfast Dick and a drop every minute for Stumblestone Davy”."]),
    ("Ulysses", [
     "In James Joyce’s Ulysses the outfall is placed, wrongly, at Wood Quay, in words that are unflattering but memorable:",
-    "<blockquote>“From its sluice in Wood quay wall under Tom Devan’s office Poddle river hung out in fealty a tongue of liquid sewage.”</blockquote>"])],
+    "<blockquote>“From its sluice in Wood quay wall under Tom Devan’s office Poddle river hung out in fealty a tongue of liquid sewage.”</blockquote>"]),
+   # In song: River Saile note (Mark, 7 Nov 2026; thread "Research River Saile song link to Poddle")
+   ("In song", [
+    "Dubliners have long claimed that “the River Saile” in the street song “Weila Waile”, made famous by The Dubliners on A Drop of the Hard Stuff (1967), is the Poddle, from its old Irish name the Salach, “the dirty river”. The song itself is traditional, an Irish form of the old ballad “The Cruel Mother”, and it is sung far beyond Dublin, sometimes with other river names. So the link is a cherished local tradition rather than a proven fact.",
+    '<p class="note">Sources: Frank Hopkins, <em>Hidden Dublin</em> (Mercier Press, 2008), p. 147; Clare County Library song archive (<a href="https://www.clarelibrary.ie/eolas/coclare/songs/cmc/weela_weela_wallia_vboyle.htm" rel="noopener">clarelibrary.ie</a>).</p>'])],
   images=[("quay-outfall", "The Poddle outfall into the Liffey"), ("wellington-quay", "Wellington Quay"), ("ulysses-cover", "Ulysses, James Joyce")],
-  links=[("National Inventory of Architectural Heritage: Wellington Quay", "https://www.buildingsofireland.ie/buildings-search/building/50020254/wellington-quay-dublin-2-dublin"), ("National Inventory of Architectural Heritage: The Merchants’ Arch", "https://www.buildingsofireland.ie/buildings-search/building/50020156/the-merchants-arch-48-49-wellington-quay-wellington-quay-dublin-2-dublin-city"), ("Archiseek: Wellington Quay", "https://www.archiseek.com/tag/wellington-quay-dublin/"), ("Crumlin and Walkinstown History Group: Wellington Quay", "https://poddle.crumlinwalkinstownhistory.ie/location/wellington-quay/"), ("Wikipedia: The Old Custom House, Dublin", "https://en.wikipedia.org/wiki/The_Old_Custom_House,_Dublin"), ("Wikipedia: Ha’penny Bridge", "https://en.wikipedia.org/wiki/Ha%27penny_Bridge")]),
+  links=[("National Inventory of Architectural Heritage: Wellington Quay", "https://www.buildingsofireland.ie/buildings-search/building/50020254/wellington-quay-dublin-2-dublin"), ("National Inventory of Architectural Heritage: The Merchants’ Arch", "https://www.buildingsofireland.ie/buildings-search/building/50020156/the-merchants-arch-48-49-wellington-quay-wellington-quay-dublin-2-dublin-city"), ("Archiseek: Wellington Quay", "https://www.archiseek.com/tag/wellington-quay-dublin/"), ("Wikipedia: The Old Custom House, Dublin", "https://en.wikipedia.org/wiki/The_Old_Custom_House,_Dublin"), ("Wikipedia: Ha’penny Bridge", "https://en.wikipedia.org/wiki/Ha%27penny_Bridge")]),
 ]
 
 def gal(*items):
@@ -364,7 +368,7 @@ HISTORY = [
   sections=[("The City Watercourse", [
     "The City Watercourse is an artificial channel. At the Stone Boat, in Harold’s Cross, it took one third of the river’s water: two thirds stayed in the Poddle and one third went into the watercourse, which carried it north-west towards Dolphin’s Barn. Near today’s Basin Lane it turned east along the south side of James’s Street and through Thomas Street into the city.",
     "It was the city’s main water supply for centuries, which is why the 1719 Act of Parliament was written to keep it clean and to stop mill owners starving it of water. A branch of it, the Tenter Water, rejoined the Poddle at Fumbally Lane. The Poddle’s one real tributary, the Commons Water, came in from Crumlin along the Cork Street area and joined it near the Coombe; both are drawn, approximately, on the map.",
-    "On the map page the City Watercourse is shown as a dashed red line, from Balrothery Weir to the Stone Boat and on to Christ Church. As far as Dolphin’s Barn it follows a line drawn from old Ordnance Survey maps; the stretches above Mount Down and beyond Dolphin’s Barn are drawn from a local hand-drawn map with no stated source. Treat all of it as approximate."]),
+    "On the map page the City Watercourse is shown as a dashed red line, from Balrothery Weir to the Stone Boat and on to Christ Church. As far as Dolphin’s Barn it follows lines drawn from old Ordnance Survey maps: the channel crossed the Grand Canal just east of Dolphin’s Barn Bridge and ran north up the Back of the Pipes, behind Reuben Street, as the 1909 Ordnance Survey sheets show. The stretches above Mount Down and north of the Back of the Pipes are drawn from a local hand-drawn map with no stated source. Treat all of it as approximate."]),
    ("Water for the city", [
     "The scheme began with an inquiry. In April 1244 the justiciar, Maurice FitzGerald, ordered a search for a new water supply for Dublin, and the city came to an arrangement with St Thomas’s Abbey to take water from the Dodder at Balrothery. The work went on, by most accounts, from 1245 to 1324.",
     "From the basin near James’s Street the water ran along Thomas Street and High Street to a conduit at Christ Church and the Tholsel. Householders could tap it, but private lead pipes were supposed to be no thicker than a goose quill. In 1308 the mayor, John le Decer, paid for a marble cistern at Cornmarket, and iron mains began to replace the old pipes from 1802. In November 1970 the Evening Herald reported timber water pipes, perhaps 250 years old, dug up at Weaver’s Square."]),
@@ -437,7 +441,7 @@ HISTORY = [
    ("Trees and wildlife", [
     "The scheme has not been uncontroversial. When it was published in 2020, local groups including Save the Poddle’s Wildlife Sanctuary objected to the number of trees to be felled and questioned the bird surveys at Tymon Lake. Some argued for moving walls back from the river to create natural floodplain, for example at St Martin’s Drive."])],
   images=[("dodder-overflow-fas-scheme", "Proposed works, Poddle Flood Alleviation Scheme"), ("m50-crossing-upgrade", "Tymon Park works plan"), ("news/clip-1934-01-06-floods-in-dublin-1784", "“Floods in Dublin”: the January 1784 flood, when the Poddle spilled over Patrick’s Street and the Close. Reprinted in the Belfast News-Letter, 6 January 1934, p. 12. Clipping courtesy of the Crumlin and Walkinstown History Group."), ("news/clip-1910-02-21-remarkable-city-scenes", "“Remarkable City Scenes”: the Poddle over its banks at Harold’s Cross and Mount Argus. Irish Independent, 21 February 1910, p. 5. Clipping courtesy of the Crumlin and Walkinstown History Group."), ("news/clip-1954-12-13-poddle-forced-families-out", "“Poddle Forced Families Out”: Terenure, behind Fortfield Road. Irish Independent, 13 December 1954, p. 9. Clipping courtesy of the Crumlin and Walkinstown History Group."), ("news/clip-1973-07-16-river-burst", "“River Burst”: Loder Park, Mount Argus. Irish Independent, 16 July 1973, p. 1. Clipping courtesy of the Crumlin and Walkinstown History Group."), ("news/clip-1978-12-30-storms-trail-of-havoc", "“Storms’ trail of havoc grows longer”: the Poddle over its banks at Templeogue. Irish Press, 30 December 1978, p. 3. Clipping courtesy of the Crumlin and Walkinstown History Group."), ("news/clip-1985-11-30-poddle-surfaces-in-garden", "“Poddle surfaces in garden”: a culvert collapse on Kimmage Road Lower. Irish Press, 30 November 1985, p. 5. Clipping courtesy of the Crumlin and Walkinstown History Group."), ("news/clip-1985-11-30-gardens-fall-into-river", "“Gardens fall into river”: two more Kimmage Road Lower gardens. Evening Press, 30 November 1985. Clipping courtesy of the Crumlin and Walkinstown History Group."), ("news/clip-1986-05-23-culverting-kimmage-road-lower", "Dublin Corporation’s tender notice for culverting the Poddle at Kimmage Road Lower. Irish Press, 23 May 1986, p. 19. Clipping courtesy of the Crumlin and Walkinstown History Group."), ("news/clip-1987-10-22-that-sinking-feeling", "“That Sinking Feeling”: collapsed front gardens on Lower Kimmage Road. Picture by Tony Reddy. Irish Independent, 22 October 1987, p. 5. Clipping courtesy of the Crumlin and Walkinstown History Group.")],
-  links=[("River Poddle Flood Alleviation Scheme website", "https://www.poddlefas.ie/"), ("Crumlin and Walkinstown History Group: newspaper reports on flooding", "https://poddle.crumlinwalkinstownhistory.ie/location/kimmage-road-lower/"), ("Dublin InQuirer: residents debate the scheme (2020)", "https://www.dublininquirer.com/residents-debate-environmental-impact-of-a-plan-to-build-flood-defences-on-the-river-poddle/"), ("Facts and figures from the planning file", "planning-record.html"), ("Live river levels and flood maps", "river-data.html")]),
+  links=[("River Poddle Flood Alleviation Scheme website", "https://www.poddlefas.ie/"), ("Dublin InQuirer: residents debate the scheme (2020)", "https://www.dublininquirer.com/residents-debate-environmental-impact-of-a-plan-to-build-flood-defences-on-the-river-poddle/"), ("Facts and figures from the planning file", "planning-record.html"), ("Live river levels and flood maps", "river-data.html")]),
  dict(slug="planning-record", name="What the planning file says", when="2019 to 2023",
   teaser="Facts and figures from the flood scheme’s planning application and environmental impact report.",
   sections=[("Where the files are", [
@@ -510,8 +514,6 @@ HISTORY = [
 
 RESOURCES = [
  ("Hidden Dublin: the River Poddle, photographs and resources", "https://www.hidden-dublin.com/poddle/poddle_resources.html"),
- ("Crumlin and Walkinstown History Group: the Poddle River project and map", "https://poddle.crumlinwalkinstownhistory.ie/"),
- ("Crumlin Walkinstown History: Balrothery (Firhouse) Weir", "https://poddle.crumlinwalkinstownhistory.ie/location/firhouse-weir/"),
  ("Arran Henderson: The best Poddle river", "https://arranqhenderson.com/2017/07/18/the-best-poddle-river/"),
  ("Arran Henderson: origins of Saint Patrick’s Cathedral, the chapel on the island", "https://arranqhenderson.com/2014/01/12/origins-of-saint-patricks-cathedral-part-one-the-chapel-on-the-island-early-celtic-church/"),
  ("Dublin City Council planning application 4423/19, 27–29 New Row South: flood risk assessment (JBA Consulting), engineering report (J.J. Campbell & Associates), city archaeologist and planner’s reports", "https://planning.agileapplications.ie/dublincity/"),
@@ -544,11 +546,12 @@ RESOURCES = [
 
 # ---------------------------------------------------------------- templates
 def esc(s): return html.escape(s, quote=True)
+NUMWORD = {16: "sixteen", 17: "seventeen", 18: "eighteen", 19: "nineteen", 20: "twenty"}
 
 def para(p):
     return p if p.startswith("<") else f"<p>{esc(p)}</p>"
 
-NAV = [("walk.html", "River walk"), ("map.html", "Map"), ("history.html", "History"), ("wildlife.html", "Wildlife"), ("river-data.html", "Live data"), ("media.html", "Media"), ("sources.html", "Sources"), ("shop.html", "Shop"), ("about.html", "About")]
+NAV = [("walk.html", "River walk"), ("map.html", "Map"), ("history.html", "History"), ("people.html", "People"), ("wildlife.html", "Wildlife"), ("river-data.html", "Live data"), ("media.html", "Media"), ("sources.html", "Sources"), ("shop.html", "Shop"), ("about.html", "About")]
 
 def shell(slug, title, desc, body, active, image=None, article=False, noindex=False):
     nav = "".join(f'<a href="{h}"{" aria-current=\"page\"" if h == active else ""}>{t}</a>' for h, t in NAV)
@@ -628,6 +631,7 @@ def article(item, kicker, prev, nxt, back, top_nav=False):
         link += '<section class="watch"><h2>Watch and read</h2><ul>' + "".join(f'<li><a href="{u}"{"" if u.endswith(".html") else " rel=\"noopener\""}>{esc(t)}</a></li>' for t, u in item["links"]) + '</ul></section>'
     if item.get("plan"):
         link += '<section class="watch plan"><h2>From the planning file</h2><p class="note">Facts from the flood scheme’s planning application and four local planning files.</p><ul>' + "".join(f'<li><a href="{u}">{esc(t)}</a></li>' for u, t in item["plan"]) + '</ul></section>'
+    link += item.get("after", "")
     brief = f'<aside class="brief"><strong>In brief</strong><p>{esc(item["brief"])}</p></aside>' if item.get("brief") else ""
     pn = '<nav class="pn" aria-label="Previous and next">'
     pn += f'<a class="prev" href="{prev[0]}.html"><span>Upstream</span>{esc(prev[1])}</a>' if prev else '<span></span>'
@@ -647,6 +651,7 @@ def write(name, content):
         fh.write(content)
 
 exec(open(os.path.join(OUT, "build_enrich.py"), encoding="utf-8").read())
+exec(open(os.path.join(OUT, "build_archive.py"), encoding="utf-8").read())
 # ---------------------------------------------------------------- pages
 # River stops
 for i, s in enumerate(STOPS):
@@ -676,10 +681,11 @@ def stop_li(i, s):
         note = '<span class="branch in">Dodder water joins here</span>'
     if s["slug"] == "stone-boat":
         note = '<span class="branch out">⅓ of the flow leaves for St Thomas’s Abbey</span>'
-    under = ' class="under"' if s["slug"] in ("mount-jerome", "st-patricks", "ship-street-little", "dubh-linn", "palace-street") else ""
+    under = ' class="under"' if s["slug"] in ("mount-jerome", "blackpitts", "cross-poddle", "st-patricks", "ship-street-little", "dubh-linn", "palace-street") else ""
     return (f'<li{under}><a href="{s["slug"]}.html"><span class="n">{i+1:02d}</span>'
             f'<span class="t"><strong>{esc(s["name"])}</strong><em>{esc(s["place"])}</em>'
-            f'<span class="d">{esc(s["teaser"])}</span>{note}</span></a></li>')
+            f'<span class="d">{esc(s["teaser"])}</span>{note}</span></a>'
+            + "".join(f'<a class="meander" href="{m["slug"]}.html"><em>Meander</em> {esc(m["name"])}</a>' for m in MEANDERS if m["parent"] == s["slug"]) + '</li>')
 
 
 # Short school walks (pages written by build_walks.py); cards shown on the walk and teachers' pages.
@@ -729,13 +735,13 @@ home = f'''{PHOTO_BAND if HERO == "photo" else ""}
 '''
 
 walk_page = f'''<div class="wrap page"><header class="page-head"><p class="kicker">The river walk</p><h1>Source to sea, stop by stop</h1>
-<p class="dek">The Poddle’s course has been created and recreated by nature and by people over the centuries. Here we plot it as a single line, above and below ground, as best we can. The <a href="map.html">map</a> shows the same stops on today’s streets, and <a href="planning-record.html">what the planning files say</a> adds some of the most interesting facts.</p></header>
+<p class="dek">The Poddle’s course has been created and recreated by nature and by people over the centuries. Here we plot it as a single line, above and below ground, as best we can, with a few meanders off the main line to the river’s branches and nearby places. The <a href="map.html">map</a> shows the same stops on today’s streets, and <a href="planning-record.html">what the planning files say</a> adds some of the most interesting facts.</p></header>
 <div class="walk-grid"><ol class="line">{walk}</ol>
 <div class="walk-maps">{figures([("1848-os-map-small", "Ordnance Survey map of Dublin, 1848"), ("poddle-catchment", "The Poddle catchment, from Tallaght north-east to the Liffey")])}</div></div>
 <section class="school-walks" id="school-walks"><h2>Shorter walks for schools</h2>
 <p>Two class-sized walks on stretches where the river is out in the open, each with things to look for, activities and safety notes for teachers.</p>{walk_cards()}</section></div>'''
-write("walk.html", shell("walk", f"The river walk · {SITE}", "Walk the River Poddle in sixteen stops, from its source in Tallaght through Kimmage, Harold’s Cross and the Liberties to the Liffey at Wellington Quay.", walk_page, "walk.html"))
-write("index.html", shell("index", "The River Poddle: Dublin’s hidden river, from Tallaght to the Liffey", "The River Poddle gave Dublin its name. Follow Dublin’s hidden river from Tallaght to the Liffey: its history, mills, floods, a sixteen-stop river walk and an interactive map.", home, "index.html"))
+write("walk.html", shell("walk", f"The river walk · {SITE}", f"Walk the River Poddle in {NUMWORD[len(STOPS)]} stops, with meanders off the main line, from its source in Tallaght through Kimmage, Harold’s Cross and the Liberties to the Liffey at Wellington Quay.", walk_page, "walk.html"))
+write("index.html", shell("index", "The River Poddle: Dublin’s hidden river, from Tallaght to the Liffey", f"The River Poddle gave Dublin its name. Follow Dublin’s hidden river from Tallaght to the Liffey: its history, mills, floods, a {NUMWORD[len(STOPS)]}-stop river walk and an interactive map.", home, "index.html"))
 
 # History index: one large map that cross-fades through the four periods (maps.js),
 # with dated thumbnails to pick one. The Poddle is baked in light blue by scripts/poddle_highlight.py.
@@ -757,7 +763,7 @@ def map_show(maps):
             f'<ol class="ms-thumbs">{thumbs}</ol>'
             f'<p class="ms-note">On the four atlas maps the River Poddle is picked out in light blue (Irish Historic Towns Atlas, 2002). '
             f'John Speed’s “Dubline”, surveyed 1610, shown from a 19th-century reprint (British Library, via Wikimedia Commons, public domain): the Poddle comes in at the bottom, by St Patrick’s (63), and runs north to the Castle (23). '
-            f'Leonard R. Strangways, “The Walls of Dublin”, 1904 (via Wikimedia Commons, public domain): south is at the top, and the River Poddle is marked near Pole Gate, south of the Castle.</p></section>'
+            f'Leonard R. Strangways, “The Walls of Dublin”, 1904 (via Wikimedia Commons, public domain): south is at the top, and the River Poddle is marked near Pole Gate, south of the Castle. For street-by-street Ordnance Survey town plans of 1847 to 1876, see <a href="sources.html">Sources</a>.</p></section>'
             f'<script src="maps.js?v={ASSET_V}" defer></script>')
 
 hist = f'''<div class="wrap page"><header class="page-head"><p class="kicker">History</p><h1>How the Poddle shaped Dublin</h1>
@@ -789,8 +795,9 @@ def wfig(*keys):
 # Sources
 src = f'''<div class="wrap page narrow"><header class="page-head"><p class="kicker">Sources</p><h1>Further reading</h1>
 <p class="dek">Maps, reports and articles used in putting this site together.</p></header>
-<section class="shout-out"><h2>Thank you, fellow Poddlers</h2><p>Here’s to the local historians who were following this river long before this site existed. A huge shout-out to my fellow Poddlers at <a href="https://www.hidden-dublin.com/poddle/poddle_resources.html" rel="noopener">Hidden Dublin</a> and the <a href="https://poddle.crumlinwalkinstownhistory.ie/" rel="noopener">Crumlin and Walkinstown History Group</a>, and of course to the great <a href="https://arranqhenderson.com/2017/07/18/the-best-poddle-river/" rel="noopener">Arran Henderson</a>.</p></section>
+<section class="shout-out"><h2>Thank you, fellow Poddlers</h2><p>Here’s to the local historians who were following this river long before this site existed. A huge shout-out to my fellow Poddlers at <a href="https://www.hidden-dublin.com/poddle/poddle_resources.html" rel="noopener">Hidden Dublin</a> and the <a href="#poddle-research">Crumlin and Walkinstown History Group</a>, and of course to the great <a href="https://arranqhenderson.com/2017/07/18/the-best-poddle-river/" rel="noopener">Arran Henderson</a>.</p></section>
 <ul class="links">{"".join(f'<li><a href="{u}" rel="noopener">{esc(t)}</a></li>' for t, u in RESOURCES)}</ul>
+{SOURCES_RESEARCH}
 <section><h2>Photo credits</h2><p>Photographs from Wikimedia Commons, shown in black and white. Licences as stated; adapted (converted to black and white and resized).</p><ul class="links plain">
 <li><a href="https://commons.wikimedia.org/wiki/File:County_Dublin_-_Firhouse_Weir_-_20210110130610.jpg" rel="noopener">Firhouse Weir, 2021</a>: Tdr112, CC BY-SA 4.0 (<a href="https://creativecommons.org/licenses/by-sa/4.0" rel="noopener">licence</a>)</li>
 <li><a href="https://commons.wikimedia.org/wiki/File:FootbridgeAtFirhouse.JPG" rel="noopener">Footbridge at Firhouse</a>: Deitel55, CC BY-SA 3.0 (<a href="https://creativecommons.org/licenses/by-sa/3.0" rel="noopener">licence</a>)</li>
@@ -802,6 +809,19 @@ src = f'''<div class="wrap page narrow"><header class="page-head"><p class="kick
 <li><a href="https://commons.wikimedia.org/wiki/File:Saint_Patricks_Cathedral_%E2%80%93_Pre_Guinness_Restoration.jpg" rel="noopener">The cathedral in 1814</a>: James Whitelaw, Public domain</li>
 <li><a href="https://commons.wikimedia.org/wiki/File:St_Patrick%27s_Cathedral,_Dublin_-_WL.jpg" rel="noopener">Lawrence Collection photograph</a>: William Lawrence (Lawrence Collection), Public domain</li>
 {"".join(f'<li><a href="{v[3]}" rel="noopener">{esc(v[0])}</a>: {esc(v[1])}, {v[2]} (<a href="{v[4]}" rel="noopener">licence</a>)</li>' for v in WILD_PHOTOS.values())}</ul></section>
+<section><h2>Old town plans to explore</h2><p>Ordnance Survey of Ireland’s large five-foot town plans of Dublin (1847, revised 1864) and of the Rathmines and Rathgar township (1876) show the Poddle street by street, often with mills, sluices and the open river before it was culverted. UCD Library has scanned them in its <a href="https://digital.ucd.ie/c0055/timeline.html" rel="noopener">OSi 19th Century Historical Maps collection</a>. Their licence (Creative Commons BY-NC-SA 4.0, non-commercial only) means we link to them here rather than copy them onto this site. These are the sheets along the river, from upstream to the Liffey:</p><ul class="links plain">
+<li><a href="https://digital.ucd.ie/c0055/items/c0055_o0559.html" rel="noopener">Rathmines and Rathgar Township, sheet XVIII.95 (1876)</a>: Mount Argus</li>
+<li><a href="https://digital.ucd.ie/c0055/items/c0055_o0560.html" rel="noopener">Rathmines and Rathgar Township, sheet XVIII.96 (1876)</a>: Harold’s Cross, east of the river</li>
+<li><a href="https://digital.ucd.ie/c0055/items/c0055_o0552.html" rel="noopener">Rathmines and Rathgar Township, sheet XVIII.85 (1876)</a>: north of Mount Argus, up to the Grand Canal</li>
+<li><a href="https://digital.ucd.ie/c0055/items/c0055_o0492.html" rel="noopener">City of Dublin, sheet 30 (1847)</a>: Dolphin’s Barn and the City Watercourse</li>
+<li><a href="https://digital.ucd.ie/c0055/items/c0055_o0496.html" rel="noopener">City of Dublin, sheet 31 (1847)</a>: Greenmount, Harold’s Cross Bridge and Clanbrassil Street</li>
+<li><a href="https://digital.ucd.ie/c0055/items/c0055_o0497.html" rel="noopener">City of Dublin, sheet 31, 2nd edition (1864)</a>: the same area, revised</li>
+<li><a href="https://digital.ucd.ie/c0055/items/c0055_o0484.html" rel="noopener">City of Dublin, sheet 26 (1847)</a>: Blackpitts, New Row and St Patrick’s Cathedral</li>
+<li><a href="https://digital.ucd.ie/c0055/items/c0055_o0472.html" rel="noopener">City of Dublin, sheet 20 (1847)</a>: Patrick Street and Christ Church</li>
+<li><a href="https://digital.ucd.ie/c0055/items/c0055_o0473.html" rel="noopener">City of Dublin, sheet 20, 2nd edition (1864)</a>: the same area, revised</li>
+<li><a href="https://digital.ucd.ie/c0055/items/c0055_o0474.html" rel="noopener">City of Dublin, sheet 21 (1847)</a>: Dublin Castle, Dame Street and Wellington Quay, where the Poddle meets the Liffey</li>
+<li><a href="https://digital.ucd.ie/c0055/items/c0055_o0475.html" rel="noopener">City of Dublin, sheet 21, 2nd edition (1864)</a>: “The Castle Sheet”, revised</li>
+</ul><p>Maps: Ordnance Survey Ireland, published by UCD Library (UCD Digital Library), CC BY-NC-SA 4.0. Which sheet covers which stretch is our own reading of each sheet’s position, so a stretch may run onto the next sheet.</p></section>
 <section><h2>Printed sources</h2><ul class="links plain">
 <li>Rev. Myles V. Ronan, “The Poddle River and its Branches”, Journal of the Royal Society of Antiquaries of Ireland, 6th series, vol. 17, no. 1 (1927), pp. 39–46</li>
 <li>D. McEntee and M. Corcoran, The Rivers Dodder and Poddle: Mills, Storms, Droughts and the Public Water Supply (Dublin City Council), chapters 5, 11 and 19</li>
@@ -899,6 +919,7 @@ MEDIA = [
  ("Video", "Tymon Park’s esker", "The Echo, on the glacial ridge beside Tymon Castle.", "https://youtu.be/-oMSnnBhdbI"),
  ("Video", "Kimmage Manor from the air", "Drone footage of the manor where the river is piped under the buildings.", "https://youtu.be/e3bgOMpW9Z4"),
  ("Video", "Medieval Dublin Online: Wood Quay", "How the Viking and medieval town grew beside the Poddle and the Liffey.", "https://vimeo.com/147322671"),
+ ("Video", "The Poddle and Temple Bar, by Love Temple Bar (Instagram reel)", "A short reel from Love Temple Bar on the hidden river that runs under Temple Bar to the Liffey.", "https://www.instagram.com/reel/DARIJ2qsINV/"),
  ("Television", "Go Outside and Play: Dublin’s Secret River (RTÉ, 2023)", "Carl Mullan follows his local river, the Poddle, from source to mouth.", "https://www.youtube.com/watch?v=yrl9EXPO2ko"),
  ("Television", "Cities of the Underworld: Viking Underground (History Channel, 2008)", "Don Wildman goes beneath the Viking towns of Europe, including Dublin.", "https://www.youtube.com/watch?v=ue_KBxfdI8Q"),
  ("Television", "The Liffey, episode 1: Protection and Defence (RTÉ, 2022)", "Dublin City Council’s David Green takes the cameras underground on the Poddle.", "https://presspack.rte.ie/2022/05/15/the-liffey-brand-new-series"),
@@ -909,7 +930,7 @@ MEDIA = [
 ]
 med = '<div class="wrap page"><header class="page-head"><p class="kicker">Media</p><h1>Watch, read and listen</h1><p class="dek">Films, television and writing about the Poddle. Links open on other sites.</p></header><ol class="media-list">'
 med += "".join(f'<li><a href="{u}" target="_blank" rel="noopener noreferrer"><span class="mtype">{esc(k)}</span><strong>{esc(t)}</strong><span>{esc(d)}</span></a></li>' for k, t, d, u in MEDIA)
-med += '</ol>'
+med += '</ol>' + MEDIA_NEWS_CARD
 # Clips grouped under their own heading (Mark, 5 Nov 2026)
 BANK_TUNNEL = [
  ("Television", "AIB bank robbery foiled (RTÉ News, 1985)", "Gardaí examine the tunnel dug towards the AIB on Dame Street, where the alarm foiled the raid.", "https://www.rte.ie/archives/collections/news/21193044-aib-bank-robbery-foiled/"),
@@ -924,6 +945,18 @@ med += "".join(f'<li><a href="{u}" target="_blank" rel="noopener noreferrer"><sp
 med += '</ol></section></div>'
 write("media.html", shell("media", f"Media · {SITE}", "Films, television and writing about the River Poddle.", med, "media.html"))
 
+# About: visitor comments. Comments arrive through the Netlify form "comments" and
+# appear here only once Mark approves them. Add each approved comment as
+# (name, place or "", "Month YYYY", text). Newest first.
+COMMENTS = [
+]
+if COMMENTS:
+    comments_list = '<ol class="comment-list">' + "".join(
+        f'<li><blockquote><p>{esc(t)}</p></blockquote><p class="comment-by">{esc(n)}{(", " + esc(pl)) if pl else ""} · {esc(d)}</p></li>'
+        for n, pl, d, t in COMMENTS) + '</ol>'
+else:
+    comments_list = '<p class="comment-empty">No comments yet. Be the first to share a memory or a thought about the Poddle.</p>'
+
 # About
 about = f'''<div class="wrap page narrow"><header class="page-head"><p class="kicker">About</p><h1>About this site</h1>
 <p class="dek">A personal project tracing the Poddle from Tallaght to the Liffey.</p></header>
@@ -934,21 +967,32 @@ about = f'''<div class="wrap page narrow"><header class="page-head"><p class="ki
 <li>We are available to give talks and share what we know, so please reach out if you would like to organise one. Teachers, there are free class ideas on the <a href="schools.html">teachers’ page</a>.</li>
 <li>There is a great deal of information about the Poddle, and much of it conflicts. If you spot something wrong, please let us know.</li>
 </ul>
-<!-- Contact form hidden 6 Nov 2026 until it moves off FormSubmit.
-<form class="contact" action="https://formsubmit.co/0f8d699887fd9b4ce088266bc980986d" method="POST">
-<input type="hidden" name="_subject" value="Message from the Poddle website">
-<input type="hidden" name="_next" value="https://poddle.ie/thanks.html">
-<input type="hidden" name="_template" value="table">
-<input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none">
+<form class="contact" name="contact" method="POST" action="/thanks.html" data-netlify="true" netlify-honeypot="bot-field">
+<input type="hidden" name="form-name" value="contact">
+<input type="hidden" name="subject" value="Message from the Poddle website">
+<p style="display:none"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
 <p><label for="c-name">Your name</label><input id="c-name" name="name" type="text" required autocomplete="name"></p>
 <p><label for="c-email">Your email</label><input id="c-email" name="email" type="email" required autocomplete="email"></p>
 <p><label for="c-msg">Your message</label><textarea id="c-msg" name="message" rows="6" required></textarea></p>
 <p><button type="submit">Send message</button></p>
 </form>
--->
-<p>To get in touch, please email <a href="mailto:hello@poddle.ie">hello@poddle.ie</a>.</p></section>
+<p>If the form doesn’t work, you can email <a href="mailto:hello@poddle.ie">hello@poddle.ie</a> instead.</p></section>
+<section id="comments"><h2>Comments</h2>
+<p>Do you remember the Poddle flooding, playing beside it as a child, or a story your family told about it? Leave a comment and it will be added here, usually within a week. Comments are read before they go up.</p>
+{comments_list}
+<h3 class="comment-head">Leave a comment</h3>
+<form class="contact" name="comments" method="POST" action="/comment-thanks.html" data-netlify="true" netlify-honeypot="bot-field">
+<input type="hidden" name="form-name" value="comments">
+<p style="display:none"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+<p><label for="m-name">Your name, as you’d like it shown</label><input id="m-name" name="name" type="text" required autocomplete="name"></p>
+<p><label for="m-place">Where you’re from <span class="opt">(optional, e.g. Kimmage)</span></label><input id="m-place" name="place" type="text"></p>
+<p><label for="m-email">Your email <span class="opt">(optional, never shown)</span></label><input id="m-email" name="email" type="email" autocomplete="email"></p>
+<p><label for="m-text">Your comment</label><textarea id="m-text" name="comment" rows="5" required maxlength="2000"></textarea></p>
+<p><button type="submit">Post comment</button></p>
+</form></section>
 </div>'''
 write("about.html", shell("about", f"About · {SITE}", "About poddle.ie, a free local-history site about the River Poddle, Dublin’s hidden river. Send corrections, memories and photographs.", about, "about.html"))
+write("comment-thanks.html", shell("comment-thanks", f"Thank you · {SITE}", "Comment received.", '<div class="wrap page narrow"><header class="page-head"><h1>Thank you</h1><p class="dek">Your comment has been received. It will appear on the About page once it has been read, usually within a week.</p></header><p><a href="about.html#comments">Back to the comments</a> · <a href="index.html">Home page</a></p></div>', "about.html", noindex=True))
 write("thanks.html", shell("thanks", f"Thank you · {SITE}", "Message sent.", '<div class="wrap page narrow"><header class="page-head"><h1>Thank you</h1><p class="dek">Your message has been sent. We will be in touch if a reply is needed.</p></header><p><a href="index.html">Back to the home page</a></p></div>', "about.html", noindex=True))
 
 # ---------------------------------------------------------------- teachers and privacy
@@ -960,7 +1004,7 @@ SCHOOL_LEVELS = [
    ("wildlife.html", "Wildlife", "otters, swans, herons and sticklebacks"),
    ("tymon.html", "Tymon Park", "the river out in the open, with lakes and ducks")]),
  ("3rd and 4th class", "How did the river shape our area?", [
-   ("walk.html", "The river walk", "sixteen stops from Tallaght to the Liffey, with photos"),
+   ("walk.html", "The river walk", f"{NUMWORD[len(STOPS)]} stops from Tallaght to the Liffey, with photos"),
    ("dubh-linn.html", "Dubh Linn", "the black pool that gave Dublin its name"),
    ("mills.html", "The mills", "how the river powered the city for seven centuries")]),
  ("5th and 6th class", "Why does it matter now?", [
@@ -1007,8 +1051,9 @@ privacy = f'''<div class="wrap page narrow"><header class="page-head"><p class="
 <p class="dek">This site collects as little as it can. Here is what is kept, why, and how to ask for it to be removed.</p></header>
 <section><h2>Who runs this site</h2><p>poddle.ie is a personal, non-commercial local-history project based in Dublin. You can contact the project by emailing <a href="mailto:hello@poddle.ie">hello@poddle.ie</a>.</p></section>
 <section><h2>Visitor counts</h2><p>The site counts visits with <a href="https://www.goatcounter.com" rel="noopener">GoatCounter</a>. It uses no cookies and does not track you across sites. It records which page was viewed, the site you came from, your browser and screen size and your country. Your IP address is not stored. There is no advertising on this site.</p></section>
-<section><h2>Messages you send</h2><p>If you use the contact form, your name, email address and message are passed through <a href="https://formsubmit.co" rel="noopener">FormSubmit</a> and delivered to the project by email. They are used only to reply to you, and deleted when no longer needed, usually within a year.</p></section>
-<section><h2>Buying a workbook</h2><p>Workbooks are sold through <a href="https://payhip.com" rel="noopener">Payhip</a>, which handles payment and delivery under its own privacy policy. Payhip shares your name, email address and what you bought with the project, so it can help with any problem with your order. The project never sees your card details.</p></section>
+<section><h2>Messages you send</h2><p>If you use the contact form, your name, email address and message are stored by <a href="https://www.netlify.com" rel="noopener">Netlify</a>, which hosts this site, and sent on to the project by email. They are used only to reply to you, and deleted when no longer needed, usually within a year.</p></section>
+<section><h2>Comments</h2><p>If you leave a comment, it is stored by Netlify in the same way. Your name, the place you give and your comment may be published on the About page; your email address, if you give one, is never shown and is used only to contact you about your comment. To have a comment changed or removed, email <a href="mailto:hello@poddle.ie">hello@poddle.ie</a>.</p></section>
+<section><h2>Buying a workbook</h2><p>Workbooks are sold through <a href="https://payhip.com" rel="noopener">Payhip</a>, which handles payment and delivery under its own privacy policy. Payhip shares your name, email address and what you bought with the project, so it can help with any problem with your order. The project never sees your card details. The checkout opens on the shop page itself, so that page loads a small script from Payhip; other pages do not.</p></section>
 <section><h2>Schools</h2><p>The project may email a school’s published office address to tell it about this free resource. It keeps the school’s name, its published email address and the principal’s name, because telling local schools about a free local-history resource is a legitimate interest, and the impact on them is small. Each email says how to opt out, and if a school asks not to be contacted again, the project keeps a note of that so it never is. The other details are deleted after a year if there is no reply.</p></section>
 <section><h2>Other sites</h2><p>The maps load street tiles from OpenStreetMap and the text uses Google Fonts, so your browser connects to those services to fetch them. Links to Facebook, Instagram, YouTube and other sites take you to services with their own privacy policies.</p></section>
 <section><h2>Your rights</h2><p>You can ask to see, correct or delete anything the project holds about you, or object to its use, by emailing <a href="mailto:hello@poddle.ie">hello@poddle.ie</a>. If you are unhappy with how your data has been handled, you can complain to the <a href="https://www.dataprotection.ie" rel="noopener">Data Protection Commission</a>.</p>
@@ -1041,13 +1086,44 @@ def shop_btn(url, label, ghost=False):
         return f'<a class="btn{" ghost" if ghost else ""}" href="{url}" target="_blank" rel="noopener noreferrer">{esc(label)}</a>'
     return '<span class="btn soon" aria-disabled="true">Coming soon</span>'
 
-wb_cards = "".join(
-  f'<li><a href="{SHOP["downloads"] or "#workbooks"}"{" target=\"_blank\" rel=\"noopener noreferrer\"" if SHOP["downloads"] else ""}>'
-  f'<span class="cover"><img src="img/shop/{img}.jpg" alt="Cover of {esc(n)}" loading="lazy" width="520" height="736"></span>'
-  f'<span class="wb-t"><strong>{esc(n)}</strong><span class="wb-d">{esc(d)}</span>'
-  f'<span class="lv">{"".join(f"<span>{esc(cl)}</span>" for _, cl, _ in LEVELS)}</span>'
-  f'<span class="price">{SHOP["price_single"]} each · {SHOP["price_pack"]} for all three</span></span></a></li>'
-  for n, img, d in WORKBOOKS)
+# Payhip product codes: the part after payhip.com/b/ in each product's link.
+# Buttons open Payhip's checkout over this page (payhip.js); without a code they
+# fall back to the store front. Codes from Mark's store, 7 Nov 2026.
+PAYHIP = {
+  "the-secret-river": dict(J="p6kGx", M="82dyc", U="i5kzG", pack="1USgz"),
+  "treasure-hunt": dict(J="XKp8c", M="kPIb0", U="VOMJs", pack="8SuWB"),
+  "walking-tour": dict(J="581V3", M="16urc", U="3yxiO", pack="7grTS"),
+  "mill-detectives": dict(J="VoDPH", M="cSQvg", U="lWoyb", pack="L2XQh"),
+  "flood-defenders": dict(J="Ikn43", M="03IBS", U="9sdEo", pack="QjHg7"),
+  "tymon-walk": dict(J="3YKip", M="ov2hM", U="Vk0Xw", pack="j6MT2"),
+  "mill-road-walk": dict(J="2Pt9s", M="y0sdG", U="Myc9O", pack="JmWAi"),
+  "complete-set": "UFrNf",
+}
+SHORT_LV = {"J": "1st–2nd", "M": "3rd–4th", "U": "5th–6th"}
+
+def buy_btn(code, label, price, cls="buy"):
+    if code:
+        href = f"https://payhip.com/b/{code}"
+        extra = f' class="{cls} payhip-buy-button" data-theme="none" data-product="{code}"'
+    elif SHOP["downloads"]:
+        href, extra = SHOP["downloads"], f' class="{cls}"'
+    else:
+        return '<span class="btn soon" aria-disabled="true">Coming soon</span>'
+    return (f'<a href="{href}"{extra} target="_blank" rel="noopener noreferrer">'
+            f'<span>{esc(label)}</span><b>{price}</b></a>')
+
+def wb_card(n, img, d):
+    codes = PAYHIP.get(img, {})
+    btns = "".join(buy_btn(codes.get(k, ""), SHORT_LV[k] + " class", SHOP["price_single"]) for k, _, _ in LEVELS)
+    pack = buy_btn(codes.get("pack", ""), "All three levels", SHOP["price_pack"], "buy pack")
+    return (f'<li><span class="cover"><img src="img/shop/{img}.jpg" alt="Cover of {esc(n)}" loading="lazy" width="520" height="736"></span>'
+            f'<span class="wb-t"><strong>{esc(n)}</strong><span class="wb-d">{esc(d)}</span></span>'
+            f'<span class="buys" role="group" aria-label="Buy {esc(n)}">{btns}{pack}</span></li>')
+
+wb_cards = "".join(wb_card(n, img, d) for n, img, d in WORKBOOKS)
+set_code = PAYHIP["complete-set"]
+set_btn = (f'<a class="btn payhip-buy-button" data-theme="none" data-product="{set_code}" href="https://payhip.com/b/{set_code}" target="_blank" rel="noopener noreferrer">Get the complete set · {SHOP["price_all"]}</a>'
+           if set_code else shop_btn(SHOP["downloads"], f'Get the complete set · {SHOP["price_all"]}'))
 
 shop_page = f'''<section class="shop-hero"><div class="wrap shop-hero-in">
  <div class="shop-hero-text">
@@ -1055,17 +1131,18 @@ shop_page = f'''<section class="shop-hero"><div class="wrap shop-hero-in">
   <h1>Workbooks for curious kids</h1>
   <p class="lede">Everything on this site is free, and it will stay that way, with no paywall and no adverts. If you would like to help with the hosting and the hours spent in the archives, buy a workbook. It is the whole business model.</p>
   <ul class="facts"><li><strong>21</strong><span>workbooks, 1st to 6th class</span></li><li><strong>A4</strong><span>PDFs to print at home or school</span></li><li><strong>{SHOP["price_single"]}</strong><span>each, with packs and a full set</span></li></ul>
-  <p class="cta">{shop_btn(SHOP["downloads"], "Browse the workbooks")}<a class="btn ghost" href="#workbooks">See what’s inside</a></p>
+  <p class="cta"><a class="btn" href="#workbooks">Browse the workbooks</a><a class="btn ghost" href="#complete-set">The complete set</a></p>
  </div>
  <figure class="shop-hero-fig"><img src="img/shop/complete-set.webp" alt="The five Poddle workbook covers fanned out" width="1200" height="600"></figure>
 </div></section>
 <div class="wrap page">
 <section class="shop-sec" id="workbooks"><div class="sec-head"><p class="kicker">The workbooks</p><h2>Seven stories of the river, three levels each</h2>
 <p class="dek">Original writing and artwork about Dublin’s hidden river. Each comes in versions for 1st and 2nd class, 3rd and 4th class, and 5th and 6th class, with notes for the adult, curriculum links and an answer key. One copy covers your own family or one classroom.</p></div>
-<ul class="wb">{wb_cards}</ul></section>
-<section class="set-panel"><figure><img src="img/shop/complete-set.webp" alt="The complete set of Poddle workbooks" loading="lazy" width="1200" height="600"></figure>
+<ul class="wb">{wb_cards}</ul>
+<p class="small buy-note">Pick a class level to buy one workbook, or “All three levels” for the pack. Checkout opens on this page, and your PDF arrives straight away by download and email.</p></section>
+<section class="set-panel" id="complete-set"><figure><img src="img/shop/complete-set.webp" alt="The complete set of Poddle workbooks" loading="lazy" width="1200" height="600"></figure>
 <div><p class="kicker">Best value</p><h2>The complete set</h2><p>All twenty-one workbooks for {SHOP["price_all"]}. It’s a ready-made local-history programme for a whole school, a teacher with several classes, or a family who wants the lot.</p>
-<p class="cta">{shop_btn(SHOP["downloads"], "Get the complete set")}</p><p class="small">Paid securely by card or PayPal through Payhip. Your download arrives straight away.</p></div></section>
+<p class="cta">{set_btn}</p><p class="small">Paid securely by card or PayPal through Payhip. Your download arrives straight away.</p></div></section>
 <section class="shop-sec tee"><div class="sec-head"><p class="kicker">Coming soon</p><h2>Poddle t-shirts</h2>
 <p class="dek">Shirts and totes printed with the river: the 1848 line of the Poddle, the culvert arch, and the dubh linn that gave Dublin its name. They will be printed to order, so nothing is wasted.</p></div>
 <p class="cta">{shop_btn(SHOP["tees"], "See the t-shirts")}</p></section>
@@ -1076,6 +1153,7 @@ shop_page = f'''<section class="shop-hero"><div class="wrap shop-hero-in">
 <li><strong>Book a talk or a walk</strong> for your group.</li>
 </ul></section>
 </div>'''
+shop_page += '\n<script src="https://payhip.com/payhip.js" defer></script>'
 write("shop.html", shell("shop", f"Workbooks and t-shirts · {SITE}", "Workbooks about Dublin’s hidden river for 1st to 6th class. Every sale helps keep this local-history site free.", shop_page, "shop.html"))
 
 exec(open(os.path.join(OUT, "build_extra.py"), encoding="utf-8").read())

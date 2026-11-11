@@ -17,14 +17,14 @@
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "About · The River Poddle, Dublin", "description": "About poddle.ie, a free local-history site about the River Poddle, Dublin’s hidden river. Send corrections, memories and photographs.", "url": "https://poddle.ie/about.html", "inLanguage": "en-IE", "isPartOf": {"@type": "WebSite", "@id": "https://poddle.ie/#site", "name": "The Poddle", "url": "https://poddle.ie/", "inLanguage": "en-IE"}}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=IBM+Plex+Sans+Condensed:wght@500;600&display=swap">
-<link rel="stylesheet" href="site.css?v=e8fc4445">
+<link rel="stylesheet" href="site.css?v=a8ddc2d1">
 <link rel="icon" href="favicon.ico" sizes="32x32">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<header class="top"><div class="wrap top-in"><a class="brand" href="index.html">The <span>Poddle</span></a><button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav"><span class="bars" aria-hidden="true"></span><span class="lbl">Menu</span></button><nav id="site-nav" aria-label="Main"><a href="walk.html">River walk</a><a href="map.html">Map</a><a href="history.html">History</a><a href="wildlife.html">Wildlife</a><a href="river-data.html">Live data</a><a href="media.html">Media</a><a href="sources.html">Sources</a><a href="shop.html">Shop</a><a href="about.html" aria-current="page">About</a></nav></div></header>
+<header class="top"><div class="wrap top-in"><a class="brand" href="index.html">The <span>Poddle</span></a><button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav"><span class="bars" aria-hidden="true"></span><span class="lbl">Menu</span></button><nav id="site-nav" aria-label="Main"><a href="walk.html">River walk</a><a href="map.html">Map</a><a href="history.html">History</a><a href="people.html">People</a><a href="wildlife.html">Wildlife</a><a href="river-data.html">Live data</a><a href="media.html">Media</a><a href="sources.html">Sources</a><a href="shop.html">Shop</a><a href="about.html" aria-current="page">About</a></nav></div></header>
 <main id="main"><div class="wrap page narrow"><header class="page-head"><p class="kicker">About</p><h1>About this site</h1>
 <p class="dek">A personal project tracing the Poddle from Tallaght to the Liffey.</p></header>
 <section><p>As an engineer with an interest in both history and how things work, the Poddle has long been a fascination of mine. I hope you have enjoyed these pages, and if you get a chance to <a href="shop.html">support the page</a> to keep it alive and free, that would be amazing.</p></section>
@@ -34,22 +34,32 @@
 <li>We are available to give talks and share what we know, so please reach out if you would like to organise one. Teachers, there are free class ideas on the <a href="schools.html">teachers’ page</a>.</li>
 <li>There is a great deal of information about the Poddle, and much of it conflicts. If you spot something wrong, please let us know.</li>
 </ul>
-<!-- Contact form hidden 6 Nov 2026 until it moves off FormSubmit.
-<form class="contact" action="https://formsubmit.co/0f8d699887fd9b4ce088266bc980986d" method="POST">
-<input type="hidden" name="_subject" value="Message from the Poddle website">
-<input type="hidden" name="_next" value="https://poddle.ie/thanks.html">
-<input type="hidden" name="_template" value="table">
-<input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none">
+<form class="contact" name="contact" method="POST" action="/thanks.html" data-netlify="true" netlify-honeypot="bot-field">
+<input type="hidden" name="form-name" value="contact">
+<input type="hidden" name="subject" value="Message from the Poddle website">
+<p style="display:none"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
 <p><label for="c-name">Your name</label><input id="c-name" name="name" type="text" required autocomplete="name"></p>
 <p><label for="c-email">Your email</label><input id="c-email" name="email" type="email" required autocomplete="email"></p>
 <p><label for="c-msg">Your message</label><textarea id="c-msg" name="message" rows="6" required></textarea></p>
 <p><button type="submit">Send message</button></p>
 </form>
--->
-<p>To get in touch, please email <a href="mailto:hello@poddle.ie">hello@poddle.ie</a>.</p></section>
+<p>If the form doesn’t work, you can email <a href="mailto:hello@poddle.ie">hello@poddle.ie</a> instead.</p></section>
+<section id="comments"><h2>Comments</h2>
+<p>Do you remember the Poddle flooding, playing beside it as a child, or a story your family told about it? Leave a comment and it will be added here, usually within a week. Comments are read before they go up.</p>
+<p class="comment-empty">No comments yet. Be the first to share a memory or a thought about the Poddle.</p>
+<h3 class="comment-head">Leave a comment</h3>
+<form class="contact" name="comments" method="POST" action="/comment-thanks.html" data-netlify="true" netlify-honeypot="bot-field">
+<input type="hidden" name="form-name" value="comments">
+<p style="display:none"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+<p><label for="m-name">Your name, as you’d like it shown</label><input id="m-name" name="name" type="text" required autocomplete="name"></p>
+<p><label for="m-place">Where you’re from <span class="opt">(optional, e.g. Kimmage)</span></label><input id="m-place" name="place" type="text"></p>
+<p><label for="m-email">Your email <span class="opt">(optional, never shown)</span></label><input id="m-email" name="email" type="email" autocomplete="email"></p>
+<p><label for="m-text">Your comment</label><textarea id="m-text" name="comment" rows="5" required maxlength="2000"></textarea></p>
+<p><button type="submit">Post comment</button></p>
+</form></section>
 </div></main>
 <footer class="foot"><div class="wrap foot-in"><p>The Poddle: a history of Dublin’s hidden river, from Tallaght to the Liffey.</p><p>Photographs and maps are credited where known. Third-party images are used for local-history purposes.</p><p class="social">Follow the river on <a href="https://www.facebook.com/thepoddle" rel="noopener me">Facebook</a> and <a href="https://www.instagram.com/poddle.ie/" rel="noopener me">Instagram</a>.</p><p><a href="schools.html">For teachers</a> · <a href="privacy.html">Privacy</a></p></div></footer>
-<script src="nav.js?v=e8fc4445" defer></script>
+<script src="nav.js?v=a8ddc2d1" defer></script>
 <script data-goatcounter="https://poddle.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>
 </html>
