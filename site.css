@@ -487,11 +487,15 @@ html { scroll-behavior: smooth; }
 .person .when { font: 600 .85rem/1.3 var(--label); color: var(--muted); margin-top: -6px; }
 .person .when span { margin: 0 4px; }
 .person .on-site { font: 500 .9rem/1.5 var(--label); }
-.person { display: flow-root; }
-.person .portrait { float: right; width: 168px; margin: 4px 0 12px 20px; }
+.text section.person:has(.portrait) { grid-template-columns: minmax(0, 1fr) 168px; column-gap: 24px; }
+.text section.person:has(.portrait) > * { grid-column: 1; }
+.person .portrait { grid-column: 2 !important; grid-row: 2 / span 6; align-self: start; margin: 4px 0 0; }
 .person .portrait img { display: block; width: 100%; height: auto; border-radius: 4px; filter: grayscale(1); }
 .person .portrait figcaption { margin-top: 6px; font-size: .74rem; }
-@media (max-width: 560px) { .person .portrait { width: 120px; margin-left: 14px; } }
+@media (max-width: 560px) {
+  .text section.person:has(.portrait) { grid-template-columns: minmax(0, 1fr); }
+  .person .portrait { grid-column: 1 !important; grid-row: auto; width: 150px; }
+}
 .phrases { padding-left: 1.2em; }
 .phrases li { margin-bottom: 8px; }
 .arch-search { display: grid; gap: 6px; max-width: 28rem; margin: 0 0 12px; font: 600 .9rem/1 var(--label); }

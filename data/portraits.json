@@ -1,0 +1,72 @@
+{
+ "jonathan-swift": {
+  "src": "img/people/swift.jpg",
+  "alt": "Portrait of Jonathan Swift in a wig and clerical bands",
+  "caption": "Jonathan Swift, painted by Charles Jervas, 1710",
+  "credit": "Wikimedia Commons",
+  "source_url": "https://commons.wikimedia.org/wiki/File:Jonathan_Swift_by_Charles_Jervas_detail.jpg",
+  "licence": "public domain",
+  "w": 480,
+  "h": 540
+ },
+ "lord-iveagh-edward-cecil-guinness": {
+  "src": "img/people/iveagh.jpg",
+  "alt": "Photograph of Edward Cecil Guinness, Lord Iveagh, in later life",
+  "caption": "Edward Cecil Guinness, 1st Earl of Iveagh, photographer and date unknown",
+  "credit": "Wikimedia Commons",
+  "source_url": "https://commons.wikimedia.org/wiki/File:1stEarlOfIveagh.jpg",
+  "licence": "public domain",
+  "w": 480,
+  "h": 585
+ },
+ "sir-benjamin-lee-guinness": {
+  "src": "img/people/benjamin-lee-guinness.jpg",
+  "alt": "Painted portrait of Sir Benjamin Lee Guinness",
+  "caption": "Sir Benjamin Lee Guinness, painted by Stephen Catterson Smith the younger, 1862–3",
+  "credit": "Wikimedia Commons",
+  "source_url": "https://commons.wikimedia.org/wiki/File:Stephen_Catterson_Smith_the_Younger_-_Portrait_of_Sir_Benjamin_Lee_Guinness.jpg",
+  "licence": "public domain",
+  "w": 480,
+  "h": 584
+ },
+ "mary-aikenhead": {
+  "src": "img/people/mary-aikenhead.jpg",
+  "alt": "Oval portrait of Mary Aikenhead as a young woman",
+  "caption": "Mary Aikenhead as a young woman, about 1807, artist unknown",
+  "credit": "Wikimedia Commons",
+  "source_url": "https://commons.wikimedia.org/wiki/File:Mary_Aikenhead_-_1807.jpg",
+  "licence": "public domain",
+  "w": 300,
+  "h": 412
+ },
+ "saint-charles-of-mount-argus": {
+  "src": "img/people/charles-houben.jpg",
+  "alt": "Photograph of Father Charles Houben in his Passionist habit and biretta",
+  "caption": "Father Charles Houben in his Passionist habit, 19th-century photograph",
+  "credit": "Wikimedia Commons",
+  "source_url": "https://commons.wikimedia.org/wiki/File:Houben.jpg",
+  "licence": "public domain",
+  "w": 400,
+  "h": 540
+ },
+ "james-joyce": {
+  "src": "img/people/james-joyce.jpg",
+  "alt": "Photograph of James Joyce in a straw hat and glasses",
+  "caption": "James Joyce in Zurich, photographed by Alex Ehrenzweig, 1915",
+  "credit": "Wikimedia Commons",
+  "source_url": "https://commons.wikimedia.org/wiki/File:James_Joyce_by_Alex_Ehrenzweig,_1915_cropped.jpg",
+  "licence": "public domain",
+  "w": 480,
+  "h": 728
+ },
+ "the-plunketts": {
+  "src": "img/people/joseph-mary-plunkett.jpg",
+  "alt": "Photograph of Joseph Mary Plunkett standing with his hands in his pockets",
+  "caption": "Joseph Mary Plunkett, about 1910, photographer unknown",
+  "credit": "Wikimedia Commons",
+  "source_url": "https://commons.wikimedia.org/wiki/File:Joseph_Mary_Plunkett.jpg",
+  "licence": "public domain",
+  "w": 207,
+  "h": 314
+ }
+}

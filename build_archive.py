@@ -255,7 +255,7 @@ if _os.path.exists(_pj):
 
 def _portrait(pp):
     p = PORTRAITS.get(pp["id"])
-    if not p or not _os.path.exists(p["src"]):
+    if not p or not _os.path.exists(_os.path.join(_os.path.dirname(_pj), "..", p["src"])):
         return ""
     return (f'<figure class="portrait"><img src="{esc(p["src"])}" alt="{esc(p["alt"])}" width="{p.get("w", 240)}" height="{p.get("h", 300)}" loading="lazy" decoding="async">'
             f'<figcaption>{esc(p["caption"])}. <a href="{esc(p["source_url"])}">{esc(p["credit"])}</a>, {esc(p["licence"])}</figcaption></figure>')
