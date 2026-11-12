@@ -213,6 +213,8 @@ html { scroll-behavior: smooth; }
 .pop h3 { font: 400 1.05rem/1.2 var(--display); margin: 2px 0 4px; }
 .pop p { margin: 0 0 6px; font: 400 .9rem/1.45 var(--body); }
 .pop .pk { font: 600 .7rem/1.2 var(--label); letter-spacing: .1em; text-transform: uppercase; color: var(--antiquity); margin: 0; }
+.bm-faded .leaflet-tile-pane { filter: saturate(.35) sepia(.25) brightness(1.08) contrast(.82); opacity: .75; }
+.bm-faded { background: #f4efe4 !important; }
 .leaflet-container { font: 400 .9rem/1.4 var(--body); isolation: isolate; }
 .leaflet-popup-content-wrapper, .leaflet-popup-tip { background: var(--sheet); color: var(--ink); }
 .leaflet-control-layers { background: var(--sheet); color: var(--ink); }

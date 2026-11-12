@@ -3,13 +3,29 @@
   var css = getComputedStyle(document.documentElement);
   var river = css.getPropertyValue("--river").trim() || "#2c6b9a";
   var red = css.getPropertyValue("--antiquity").trim() || "#9b3b2a";
+  // Faded-paper basemap: street map softened so the river lines stand out.
+  var OSM = "https://tile.openstreetmap.org/{z}/{x}/{y}.png";
+  var OSMATT = "&copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors";
+  var SKEY = "faded";
+  var S = { w: 1.5, casing: "#0f2a44", cw: 3, cls: "bm-faded", river: "#2f86d0" };
+  if (S.river) river = S.river;
+  if (S.red) red = S.red;
+  // Draws a line, with a pale casing or a soft glow underneath when the style asks for one.
+  function wline(c, o, group) {
+    var w = (o.weight || 3) * S.w;
+    var band = (o.opacity || 1) < 0.7;
+    if (S.casing && !band) L.polyline(c, { color: S.casing, weight: w + S.cw, opacity: 0.95, lineCap: "round", lineJoin: "round", interactive: false }).addTo(group);
+    if (false && !band) {
+      L.polyline(c, { color: o.color, weight: w + 10, opacity: 0.16, lineCap: "round", lineJoin: "round", interactive: false }).addTo(group);
+      L.polyline(c, { color: o.color, weight: w + 4, opacity: 0.3, lineCap: "round", lineJoin: "round", interactive: false }).addTo(group);
+    }
+    return L.polyline(c, L.extend({}, o, { weight: w, lineJoin: "round" }));
+  }
 
   // zoomSnap lets the opening view fit the river closely instead of jumping out a whole zoom level.
   var map = L.map("map", { scrollWheelZoom: false, zoomSnap: 0.25 }).setView([53.318, -6.31], 13);
-  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
-    maxZoom: 19,
-    attribution: "&copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors"
-  }).addTo(map);
+  if (S.cls) map.getContainer().classList.add(S.cls);
+  L.tileLayer(OSM, { maxZoom: 19, attribution: OSMATT }).addTo(map);
 
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", "\"": "&quot;" }[c]; }); }
 
@@ -18,10 +34,10 @@
   DATA.river.forEach(function (w) {
     var isWc = /watercourse/i.test(w.n);
     (isWc ? riverWc : riverLines).push(w.c);
-    L.polyline(w.c, {
-      color: isWc ? red : river, weight: isWc ? 3 : 4, opacity: 0.9,
+    wline(w.c, {
+      color: isWc ? red : river, weight: isWc ? 3 : 4, opacity: S.casing || false ? 1 : 0.9,
       dashArray: isWc ? "8 6" : (w.t ? "2 7" : null), lineCap: "round"
-    }).bindTooltip(w.n + (w.t ? " (underground)" : "")).addTo(riverLayer);
+    }, riverLayer).bindTooltip(w.n + (w.t ? " (underground)" : "")).addTo(riverLayer);
   });
   riverLayer.addTo(map);
 
@@ -36,7 +52,7 @@
     var g = ch.k === "abbey" ? groups.abbey : (ch.k === "overflow" ? groups.overflow : groups.watercourse);
     var lines = ch.k === "abbey" ? ch.c : [ch.c];
     lines.forEach(function (c) {
-      L.polyline(c, L.extend({ lineCap: "round" }, style[ch.k])).bindPopup("<div class=\"pop\"><p class=\"pk\">" +
+      wline(c, L.extend({ lineCap: "round" }, style[ch.k], ch.k === "abbey" && true ? { opacity: 0.6 } : {}), g).bindPopup("<div class=\"pop\"><p class=\"pk\">" +
         (ch.approx ? "Approximate route" : "Channel") + "</p><h3>" + esc(ch.n) + "</h3><p>" + esc(ch.note) +
         "</p><a href=\"" + ch.slug + ".html\">Read the history →</a></div>", { maxWidth: 260 }).addTo(g);
     });
@@ -45,12 +61,12 @@
 
   // Arrowheads along every water line, pointing downstream.
   if (window.poddleFlow) {
-    var flow = [{ group: riverLayer, color: river, weight: 4, lines: riverLines },
-                { group: riverLayer, color: red, weight: 3, lines: riverWc }];
+    var flow = [{ group: riverLayer, color: river, weight: 4 * S.w, lines: riverLines },
+                { group: riverLayer, color: red, weight: 3 * S.w, lines: riverWc }];
     var tint = { abbey: "#9a6512", citywc: red, tenter: red, commons: "#2a7f9e", overflow: "#3b8f6a" };
     (DATA.channels || []).forEach(function (ch) {
       flow.push({ group: ch.k === "abbey" ? groups.abbey : (ch.k === "overflow" ? groups.overflow : groups.watercourse),
-                  color: tint[ch.k], weight: style[ch.k].weight, lines: ch.k === "abbey" ? ch.c : [ch.c] });
+                  color: tint[ch.k], weight: style[ch.k].weight * S.w, lines: ch.k === "abbey" ? ch.c : [ch.c] });
     });
     poddleFlow(map, flow);
   }
