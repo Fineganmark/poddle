@@ -95,7 +95,7 @@ MEANDERS = [
       teaser="Follow the third of the water that left at the Stone Boat, past Shaw’s mill and the Back of the Pipes to the City Basin.",
       ll=(53.33350, -6.29120)),
  dict(slug="meander-st-jamess-gate", name="Guinness and St James’s Gate", parent="st-patricks", place="Thomas Street and James’s Street",
-      teaser="The brewery that won its water from the City Watercourse, and the family who rebuilt the streets around St Patrick’s.",
+      teaser="Where Guinness got its water: not the Liffey but the City Watercourse, fed by the Poddle. The 1775 pickaxe stand-off, and the family who rebuilt the streets around St Patrick’s.",
       ll=(53.34330, -6.28700), own=True),  # poddle.ie's own research, not the history group's
  dict(slug="meander-abbey-stream", name="Along the Abbey Stream", parent="mount-jerome", place="Harold’s Cross to Marrowbone Lane",
       teaser="The monks’ mill stream, from the Hospice under the canal to Donore Avenue, Mill Street and Marrowbone Lane.",

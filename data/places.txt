@@ -314,8 +314,9 @@ The Poddle never ran under Grafton Street; the Stein, another of Dublin’s hidd
 # Sources: Guinness Archive (email to poddle.ie, 10 Nov 2026); Come Here To Me, 2015, quoting the Dublin Historical Record (1947); The Iveagh Trust.
 
 @@ st-jamess-gate-brewery | meander:meander-st-jamess-gate | St James’s Gate brewery | 53.34330,-6.28700
-## Water at James’s Gate
-St James’s Gate was the western gate of the medieval city, on the road out past St Thomas’s Abbey. The City Watercourse, a third of the Poddle’s water topped up from the Dodder, came in from Dolphin’s Barn along the Back of the Pipes, and a public cistern outside the gate is recorded from the 13th century. From 1721 the water was stored in the new City Basin off James’s Street, a few minutes’ walk south-west of the gate. For the brewers, maltsters and distillers along James’s Street and Thomas Street that water was everything: the Liffey was tidal and fouled, and could not be used for brewing.
+## Where did Guinness get its water?
+Not from the Liffey, as people often say. The brewery at St James’s Gate was built on the City Watercourse, the channel that took a third of the River Poddle’s water at the <a href="stone-boat.html" rel="noopener">Stone Boat</a> by Sundrive Road in Kimmage and carried it to the city. Arthur Guinness’s lease of 1759 gave him that water free, as the next section shows.
+St James’s Gate was the western gate of the medieval city, on the road out past St Thomas’s Abbey. The City Watercourse, topped up from the Dodder, came in from Dolphin’s Barn along the Back of the Pipes, and a public cistern outside the gate is recorded from the 13th century. From 1721 the water was stored in the new City Basin off James’s Street, a few minutes’ walk south-west of the gate. For the brewers, maltsters and distillers along James’s Street and Thomas Street that water was everything: the Liffey was tidal and fouled, and could not be used for brewing.
 Source: D. McEntee and M. Corcoran, The Rivers Dodder and Poddle; Betty Brunkard, Basin Street Harbour (2014); Come Here To Me (2015).
 ## Arthur Guinness’s lease
 On 31 December 1759 Arthur Guinness, then 34, took a lease of a small, disused brewery at St James’s Gate from Mark Rainsford, for 9,000 years at £45 a year. The Guinness Archive has shared the clause about the water. It gave him:
