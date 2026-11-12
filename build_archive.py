@@ -230,6 +230,22 @@ PEOPLE = [
 ]
 for pp in PEOPLE:
     pp["id"] = slug_id(pp["name"])
+
+# ---- Portraits (Nov 2026): openly licensed / public-domain images, black and white, credited.
+# Keyed by person id; a portrait is only shown once its file exists in img/people/.
+# Sources and licences are also listed in img/people/SOURCES.md.
+import os as _os
+PORTRAITS = {}
+_pj = _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "data", "portraits.json")
+if _os.path.exists(_pj):
+    PORTRAITS = _json.load(open(_pj, encoding="utf-8"))
+
+def _portrait(pp):
+    p = PORTRAITS.get(pp["id"])
+    if not p or not _os.path.exists(p["src"]):
+        return ""
+    return (f'<figure class="portrait"><img src="{esc(p["src"])}" alt="{esc(p["alt"])}" width="{p.get("w", 240)}" height="{p.get("h", 300)}" loading="lazy" decoding="async">'
+            f'<figcaption>{esc(p["caption"])}. <a href="{esc(p["source_url"])}">{esc(p["credit"])}</a>, {esc(p["licence"])}</figcaption></figure>')
 PEOPLE_ON = {}
 for pp in PEOPLE:
     for u, _t in pp["links"]:
@@ -240,19 +256,19 @@ for it in STOPS + HISTORY + MEANDERS:
         if pp not in ps:
             ps.append(pp)
     if ps:
-        box = ('<section class="watch people-links"><h2>People</h2><ul>' + "".join(
+        box = ('<section class="watch people-links"><h2>Poddle People</h2><ul>' + "".join(
                f'<li><a href="people.html#{pp["id"]}">{esc(pp["name"])}</a>: {esc(pp["tag"])}</li>' for pp in ps) + '</ul></section>')
         it["after"] = box + it.get("after", "")
 
-people_body = ('<div class="wrap page"><header class="page-head"><p class="kicker">People</p><h1>People of the Poddle</h1>'
+people_body = ('<div class="wrap page"><header class="page-head"><p class="kicker">People</p><h1>Poddle People</h1>'
   '<p class="dek">Archbishops and rebels, millers and nuns, a dean, a spy and a playwright’s father: the people whose lives ran alongside the river. Each links to the places on the walk and in the history where their story is told.</p></header>'
   '<nav class="arch-toc" aria-label="People on this page"><ul>' + "".join(f'<li><a href="#{pp["id"]}">{esc(pp["name"])}</a></li>' for pp in PEOPLE) + '</ul></nav>'
   '<div class="page-grid solo"><div class="text">'
-  + "".join(f'<section id="{pp["id"]}" class="person"><h2>{esc(pp["name"])}</h2><p class="when">{esc(pp["dates"])} <span>·</span> {esc(pp["tag"])}</p>'
+  + "".join(f'<section id="{pp["id"]}" class="person"><h2>{esc(pp["name"])}</h2><p class="when">{esc(pp["dates"])} <span>·</span> {esc(pp["tag"])}</p>' + _portrait(pp)
             + "".join(f"<p>{esc(x)}</p>" for x in pp["paras"])
             + '<p class="on-site">On poddle.ie: ' + " · ".join(f'<a href="{u}">{esc(t)}</a>' for u, t in pp["links"]) + '</p></section>' for pp in PEOPLE)
   + CREDIT_NOTE + '</div></div></div>')
-write("people.html", shell("people", f"People of the Poddle · {SITE}",
+write("people.html", shell("people", f"Poddle People · {SITE}",
       "The people whose lives ran alongside Dublin’s River Poddle: Red Hugh O’Donnell, Dean Swift, the Domvilles, Sister Ann Dominica Fitzgerald, Lord Iveagh and more.", people_body, "people.html"))
 
 # ---- meander pages
@@ -310,7 +326,7 @@ SOURCES_RESEARCH = (
   'Its volunteers gave more than 500 hours to finding, transcribing and sorting newspaper articles, photographs, stories and reports about the Poddle and the City Watercourse, '
   'and first published them in October 2024 at the Dublin Festival of History, in Walkinstown Library, with a talk by Cathy Scuffil. Part of the project was funded by the Local Authority Waters Programme.</p>'
   f'<p>In November 2026 the group generously agreed to bring their research together with poddle.ie, so that the river’s story can be told in one place. Their place histories are now part of the '
-  '<a href="walk.html">river walk</a> and its meanders, their people are on the <a href="people.html">People</a> page, and their newspaper index is on the <a href="media-newspapers.html">Media</a> page.</p>'
+  '<a href="walk.html">river walk</a> and its meanders, their people are on the <a href="people.html">Poddle People</a> page, and their newspaper index is on the <a href="media-newspapers.html">Media</a> page.</p>'
   f'<p>Thank you to the volunteers: {VOLUNTEERS}, and to the writers and Poddleologists whose work they gathered, among them Finola Watchorn, author of <em>Crumlin and the Way it Was</em>, and Betty Brunkard, author of <em>Basin Street Harbour</em>.</p>'
   '<details class="where-now"><summary>Their places, and where to find them now</summary><ul class="links plain cols">' + WHERE_NOW + '</ul></details>'
   '<p class="note">Corrections and new material are very welcome, through the <a href="about.html#contact">contact form</a>.</p></section>')

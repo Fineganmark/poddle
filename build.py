@@ -7,7 +7,7 @@ def _v(*names):
     for n in names:
         h.update(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), n), "rb").read())
     return h.hexdigest()[:8]
-ASSET_V = _v("site.css", "map.js", "levels.js", "quotes.js", "planmap.js", "nav.js", "maps.js", "gallery.js", "mapsafe.js", "flow.js", "walkmap.js")
+ASSET_V = _v("site.css", "map.js", "levels.js", "quotes.js", "planmap.js", "nav.js", "maps.js", "gallery.js", "mapsafe.js", "flow.js", "walkmap.js", "search.js")
 
 OUT = os.path.dirname(os.path.abspath(__file__))
 SITE = "The River Poddle, Dublin"   # title suffix
@@ -551,7 +551,7 @@ NUMWORD = {16: "sixteen", 17: "seventeen", 18: "eighteen", 19: "nineteen", 20: "
 def para(p):
     return p if p.startswith("<") else f"<p>{esc(p)}</p>"
 
-NAV = [("walk.html", "River walk"), ("map.html", "Map"), ("history.html", "History"), ("people.html", "People"), ("wildlife.html", "Wildlife"), ("river-data.html", "Live data"), ("media.html", "Media"), ("sources.html", "Sources"), ("shop.html", "Shop"), ("about.html", "About")]
+NAV = [("walk.html", "River walk"), ("map.html", "Map"), ("history.html", "History"), ("people.html", "Poddle People"), ("wildlife.html", "Wildlife"), ("river-data.html", "Live data"), ("media.html", "Media"), ("sources.html", "Sources"), ("shop.html", "Shop"), ("about.html", "About")]
 
 def shell(slug, title, desc, body, active, image=None, article=False, noindex=False):
     nav = "".join(f'<a href="{h}"{" aria-current=\"page\"" if h == active else ""}>{t}</a>' for h, t in NAV)
@@ -585,7 +585,8 @@ def shell(slug, title, desc, body, active, image=None, article=False, noindex=Fa
             f'<link rel="apple-touch-icon" href="apple-touch-icon.png">\n')
     page = (f'<a class="skip" href="#main">Skip to content</a>\n'
             f'<header class="top"><div class="wrap top-in"><a class="brand" href="index.html">The <span>Poddle</span></a>'
-            f'<button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav"><span class="bars" aria-hidden="true"></span><span class="lbl">Menu</span></button><nav id="site-nav" aria-label="Main">{nav}</nav></div></header>\n'
+            f'<button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav"><span class="bars" aria-hidden="true"></span><span class="lbl">Menu</span></button><nav id="site-nav" aria-label="Main">{nav}</nav>'
+            f'<a class="search-link" href="search.html"{" aria-current=\"page\"" if active == "search.html" else ""}><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M15.5 15.5 21 21" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg><span>Search</span></a></div></header>\n'
             f'<main id="main">{body}</main>\n'
             f'<footer class="foot"><div class="wrap foot-in"><p>The Poddle: a history of Dublin’s hidden river, from Tallaght to the Liffey.</p>'
             f'<p>Photographs and maps are credited where known. Third-party images are used for local-history purposes.</p>'
@@ -1131,5 +1132,54 @@ write("404.html", shell("404", f"Page not found · {SITE}", "This page could not
       .replace('src="', 'src="/').replace('src="/http', 'src="http'))
 write("sitemap.xml", '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
       + "".join(f'<url><loc>{BASE if s == "index" else BASE + s + ".html"}</loc></url>\n' for s in SITEMAP) + '</urlset>\n')
+# Site search (Nov 2026): search.html + search.js read search-index.json, built here from every indexed page.
+write("search.html", shell("search", f"Search · {SITE}", "Search the whole poddle.ie site: the river walk, history, people, wildlife, maps and sources.",
+      '<div class="wrap page narrow"><header class="page-head"><p class="kicker">Search</p><h1>Search the site</h1>'
+      '<p class="dek">Look for a place, a street, a person or a word, anywhere on poddle.ie.</p></header>'
+      '<form class="site-search" action="search.html" method="get" role="search"><label for="q">Search poddle.ie</label>'
+      '<div><input id="q" name="q" type="search" autocomplete="off" placeholder="e.g. Kimmage mill, Swift, floods"><button type="submit">Search</button></div></form>'
+      '<p id="search-status" class="small" role="status" aria-live="polite"></p><ol id="search-results" class="search-results"></ol>'
+      '<noscript><p>Search needs JavaScript. You can also browse the <a href="walk.html">river walk</a> or the <a href="history.html">history</a>.</p></noscript></div>'
+      f'<script src="search.js?v={ASSET_V}" defer></script>', "search.html"))
+
+def _search_index():
+    import html as _h
+    skip = {"404", "search", "thanks"}
+    docs = []
+    for s in SITEMAP:
+        if s in skip:
+            continue
+        fn = "index.html" if s == "index" else s + ".html"
+        src = open(os.path.join(OUT, fn), encoding="utf-8").read()
+        t = re.search(r"<title>(.*?)</title>", src, re.S)
+        title = _h.unescape(t.group(1)).split(" · ")[0].strip() if t else s
+        m = re.search(r'<main id="main">(.*)</main>', src, re.S)
+        body = m.group(1) if m else ""
+        body = re.sub(r"<(script|style|svg|noscript|nav)\b.*?</\1>", " ", body, flags=re.S)
+        body = re.sub(r'<p class="crumb">.*?</p>', " ", body, flags=re.S)
+        body = re.sub(r'<(nav|div) class="pn[^"]*".*?</\1>', " ", body, flags=re.S)
+        parts = re.split(r'(<h2[^>]*>.*?</h2>)', body, flags=re.S)
+        secs, cur_id, cur_h, buf = [], "", "", []
+        def flush():
+            txt = re.sub(r"\s+", " ", _h.unescape(re.sub(r"<[^>]+>", " ", " ".join(buf)))).strip()
+            if txt or cur_h:
+                secs.append([cur_id, cur_h, txt])
+        for p in parts:
+            hm = re.match(r'<h2([^>]*)>(.*?)</h2>', p, re.S)
+            if hm:
+                flush(); buf = []
+                im = re.search(r'id="([^"]+)"', hm.group(1))
+                cur_id = im.group(1) if im else ""
+                cur_h = re.sub(r"\s+", " ", _h.unescape(re.sub(r"<[^>]+>", "", hm.group(2)))).strip()
+                if not cur_id:  # the id is usually on the wrapping <section>
+                    prev = parts[parts.index(p) - 1] if parts.index(p) else ""
+                    sm = re.findall(r'<section[^>]*id="([^"]+)"[^>]*>\s*$', prev)
+                    cur_id = sm[-1] if sm else ""
+            else:
+                buf.append(p)
+        flush()
+        docs.append({"u": fn if s != "index" else "index.html", "t": title, "s": secs})
+    write("search-index.json", json.dumps(docs, ensure_ascii=False, separators=(",", ":")))
+_search_index()
 write("robots.txt", f"User-agent: *\nAllow: /\n\nSitemap: {BASE}sitemap.xml\n")
 print("built", len(STOPS) + len(HISTORY) + 4, "pages")
