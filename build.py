@@ -7,7 +7,7 @@ def _v(*names):
     for n in names:
         h.update(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), n), "rb").read())
     return h.hexdigest()[:8]
-ASSET_V = _v("site.css", "map.js", "levels.js", "quotes.js", "planmap.js", "nav.js", "maps.js", "gallery.js", "mapsafe.js", "flow.js", "walkmap.js", "search.js")
+ASSET_V = _v("site.css", "map.js", "levels.js", "quotes.js", "planmap.js", "nav.js", "maps.js", "gallery.js", "mapsafe.js", "flow.js", "walkmap.js", "search.js", "lightbox.js")
 
 OUT = os.path.dirname(os.path.abspath(__file__))
 SITE = "The River Poddle, Dublin"   # title suffix
@@ -319,8 +319,9 @@ STOPS = [
 ]
 
 def gal(*items):
-    return '<div class="fig-grid">' + "".join(
-        f'<figure class="fig"><a href="img/{f}.jpg"><img src="img/{f}.jpg" alt="{html.escape(c, quote=True)}" loading="lazy"></a><figcaption>{html.escape(c)} <a href="img/{f}.jpg">Open full size</a></figcaption></figure>' for f, c in items) + '</div>'
+    # Clickable thumbnails: the caption shows with the full-size picture (lightbox.js)
+    return '<div class="fig-grid thumbs">' + "".join(
+        f'<figure class="fig"><a class="zoom" href="img/{f}.jpg"><img class="th" src="img/{f}.jpg" alt="{html.escape(c, quote=True)}" loading="lazy"></a><figcaption>{html.escape(c)} <a href="img/{f}.jpg">Open full size</a></figcaption></figure>' for f, c in items) + '</div>'
 
 EIAR_CR = "From the environmental impact assessment report for the River Poddle Flood Alleviation Scheme (An Bord Pleanála case 306725). "
 HISTORY = [
@@ -593,6 +594,7 @@ def shell(slug, title, desc, body, active, image=None, article=False, noindex=Fa
             f'<p class="social">Follow the river on ' + " and ".join(f'<a href="{u}" rel="noopener me">{n}</a>' for n, u in SOCIAL) + '.</p>'
             f'<p><a href="schools.html">For teachers</a> · <a href="privacy.html">Privacy</a></p></div></footer>\n'
             f'<script src="nav.js?v={ASSET_V}" defer></script>\n'
+            f'<script src="lightbox.js?v={ASSET_V}" defer></script>\n'
             + (f'<script data-goatcounter="https://{GOATCOUNTER}.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>\n' if GOATCOUNTER else ''))
     if slug == "index" and not os.environ.get("STATIC"):
         return head + page
@@ -647,7 +649,81 @@ def article(item, kicker, prev, nxt, back, top_nav=False):
              f'<div class="media">{figures(item["images"], lead=True)}{gallery(item["gallery"], item["gallery_credit"]) if item.get("gallery") else ""}</div></div>' if item["images"] else
              f'<div class="page-grid solo"><div class="text">{flag}{secs}{link}</div></div>') + f'{pn}</article>')
 
+# ---- fast pictures (Nov 2026): pages show the small copies in img/sm/ made by scripts/make_small.py;
+# clicking a picture opens the full-size original (lightbox.js, or a plain link without JavaScript).
+_SM_DIMS = {}
+def small(src, thumb=False):
+    """'img/x/y.jpg' -> its small copy if one exists, else the original."""
+    if not src.startswith("img/") or src.startswith("img/sm/"):
+        return src
+    alt = "img/sm/" + os.path.splitext(src[4:])[0] + (".t.webp" if thumb else ".webp")
+    return alt if os.path.exists(os.path.join(OUT, alt)) else src
+
+def _dims(src):
+    if src not in _SM_DIMS:
+        _SM_DIMS[src] = None
+        try:
+            with open(os.path.join(OUT, src), "rb") as fh:
+                b = fh.read(64)
+            if b[:4] == b"RIFF" and b[12:16] == b"VP8 ":
+                _SM_DIMS[src] = (int.from_bytes(b[26:28], "little") & 0x3fff, int.from_bytes(b[28:30], "little") & 0x3fff)
+            elif b[:4] == b"RIFF" and b[12:16] == b"VP8X":
+                _SM_DIMS[src] = (int.from_bytes(b[24:27], "little") + 1, int.from_bytes(b[27:30], "little") + 1)
+        except OSError:
+            pass
+    return _SM_DIMS[src]
+
+_TOK = re.compile(r'<a\b[^>]*>|</a>|<img\b[^>]*>')
+def fast_pictures(page):
+    out, pos, in_a = [], 0, 0
+    for m in _TOK.finditer(page):
+        t = m.group(0)
+        out.append(page[pos:m.start()]); pos = m.end()
+        if t.startswith("</a"):
+            in_a = max(0, in_a - 1); out.append(t); continue
+        if t.startswith("<a"):
+            in_a += 1
+            hm = re.search(r'href="(img/[^"]+\.(?:jpe?g|png|webp))"', t)
+            if hm and "gal-thumb" in t and small(hm.group(1)) != hm.group(1):
+                t = t[:-1] + f' data-sm="{small(hm.group(1))}">'
+            out.append(t); continue
+        sm = re.search(r'src="(img/[^"]+\.(?:jpe?g|png|webp))"', t)
+        if not sm:
+            out.append(t); continue
+        full = sm.group(1)
+        thumb = 'class="th"' in t or "-thumb." in full
+        new = small(full, thumb)
+        if new != full:
+            t = t.replace(f'src="{full}"', f'src="{new}"')
+            d = _dims(new)
+            if d and " width=" not in t:
+                t = t.replace("<img ", f'<img width="{d[0]}" height="{d[1]}" ', 1)
+            if "decoding=" not in t:
+                t = t.replace("<img ", '<img decoding="async" ', 1)
+        # a picture in a figure that is not already a link opens full size when clicked
+        if not in_a and re.search(r'<figure class="(?:fig|portrait)(?: lead)?">\s*$', page[max(0, m.start() - 60):m.start()]):
+            t = f'<a class="zoom" href="{full}">{t}</a>'
+        out.append(t)
+    out.append(page[pos:])
+    return "".join(out)
+
+_EXT = re.compile(r'<a href="(https?://[^"]+)"([^>]*)>')
+def new_tabs(page):
+    """Links to other websites (sources, videos, articles) open in a new browser tab."""
+    def f(m):
+        url, rest = m.group(1), m.group(2)
+        if "poddle.ie" in url.split("/")[2] or "target=" in rest:
+            return m.group(0)
+        rm = re.search(r'\s*rel="([^"]*)"', rest)
+        rel = rm.group(1).split() if rm else []
+        rest = rest.replace(rm.group(0), "") if rm else rest
+        rel = " ".join(["noopener"] + [r for r in rel if r != "noopener"])
+        return f'<a href="{url}" target="_blank" rel="{rel}"{rest}>'
+    return _EXT.sub(f, page)
+
 def write(name, content):
+    if name.endswith(".html"):
+        content = new_tabs(fast_pictures(content))
     with open(os.path.join(OUT, name), "w", encoding="utf-8") as fh:
         fh.write(content)
 
@@ -658,10 +734,14 @@ exec(open(os.path.join(OUT, "build_archive.py"), encoding="utf-8").read())
 for i, s in enumerate(STOPS):
     prev = (STOPS[i-1]["slug"], STOPS[i-1]["name"]) if i else None
     nxt = (STOPS[i+1]["slug"], STOPS[i+1]["name"]) if i + 1 < len(STOPS) else None
-    kicker = f'Stop {i+1} of {len(STOPS)} <span>·</span> {esc(s["place"])}'
+    if WALK_AFTER.get(s["slug"]):   # a meander that is also a numbered stop comes next on the walk
+        nxt = (WALK_AFTER[s["slug"]]["slug"], WALK_AFTER[s["slug"]]["name"])
+    if WALK_BEFORE.get(s["slug"]):
+        prev = (WALK_BEFORE[s["slug"]]["slug"], WALK_BEFORE[s["slug"]]["name"])
+    kicker = f'Stop {WALK_N[s["slug"]]} of {WALK_TOTAL} <span>·</span> {esc(s["place"])}'
     body = article(s, kicker, prev, nxt, ("walk.html", "The river walk"), top_nav=True)
     write(f'{s["slug"]}.html', shell(s["slug"], f'{s["name"]} · {SITE}',
-          f'{s["teaser"]} Stop {i+1} of {len(STOPS)} on the River Poddle walk, at {s["place"]}, Dublin.', body, "walk.html",
+          f'{s["teaser"]} Stop {WALK_N[s["slug"]]} of {WALK_TOTAL} on the River Poddle walk, at {s["place"]}, Dublin.', body, "walk.html",
           image=s["images"][0][0] if s["images"] else None, article=True))
 
 # History chapters (prev/next labels say Earlier/Later)
@@ -683,10 +763,16 @@ def stop_li(i, s):
     if s["slug"] == "stone-boat":
         note = '<span class="branch out">⅓ of the flow leaves for St Thomas’s Abbey</span>'
     under = ' class="under"' if s["slug"] in ("mount-jerome", "blackpitts", "cross-poddle", "st-patricks", "ship-street-little", "dubh-linn", "palace-street") else ""
-    return (f'<li{under}><a href="{s["slug"]}.html"><span class="n">{i+1:02d}</span>'
+    li = (f'<li{under}><a href="{s["slug"]}.html"><span class="n">{WALK_N[s["slug"]]:02d}</span>'
             f'<span class="t"><strong>{esc(s["name"])}</strong><em>{esc(s["place"])}</em>'
             f'<span class="d">{esc(s["teaser"])}</span>{note}</span></a>'
-            + "".join(f'<a class="meander" href="{m["slug"]}.html"><em>Meander</em> {esc(m["name"])}</a>' for m in MEANDERS if m["parent"] == s["slug"]) + '</li>')
+            + "".join(f'<a class="meander" href="{m["slug"]}.html"><em>Meander</em> {esc(m["name"])}</a>' for m in MEANDERS if m["parent"] == s["slug"] and not m.get("stop")) + '</li>')
+    m = WALK_AFTER.get(s["slug"])
+    if m:   # Guinness and St James's Gate: a numbered stop, off the river's own line, marked with the pint
+        li += (f'<li class="off-line"><a href="{m["slug"]}.html"><span class="n pint-n" title="Stop {WALK_N[m["slug"]]}">{PINT_SVG}<b>{WALK_N[m["slug"]]:02d}</b></span>'
+               f'<span class="t"><strong>{esc(m["name"])}</strong><em>{esc(m["place"])}</em>'
+               f'<span class="d">{esc(m["teaser"])}</span><span class="branch out">On the City Watercourse, off the river’s own line</span></span></a></li>')
+    return li
 
 
 # Short school walks (pages written by build_walks.py); cards shown on the walk and teachers' pages.
@@ -741,8 +827,8 @@ walk_page = f'''<div class="wrap page"><header class="page-head"><p class="kicke
 <div class="walk-maps">{figures([("1848-os-map-small", "Ordnance Survey map of Dublin, 1848"), ("poddle-catchment", "The Poddle catchment, from Tallaght north-east to the Liffey")])}</div></div>
 <section class="school-walks" id="school-walks"><h2>Shorter walks for schools</h2>
 <p>Two class-sized walks on stretches where the river is out in the open, each with things to look for, activities and safety notes for teachers.</p>{walk_cards()}</section></div>'''
-write("walk.html", shell("walk", f"The river walk · {SITE}", f"Walk the River Poddle in {NUMWORD[len(STOPS)]} stops, with meanders off the main line, from its source in Tallaght through Kimmage, Harold’s Cross and the Liberties to the Liffey at Wellington Quay.", walk_page, "walk.html"))
-write("index.html", shell("index", "The River Poddle: Dublin’s hidden river, from Tallaght to the Liffey", f"The River Poddle gave Dublin its name. Follow Dublin’s hidden river from Tallaght to the Liffey: its history, mills, floods, a {NUMWORD[len(STOPS)]}-stop river walk and an interactive map.", home, "index.html"))
+write("walk.html", shell("walk", f"The river walk · {SITE}", f"Walk the River Poddle in {NUMWORD[WALK_TOTAL]} stops, with meanders off the main line, from its source in Tallaght through Kimmage, Harold’s Cross and the Liberties to the Liffey at Wellington Quay.", walk_page, "walk.html"))
+write("index.html", shell("index", "The River Poddle: Dublin’s hidden river, from Tallaght to the Liffey", f"The River Poddle gave Dublin its name. Follow Dublin’s hidden river from Tallaght to the Liffey: its history, mills, floods, a {NUMWORD[WALK_TOTAL]}-stop river walk and an interactive map.", home, "index.html"))
 
 # History index: one large map that cross-fades through the four periods (maps.js),
 # with dated thumbnails to pick one. The Poddle is baked in light blue by scripts/poddle_highlight.py.
@@ -934,14 +1020,9 @@ med = '<div class="wrap page"><header class="page-head"><p class="kicker">Media<
 med += "".join(f'<li><a href="{u}" target="_blank" rel="noopener noreferrer"><span class="mtype">{esc(k)}</span><strong>{esc(t)}</strong><span>{esc(d)}</span></a></li>' for k, t, d, u in MEDIA)
 med += '</ol>' + MEDIA_NEWS_CARD
 # Clips grouped under their own heading (Mark, 5 Nov 2026)
-BANK_TUNNEL = [
- ("Television", "AIB bank robbery foiled (RTÉ News, 1985)", "Gardaí examine the tunnel dug towards the AIB on Dame Street, where the alarm foiled the raid.", "https://www.rte.ie/archives/collections/news/21193044-aib-bank-robbery-foiled/"),
- ("Article", "Bungling bank robbers tunnel into ladies’ room (UPI, 10 April 1985)", "The gang dug 25 yards from beside the Castle wall, crawled through sewers and cut into a basement washroom.", "https://www.upi.com/Archives/1985/04/10/Bungling-bank-robbers-tunnel-into-ladies-room/6614481957200/"),
- ("Video", "Dublin’s Hidden Rivers: the wall the robbers broke through", "The film goes into the culvert and shows the wall the gang tried to get through, from about 4:06.", "https://www.youtube.com/watch?v=K5ygnHSLKLY&t=246s"),
- ("Podcast", "Did you know about Dublin’s bank robbery? (98FM)", "A short episode on the Easter 1985 attempt to reach the bank through the city’s tunnels and sewers.", "https://www.98fm.com/podcasts/98fms-did-you-know/did-you-know-about-dublins-bank-robbery"),
-]
+# BANK_TUNNEL (the clips) is defined in build_archive.py, with the bank tunnel meander
 med += ('<section class="media-group"><h2>The Dame Street bank tunnel, 1985</h2>'
-        '<p>Over the Easter weekend of 1985 a gang tunnelled from waste ground beside the Dublin Castle wall, crawled through the sewers under Dame Street and cut through a basement wall of the AIB branch. It was the ladies’ toilet. The alarm went off and they fled empty-handed. The news reports of the time don’t name the Poddle, but the river runs under this corner of Dame Street, and the film Dublin’s Hidden Rivers shows the wall in the culvert that the gang tried to use.</p>'
+        '<p>Over the Easter weekend of 1985 a gang tunnelled from waste ground beside the Dublin Castle wall, crawled through the sewers under Dame Street and cut through a basement wall of the AIB branch. It was the ladies’ toilet. The alarm went off and they fled empty-handed. The news reports of the time don’t name the Poddle, but the river runs under this corner of Dame Street, and the film Dublin’s Hidden Rivers shows the wall in the culvert that the gang tried to use. The whole story is told on the <a href="meander-bank-tunnel.html">bank tunnel meander</a>.</p>'
         '<ol class="media-list">')
 med += "".join(f'<li><a href="{u}" target="_blank" rel="noopener noreferrer"><span class="mtype">{esc(k)}</span><strong>{esc(t)}</strong><span>{esc(d)}</span></a></li>' for k, t, d, u in BANK_TUNNEL)
 med += '</ol></section></div>'
@@ -971,7 +1052,7 @@ SCHOOL_LEVELS = [
    ("wildlife.html", "Wildlife", "otters, swans, herons and sticklebacks"),
    ("tymon.html", "Tymon Park", "the river out in the open, with lakes and ducks")]),
  ("3rd and 4th class", "How did the river shape our area?", [
-   ("walk.html", "The river walk", f"{NUMWORD[len(STOPS)]} stops from Tallaght to the Liffey, with photos"),
+   ("walk.html", "The river walk", f"{NUMWORD[WALK_TOTAL]} stops from Tallaght to the Liffey, with photos"),
    ("dubh-linn.html", "Dubh Linn", "the black pool that gave Dublin its name"),
    ("mills.html", "The mills", "how the river powered the city for seven centuries")]),
  ("5th and 6th class", "Why does it matter now?", [

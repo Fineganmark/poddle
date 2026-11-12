@@ -45,8 +45,9 @@ GAUGES = [
 ]
 
 river = json.load(open(os.path.join(OUT, "data", "river.json")))
-stops_js = [dict(n=i + 1, slug=st["slug"], name=st["name"], place=st["place"], teaser=st["teaser"],
+stops_js = [dict(n=WALK_N[st["slug"]], slug=st["slug"], name=st["name"], place=st["place"], teaser=st["teaser"],
                  img=(st["images"][0][0] if st["images"] else None),
+                 src=(small(f'img/{st["images"][0][0]}.jpg') if st["images"] else None),
                  lat=COORDS[st["slug"]][0], lon=COORDS[st["slug"]][1])
             for i, st in enumerate(STOPS)]
 # Channels drawn on top of the river line. The Abbey Stream is the three OpenStreetMap ways named "Abbey Stream"
@@ -87,7 +88,7 @@ map_body = (
  '<li><span class="k k-open"></span>River, open channel</li><li><span class="k k-under"></span>River, underground</li>'
  '<li><span class="k k-water"></span>City Watercourse (approx.)</li><li><span class="k k-abbey"></span>Abbey Stream</li><li><span class="k k-commons"></span>Commons Water (approx.)</li><li><span class="k k-overflow"></span>Dodder Overflow (approx.)</li><li><span class="k k-flow" aria-hidden="true"><svg viewBox="0 0 26 14" width="26" height="14"><path d="M1 7h24" stroke="currentColor" stroke-width="4"/><path d="M10 2.5l5.5 4.5-5.5 4.5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Direction of flow</li><li><span class="k k-stop">1</span>River walk stop</li>'
  '<li><span class="k k-mill"></span>Mill site</li><li><span class="k k-works"></span>Flood scheme works</li>'
- '<li><span class="k k-cross"></span>Canal crossing</li><li><span class="k k-dig"></span>Archaeology and monuments</li><li><span class="k k-meander"></span>Meander off the walk</li><li><span class="k k-gauge"></span>River gauge (Dodder)</li></ul></div>'
+ '<li><span class="k k-cross"></span>Canal crossing</li><li><span class="k k-dig"></span>Archaeology and monuments</li><li><span class="k k-pint">' + PINT_SVG.replace('width="24" height="32"', 'width="18" height="24"') + f'</span>Stop {WALK_N["meander-st-jamess-gate"]}: Guinness and St James’s Gate</li>' + '<li><span class="k k-meander"></span>Meander off the walk</li><li><span class="k k-gauge"></span>River gauge (Dodder)</li></ul></div>'
  '<p class="note">River line © OpenStreetMap contributors. The City Watercourse, Tenter Water and Dodder Overflow are approximate routes, not surveyed lines. The City Watercourse as far as the Grand Canal follows the OpenStreetMap line, which was drawn from old Ordnance Survey and Taylor maps; from the canal at Dolphin’s Barn up the Back of the Pipes it is traced from the 1909 Ordnance Survey sheets. The rest of the City Watercourse, the Tenter Water, the Commons Water and the lower Abbey Stream follow the hand-drawn map of the <a href=\"sources.html#poddle-research\">Crumlin and Walkinstown History Group’s Poddle project</a>, which gives no source for its lines. The underground Poddle from Patrick Street to Wellington Quay, including the City Hall branch, is redrawn along today’s streets from written descriptions and a plan in McEntee and Corcoran, Ronan (1927) and Fitzgerald (1973); the route is theirs, but the exact line under each street is our best fit. Some mill sites are approximate too, and say so.</p>'
  '<noscript><p>The map needs JavaScript. The river walk is also listed on the <a href="walk.html">river walk page</a>.</p></noscript></div>'
  '<link rel="stylesheet" href="vendor/leaflet.css">'
@@ -101,9 +102,10 @@ live_body = '''<div class="wrap page"><header class="page-head"><p class="kicker
 <div class="page-grid solo"><div class="text">
 <section><h2>Is there a gauge on the Poddle?</h2>
 <p>Not one that publishes live readings. The Office of Public Works runs Ireland’s network of river gauges, and none of its public stations is on the Poddle. The nearest are on the Dodder, the river the monks borrowed water from at Balrothery, and the one the Lakelands Overflow still sends flood water back to. When the Dodder is high after heavy rain on the Dublin Mountains, the Poddle is usually rising too.</p></section>
-<section><h2>The Dodder now</h2>
+<section><h2>The Dodder and the Liffey now</h2>
+<p>The Poddle ends in the Liffey at Wellington Quay, where the river is tidal. The Office of Public Works has no live gauge on the Liffey in the city, so the Liffey reading here is the Marine Institute’s tide gauge at Dublin Port, a few kilometres downstream, which shows the tide the Poddle’s outfall meets.</p>
 <div id="gauges" class="gauges"><p class="muted">Loading the latest readings…</p></div>
-<p class="note">Water level in metres above each gauge’s staff zero, over the last seven days. Provisional data from the Office of Public Works via waterlevel.ie, refreshed on this site every hour. Not for flood warning.</p></section>
+<p class="note">Dodder: water level in metres above each gauge’s staff zero, over the last seven days; provisional data from the Office of Public Works via waterlevel.ie. Liffey: sea level at Dublin Port in metres above Ordnance Datum (Malin), from the Marine Institute’s Irish National Tide Gauge Network. Refreshed on this site every hour. Not for flood warning.</p></section>
 <section><h2>Flood warnings</h2>
 <p>For live weather and rain warnings, check <a href="https://www.met.ie/warnings" rel="noopener">Met Éireann’s warnings page</a>. South Dublin County Council and Dublin City Council post flood alerts on their own channels during events.</p></section>
 <section><h2>Explore the flood models</h2>

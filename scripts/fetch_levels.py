@@ -1,5 +1,7 @@
 """Fetch the last week of water levels for the Dodder gauges nearest the Poddle
-from waterlevel.ie (Office of Public Works, provisional data) into data/levels.json."""
+from waterlevel.ie (Office of Public Works, provisional data), and the Liffey at
+Dublin Port from the Marine Institute's tide gauge (the Poddle enters the tidal
+Liffey at Wellington Quay; the OPW has no live Liffey gauge in the city), into data/levels.json."""
 import csv, io, json, sys, urllib.request
 from datetime import datetime, timezone
 
@@ -21,6 +23,26 @@ def parse(text):
         pts = pts[::4] + ([pts[-1]] if (len(pts) - 1) % 4 else [])
     return pts
 
+# Marine Institute, Irish National Tide Gauge Network (ERDDAP), every 6 minutes, metres above Ordnance Datum (Malin)
+TIDE = dict(ref="dublin-port", name="Dublin Port, River Liffey (tidal)",
+            url="https://erddap.marine.ie/erddap/tabledap/IrishNationalTideGaugeNetwork.csv"
+                "?time,Water_Level_OD_Malin&station_id=%22Dublin%20Port%22&time%3E=now-7days",
+            page="https://www.marine.ie/site-area/data-services/real-time-observations/irish-national-tide-gauge-network")
+
+def parse_erddap(text):
+    rows = list(csv.reader(io.StringIO(text)))[2:]   # header row, then a units row
+    pts = []
+    for r in rows:
+        try:
+            v = float(r[1])
+            if -4 < v < 5:   # the gauge sometimes logs nonsense (e.g. -32 m); Dublin tides stay within about -3 to +3 m OD
+                pts.append([r[0][:19], round(v, 3)])
+        except (IndexError, ValueError):
+            continue
+    if len(pts) > 400:   # every 6 minutes; keep about one an hour, and the latest
+        pts = pts[::10] + ([pts[-1]] if (len(pts) - 1) % 10 else [])
+    return pts
+
 def main(out):
     stations = []
     for ref, name in STATIONS:
@@ -30,6 +52,12 @@ def main(out):
                 stations.append(dict(ref=ref, name=name, points=pts))
         except Exception as e:  # keep the site building even if one gauge is down
             print("skip", ref, e, file=sys.stderr)
+    try:
+        pts = parse_erddap(get(TIDE["url"]))
+        if pts:
+            stations.append(dict(ref=TIDE["ref"], name=TIDE["name"], points=pts, tide=True, page=TIDE["page"]))
+    except Exception as e:
+        print("skip tide gauge", e, file=sys.stderr)
     if not stations:
         print("no gauge data; leaving levels.json absent", file=sys.stderr)
         return

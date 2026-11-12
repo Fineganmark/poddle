@@ -59,7 +59,7 @@
   var stops = L.layerGroup();
   DATA.stops.forEach(function (s) {
     var icon = L.divIcon({ className: "pin-stop", html: "<span>" + s.n + "</span>", iconSize: [28, 28], iconAnchor: [14, 14] });
-    var img = s.img ? "<img src=\"img/" + s.img + ".jpg\" alt=\"\" loading=\"lazy\">" : "";
+    var img = s.img ? "<img src=\"" + (s.src || "img/" + s.img + ".jpg") + "\" alt=\"\" loading=\"lazy\">" : "";
     L.marker([s.lat, s.lon], { icon: icon, title: s.name, keyboard: true })
       .bindPopup("<div class=\"pop\">" + img + "<p class=\"pk\">Stop " + s.n + " · " + esc(s.place) + "</p><h3>" + esc(s.name) +
         "</h3><p>" + esc(s.teaser) + "</p><a href=\"" + s.slug + ".html\">Read the history →</a></div>", { maxWidth: 260 })
@@ -67,7 +67,7 @@
   });
   // Meanders: short detours off the main walk, shown in the same layer as the stops
   var meanderById = {};
-  var PINT = '<svg viewBox="0 0 24 32" width="24" height="32" aria-hidden="true" focusable="false">' +
+  var PINT = '<svg viewBox="0 0 24 32" width="28" height="37" aria-hidden="true" focusable="false">' +
     '<path d="M4.2 3.5h15.6l-1.9 25.1a2 2 0 0 1-2 1.9H8.1a2 2 0 0 1-2-1.9z" fill="#1d130d" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/>' +
     '<path d="M4.9 4.3h14.2l-.5 5.6H5.4z" fill="#f2e6c9"/>' +
     '<path d="M4.2 3.5c1.2-1.9 3-1.4 4.2-.9 1.3-1.4 3.4-1.4 4.5-.2 1.3-1 3.4-.9 4.4.2 1.2-.4 2.2.2 2.5.9" fill="#f2e6c9" stroke="#fff" stroke-width="1.2" stroke-linejoin="round"/>' +
@@ -75,11 +75,11 @@
   (DATA.meanders || []).forEach(function (m) {
     // The Guinness meander gets a little pint (our own drawing, not a brand mark).
     var icon = m.slug === "meander-st-jamess-gate"
-      ? L.divIcon({ className: "pin-pint", html: PINT, iconSize: [24, 32], iconAnchor: [12, 30] })
+      ? L.divIcon({ className: "pin-pint", html: PINT + (m.n ? "<b>" + m.n + "</b>" : ""), iconSize: [28, 37], iconAnchor: [14, 35] })
       : L.divIcon({ className: "pin-stop pin-meander", html: "<span>M</span>", iconSize: [22, 22], iconAnchor: [11, 11] });
-    meanderById[m.slug] = L.marker([m.lat, m.lon], { icon: icon, title: "Meander: " + m.name, keyboard: true })
-      .bindPopup("<div class=\"pop\"><p class=\"pk\">Meander off stop " + m.parent + " · " + esc(m.place) + "</p><h3>" + esc(m.name) +
-        "</h3><p>" + esc(m.teaser) + "</p><a href=\"" + m.slug + ".html\">Take the meander →</a></div>", { maxWidth: 260 })
+    meanderById[m.slug] = L.marker([m.lat, m.lon], { icon: icon, title: (m.n ? "Stop " + m.n + ": " : "Meander: ") + m.name, keyboard: true })
+      .bindPopup("<div class=\"pop\"><p class=\"pk\">" + (m.n ? "Stop " + m.n : "Meander off stop " + m.parent) + " · " + esc(m.place) + "</p><h3>" + esc(m.name) +
+        "</h3><p>" + esc(m.teaser) + "</p><a href=\"" + m.slug + ".html\">" + (m.n ? "Read the history →" : "Take the meander →") + "</a></div>", { maxWidth: 260 })
       .addTo(stops);
   });
   stops.addTo(map);

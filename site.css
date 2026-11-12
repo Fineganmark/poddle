@@ -539,3 +539,39 @@ html { scroll-behavior: smooth; }
 .search-results mark { background: color-mix(in srgb, var(--river) 22%, transparent); color: inherit; padding: 0 1px; border-radius: 2px; }
 .pin-pint { background: none; border: 0; filter: drop-shadow(0 1px 2px rgba(0, 0, 0, .45)); }
 .pin-pint svg { display: block; }
+
+/* Clickable thumbnails (Nov 2026): picture grids below the text show small squares; click opens the full picture */
+.fig-grid.thumbs { grid-template-columns: repeat(auto-fill, minmax(min(46%, 150px), 1fr)); gap: 10px; }
+.fig-grid.thumbs .fig { gap: 0; }
+.fig-grid.thumbs img { aspect-ratio: 1; object-fit: cover; width: 100%; height: auto; display: block; }
+.fig-grid.thumbs figcaption { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+a.zoom { display: block; cursor: zoom-in; }
+a.zoom:hover img, a.zoom:focus-visible img { outline: 2px solid var(--river); outline-offset: 2px; }
+.text .fig-grid:not(.thumbs) .fig { max-width: 640px; }
+@media (max-width: 760px) {
+  .media:has(.fig ~ .fig) { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+  .media > * { grid-column: 1 / -1; }
+  .media > .fig:not(.lead) { grid-column: auto; gap: 0; }
+  .media > .fig:not(.lead) img { aspect-ratio: 1; object-fit: cover; width: 100%; height: auto; }
+  .media > .fig:not(.lead) figcaption { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+}
+.lb { position: fixed; inset: 0; z-index: 1000; display: none; align-items: center; justify-content: center; padding: 48px 16px 16px; background: rgba(12, 14, 16, .92); }
+.lb.on { display: flex; }
+.lb figure { margin: 0; display: grid; gap: 10px; max-width: min(1400px, 100%); max-height: 100%; justify-items: center; }
+.lb img { max-width: 100%; max-height: calc(100vh - 150px); max-height: calc(100dvh - 150px); width: auto; height: auto; object-fit: contain; background: #fff; }
+.lb figcaption { color: #e8e4dc; max-width: 60rem; font-size: .9rem; text-align: left; }
+.lb figcaption a { color: #fff; }
+.lb-x { position: absolute; top: 8px; right: 12px; width: 40px; height: 40px; border: 0; border-radius: 50%; background: rgba(255,255,255,.14); color: #fff; font-size: 28px; line-height: 40px; cursor: pointer; }
+.lb-x:hover, .lb-x:focus-visible { background: rgba(255,255,255,.3); }
+
+/* Guinness and St James's Gate: a numbered walk stop marked with the pint (Nov 2026) */
+.pin-pint { position: relative; }
+.pin-pint b { position: absolute; left: 0; right: 1px; top: 15px; text-align: center; color: #fff; font: 700 11px/1 var(--label); font-variant-numeric: tabular-nums; pointer-events: none; }
+.k-pint { display: inline-grid; place-items: center; width: 26px; }
+.k-pint svg { display: block; }
+.line .n.pint-n { border: 0; background: none; border-radius: 0; width: 34px; height: 44px; top: 8px; color: #fff; }
+.line .n.pint-n svg { position: absolute; inset: 0; width: 34px; height: 44px; filter: drop-shadow(0 1px 2px rgba(0,0,0,.35)); }
+.line .n.pint-n b { position: relative; top: 5px; font: 700 .8rem/1 var(--label); }
+.line a:hover .n.pint-n, .line a:focus-visible .n.pint-n { background: none; color: #f2e6c9; }
+.line li.off-line::before { border-left: 3px dashed var(--antiquity); left: 21.5px; }
+.research { margin-top: 56px; padding-top: 24px; border-top: 1px solid var(--rule); }
