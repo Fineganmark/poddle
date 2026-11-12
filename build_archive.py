@@ -168,6 +168,18 @@ for h in HISTORY:
         h["after"] += ('<section class="watch walk-links"><h2>On the walk</h2><ul>'
                        + "".join(f'<li><a href="{u}">{esc(t)}</a></li>' for u, t in HIST_WALK[h["slug"]]) + '</ul></section>')
 
+# ---- pictures gathered by the history group (data/crumlin-pics.txt), shown in black and white
+_pics = {}
+for _l in open(os.path.join(OUT, "data", "crumlin-pics.txt"), encoding="utf-8"):
+    if _l.startswith("#") or not _l.strip():
+        continue
+    _slug, _num, _name, _cap = [x.strip() for x in _l.split("|", 3)]
+    _pics.setdefault(_slug, []).append(("crumlin/" + _name, _cap))
+PICS_NOTE = '<p class="note">Pictures gathered by the Crumlin and Walkinstown History Group for their Poddle research, shown here in black and white. If you know more about any of them, or hold the rights to one, please <a href="about.html">get in touch</a>.</p>'
+for _slug, _items in _pics.items():
+    _t = STOP_BY.get(_slug) or MEANDER_BY.get(_slug)
+    _t["sections"].append(("Pictures from the archive", [gal(*_items), PICS_NOTE]))
+
 # meander pages' own notes (set before the People boxes are added)
 for m in MEANDERS:
     m["brief"] = ""

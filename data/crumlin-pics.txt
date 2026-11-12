@@ -1,0 +1,50 @@
+# target-slug | source-number | new-name | caption (credit at end). Built by build_archive.py. All shown in black and white.
+cross-poddle | 001 | st-sepulchres-palace | The Archiepiscopal Palace of St Sepulchre in Kevin Street, with tall chimney-stacks, a sentry box and a carriage at the gate. The building is now part of Kevin Street Garda Station. Watercolour, National Library of Ireland.
+cross-poddle | 077 | st-patricks-from-cross-poddle | St Patrick’s Cathedral seen from the Cross Poddle end of Patrick Street, in an early nineteenth-century print.
+cross-poddle | 076 | cross-poddle-sketch | A newspaper sketch of the corner once called the Cross Poddle, now Dean Street.
+cross-poddle | 059 | new-row-old-house | An old gabled house in New Row, long known as “New Row on the Poddle”.
+cross-poddle | 061 | new-row-street | New Row looking towards St Patrick’s, with a horse and cart outside the corner shop.
+blackpitts | 009 | blackpitts-lawrence | Blackpitts, around 1900. Lawrence Collection, National Library of Ireland (L_ROY_07891).
+blackpitts | 005 | blackpitts-old-houses | Old houses at Blackpitts, in a nineteenth-century photograph.
+blackpitts | 007 | blackpitts-cottages | Cottages and a carter on the unpaved street at Blackpitts.
+blackpitts | 008 | blackpitts-cabins | Single-storey cabins at Blackpitts.
+blackpitts | 010 | blackpitts-maltings | The City of Dublin Maltings at “Black Pitts”, from a nineteenth-century billhead.
+meander-dolphins-barn | 018 | dolphins-barn-old-mill-1893 | “Old mill on Poddle River, Dolphin’s Barn, 1893”, as the note under the photograph says.
+meander-dolphins-barn | 016 | dolphins-barn-sketch | Dolphin’s Barn in a newspaper sketch.
+meander-dolphins-barn | 017 | dolphins-barn-aerial-flats | Flats beside the Grand Canal at Dolphin’s Barn, from the air.
+meander-abbey-stream | 065 | hospice-aerial | Our Lady’s Hospice, Harold’s Cross, from the air, with the mill pond beside it. Morgan Aerial Photographic Collection, National Library of Ireland (NPA MOR2318).
+meander-abbey-stream | 071 | hospice-mill-pond-map | The mill pond beside Our Lady’s Hospice on an Ordnance Survey map. Ordnance Survey Ireland.
+meander-abbey-stream | 072 | greenmount-spinning-map | Greenmount Spinning Manufactory and Green Mount on an early Ordnance Survey map. Ordnance Survey Ireland.
+meander-abbey-stream | 033 | greenmount-aerial-works | The Greenmount works at Harold’s Cross from the air.
+meander-abbey-stream | 030 | greenmount-aerial-canal | Greenmount and the Grand Canal from the air.
+meander-abbey-stream | 037 | pim-brothers-1876 | Pim Brothers and Co. advertisement, 1876, with the Greenmount Spinning Company at the foot.
+meander-abbey-stream | 011 | wellington-barracks-plan | A plan of Wellington Barracks beside the Grand Canal, with the Poddle’s route across the site. From An Cosantóir, March–April 2023.
+meander-abbey-stream | 019 | donore-poddle-bridges | A sketch of the Poddle running under its old bridges, from the Donore Avenue pages of the history group’s research.
+meander-abbey-stream | 099 | sweeneys-warrenmount-map | Warrenmount Mills and its mill pond on an Ordnance Survey town plan. Ordnance Survey Ireland.
+meander-abbey-stream | 100 | sweeneys-terrace-houses | Old gabled houses, from the history group’s Sweeney’s Terrace research.
+meander-abbey-stream | 102 | sweeneys-lane-river | The river running open between old stone buildings, from the history group’s Sweeney’s Terrace research.
+meander-abbey-stream | 103 | sweeneys-millstone | A millstone kept as a feature in the new development near Sweeney’s Terrace. Photo: Crumlin and Walkinstown History Group, 2023.
+meander-abbey-stream | 105 | sweeneys-open-river | The Poddle running open in its channel. Photo: Crumlin and Walkinstown History Group, 2023.
+meander-liberties | 113 | weaver-square-rocque | Chamber Street and Weaver’s Square on John Rocque’s map of Dublin, 1756.
+meander-liberties | 114 | weaver-square-pipes | Thomas Conway and John Burke with part of the wooden water main they unearthed at Weaver Square, off Cork Street. Newspaper photograph, 1970.
+meander-st-andrews | 090 | st-andrews-round-church | The round church of St Andrew, in an early nineteenth-century engraving.
+ship-street-little | 041 | ship-street-barracks | Ship Street Barracks, Dublin. Lawrence Photographic Studio, National Library of Ireland.
+ship-street-little | 040 | ship-street-castle-wall | Ship Street under the wall of Dublin Castle.
+ship-street-little | 042 | ship-street-gate | The Ship Street gate of Dublin Castle, with the steps beyond.
+ship-street-little | 093 | st-michael-le-pole-watercolour | “The Old Tower of Michael of Pole, Dublin”: the round tower and church of St Michael le Pole, in an eighteenth-century watercolour.
+ship-street-little | 096 | st-michael-le-pole-engraving | The round tower of St Michael le Pole, in a nineteenth-century engraving.
+dubh-linn | 026 | castle-and-black-pool | A reconstruction of the medieval castle, with the outline of today’s Dubh Linn Gardens over the Black Pool (dashed line). Via Wikimedia Commons.
+palace-street | 062 | dan-lowreys-music-hall | Dan Lowrey’s Music Hall, the theatre that became the Olympia, from a nineteenth-century print.
+palace-street | 064 | olympia-1900 | Crowds outside the theatre in Dame Street for Queen Victoria’s visit, 1900.
+palace-street | 063 | olympia-1921 | A crowd outside the Olympia on 11 July 1921, the day of the Truce.
+dodder-overflow | 049 | mount-down-bridge-1982 | Mount Down Bridge, 1982. Photo: Patrick Healy, South Dublin County Libraries.
+dodder-overflow | 047 | mount-down-mill | The old mill building at Mount Down.
+dodder-overflow | 043 | mount-down-sluice | A timber sluice gate on the watercourse at Mount Down.
+dodder-overflow | 045 | mount-down-sluice-water | A sluice and its channel at Mount Down.
+mount-jerome | 057 | mount-jerome-1835-map | The Poddle and its pond at the edge of the new cemetery, from the Dublin Cemetery Company’s map of Mount Jerome, 1835. Joly Collection, National Library of Ireland.
+mount-jerome | 058 | mount-jerome-1835-view | Bird’s-eye view of Mount Jerome, the site of the new cemetery, 1835. Joly Collection, National Library of Ireland.
+ravensdale | 079 | st-martins-footbridge | The footbridge over the Poddle at St Martin’s, from a newspaper photograph.
+fettercairn-house | 106 | tallaght-old-map | Tallaght and the lands around it on an early nineteenth-century map.
+tymon | 109 | timmond-castle | “Timmond Castle, near ye Greenhills, 3 miles from Dublin”, in an eighteenth-century watercolour.
+tymon | 111 | tymon-castle-print | Tymon Castle in an eighteenth-century print.
+balrothery-weir | 107 | templeogue-house | Templeogue House, where the watercourse ran through the grounds.
