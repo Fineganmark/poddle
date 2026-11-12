@@ -106,6 +106,9 @@ MEANDERS = [
  dict(slug="meander-christ-church", name="Christ Church Cathedral", parent="ship-street-little", place="Christchurch Place",
       teaser="The cathedral on the ridge above the river, where St Patrick’s came when it flooded.",
       ll=(53.34340, -6.27140)),
+ dict(slug="meander-bank-tunnel", name="The Dame Street bank tunnel, 1985", parent="palace-street", place="Dame Street and Palace Street",
+      teaser="Easter 1985: a gang crawled through the tunnels under Dame Street to rob the bank beside the Poddle, and came up in the ladies’ toilet.",
+      ll=(53.34418, -6.26610), own=True),  # from the clips on the Media page (Mark, 12 Nov 2026)
  dict(slug="meander-st-andrews", name="St Andrew’s and Grafton Street", parent="palace-street", place="St Andrew Street",
       teaser="A church that began in the fields by the Poddle, and a street closed for a river it never touched.",
       ll=(53.34360, -6.26120)),
@@ -113,6 +116,46 @@ MEANDERS = [
 MEANDER_BY = {m["slug"]: m for m in MEANDERS}
 for m in MEANDERS:
     m.update(sections=[], images=[], places=[])
+
+# ---- the Dame Street bank tunnel (meander, Nov 2026): the clips are also listed on the Media page
+BANK_TUNNEL = [
+ ("Television", "AIB bank robbery foiled (RTÉ News, 1985)", "Gardaí examine the tunnel dug towards the AIB on Dame Street, where the alarm foiled the raid.", "https://www.rte.ie/archives/collections/news/21193044-aib-bank-robbery-foiled/"),
+ ("Article", "Bungling bank robbers tunnel into ladies’ room (UPI, 10 April 1985)", "The gang dug 25 yards from beside the Castle wall, crawled through sewers and cut into a basement washroom.", "https://www.upi.com/Archives/1985/04/10/Bungling-bank-robbers-tunnel-into-ladies-room/6614481957200/"),
+ ("Video", "Dublin’s Hidden Rivers: the wall the robbers broke through", "The film goes into the culvert and shows the wall the gang tried to get through, from about 4:06.", "https://www.youtube.com/watch?v=K5ygnHSLKLY&t=246s"),
+ ("Podcast", "Did you know about Dublin’s bank robbery? (98FM)", "A short episode on the Easter 1985 attempt to reach the bank through the city’s tunnels and sewers.", "https://www.98fm.com/podcasts/98fms-did-you-know/did-you-know-about-dublins-bank-robbery"),
+]
+_bt = MEANDER_BY["meander-bank-tunnel"]
+_bt["sections"] = [
+ ("Easter 1985", [
+  "Over the Easter weekend of 1985 a gang set out to rob the Allied Irish Banks branch on Dame Street, at the corner of Palace Street, without going near its front door. They began on waste ground beside the wall of Dublin Castle and dug a tunnel of about 25 yards, then crawled on through the old sewers and culverts under Dame Street until they were under the bank.",
+  "They cut through a basement wall and came up in the ladies’ toilet. The alarm went off, and the gang fled empty-handed. RTÉ News filmed the gardaí examining the tunnel afterwards, and the American news agency UPI sent the story round the world as the “bungling bank robbers”."]),
+ ("The river under the bank", [
+  "The reports of the time talk of tunnels and sewers and never name the Poddle, but the river is the reason those tunnels are there. Inside the Palace Street gate of the Castle the Poddle divides. McEntee and Corcoran describe it: the more westerly branch flows under the open space beside City Hall before going under Dame Street, and “the eastern branch flows under Palace Street, beside a bank, which a gang of would-be robbers tried to access from the culvert in the 1980s.”",
+  "The film Dublin’s Hidden Rivers goes down into the culvert and shows the wall the gang tried to get through, from about 4:06 in. The 98FM podcast Did You Know? tells the story in a few minutes."]),
+ ("Then and now", [
+  "The Poddle still runs under Palace Street to the Liffey at Wellington Quay, through the culvert the gang used. The bank building is still on the corner of Dame Street and Palace Street, opposite the Olympia, which stands over the river too."]),
+]
+_bt["links"] = [(f"{k}: {t}", u) for k, t, d, u in BANK_TUNNEL]
+_bt["brief"] = ""
+
+# ---- walk numbering: the Guinness meander is also a numbered stop on the walk (Mark, 12 Nov 2026),
+# straight after its parent, St Patrick's. Its page and map pin keep the pint.
+MEANDER_BY["meander-st-jamess-gate"]["stop"] = True
+WALK = []
+for _s in STOPS:
+    WALK.append(_s["slug"])
+    WALK += [m["slug"] for m in MEANDERS if m["parent"] == _s["slug"] and m.get("stop")]
+WALK_N = {slug: i + 1 for i, slug in enumerate(WALK)}
+WALK_TOTAL = len(WALK)
+WALK_AFTER = {m["parent"]: m for m in MEANDERS if m.get("stop")}            # stop slug -> the meander-stop after it
+_order = [x["slug"] for x in STOPS]
+WALK_BEFORE = {_order[_order.index(m["parent"]) + 1]: m for m in MEANDERS
+               if m.get("stop") and _order.index(m["parent"]) + 1 < len(_order)}   # stop slug -> the meander-stop before it
+# pint drawing (our own, not a brand mark), shared with the map
+PINT_SVG = ('<svg viewBox="0 0 24 32" width="24" height="32" aria-hidden="true" focusable="false">'
+    '<path d="M4.2 3.5h15.6l-1.9 25.1a2 2 0 0 1-2 1.9H8.1a2 2 0 0 1-2-1.9z" fill="#1d130d" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/>'
+    '<path d="M4.9 4.3h14.2l-.5 5.6H5.4z" fill="#f2e6c9"/>'
+    '<path d="M4.2 3.5c1.2-1.9 3-1.4 4.2-.9 1.3-1.4 3.4-1.4 4.5-.2 1.3-1 3.4-.9 4.4.2 1.2-.4 2.2.2 2.5.9" fill="#f2e6c9" stroke="#fff" stroke-width="1.2" stroke-linejoin="round"/></svg>')
 
 # ---- put each place on its page
 for p in PLACES:
@@ -128,7 +171,7 @@ for p in PLACES:
 
 for s in STOPS:
     s.setdefault("after", "")
-    ms = [m for m in MEANDERS if m["parent"] == s["slug"]]
+    ms = [m for m in MEANDERS if m["parent"] == s["slug"] and not m.get("stop")]
     if ms:
         s["after"] += ('<section class="watch meanders"><h2>Meander off the walk</h2><p class="note">A detour from this stop, off the main line of the river.</p><ul>'
                        + "".join(f'<li><a href="{m["slug"]}.html">{esc(m["name"])}</a>: {esc(m["teaser"])}</li>' for m in ms) + '</ul></section>')
@@ -185,7 +228,9 @@ for m in MEANDERS:
     m["brief"] = ""
     m["after"] = ("" if m.get("own") else CREDIT_NOTE) + f'<p class="xlink"><a href="map.html?meander={m["slug"]}">See this meander on the map →</a></p>'
 def _stop_n(slug):
-    return [s["slug"] for s in STOPS].index(slug) + 1
+    return WALK_N[slug]
+def _stop_i(slug):
+    return [s["slug"] for s in STOPS].index(slug)
 
 # ---- People: everyone whose story touches the river, from the existing pages and the group's research
 PEOPLE = [
@@ -270,7 +315,7 @@ def _portrait(pp):
     if not p or not _os.path.exists(_os.path.join(_os.path.dirname(_pj), "..", p["src"])):
         return ""
     return (f'<figure class="portrait"><img src="{esc(p["src"])}" alt="{esc(p["alt"])}" width="{p.get("w", 240)}" height="{p.get("h", 300)}" loading="lazy" decoding="async">'
-            f'<figcaption>{esc(p["caption"])}. <a href="{esc(p["source_url"])}">{esc(p["credit"])}</a>, {esc(p["licence"])}</figcaption></figure>')
+            f'<figcaption>{esc(p["caption"])}. <a href="{esc(p["source_url"])}">{esc(p["credit"])}</a>' + (f', {esc(p["licence"])}' if p.get("licence") else ".") + '</figcaption></figure>')
 PEOPLE_ON = {}
 for pp in PEOPLE:
     for u, _t in pp["links"]:
@@ -285,6 +330,8 @@ for it in STOPS + HISTORY + MEANDERS:
                f'<li><a href="people.html#{pp["id"]}">{esc(pp["name"])}</a>: {esc(pp["tag"])}</li>' for pp in ps) + '</ul></section>')
         it["after"] = box + it.get("after", "")
 
+# people with a portrait come first, otherwise in the order above
+PEOPLE.sort(key=lambda pp: not _portrait(pp))
 people_body = ('<div class="wrap page"><header class="page-head"><p class="kicker">People</p><h1>Poddle People</h1>'
   '<p class="dek">Archbishops and rebels, millers and nuns, a dean, a spy and a playwright’s father: the people whose lives ran alongside the river. Each links to the places on the walk and in the history where their story is told.</p></header>'
   '<nav class="arch-toc" aria-label="People on this page"><ul>' + "".join(f'<li><a href="#{pp["id"]}">{esc(pp["name"])}</a></li>' for pp in PEOPLE) + '</ul></nav>'
@@ -299,12 +346,21 @@ write("people.html", shell("people", f"Poddle People · {SITE}",
 # ---- meander pages
 for m in MEANDERS:
     par = STOP_BY[m["parent"]]
-    nxt = STOPS[_stop_n(m["parent"])] if _stop_n(m["parent"]) < len(STOPS) else None
-    kicker = f'Meander <span>·</span> off Stop {_stop_n(m["parent"])}, {esc(par["name"])}'
-    body = article(m, kicker, (par["slug"], par["name"]), (nxt["slug"], nxt["name"]) if nxt else None, (f'{par["slug"]}.html', f'Back to Stop {_stop_n(m["parent"])}: {par["name"]}'))
-    body = body.replace("<span>Upstream</span>", "<span>Back to the walk</span>").replace("<span>Downstream</span>", "<span>Next stop on the walk</span>")
-    toc = '<nav class="arch-toc" aria-label="On this meander"><ul>' + "".join(f'<li><a href="#{slug_id(p["secs"][0][0])}">{esc(p["title"])}</a></li>' for p in m["places"]) + '</ul></nav>'
-    body = body.replace('<div class="page-grid solo">', toc + '<div class="page-grid solo">', 1)
+    nxt = STOPS[_stop_i(m["parent"]) + 1] if _stop_i(m["parent"]) + 1 < len(STOPS) else None
+    if m.get("stop"):
+        kicker = f'Stop {WALK_N[m["slug"]]} of {WALK_TOTAL} <span>·</span> {esc(m["place"])} <span>·</span> on the City Watercourse'
+        back = ("walk.html", "The river walk")
+    else:
+        kicker = f'Meander <span>·</span> off Stop {_stop_n(m["parent"])}, {esc(par["name"])}'
+        back = (f'{par["slug"]}.html', f'Back to Stop {_stop_n(m["parent"])}: {par["name"]}')
+    body = article(m, kicker, (par["slug"], par["name"]), (nxt["slug"], nxt["name"]) if nxt else None, back)
+    if m.get("stop"):
+        body = body.replace("<span>Upstream</span>", "<span>Previous stop</span>").replace("<span>Downstream</span>", "<span>Next stop</span>")
+    else:
+        body = body.replace("<span>Upstream</span>", "<span>Back to the walk</span>").replace("<span>Downstream</span>", "<span>Next stop on the walk</span>")
+    if m["places"]:
+        toc = '<nav class="arch-toc" aria-label="On this meander"><ul>' + "".join(f'<li><a href="#{slug_id(p["secs"][0][0])}">{esc(p["title"])}</a></li>' for p in m["places"]) + '</ul></nav>'
+        body = body.replace('<div class="page-grid solo">', toc + '<div class="page-grid solo">', 1)
     write(f'{m["slug"]}.html', shell(m["slug"], f'{m["name"]} · Meander · {SITE}',
           f'{m["teaser"]} A meander off the River Poddle walk, at {m["place"]}, Dublin.', body, "walk.html", article=True))
 
@@ -375,6 +431,6 @@ _redirect("archive-news.html", "media-newspapers.html")
 _redirect("archive-overview.html", "origins.html#words-and-phrases")
 
 # Map data (read by build_extra.py): meander pins sit in the walk stops layer; places are looked up by ?at=
-MEANDERS_JS = [dict(slug=m["slug"], name=m["name"], place=m["place"], teaser=m["teaser"], parent=_stop_n(m["parent"]),
+MEANDERS_JS = [dict(slug=m["slug"], name=m["name"], place=m["place"], teaser=m["teaser"], parent=_stop_n(m["parent"]), n=WALK_N.get(m["slug"]),
                     lat=m["ll"][0], lon=m["ll"][1],
                     pts=[[p["title"], p["ll"][0], p["ll"][1], p["url"]] for p in m["places"] if p["ll"]]) for m in MEANDERS]

@@ -27,13 +27,15 @@
         var when = new Date(last[0] + "Z").toLocaleString("en-IE", { weekday: "short", hour: "2-digit", minute: "2-digit", timeZone: "Europe/Dublin" });
         return "<article class=\"gauge\"><header><h3>" + esc(s.name) + "</h3><p class=\"now\"><strong>" + last[1].toFixed(2) +
           " m</strong> at " + esc(when) + "</p></header>" + chart(s.points) +
-          "<p class=\"src\"><a href=\"https://waterlevel.ie/00000" + s.ref + "/0001/\" rel=\"noopener\">Station " + esc(s.ref) + " on waterlevel.ie →</a></p></article>";
+          (s.tide
+            ? "<p class=\"src\">Rises and falls with the tide twice a day; metres above Ordnance Datum (Malin). <a href=\"" + esc(s.page) + "\" target=\"_blank\" rel=\"noopener\">Marine Institute tide gauge →</a></p></article>"
+            : "<p class=\"src\"><a href=\"https://waterlevel.ie/00000" + s.ref + "/0001/\" target=\"_blank\" rel=\"noopener\">Station " + esc(s.ref) + " on waterlevel.ie →</a></p></article>");
       }).join("");
       box.innerHTML = html + "<p class=\"note\">Updated " + esc(new Date(data.updated).toLocaleString("en-IE", { dateStyle: "medium", timeStyle: "short", timeZone: "Europe/Dublin" })) + ".</p>";
     })
     .catch(function () {
       box.innerHTML = "<p class=\"muted\">Live readings aren’t available here right now. See the gauges directly on " +
-        "<a href=\"https://waterlevel.ie/0000009010/0001/\" rel=\"noopener\">Waldron’s Bridge</a> and " +
-        "<a href=\"https://waterlevel.ie/0000009369/0001/\" rel=\"noopener\">Anglesea Road</a>.</p>";
+        "<a href=\"https://waterlevel.ie/0000009010/0001/\" target=\"_blank\" rel=\"noopener\">Waldron’s Bridge</a> and " +
+        "<a href=\"https://waterlevel.ie/0000009369/0001/\" target=\"_blank\" rel=\"noopener\">Anglesea Road</a>.</p>";
     });
 })();

@@ -8,7 +8,7 @@
     for (var k = 0; k < thumbs.length; k++) {
       thumbs[k].addEventListener("click", function (e) {
         e.preventDefault();
-        big.src = this.getAttribute("href");
+        big.src = this.getAttribute("data-sm") || this.getAttribute("href");
         big.alt = cap.textContent = this.getAttribute("data-cap");
         for (var j = 0; j < thumbs.length; j++) thumbs[j].removeAttribute("aria-current");
         this.setAttribute("aria-current", "true");
