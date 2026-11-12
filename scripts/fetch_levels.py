@@ -34,7 +34,9 @@ def parse_erddap(text):
     pts = []
     for r in rows:
         try:
-            pts.append([r[0][:19], round(float(r[1]), 3)])
+            v = float(r[1])
+            if -4 < v < 5:   # the gauge sometimes logs nonsense (e.g. -32 m); Dublin tides stay within about -3 to +3 m OD
+                pts.append([r[0][:19], round(v, 3)])
         except (IndexError, ValueError):
             continue
     if len(pts) > 400:   # every 6 minutes; keep about one an hour, and the latest

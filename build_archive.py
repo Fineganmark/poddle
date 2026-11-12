@@ -127,13 +127,11 @@ BANK_TUNNEL = [
 _bt = MEANDER_BY["meander-bank-tunnel"]
 _bt["sections"] = [
  ("Easter 1985", [
-  "Over the Easter weekend of 1985 a gang set out to rob the Allied Irish Banks branch on Dame Street, at the corner of Palace Street, without going near its front door. They began on waste ground beside the wall of Dublin Castle and dug a tunnel of about 25 yards, then crawled on through the old sewers and culverts under Dame Street until they were under the bank.",
+  "Over the Easter weekend of 1985 a gang set out to rob the Allied Irish Banks branch on Dame Street without going near its front door. They began on waste ground beside the wall of Dublin Castle and dug a tunnel of about 25 yards, then crawled on through the old sewers and culverts under Dame Street until they were under the bank.",
   "They cut through a basement wall and came up in the ladies’ toilet. The alarm went off, and the gang fled empty-handed. RTÉ News filmed the gardaí examining the tunnel afterwards, and the American news agency UPI sent the story round the world as the “bungling bank robbers”."]),
  ("The river under the bank", [
   "The reports of the time talk of tunnels and sewers and never name the Poddle, but the river is the reason those tunnels are there. Inside the Palace Street gate of the Castle the Poddle divides. McEntee and Corcoran describe it: the more westerly branch flows under the open space beside City Hall before going under Dame Street, and “the eastern branch flows under Palace Street, beside a bank, which a gang of would-be robbers tried to access from the culvert in the 1980s.”",
-  "The film Dublin’s Hidden Rivers goes down into the culvert and shows the wall the gang tried to get through, from about 4:06 in. The 98FM podcast Did You Know? tells the story in a few minutes."]),
- ("Then and now", [
-  "The Poddle still runs under Palace Street to the Liffey at Wellington Quay, through the culvert the gang used. The bank building is still on the corner of Dame Street and Palace Street, opposite the Olympia, which stands over the river too."]),
+  "The film Dublin’s Hidden Rivers goes down into the culvert and shows the wall the gang tried to get through, from about 4:06 in. The 98FM podcast Did You Know? tells the story in a few minutes. Where exactly the tunnel met the river is not recorded in these sources."]),
 ]
 _bt["links"] = [(f"{k}: {t}", u) for k, t, d, u in BANK_TUNNEL]
 _bt["brief"] = ""
