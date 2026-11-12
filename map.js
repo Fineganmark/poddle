@@ -4,7 +4,8 @@
   var river = css.getPropertyValue("--river").trim() || "#2c6b9a";
   var red = css.getPropertyValue("--antiquity").trim() || "#9b3b2a";
 
-  var map = L.map("map", { scrollWheelZoom: false }).setView([53.318, -6.31], 13);
+  // zoomSnap lets the opening view fit the river closely instead of jumping out a whole zoom level.
+  var map = L.map("map", { scrollWheelZoom: false, zoomSnap: 0.25 }).setView([53.318, -6.31], 13);
   L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
     maxZoom: 19,
     attribution: "&copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors"
@@ -66,8 +67,16 @@
   });
   // Meanders: short detours off the main walk, shown in the same layer as the stops
   var meanderById = {};
+  var PINT = '<svg viewBox="0 0 24 32" width="24" height="32" aria-hidden="true" focusable="false">' +
+    '<path d="M4.2 3.5h15.6l-1.9 25.1a2 2 0 0 1-2 1.9H8.1a2 2 0 0 1-2-1.9z" fill="#1d130d" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/>' +
+    '<path d="M4.9 4.3h14.2l-.5 5.6H5.4z" fill="#f2e6c9"/>' +
+    '<path d="M4.2 3.5c1.2-1.9 3-1.4 4.2-.9 1.3-1.4 3.4-1.4 4.5-.2 1.3-1 3.4-.9 4.4.2 1.2-.4 2.2.2 2.5.9" fill="#f2e6c9" stroke="#fff" stroke-width="1.2" stroke-linejoin="round"/>' +
+    '<path d="M7.2 12.5l.9 14" stroke="#4a3426" stroke-width="1.2" stroke-linecap="round" opacity=".8"/></svg>';
   (DATA.meanders || []).forEach(function (m) {
-    var icon = L.divIcon({ className: "pin-stop pin-meander", html: "<span>M</span>", iconSize: [22, 22], iconAnchor: [11, 11] });
+    // The Guinness meander gets a little pint (our own drawing, not a brand mark).
+    var icon = m.slug === "meander-st-jamess-gate"
+      ? L.divIcon({ className: "pin-pint", html: PINT, iconSize: [24, 32], iconAnchor: [12, 30] })
+      : L.divIcon({ className: "pin-stop pin-meander", html: "<span>M</span>", iconSize: [22, 22], iconAnchor: [11, 11] });
     meanderById[m.slug] = L.marker([m.lat, m.lon], { icon: icon, title: "Meander: " + m.name, keyboard: true })
       .bindPopup("<div class=\"pop\"><p class=\"pk\">Meander off stop " + m.parent + " · " + esc(m.place) + "</p><h3>" + esc(m.name) +
         "</h3><p>" + esc(m.teaser) + "</p><a href=\"" + m.slug + ".html\">Take the meander →</a></div>", { maxWidth: 260 })
@@ -123,7 +132,7 @@
   if (below) below.appendChild(layerCtl.getContainer());
 
   var all = L.featureGroup(stops.getLayers().filter(function (l) { return !/Meander/.test(l.options.title || ""); }));
-  function home() { map.fitBounds(all.getBounds().pad(0.08)); }
+  function home() { map.fitBounds(all.getBounds(), { padding: map.getSize().x < 500 ? [10, 10] : [28, 28] }); }
   home();
   if (window.poddleMapSafe) poddleMapSafe(map, home);
   var q = /[?&]mill=([\w-]+)/.exec(location.search);
