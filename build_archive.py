@@ -45,8 +45,10 @@ for ln in open(os.path.join(OUT, "data", "places.txt"), encoding="utf-8"):
     if ln.startswith("#") and not ln.startswith("##"):
         continue
     if ln.startswith("@@ "):
-        slug, home, title = [x.strip() for x in ln[3:].split("|")]
-        cur = dict(slug=slug, home=home, title=title, secs=[], ll=PLACE_LL.get(slug))
+        f = [x.strip() for x in ln[3:].split("|")]
+        slug, home, title = f[:3]
+        ll = tuple(float(x) for x in f[3].split(",")) if len(f) > 3 else PLACE_LL.get(slug)  # optional "| lat,lon" for our own places
+        cur = dict(slug=slug, home=home, title=title, secs=[], ll=ll)
         PLACES.append(cur)
     elif ln.startswith("## "):
         cur["secs"].append((ln[3:].strip(), []))
@@ -92,6 +94,9 @@ MEANDERS = [
  dict(slug="meander-dolphins-barn", name="Dolphin’s Barn and the City Watercourse", parent="stone-boat", place="Rutland Avenue to James’s Street",
       teaser="Follow the third of the water that left at the Stone Boat, past Shaw’s mill and the Back of the Pipes to the City Basin.",
       ll=(53.33350, -6.29120)),
+ dict(slug="meander-st-jamess-gate", name="Guinness and St James’s Gate", parent="st-patricks", place="Thomas Street and James’s Street",
+      teaser="The brewery that won its water from the City Watercourse, and the family who rebuilt the streets around St Patrick’s.",
+      ll=(53.34330, -6.28700), own=True),  # poddle.ie's own research, not the history group's
  dict(slug="meander-abbey-stream", name="Along the Abbey Stream", parent="mount-jerome", place="Harold’s Cross to Marrowbone Lane",
       teaser="The monks’ mill stream, from the Hospice under the canal to Donore Avenue, Mill Street and Marrowbone Lane.",
       ll=(53.33300, -6.28260)),
@@ -166,7 +171,7 @@ for h in HISTORY:
 # meander pages' own notes (set before the People boxes are added)
 for m in MEANDERS:
     m["brief"] = ""
-    m["after"] = CREDIT_NOTE + f'<p class="xlink"><a href="map.html?meander={m["slug"]}">See this meander on the map →</a></p>'
+    m["after"] = ("" if m.get("own") else CREDIT_NOTE) + f'<p class="xlink"><a href="map.html?meander={m["slug"]}">See this meander on the map →</a></p>'
 def _stop_n(slug):
     return [s["slug"] for s in STOPS].index(slug) + 1
 
@@ -188,9 +193,17 @@ PEOPLE = [
  dict(name="Jonathan Swift", dates="1667–1745", tag="Dean of St Patrick’s, on the river’s island",
       paras=["Swift was Dean of St Patrick’s from 1713 until his death, in a cathedral built on an island between two streams of the Poddle, with the water a few feet beneath its floor. He opposed a plan to crown its tower with a brick spire. One account says the Poddle Guard was set up in 1725 to stop him rousing the crowds of the Liberties against the government; others say it simply policed the rough ground by the cathedral. He left most of his fortune to found St Patrick’s Hospital, which still cares for patients today."],
       links=[("st-patricks.html#a-cathedral-on-wet-ground", "A cathedral on wet ground"), ("meander-liberties.html#the-poddle-guard-and-the-city-sword", "The Poddle Guard")]),
+ dict(name="Arthur Guinness", dates="1725–1803", tag="Brewed with the City Watercourse",
+      paras=["On 31 December 1759 Arthur Guinness took a lease of the disused brewery at St James’s Gate from Mark Rainsford, for 9,000 years at £45 a year. The lease gave him free use of “the said Pipe water or City Water Course”, the water the City Watercourse carried down from the Dodder and the Poddle to the City Basin beside the brewery.",
+             "When Dublin Corporation came with the Sheriff in May 1775 to fill in his channel, he took a pickaxe from one of the workmen and told them the water was his and he would defend it. The quarrel ended in a compromise in the mid-1780s, when he agreed to pay £10 a year for the water."],
+      links=[("meander-st-jamess-gate.html#arthur-guinness-s-lease", "Arthur Guinness’s lease"), ("meander-st-jamess-gate.html#the-pickaxe-1775", "The pickaxe, 1775"), ("meander-dolphins-barn.html#the-city-basin", "The City Basin")]),
+ dict(name="Sir Benjamin Lee Guinness", dates="1798–1868", tag="Restored St Patrick’s on its island",
+      paras=["Arthur Guinness’s grandson ran the brewery and was Lord Mayor of Dublin in 1851. Between 1860 and 1865 he paid for the great restoration of St Patrick’s Cathedral, when it was feared the building, standing on wet ground between two streams of the Poddle, might collapse. His statue stands outside the cathedral."],
+      links=[("st-patricks.html#out-of-sight", "Out of sight"), ("meander-st-jamess-gate.html#the-guinness-family-by-the-poddle", "The Guinness family by the Poddle")]),
  dict(name="Lord Iveagh (Edward Cecil Guinness)", dates="1847–1927", tag="Rebuilt the Poddle valley",
-      paras=["Around 1900 the streets between St Patrick’s and Bride Street, the “Poddle valley”, were some of the worst slums in the city, with houses sinking into the river beneath them. Lord Iveagh cleared them, laid out St Patrick’s Park and built the Bull Alley flats through his Iveagh Trust. The Corporation moved part of the river to give the new buildings firm ground, and in 1902 thanked him for a gift of £1,400 towards completing the new channel from the cathedral to where the two branches met."],
-      links=[("st-patricks.html#out-of-sight", "Out of sight"), ("st-patricks.html#the-iveagh-buildings", "The Iveagh Buildings")]),
+      paras=["The third son of Sir Benjamin Lee Guinness, Edward Cecil Guinness ran the brewery and was made Lord Iveagh in 1891. Around 1900 the streets between St Patrick’s and Bride Street, the “Poddle valley”, were some of the worst slums in the city, with houses sinking into the river beneath them. Lord Iveagh cleared them and laid out St Patrick’s Park, opened in 1902, and his Iveagh Trust built the Bull Alley flats (1901 to 1906), the Iveagh Hostel and the Iveagh Baths on Bride Road (1906), and the Iveagh Play Centre (1915). He also paid for the Iveagh Markets on Francis Street.",
+             "The Corporation moved part of the river to give the new buildings firm ground, and in 1902 thanked him for a gift of £1,400 towards completing the new channel from the cathedral to where the two branches met. During the works of 1901 the old carved stone thought to mark St Patrick’s Well was found in the culvert beside the cathedral."],
+      links=[("st-patricks.html#out-of-sight", "Out of sight"), ("st-patricks.html#the-iveagh-buildings", "The Iveagh Buildings"), ("st-patricks.html#between-two-streams", "St Patrick’s Well"), ("meander-st-jamess-gate.html#the-guinness-family-by-the-poddle", "The Guinness family by the Poddle"), ("blackpitts.html#washing-rights-in-the-poddle", "Guinness workers at Blackpitts")]),
  dict(name="George Carr Shaw", dates="1814–1885", tag="The playwright’s father, a reluctant miller",
       paras=["Born in Kilkenny, a civil servant who sold his pension for £500 and went into the flour trade, George Carr Shaw ran Rutland mill on the City Watercourse with his partner Clibborn. His son, George Bernard Shaw, described a business that “did not work the industry: it worked them”, and his father laughing helplessly in an empty corner of the warehouse after a customer’s bankruptcy all but ruined them. The mill kept him until he died in 1885."],
       links=[("meander-dolphins-barn.html#rutland-avenue-and-shaw-s-mill", "Shaw’s mill, Rutland Avenue"), ("mills.html", "The mills")]),
@@ -341,7 +354,8 @@ for _f in os.listdir(OUT):
     if re.fullmatch(r'place-[\w-]+\.html', _f):
         os.remove(os.path.join(OUT, _f))
 for p in PLACES:
-    _redirect(f'place-{p["slug"]}.html', p["url"])
+    if p["slug"] in PLACE_LL or p["slug"] in _titles:  # only the history group's old addresses need redirects
+        _redirect(f'place-{p["slug"]}.html', p["url"])
 _redirect("archive.html", "sources.html#poddle-research")
 _redirect("archive-places.html", "sources.html#poddle-research")
 _redirect("archive-people.html", "people.html")

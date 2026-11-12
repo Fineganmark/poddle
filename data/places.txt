@@ -228,6 +228,7 @@ Source: Irish Times, 4 March 1879 and 27 November 2020 (Frank McNally); Evening 
 @@ st-james-basin | meander:meander-dolphins-barn | The City Basin
 ## The City Basin
 The first City Basin, a reservoir filled from the watercourse, was made around 1670. Between 1682 and 1721 Dublin’s population roughly doubled, from about 60,000 to 120,000, and in 1721 a new basin was built off James’s Street, between where St James’s Hospital and the Guinness Storehouse are now. It could hold about three months’ supply and served 90 streets. It was later joined to the Grand Canal. In the 18th century it was a fashionable promenade, approached through an ornamental arch at the end of Basin Lane, with walks lined with lime and elm, garden seats, bands, concerts and fireworks.
+Next to the basin, the brewery at St James’s Gate had the right to the same water under Arthur Guinness’s lease of 1759, and fought the city for it in 1775: see the meander <a href="meander-st-jamess-gate.html" rel="noopener">Guinness and St James’s Gate</a>.
 The visitor Richard Twiss was less impressed in 1775: both the springs and the reservoir were dry while he was in Dublin, and of the canal begun from it in 1765 he wrote that “it bids fair for being completed in three or four centuries.”
 After the canal line closed in 1974 the basin and harbour were filled in, but the names Basin View and Basin Street remain. In March 2023 Dublin City Council workers regenerating the linear park at Rialto, near the Fatima Luas stop, uncovered part of the old basin.
 Source: Betty Brunkard, Basin Street Harbour (Fountain Resource Group, 2014); The Journal, 16 March 2023.
@@ -308,3 +309,29 @@ St Andrew’s church first stood in the fields near the Poddle, outside the wall
 @@ grafton-street | meander:meander-st-andrews | Grafton Street
 ## Grafton Street
 The Poddle never ran under Grafton Street; the Stein, another of Dublin’s hidden rivers, runs nearby. Even so, from 24 January 1988 the stretch between Chatham Street and South Anne Street was closed to traffic for about three weeks “to facilitate culverting of the Poddle River at Kimmage”, a notice that is still a puzzle.
+
+# ---------------- Meander: Guinness and St James's Gate (from St Patrick's)
+# Sources: Guinness Archive (email to poddle.ie, 10 Nov 2026); Come Here To Me, 2015, quoting the Dublin Historical Record (1947); The Iveagh Trust.
+
+@@ st-jamess-gate-brewery | meander:meander-st-jamess-gate | St James’s Gate brewery | 53.34330,-6.28700
+## Water at James’s Gate
+St James’s Gate was the western gate of the medieval city, on the road out past St Thomas’s Abbey. The City Watercourse, a third of the Poddle’s water topped up from the Dodder, came in from Dolphin’s Barn along the Back of the Pipes, and a public cistern outside the gate is recorded from the 13th century. From 1721 the water was stored in the new City Basin off James’s Street, a few minutes’ walk south-west of the gate. For the brewers, maltsters and distillers along James’s Street and Thomas Street that water was everything: the Liffey was tidal and fouled, and could not be used for brewing.
+Source: D. McEntee and M. Corcoran, The Rivers Dodder and Poddle; Betty Brunkard, Basin Street Harbour (2014); Come Here To Me (2015).
+## Arthur Guinness’s lease
+On 31 December 1759 Arthur Guinness, then 34, took a lease of a small, disused brewery at St James’s Gate from Mark Rainsford, for 9,000 years at £45 a year. The Guinness Archive has shared the clause about the water. It gave him:
+<em>“free use Liberty and privilidge of the said Pipe water or City Water Course Lying on the west of the premisses gratis and without any Consideration to be paid for the same as held and Enjoyed by the said Sir Mark Ransford for Brewing and Malting”</em>, and the right to bring “Horses Carts Drays and Carriages” through the back way from Ransford Street.
+So the first Guinness was brewed with water that had come down the City Watercourse from the Poddle and the Dodder, past Templeogue, Kimmage and Dolphin’s Barn.
+Source: lease of 31 December 1759, extract courtesy of the Guinness Archive, Diageo Ireland.
+## The pickaxe, 1775
+Free water did not stay free for long. In 1772 a Corporation committee found two oversized pipes taking water into the brewery, and the city claimed Guinness was using far more than his lease allowed. On 16 May 1775 the committee came with the Sheriff and a gang of workmen to fill in the channel from the watercourse. Guinness, the committee reported, seized a pickaxe from one of the labourers, said that if they filled it up from end to end he would open it again at once, and that “the water was his, and he would defend it by force of arms”. The committee withdrew.
+The dispute ran on for almost ten years. It ended in a compromise: by one account on 24 May 1784, by another in 1785, Guinness agreed to take a lease of the water for the rest of his 9,000 years, at £10 a year.
+Source: Come Here To Me, “Arthur Guinness and his Right2Water” (2015), quoting the Dublin Historical Record (1947).
+
+@@ guinness-family-poddle | meander:meander-st-jamess-gate | The Guinness family by the Poddle | 53.34000,-6.27120
+## The Guinness family by the Poddle
+The family left its mark downstream too, on the island between the two streams of the Poddle. Arthur’s grandson, Sir Benjamin Lee Guinness, paid for the restoration of <a href="st-patricks.html#out-of-sight" rel="noopener">St Patrick’s Cathedral</a> from 1860 to 1865, when it was feared it might collapse. His son Edward Cecil Guinness, Lord Iveagh, cleared the slums of the “Poddle valley” north of the cathedral, where houses were sinking into the river, and laid out St Patrick’s Park, opened in 1902. His Iveagh Trust built the <a href="st-patricks.html#the-iveagh-buildings" rel="noopener">Bull Alley flats</a> between 1901 and 1906, then the Iveagh Hostel and Iveagh Baths on Bride Road and, in 1915, the Iveagh Play Centre facing the cathedral. To give the new buildings firm ground the Corporation moved part of the Poddle’s course, with £1,400 from Lord Iveagh towards the new channel.
+Many brewery families lived along the river’s course. Around Blackpitts, many of Mary Agnes Hammond’s tenants were Guinness workers, and their deeds carried the right to <a href="blackpitts.html#washing-rights-in-the-poddle" rel="noopener">wash in the River Poddle</a>.
+Source: The Iveagh Trust, “The Vision for Bull Alley”; Dublin Corporation minutes, 1902.
+## Filming the watercourse
+The brewery even had a hand in the river’s first film. John Gleeson, a Guinness employee who edited films for the Guinness Film Society’s film group, was filming the City Watercourse between Firhouse and Kimmage in 1972, with narration by <a href="people.html#sister-ann-dominica-fitzgerald" rel="noopener">Sister Ann Dominica Fitzgerald</a>. The Guinness Archive tells us the Film Society gave its films to the Irish Film Institute, so if the film survives it should be there. The search goes on.
+Source: Evening Herald, 25 July 1972; Guinness Archive, 2026.
