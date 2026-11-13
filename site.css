@@ -577,3 +577,7 @@ a.zoom:hover img, a.zoom:focus-visible img { outline: 2px solid var(--river); ou
 .line a:hover .n.pint-n, .line a:focus-visible .n.pint-n { background: none; color: #f2e6c9; }
 .line li.off-line::before { border-left: 3px dashed var(--antiquity); left: 21.5px; }
 .research { margin-top: 56px; padding-top: 24px; border-top: 1px solid var(--rule); }
+.flood-timeline li > div { display: grid; gap: 4px; min-width: 0; }
+.flood-timeline .tl-src { display: block; font: 400 .8rem/1.45 var(--label); color: var(--muted); }
+.flood-timeline .approx { font: 600 .7rem/1 var(--label); font-style: normal; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); border: 1px solid var(--rule); border-radius: 3px; padding: 2px 5px; margin-left: 6px; white-space: nowrap; }
+@media (max-width: 560px) { .flood-timeline li { grid-template-columns: 1fr; gap: 2px; } }
