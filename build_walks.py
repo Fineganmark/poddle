@@ -29,7 +29,7 @@ SCHOOL_WALKS = [
     text=["This concrete structure with railings is the first finished part of the River Poddle Flood Alleviation Scheme. It came into use on 20 February 2025. In a big storm it lets only a set amount of water through, so the lake fills up behind the raised bank and can rise by up to three metres. The water is let out slowly once the storm has passed, so the streets downstream in Kimmage and Harold’s Cross don’t flood."],
     look="The raised grassy bank (the embankment) and the opening where the water leaves the lake.",
     do="Find something about three metres tall, like a lamp post or a tree. Imagine the lake rising that high in a storm.",
-    ask="Homes in Kimmage and Harold’s Cross flooded in 1987, 1993 and 2011. How does holding water back here help them?",
+    ask="Homes in Kimmage and Harold’s Cross flooded in 1986, 1993 and 2011. How does holding water back here help them?",
     more=("floods", "Floods and the flood scheme")),
    dict(name="The wetland that cleans the river", where="The integrated constructed wetland and its boardwalk", lat=53.30408, lon=-6.33039,
     img=("tymon-wetland-boardwalk", "The boardwalk through the integrated constructed wetland, Tymon Park. Photo: Mark Finegan, November 2026."),
