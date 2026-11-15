@@ -1,0 +1,62 @@
+﻿[
+    {
+        "n":  1,
+        "file":  "r1.jpg",
+        "downloaded":  true,
+        "query":  "title File:Zozimus.jpg",
+        "title":  "File:Zozimus.jpg",
+        "descriptionurl":  "https://commons.wikimedia.org/wiki/File:Zozimus.jpg",
+        "width":  569,
+        "height":  963,
+        "Artist":  "Unknown authorUnknown author",
+        "DateTimeOriginal":  "28 May 2008 (original upload date)",
+        "LicenseShortName":  "Public domain",
+        "Credit":  "www.dublinka.com/pics/Zozimus.jpg",
+        "ImageDescription":  "a 19th century print of Zozimus the blind bard"
+    },
+    {
+        "n":  2,
+        "file":  "r2.jpg",
+        "downloaded":  true,
+        "query":  "title File:Michael J. Moran.jpg",
+        "title":  "File:Michael J. Moran.jpg",
+        "descriptionurl":  "https://commons.wikimedia.org/wiki/File:Michael_J._Moran.jpg",
+        "width":  170,
+        "height":  255,
+        "Artist":  "Massachusetts General Court",
+        "DateTimeOriginal":  "Unknown date",
+        "LicenseShortName":  "Public domain",
+        "Credit":  "https://malegislature.gov/Legislators/Profile/MJM1",
+        "ImageDescription":  "Massachusetts State Representative Michael J. Moran (D – Brighton)"
+    },
+    {
+        "n":  3,
+        "file":  "r3.jpg",
+        "downloaded":  true,
+        "query":  "search Zozimus",
+        "title":  "File:Henry MacManus - THE STREET POET ZOZIMUS IN 1838.jpg",
+        "descriptionurl":  "https://commons.wikimedia.org/wiki/File:Henry_MacManus_-_THE_STREET_POET_ZOZIMUS_IN_1838.jpg",
+        "width":  465,
+        "height":  600,
+        "Artist":  "Henry MacManus",
+        "DateTimeOriginal":  null,
+        "LicenseShortName":  "Public domain",
+        "Credit":  "https://www.invaluable.com/auction-lot/henry-m-mcmanus-rha-fl-1835-1877-111-c-6576178ece",
+        "ImageDescription":  "THE STREET POET ZOZIMUS IN 1838"
+    },
+    {
+        "n":  4,
+        "file":  "r4.jpg",
+        "downloaded":  true,
+        "query":  "search Zozimus",
+        "title":  "File:Zozimus grave.jpg",
+        "descriptionurl":  "https://commons.wikimedia.org/wiki/File:Zozimus_grave.jpg",
+        "width":  2448,
+        "height":  3264,
+        "Artist":  "Sheila1988",
+        "DateTimeOriginal":  "2017-04-15",
+        "LicenseShortName":  "CC0",
+        "Credit":  "Own work",
+        "ImageDescription":  "Zozimus grave, Glasnevin Cemetery"
+    }
+]

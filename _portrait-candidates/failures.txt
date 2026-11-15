@@ -1,0 +1,5 @@
+﻿Download log (Wikimedia Commons, 15 Nov 2026)
+First pass: 6 downloads hit HTTP 429 rate limits; all 6 were later downloaded successfully via standard-size thumbnails:
+  zozimus-michael-moran r2, r3; the-plunketts r3; dan-lowrey r3; the-domvilles-of-templeogue r2; the-pims r1
+Searches with no results: "Arthur Guinness brewer portrait", "Josephine Plunkett countess", "Daniel Lowrey Dublin"
+Entries whose query ends in "(extra)" came from alternative searches run because the briefed search returned the wrong subject.
