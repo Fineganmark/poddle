@@ -792,7 +792,7 @@ for i, s in enumerate(STOPS):
     body = article(s, kicker, prev, nxt, ("walk.html", "The river walk"), top_nav=True)
     write(f'{s["slug"]}.html', shell(s["slug"], f'{s["name"]} · {SITE}',
           f'{s["teaser"]} Stop {WALK_N[s["slug"]]} of {WALK_TOTAL} on the River Poddle walk, at {s["place"]}, Dublin.', body, "walk.html",
-          image=s["images"][0][0] if s["images"] else None, article=True))
+          image=share_img(s), article=True))
 
 # History chapters (prev/next labels say Earlier/Later)
 for i, h in enumerate(HISTORY):
@@ -803,7 +803,7 @@ for i, h in enumerate(HISTORY):
     body = body.replace("<span>Upstream</span>", "<span>Earlier</span>").replace("<span>Downstream</span>", "<span>Later</span>")
     write(f'{h["slug"]}.html', shell(h["slug"], f'{h["name"]} · {SITE}',
           f'{h["teaser"]} {h["name"]}: a chapter in the history of the River Poddle, Dublin’s hidden river.', body, "history.html",
-          image=h["images"][0][0] if h["images"] else None, article=True))
+          image=share_img(h), article=True))
 
 # Home: intro + the river walk as a line diagram
 def stop_li(i, s):
@@ -967,7 +967,7 @@ src = f'''<div class="wrap page narrow"><header class="page-head"><p class="kick
 <li>Dublin Corporation, Reports and Printed Documents, 1901, Report No. 129, “Report of the Paving Committee re Covering of the Poddle River at Donore Avenue”, pp. 301–316 (Dublin City Library and Archive)</li>
 <li>J. Warburton, J. Whitelaw and R. Walsh, History of the City of Dublin (1818), as quoted by McEntee and Corcoran</li>
 <li>Robert Mallet, Report on the proposed formation of reservoirs on the River Dodder (1844), as quoted by McEntee and Corcoran</li>
-<li>Dublin Corporation Waterworks Department, Ordnance Survey sheets with water mains (South Side and South County Dublin, WW/12/17–19), Dublin City Library and Archive</li>
+<li>Dublin Corporation Waterworks Department, Ordnance Survey sheets with water mains (South Side and South County Dublin, WW/12/17–19). Map extracts on this site are from photographs by Mark Finegan, courtesy of Dublin City Library &amp; Archive</li>
 <li>Dublin Corporation (Dublin City Council) minutes, 1901–1987, from the index entries for the Poddle supplied by Dublin City Library and Archive, 2026</li>
 <li>Greater Dublin Strategic Drainage Study (2005)</li>
 <li>H. F. Berry, “The water supply of ancient Dublin”, Journal of the Royal Society of Antiquaries of Ireland 21 (1891), pp. 557–73</li>
