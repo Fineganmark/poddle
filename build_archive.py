@@ -218,8 +218,10 @@ for _l in open(os.path.join(OUT, "data", "crumlin-pics.txt"), encoding="utf-8"):
     _pics.setdefault(_slug, []).append(("crumlin/" + _name, _cap))
 PICS_NOTE = '<p class="note">Pictures gathered by the Crumlin and Walkinstown History Group for their Poddle research, shown here in black and white. If you know more about any of them, or hold the rights to one, please <a href="about.html">get in touch</a>.</p>'
 for _slug, _items in _pics.items():
-    _t = STOP_BY.get(_slug) or MEANDER_BY.get(_slug)
-    _t["sections"].append(("Pictures from the archive", [gal(*_items), PICS_NOTE]))
+    _t = STOP_BY.get(_slug) or MEANDER_BY.get(_slug) or next(h for h in HISTORY if h["slug"] == _slug)
+    # the City Watercourse page credits the group in captions only, not in its text
+    _note = PICS_NOTE.replace("Pictures gathered by the Crumlin and Walkinstown History Group for their Poddle research, shown here", "Pictures from the archive, shown") if _slug == "city-watercourse" else PICS_NOTE
+    _t["sections"].append(("Pictures from the archive", [gal(*_items), _note]))
 
 # meander pages' own notes (set before the People boxes are added)
 for m in MEANDERS:

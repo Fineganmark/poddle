@@ -48,3 +48,23 @@ fettercairn-house | 106 | tallaght-old-map | Tallaght and the lands around it on
 tymon | 109 | timmond-castle | “Timmond Castle, near ye Greenhills, 3 miles from Dublin”, in an eighteenth-century watercolour.
 tymon | 111 | tymon-castle-print | Tymon Castle in an eighteenth-century print.
 balrothery-weir | 107 | templeogue-house | Templeogue House, where the watercourse ran through the grounds.
+# History pages: the same pictures again where they fit ("-" = file already made above)
+mills | - | dolphins-barn-old-mill-1893 | “Old mill on Poddle River, Dolphin’s Barn, 1893”, as the note under the photograph says.
+mills | - | mount-down-mill | The old mill building at Mount Down.
+mills | - | mount-down-sluice | A timber sluice gate on the watercourse at Mount Down.
+mills | - | hospice-mill-pond-map | The mill pond beside Our Lady’s Hospice on an Ordnance Survey map. Ordnance Survey Ireland.
+mills | - | greenmount-spinning-map | Greenmount Spinning Manufactory and Green Mount on an early Ordnance Survey map. Ordnance Survey Ireland.
+mills | - | sweeneys-warrenmount-map | Warrenmount Mills and its mill pond on an Ordnance Survey town plan. Ordnance Survey Ireland.
+mills | - | pim-brothers-1876 | Pim Brothers and Co. advertisement, 1876, with the Greenmount Spinning Company at the foot.
+mills | - | blackpitts-maltings | The City of Dublin Maltings at “Black Pitts”, from a nineteenth-century billhead.
+mills | - | sweeneys-millstone | A millstone kept as a feature in the new development near Sweeney’s Terrace. Photo: Crumlin and Walkinstown History Group, 2023.
+city-watercourse | - | mount-down-sluice-water | A sluice and its channel at Mount Down.
+city-watercourse | - | weaver-square-pipes | Thomas Conway and John Burke with part of the wooden water main they unearthed at Weaver Square, off Cork Street. Newspaper photograph, 1970.
+city-watercourse | - | weaver-square-rocque | Chamber Street and Weaver’s Square on John Rocque’s map of Dublin, 1756.
+heart-of-dublin | - | castle-and-black-pool | A reconstruction of the medieval castle, with the outline of today’s Dubh Linn Gardens over the Black Pool (dashed line). Via Wikimedia Commons.
+heart-of-dublin | - | st-michael-le-pole-watercolour | “The Old Tower of Michael of Pole, Dublin”: the round tower and church of St Michael le Pole, in an eighteenth-century watercolour.
+heart-of-dublin | - | st-patricks-from-cross-poddle | St Patrick’s Cathedral seen from the Cross Poddle end of Patrick Street, in an early nineteenth-century print.
+origins | - | tallaght-old-map | Tallaght and the lands around it on an early nineteenth-century map.
+origins | - | timmond-castle | “Timmond Castle, near ye Greenhills, 3 miles from Dublin”, in an eighteenth-century watercolour.
+second-diversion | - | templeogue-house | Templeogue House, where the watercourse ran through the grounds.
+second-diversion | - | mount-down-bridge-1982 | Mount Down Bridge, 1982. Photo: Patrick Healy, South Dublin County Libraries.
