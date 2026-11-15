@@ -78,5 +78,45 @@
   "licence": "",
   "w": 416,
   "h": 588
+ },
+ "arthur-guinness": {
+  "src": "img/people/arthur-guinness.jpg",
+  "alt": "Painted portrait of Arthur Guinness in a powdered wig and dark coat",
+  "caption": "Arthur Guinness, founder of the brewery, artist and date unknown",
+  "credit": "Wikimedia Commons",
+  "source_url": "https://commons.wikimedia.org/wiki/File:Arthur_Guinness.jpg",
+  "licence": "public domain",
+  "w": 480,
+  "h": 514
+ },
+ "zozimus-michael-moran": {
+  "src": "img/people/zozimus.jpg",
+  "alt": "Print of Zozimus standing in a tall hat and long coat, holding his ballad sheets",
+  "caption": "Zozimus, from a 19th-century print published by Joseph Tully, Dublin",
+  "credit": "Wikimedia Commons",
+  "source_url": "https://commons.wikimedia.org/wiki/File:Zozimus.jpg",
+  "licence": "public domain",
+  "w": 480,
+  "h": 451
+ },
+ "sir-frederick-shaw": {
+  "src": "img/people/frederick-shaw.jpg",
+  "alt": "Engraved portrait of Sir Frederick Shaw as a young man, seated",
+  "caption": "Frederick Shaw, engraved by E. Scriven after F. Cruickshank, published about 1846",
+  "credit": "Antiqueportrait, Wikimedia Commons",
+  "source_url": "https://commons.wikimedia.org/wiki/File:Frederick_Shaw_7006a.jpg",
+  "licence": "CC BY 3.0",
+  "w": 480,
+  "h": 616
+ },
+ "the-pims": {
+  "src": "img/people/jonathan-pim.jpg",
+  "alt": "Photograph of Jonathan Pim standing, reading a newspaper",
+  "caption": "Jonathan Pim (1806–1885), about 1860, photographer unknown",
+  "credit": "Wikimedia Commons",
+  "source_url": "https://commons.wikimedia.org/wiki/File:Jonathan_Pim_1806-1885.jpg",
+  "licence": "public domain",
+  "w": 250,
+  "h": 340
  }
 }
