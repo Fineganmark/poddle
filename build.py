@@ -31,7 +31,8 @@ STOPS = [
   teaser="Where the catchment begins, in the townland of Whitehall.",
   sections=[("Fettercairn House", [
     "Fettercairn House (renamed St Mark’s House in 1985) appears on the first Ordnance Survey map of Ireland, printed in 1837.",
-    "The house stands in the townland of Whitehall in Tamhlacht (Tallaght). It marks the southern edge of the Poddle catchment, where the stream is known as the Tymon Stream."]),
+    "The house stands in the townland of Whitehall in Tamhlacht (Tallaght). It marks the southern edge of the Poddle catchment, where the stream is known as the Tymon Stream.",
+    "Local historians say the Poddle’s source is a natural spring close to the house, near Cookstown. The spring is now underground, so there is nothing to see at the surface."]),
    ("The catchment", [
     "The Greater Dublin Strategic Drainage Study (2005) mapped the Poddle catchment beginning near Fettercairn House in Tallaght and stretching north-east through the city to the Liffey."])],
   images=[("fettercarin-house", "Fettercairn House, now St Mark’s House"), ("poddle-catchment", "The Poddle catchment, Greater Dublin Strategic Drainage Study (2005)")]),
@@ -871,7 +872,7 @@ home = f'''{PHOTO_BAND if HERO == "photo" else ""}
 '''
 
 walk_page = f'''<div class="wrap page"><header class="page-head"><p class="kicker">The river walk</p><h1>Source to sea, stop by stop</h1>
-<p class="dek">The Poddle’s course has been created and recreated by nature and by people over the centuries. Here we plot it as a single line, above and below ground, as best we can, with a few meanders off the main line to the river’s branches and nearby places. The <a href="map.html">map</a> shows the same stops on today’s streets, and <a href="planning-record.html">what the planning files say</a> adds some of the most interesting facts.</p></header>
+<p class="dek">The Poddle begins as a natural spring, now underground, close to Fettercairn House near Cookstown in Tallaght. Its course has been created and recreated by nature and by people over the centuries. Here we plot it as a single line, above and below ground, as best we can, with a few meanders off the main line to the river’s branches and nearby places. The <a href="map.html">map</a> shows the same stops on today’s streets, and <a href="planning-record.html">what the planning files say</a> adds some of the most interesting facts.</p></header>
 <div class="walk-grid"><ol class="line">{walk}</ol>
 <div class="walk-maps">{figures([("1848-os-map-small", "Ordnance Survey map of Dublin, 1848"), ("poddle-catchment", "The Poddle catchment, from Tallaght north-east to the Liffey")])}</div></div>
 <section class="school-walks" id="school-walks"><h2>Shorter walks for schools</h2>
