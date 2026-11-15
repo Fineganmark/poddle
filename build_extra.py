@@ -2,7 +2,7 @@
 import json
 
 COORDS = {
- "fettercairn-house": (53.29175, -6.39758), "bancroft": (53.29255, -6.35076), "tymon": (53.29092, -6.33429),
+ "fettercairn-house": (53.29208, -6.38936), "bancroft": (53.29255, -6.35076), "tymon": (53.29092, -6.33429),
  "balrothery-weir": (53.28870, -6.33191), "m50-crossing": (53.30160, -6.34200), "dodder-overflow": (53.30671, -6.31738),
  "kimmage-manor": (53.30853, -6.30862), "ravensdale": (53.31335, -6.29849), "stone-boat": (53.32015, -6.28987),
  "mount-argus": (53.32248, -6.28704), "mount-jerome": (53.32574, -6.28430), "blackpitts": (53.33570, -6.27510), "cross-poddle": (53.33900, -6.27290), "st-patricks": (53.33956, -6.27148),
