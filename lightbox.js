@@ -5,8 +5,14 @@
    button under the caption, Esc and the phone's Back button close it, and if Back does not answer the viewer
    closes anyway. */
 (function () {
-  var links = document.querySelectorAll("a.zoom, figure.fig > a[href^='img/']");
+  // Every link to a picture file opens in the viewer, including the "Open full size" links under captions.
+  // A home-screen icon on an iPhone opens the site with no Back button, so a link that leaves the page for a
+  // bare picture file is a dead end there (Mark, 16 Nov 2026). The gallery and map-slideshow thumbnails have
+  // their own scripts and are left alone.
+  var links = document.querySelectorAll("a.zoom, a[href^='img/']:not(.gal-thumb):not(.ms-thumb)");
   if (!links.length) return;
+  var standalone = window.navigator.standalone === true ||
+    (window.matchMedia && window.matchMedia("(display-mode: standalone), (display-mode: fullscreen)").matches);
   var box, img, cap, full, xbtn, last, pushed = false, backTimer = null, vv = window.visualViewport;
   function isOn() { return !!box && box.classList.contains("on"); }
   function build() {
@@ -65,6 +71,8 @@
   }
   function open(a) {
     if (!box) build();
+    // A caption's "Open full size" link opens the same view as tapping its picture.
+    if (!a.querySelector("img")) { var f0 = a.closest("figure"), z = f0 && f0.querySelector("a.zoom, a[href^='img/'] > img"); if (z) a = z.tagName === "IMG" ? z.parentNode : z; }
     last = a;
     var fig = a.closest("figure"), fc = fig && fig.querySelector("figcaption"), t = "";
     if (fc) { var c = fc.cloneNode(true); var x = c.querySelectorAll("a"); for (var i = 0; i < x.length; i++) if (/open full size/i.test(x[i].textContent)) x[i].parentNode.removeChild(x[i]); t = c.textContent.trim(); }
@@ -78,6 +86,7 @@
     img.style.filter = thumb ? getComputedStyle(thumb).filter : "";
     cap.textContent = t;
     full.href = a.getAttribute("href");
+    full.style.display = standalone ? "none" : "";   // no Back button to return from the bare file
     box.scrollTop = 0;
     box.classList.add("on");
     placeX();
