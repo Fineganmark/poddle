@@ -343,6 +343,9 @@ people_body = ('<div class="wrap page"><header class="page-head"><p class="kicke
 write("people.html", shell("people", f"Poddle People · {SITE}",
       "The people whose lives ran alongside Dublin’s River Poddle: Red Hugh O’Donnell, Dean Swift, the Domvilles, Sister Ann Dominica Fitzgerald, Lord Iveagh and more.", people_body, "people.html"))
 
+# DCLA waterworks map extracts on stop, history and meander pages (build_dcla.py)
+exec(open(os.path.join(OUT, "build_dcla.py"), encoding="utf-8").read())
+
 # ---- meander pages
 for m in MEANDERS:
     par = STOP_BY[m["parent"]]

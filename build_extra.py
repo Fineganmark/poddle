@@ -47,8 +47,8 @@ GAUGES = [
 
 river = json.load(open(os.path.join(OUT, "data", "river.json")))
 stops_js = [dict(n=WALK_N[st["slug"]], slug=st["slug"], name=st["name"], place=st["place"], teaser=st["teaser"],
-                 img=(st["images"][0][0] if st["images"] else None),
-                 src=(small(f'img/{st["images"][0][0]}.jpg') if st["images"] else None),
+                 img=share_img(st),
+                 src=(small(f'img/{share_img(st)}.jpg') if share_img(st) else None),
                  lat=COORDS[st["slug"]][0], lon=COORDS[st["slug"]][1])
             for i, st in enumerate(STOPS)]
 # Channels drawn on top of the river line. The Abbey Stream is the three OpenStreetMap ways named "Abbey Stream"
