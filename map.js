@@ -50,7 +50,7 @@
   var groups = { abbey: L.layerGroup(), watercourse: L.layerGroup(), overflow: L.layerGroup() };
   (DATA.channels || []).forEach(function (ch) {
     var g = ch.k === "abbey" ? groups.abbey : (ch.k === "overflow" ? groups.overflow : groups.watercourse);
-    var lines = ch.k === "abbey" ? ch.c : [ch.c];
+    var lines = Array.isArray(ch.c[0][0]) ? ch.c : [ch.c];
     lines.forEach(function (c) {
       wline(c, L.extend({ lineCap: "round" }, style[ch.k], ch.k === "abbey" && true ? { opacity: 0.6 } : {}), g).bindPopup("<div class=\"pop\"><p class=\"pk\">" +
         (ch.approx ? "Approximate route" : "Channel") + "</p><h3>" + esc(ch.n) + "</h3><p>" + esc(ch.note) +
@@ -66,7 +66,7 @@
     var tint = { abbey: "#9a6512", citywc: red, tenter: red, commons: "#2a7f9e", overflow: "#3b8f6a" };
     (DATA.channels || []).forEach(function (ch) {
       flow.push({ group: ch.k === "abbey" ? groups.abbey : (ch.k === "overflow" ? groups.overflow : groups.watercourse),
-                  color: tint[ch.k], weight: style[ch.k].weight * S.w, lines: ch.k === "abbey" ? ch.c : [ch.c] });
+                  color: tint[ch.k], weight: style[ch.k].weight * S.w, lines: Array.isArray(ch.c[0][0]) ? ch.c : [ch.c] });
     });
     poddleFlow(map, flow);
   }
