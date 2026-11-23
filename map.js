@@ -42,17 +42,17 @@
   riverLayer.addTo(map);
 
   // Channels: Abbey Stream, City Watercourse, Tenter Water, Commons Water, Dodder Overflow
-  var style = { abbey: { color: "#c98a1b", weight: 9, opacity: 0.45 },
+  var style = { abbey: { color: "#2a7f9e", weight: 3, dashArray: "6 5", opacity: 0.95 },
                 citywc: { color: red, weight: 3, dashArray: "8 6", opacity: 0.95 },
                 tenter: { color: red, weight: 3, dashArray: "3 6", opacity: 0.95 },
-                commons: { color: "#2a7f9e", weight: 3, dashArray: "6 5", opacity: 0.95 },
+                commons: { color: "#c98a1b", weight: 9, opacity: 0.45 },
                 overflow: { color: "#3b8f6a", weight: 4, dashArray: "10 5", opacity: 0.95 } };
   var groups = { abbey: L.layerGroup(), watercourse: L.layerGroup(), overflow: L.layerGroup() };
   (DATA.channels || []).forEach(function (ch) {
     var g = ch.k === "abbey" ? groups.abbey : (ch.k === "overflow" ? groups.overflow : groups.watercourse);
     var lines = Array.isArray(ch.c[0][0]) ? ch.c : [ch.c];
     lines.forEach(function (c) {
-      wline(c, L.extend({ lineCap: "round" }, style[ch.k], ch.k === "abbey" && true ? { opacity: 0.6 } : {}), g).bindPopup("<div class=\"pop\"><p class=\"pk\">" +
+      wline(c, L.extend({ lineCap: "round" }, style[ch.k], ch.k === "commons" ? { opacity: 0.6 } : {}), g).bindPopup("<div class=\"pop\"><p class=\"pk\">" +
         (ch.approx ? "Approximate route" : "Channel") + "</p><h3>" + esc(ch.n) + "</h3><p>" + esc(ch.note) +
         "</p><a href=\"" + ch.slug + ".html\">Read the history →</a></div>", { maxWidth: 260 }).addTo(g);
     });
@@ -63,7 +63,7 @@
   if (window.poddleFlow) {
     var flow = [{ group: riverLayer, color: river, weight: 4 * S.w, lines: riverLines },
                 { group: riverLayer, color: red, weight: 3 * S.w, lines: riverWc }];
-    var tint = { abbey: "#9a6512", citywc: red, tenter: red, commons: "#2a7f9e", overflow: "#3b8f6a" };
+    var tint = { abbey: "#2a7f9e", citywc: red, tenter: red, commons: "#9a6512", overflow: "#3b8f6a" };
     (DATA.channels || []).forEach(function (ch) {
       flow.push({ group: ch.k === "abbey" ? groups.abbey : (ch.k === "overflow" ? groups.overflow : groups.watercourse),
                   color: tint[ch.k], weight: style[ch.k].weight * S.w, lines: Array.isArray(ch.c[0][0]) ? ch.c : [ch.c] });
